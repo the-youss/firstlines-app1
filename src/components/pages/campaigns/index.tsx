@@ -28,7 +28,8 @@ interface Lead {
 
 export const Campaigns = () => {
   const trpc = useTRPC()
-  const { data: campaignCount } = useSuspenseQuery(trpc.campaign.count.queryOptions());
+  const campaignCount = 1
+  // const { data: campaignCount } = useSuspenseQuery(trpc.campaign.count.queryOptions());
   const [selectedLeads, setSelectedLeads] = useState<Set<string>>(new Set());
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>(null);

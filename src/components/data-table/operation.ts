@@ -16,7 +16,7 @@ import { toBoolean } from "@/lib/utils"
 export function getDefaultFilterOperator(
   columnType: ColumnType
 ): FilterOperator {
-  if (columnType === "text") {
+  if (columnType === "between") {
     return "iLike"
   }
 

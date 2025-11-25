@@ -33,21 +33,21 @@ export function ForgetPasswordForm({
 
 
   const _requestForgetPassword = (email: string) => {
-    authClient.resetPassword({
-      email,
-      redirectTo: appRoutes.appDashboard,
-      fetchOptions: {
-        onError: (context) => {
-          toast.error(context.error.message)
-        },
-        onRequest: () => {
-          setLoading(true)
-        },
-        onResponse: () => {
-          setLoading(false)
-        },
-      },
-    })
+    // authClient.resetPassword({
+    //   email,
+    //   redirectTo: appRoutes.appDashboard,
+    //   fetchOptions: {
+    //     onError: (context) => {
+    //       toast.error(context.error.message)
+    //     },
+    //     onRequest: () => {
+    //       setLoading(true)
+    //     },
+    //     onResponse: () => {
+    //       setLoading(false)
+    //     },
+    //   },
+    // })
   }
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
