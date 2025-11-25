@@ -1,0 +1,193 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Verification {
+  id         String    @id @default(uuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([identifier])
+}
+
+model Account {
+  id                    String    @id @default(uuid())
+  userId                String
+  accountId             String
+  providerId            String
+  accessToken           String?
+  refreshToken          String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  idToken               String?
+  password              String?
+
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+ createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([token])
+  @@index([userId])
+}
+
+model User {
+  id            String  @id @default(uuid())
+  name          String
+  email         String  @unique
+  emailVerified Boolean
+  image         String?
+ 
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions Session[]
+  accounts Account[]
+  lists List[]
+  campaigns Campaign[]
+
+  @@index([email])
+}
+
+
+model List {
+  id String @id @default(uuid())
+  name String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  leads Lead[]
+  campaign Campaign[]
+
+  @@index([userId])
+  @@index([id, userId])
+}
+
+
+model Lead {
+  id String @id @default(uuid())
+  firstName String
+  lastName String
+  country String?
+  city String?
+  isLinkedinPremium Boolean @default(false)
+  linkedinId String?
+  linkedinHash String?
+  jobTitle String?
+  industry String?  
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  companyId String?
+  company Company? @relation(fields: [companyId], references: [id], onDelete: SetNull)
+
+  listId String
+  list List @relation(fields: [listId], references: [id], onDelete: Cascade)
+
+  @@index([firstName, lastName])
+  @@index([firstName, lastName, country])
+  @@index([firstName, lastName, city])
+  @@index([firstName, lastName, isLinkedinPremium])
+  @@index([country])
+  @@index([city])
+  @@index([isLinkedinPremium])
+}
+
+
+model Company {
+  id String @id @default(uuid())
+
+  companyName String?
+  companyWebsite String?
+  companySize String?
+  companyLinkedinUrl String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  leads Lead[]
+
+  @@index([companyName])
+  @@index([companyWebsite])
+  @@index([companyName, companyWebsite])
+  @@index([companySize])
+}
+
+model Campaign {
+  id String @id @default(uuid())
+  name String
+  timezone String @default("America/New_York")
+  excludeActive  Boolean       @default(true)
+  dailyLimit     Int           @default(25)
+  
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listId String? @unique
+  list List? @relation(fields: [listId], references: [id], onDelete: Cascade)
+  steps          SequenceStep[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([timezone])
+  @@index([excludeActive])
+  @@index([dailyLimit])
+  @@index([listId,timezone])
+}
+
+enum StepType {
+  connection
+  wait
+  message
+}
+
+model SequenceStep {
+  id         String   @id @default(cuid())
+  order      Int      // position in the sequence
+  type       StepType
+  content    String?  // for connection + message
+  days       Int?     // for wait steps
+
+  campaignId String
+  campaign   Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+  @@index([campaignId])
+  @@index([campaignId,type])
+  @@index([type,days])
+}
