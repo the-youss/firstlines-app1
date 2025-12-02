@@ -7,7 +7,7 @@ import { getServerUTCDate } from "@/lib/utils";
 
 export const extractionRouter = {
   startSalesNavExtraction: protectedProcedure
-    .input(z.object({ payloadId: z.string() }))
+    .input(z.object({ payloadId: z.string(), name: z.string() }))
     .mutation(async ({ ctx, input, }) => {
       const payload = await ctx.db.extensionPayload.findUnique({
         where: {
@@ -21,9 +21,16 @@ export const extractionRouter = {
           message: 'There is something wrong with the payload',
         })
       }
+
+      const list = await ctx.db.list.create({
+        data: {
+          name: input.name,
+          userId: ctx.session.user.id,
+        }
+      })
       return ctx.db.queueJob.create({
         data: {
-          input: payload.payload as Prisma.JsonObject,
+          input: { list, linkedinPayload: payload.payload },
           type: QueueJobType.sales_nav_extraction,
           userId: ctx.session.user.id,
           logs: [`Extraction add to queue at ${getServerUTCDate()}`],
