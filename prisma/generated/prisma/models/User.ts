@@ -202,6 +202,8 @@ export type UserWhereInput = {
   accounts?: Prisma.AccountListRelationFilter
   lists?: Prisma.ListListRelationFilter
   campaigns?: Prisma.CampaignListRelationFilter
+  extensionPayload?: Prisma.ExtensionPayloadListRelationFilter
+  queueJobs?: Prisma.QueueJobListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -216,6 +218,8 @@ export type UserOrderByWithRelationInput = {
   accounts?: Prisma.AccountOrderByRelationAggregateInput
   lists?: Prisma.ListOrderByRelationAggregateInput
   campaigns?: Prisma.CampaignOrderByRelationAggregateInput
+  extensionPayload?: Prisma.ExtensionPayloadOrderByRelationAggregateInput
+  queueJobs?: Prisma.QueueJobOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -233,6 +237,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   accounts?: Prisma.AccountListRelationFilter
   lists?: Prisma.ListListRelationFilter
   campaigns?: Prisma.CampaignListRelationFilter
+  extensionPayload?: Prisma.ExtensionPayloadListRelationFilter
+  queueJobs?: Prisma.QueueJobListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -273,6 +279,8 @@ export type UserCreateInput = {
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -287,6 +295,8 @@ export type UserUncheckedCreateInput = {
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -301,6 +311,8 @@ export type UserUpdateInput = {
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -315,6 +327,8 @@ export type UserUncheckedUpdateInput = {
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -442,6 +456,34 @@ export type UserUpdateOneRequiredWithoutCampaignsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCampaignsInput, Prisma.UserUpdateWithoutCampaignsInput>, Prisma.UserUncheckedUpdateWithoutCampaignsInput>
 }
 
+export type UserCreateNestedOneWithoutExtensionPayloadInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutExtensionPayloadInput, Prisma.UserUncheckedCreateWithoutExtensionPayloadInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutExtensionPayloadInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutExtensionPayloadNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutExtensionPayloadInput, Prisma.UserUncheckedCreateWithoutExtensionPayloadInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutExtensionPayloadInput
+  upsert?: Prisma.UserUpsertWithoutExtensionPayloadInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutExtensionPayloadInput, Prisma.UserUpdateWithoutExtensionPayloadInput>, Prisma.UserUncheckedUpdateWithoutExtensionPayloadInput>
+}
+
+export type UserCreateNestedOneWithoutQueueJobsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutQueueJobsInput, Prisma.UserUncheckedCreateWithoutQueueJobsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutQueueJobsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutQueueJobsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutQueueJobsInput, Prisma.UserUncheckedCreateWithoutQueueJobsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutQueueJobsInput
+  upsert?: Prisma.UserUpsertWithoutQueueJobsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutQueueJobsInput, Prisma.UserUpdateWithoutQueueJobsInput>, Prisma.UserUncheckedUpdateWithoutQueueJobsInput>
+}
+
 export type UserCreateWithoutAccountsInput = {
   id?: string
   name: string
@@ -453,6 +495,8 @@ export type UserCreateWithoutAccountsInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -466,6 +510,8 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -495,6 +541,8 @@ export type UserUpdateWithoutAccountsInput = {
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -508,6 +556,8 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutSessionsInput = {
@@ -521,6 +571,8 @@ export type UserCreateWithoutSessionsInput = {
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -534,6 +586,8 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -563,6 +617,8 @@ export type UserUpdateWithoutSessionsInput = {
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -576,6 +632,8 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutListsInput = {
@@ -589,6 +647,8 @@ export type UserCreateWithoutListsInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutListsInput = {
@@ -602,6 +662,8 @@ export type UserUncheckedCreateWithoutListsInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutListsInput = {
@@ -631,6 +693,8 @@ export type UserUpdateWithoutListsInput = {
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutListsInput = {
@@ -644,6 +708,8 @@ export type UserUncheckedUpdateWithoutListsInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutCampaignsInput = {
@@ -657,6 +723,8 @@ export type UserCreateWithoutCampaignsInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCampaignsInput = {
@@ -670,6 +738,8 @@ export type UserUncheckedCreateWithoutCampaignsInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCampaignsInput = {
@@ -699,6 +769,8 @@ export type UserUpdateWithoutCampaignsInput = {
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCampaignsInput = {
@@ -712,6 +784,160 @@ export type UserUncheckedUpdateWithoutCampaignsInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutExtensionPayloadInput = {
+  id?: string
+  name: string
+  email: string
+  emailVerified: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  lists?: Prisma.ListCreateNestedManyWithoutUserInput
+  campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutExtensionPayloadInput = {
+  id?: string
+  name: string
+  email: string
+  emailVerified: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
+  campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutExtensionPayloadInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutExtensionPayloadInput, Prisma.UserUncheckedCreateWithoutExtensionPayloadInput>
+}
+
+export type UserUpsertWithoutExtensionPayloadInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutExtensionPayloadInput, Prisma.UserUncheckedUpdateWithoutExtensionPayloadInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutExtensionPayloadInput, Prisma.UserUncheckedCreateWithoutExtensionPayloadInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutExtensionPayloadInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutExtensionPayloadInput, Prisma.UserUncheckedUpdateWithoutExtensionPayloadInput>
+}
+
+export type UserUpdateWithoutExtensionPayloadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  lists?: Prisma.ListUpdateManyWithoutUserNestedInput
+  campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutExtensionPayloadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
+  campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutQueueJobsInput = {
+  id?: string
+  name: string
+  email: string
+  emailVerified: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  lists?: Prisma.ListCreateNestedManyWithoutUserInput
+  campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutQueueJobsInput = {
+  id?: string
+  name: string
+  email: string
+  emailVerified: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
+  campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutQueueJobsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutQueueJobsInput, Prisma.UserUncheckedCreateWithoutQueueJobsInput>
+}
+
+export type UserUpsertWithoutQueueJobsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutQueueJobsInput, Prisma.UserUncheckedUpdateWithoutQueueJobsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutQueueJobsInput, Prisma.UserUncheckedCreateWithoutQueueJobsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutQueueJobsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutQueueJobsInput, Prisma.UserUncheckedUpdateWithoutQueueJobsInput>
+}
+
+export type UserUpdateWithoutQueueJobsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  lists?: Prisma.ListUpdateManyWithoutUserNestedInput
+  campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutQueueJobsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
+  campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -724,6 +950,8 @@ export type UserCountOutputType = {
   accounts: number
   lists: number
   campaigns: number
+  extensionPayload: number
+  queueJobs: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -731,6 +959,8 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   accounts?: boolean | UserCountOutputTypeCountAccountsArgs
   lists?: boolean | UserCountOutputTypeCountListsArgs
   campaigns?: boolean | UserCountOutputTypeCountCampaignsArgs
+  extensionPayload?: boolean | UserCountOutputTypeCountExtensionPayloadArgs
+  queueJobs?: boolean | UserCountOutputTypeCountQueueJobsArgs
 }
 
 /**
@@ -771,6 +1001,20 @@ export type UserCountOutputTypeCountCampaignsArgs<ExtArgs extends runtime.Types.
   where?: Prisma.CampaignWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountExtensionPayloadArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExtensionPayloadWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountQueueJobsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.QueueJobWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -784,6 +1028,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   lists?: boolean | Prisma.User$listsArgs<ExtArgs>
   campaigns?: boolean | Prisma.User$campaignsArgs<ExtArgs>
+  extensionPayload?: boolean | Prisma.User$extensionPayloadArgs<ExtArgs>
+  queueJobs?: boolean | Prisma.User$queueJobsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -823,6 +1069,8 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   lists?: boolean | Prisma.User$listsArgs<ExtArgs>
   campaigns?: boolean | Prisma.User$campaignsArgs<ExtArgs>
+  extensionPayload?: boolean | Prisma.User$extensionPayloadArgs<ExtArgs>
+  queueJobs?: boolean | Prisma.User$queueJobsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -835,6 +1083,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     accounts: Prisma.$AccountPayload<ExtArgs>[]
     lists: Prisma.$ListPayload<ExtArgs>[]
     campaigns: Prisma.$CampaignPayload<ExtArgs>[]
+    extensionPayload: Prisma.$ExtensionPayloadPayload<ExtArgs>[]
+    queueJobs: Prisma.$QueueJobPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1242,6 +1492,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   accounts<T extends Prisma.User$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   lists<T extends Prisma.User$listsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$listsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ListPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   campaigns<T extends Prisma.User$campaignsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$campaignsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  extensionPayload<T extends Prisma.User$extensionPayloadArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$extensionPayloadArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExtensionPayloadPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  queueJobs<T extends Prisma.User$queueJobsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$queueJobsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QueueJobPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1759,6 +2011,54 @@ export type User$campaignsArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.CampaignScalarFieldEnum | Prisma.CampaignScalarFieldEnum[]
+}
+
+/**
+ * User.extensionPayload
+ */
+export type User$extensionPayloadArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExtensionPayload
+   */
+  select?: Prisma.ExtensionPayloadSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExtensionPayload
+   */
+  omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
+  where?: Prisma.ExtensionPayloadWhereInput
+  orderBy?: Prisma.ExtensionPayloadOrderByWithRelationInput | Prisma.ExtensionPayloadOrderByWithRelationInput[]
+  cursor?: Prisma.ExtensionPayloadWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExtensionPayloadScalarFieldEnum | Prisma.ExtensionPayloadScalarFieldEnum[]
+}
+
+/**
+ * User.queueJobs
+ */
+export type User$queueJobsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the QueueJob
+   */
+  select?: Prisma.QueueJobSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the QueueJob
+   */
+  omit?: Prisma.QueueJobOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.QueueJobInclude<ExtArgs> | null
+  where?: Prisma.QueueJobWhereInput
+  orderBy?: Prisma.QueueJobOrderByWithRelationInput | Prisma.QueueJobOrderByWithRelationInput[]
+  cursor?: Prisma.QueueJobWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.QueueJobScalarFieldEnum | Prisma.QueueJobScalarFieldEnum[]
 }
 
 /**

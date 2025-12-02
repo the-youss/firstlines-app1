@@ -393,7 +393,8 @@ export const ModelName = {
   Company: 'Company',
   Campaign: 'Campaign',
   SequenceStep: 'SequenceStep',
-  ExtensionPayload: 'ExtensionPayload'
+  ExtensionPayload: 'ExtensionPayload',
+  QueueJob: 'QueueJob'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -409,7 +410,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload"
+    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload" | "queueJob"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1153,6 +1154,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    QueueJob: {
+      payload: Prisma.$QueueJobPayload<ExtArgs>
+      fields: Prisma.QueueJobFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.QueueJobFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.QueueJobFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>
+        }
+        findFirst: {
+          args: Prisma.QueueJobFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.QueueJobFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>
+        }
+        findMany: {
+          args: Prisma.QueueJobFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>[]
+        }
+        create: {
+          args: Prisma.QueueJobCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>
+        }
+        createMany: {
+          args: Prisma.QueueJobCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.QueueJobCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>[]
+        }
+        delete: {
+          args: Prisma.QueueJobDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>
+        }
+        update: {
+          args: Prisma.QueueJobUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>
+        }
+        deleteMany: {
+          args: Prisma.QueueJobDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.QueueJobUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.QueueJobUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>[]
+        }
+        upsert: {
+          args: Prisma.QueueJobUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QueueJobPayload>
+        }
+        aggregate: {
+          args: Prisma.QueueJobAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateQueueJob>
+        }
+        groupBy: {
+          args: Prisma.QueueJobGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.QueueJobGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.QueueJobCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.QueueJobCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1325,14 +1400,30 @@ export type SequenceStepScalarFieldEnum = (typeof SequenceStepScalarFieldEnum)[k
 
 export const ExtensionPayloadScalarFieldEnum = {
   id: 'id',
-  userId: 'userId',
   hash: 'hash',
   payload: 'payload',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
 export type ExtensionPayloadScalarFieldEnum = (typeof ExtensionPayloadScalarFieldEnum)[keyof typeof ExtensionPayloadScalarFieldEnum]
+
+
+export const QueueJobScalarFieldEnum = {
+  id: 'id',
+  status: 'status',
+  type: 'type',
+  input: 'input',
+  lastMessage: 'lastMessage',
+  logs: 'logs',
+  isFailed: 'isFailed',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type QueueJobScalarFieldEnum = (typeof QueueJobScalarFieldEnum)[keyof typeof QueueJobScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1349,6 +1440,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -1460,6 +1558,34 @@ export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$Prisma
 
 
 /**
+ * Reference to a field of type 'QueueJobStatus'
+ */
+export type EnumQueueJobStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueueJobStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'QueueJobStatus[]'
+ */
+export type ListEnumQueueJobStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueueJobStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'QueueJobType'
+ */
+export type EnumQueueJobTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueueJobType'>
+    
+
+
+/**
+ * Reference to a field of type 'QueueJobType[]'
+ */
+export type ListEnumQueueJobTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueueJobType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -1561,6 +1687,7 @@ export type GlobalOmitConfig = {
   campaign?: Prisma.CampaignOmit
   sequenceStep?: Prisma.SequenceStepOmit
   extensionPayload?: Prisma.ExtensionPayloadOmit
+  queueJob?: Prisma.QueueJobOmit
 }
 
 /* Types for Logging */

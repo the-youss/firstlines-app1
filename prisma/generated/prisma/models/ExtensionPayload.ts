@@ -26,25 +26,25 @@ export type AggregateExtensionPayload = {
 
 export type ExtensionPayloadMinAggregateOutputType = {
   id: string | null
-  userId: string | null
   hash: string | null
+  userId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
 export type ExtensionPayloadMaxAggregateOutputType = {
   id: string | null
-  userId: string | null
   hash: string | null
+  userId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
 export type ExtensionPayloadCountAggregateOutputType = {
   id: number
-  userId: number
   hash: number
   payload: number
+  userId: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -53,25 +53,25 @@ export type ExtensionPayloadCountAggregateOutputType = {
 
 export type ExtensionPayloadMinAggregateInputType = {
   id?: true
-  userId?: true
   hash?: true
+  userId?: true
   createdAt?: true
   updatedAt?: true
 }
 
 export type ExtensionPayloadMaxAggregateInputType = {
   id?: true
-  userId?: true
   hash?: true
+  userId?: true
   createdAt?: true
   updatedAt?: true
 }
 
 export type ExtensionPayloadCountAggregateInputType = {
   id?: true
-  userId?: true
   hash?: true
   payload?: true
+  userId?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -151,9 +151,9 @@ export type ExtensionPayloadGroupByArgs<ExtArgs extends runtime.Types.Extensions
 
 export type ExtensionPayloadGroupByOutputType = {
   id: string
-  userId: string
   hash: string
   payload: runtime.JsonValue | null
+  userId: string
   createdAt: Date
   updatedAt: Date
   _count: ExtensionPayloadCountAggregateOutputType | null
@@ -181,20 +181,22 @@ export type ExtensionPayloadWhereInput = {
   OR?: Prisma.ExtensionPayloadWhereInput[]
   NOT?: Prisma.ExtensionPayloadWhereInput | Prisma.ExtensionPayloadWhereInput[]
   id?: Prisma.StringFilter<"ExtensionPayload"> | string
-  userId?: Prisma.StringFilter<"ExtensionPayload"> | string
   hash?: Prisma.StringFilter<"ExtensionPayload"> | string
   payload?: Prisma.JsonNullableFilter<"ExtensionPayload">
+  userId?: Prisma.StringFilter<"ExtensionPayload"> | string
   createdAt?: Prisma.DateTimeFilter<"ExtensionPayload"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"ExtensionPayload"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
 export type ExtensionPayloadOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   hash?: Prisma.SortOrder
   payload?: Prisma.SortOrderInput | Prisma.SortOrder
+  userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  user?: Prisma.UserOrderByWithRelationInput
 }
 
 export type ExtensionPayloadWhereUniqueInput = Prisma.AtLeast<{
@@ -203,17 +205,18 @@ export type ExtensionPayloadWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ExtensionPayloadWhereInput | Prisma.ExtensionPayloadWhereInput[]
   OR?: Prisma.ExtensionPayloadWhereInput[]
   NOT?: Prisma.ExtensionPayloadWhereInput | Prisma.ExtensionPayloadWhereInput[]
-  userId?: Prisma.StringFilter<"ExtensionPayload"> | string
   payload?: Prisma.JsonNullableFilter<"ExtensionPayload">
+  userId?: Prisma.StringFilter<"ExtensionPayload"> | string
   createdAt?: Prisma.DateTimeFilter<"ExtensionPayload"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"ExtensionPayload"> | Date | string
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id" | "hash">
 
 export type ExtensionPayloadOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   hash?: Prisma.SortOrder
   payload?: Prisma.SortOrderInput | Prisma.SortOrder
+  userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.ExtensionPayloadCountOrderByAggregateInput
@@ -226,61 +229,60 @@ export type ExtensionPayloadScalarWhereWithAggregatesInput = {
   OR?: Prisma.ExtensionPayloadScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ExtensionPayloadScalarWhereWithAggregatesInput | Prisma.ExtensionPayloadScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"ExtensionPayload"> | string
-  userId?: Prisma.StringWithAggregatesFilter<"ExtensionPayload"> | string
   hash?: Prisma.StringWithAggregatesFilter<"ExtensionPayload"> | string
   payload?: Prisma.JsonNullableWithAggregatesFilter<"ExtensionPayload">
+  userId?: Prisma.StringWithAggregatesFilter<"ExtensionPayload"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"ExtensionPayload"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ExtensionPayload"> | Date | string
 }
 
 export type ExtensionPayloadCreateInput = {
   id?: string
-  userId: string
   hash: string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
   updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutExtensionPayloadInput
 }
 
 export type ExtensionPayloadUncheckedCreateInput = {
   id?: string
-  userId: string
   hash: string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
 export type ExtensionPayloadUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
   hash?: Prisma.StringFieldUpdateOperationsInput | string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutExtensionPayloadNestedInput
 }
 
 export type ExtensionPayloadUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
   hash?: Prisma.StringFieldUpdateOperationsInput | string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ExtensionPayloadCreateManyInput = {
   id?: string
-  userId: string
   hash: string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
 export type ExtensionPayloadUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
   hash?: Prisma.StringFieldUpdateOperationsInput | string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -289,86 +291,238 @@ export type ExtensionPayloadUpdateManyMutationInput = {
 
 export type ExtensionPayloadUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  userId?: Prisma.StringFieldUpdateOperationsInput | string
   hash?: Prisma.StringFieldUpdateOperationsInput | string
   payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type ExtensionPayloadListRelationFilter = {
+  every?: Prisma.ExtensionPayloadWhereInput
+  some?: Prisma.ExtensionPayloadWhereInput
+  none?: Prisma.ExtensionPayloadWhereInput
+}
+
+export type ExtensionPayloadOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
 export type ExtensionPayloadCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   hash?: Prisma.SortOrder
   payload?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
 export type ExtensionPayloadMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   hash?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
 export type ExtensionPayloadMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  userId?: Prisma.SortOrder
   hash?: Prisma.SortOrder
+  userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type ExtensionPayloadCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.ExtensionPayloadCreateWithoutUserInput, Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput> | Prisma.ExtensionPayloadCreateWithoutUserInput[] | Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput | Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.ExtensionPayloadCreateManyUserInputEnvelope
+  connect?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+}
+
+export type ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.ExtensionPayloadCreateWithoutUserInput, Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput> | Prisma.ExtensionPayloadCreateWithoutUserInput[] | Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput | Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.ExtensionPayloadCreateManyUserInputEnvelope
+  connect?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+}
+
+export type ExtensionPayloadUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtensionPayloadCreateWithoutUserInput, Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput> | Prisma.ExtensionPayloadCreateWithoutUserInput[] | Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput | Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.ExtensionPayloadUpsertWithWhereUniqueWithoutUserInput | Prisma.ExtensionPayloadUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.ExtensionPayloadCreateManyUserInputEnvelope
+  set?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  disconnect?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  delete?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  connect?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  update?: Prisma.ExtensionPayloadUpdateWithWhereUniqueWithoutUserInput | Prisma.ExtensionPayloadUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.ExtensionPayloadUpdateManyWithWhereWithoutUserInput | Prisma.ExtensionPayloadUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ExtensionPayloadScalarWhereInput | Prisma.ExtensionPayloadScalarWhereInput[]
+}
+
+export type ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtensionPayloadCreateWithoutUserInput, Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput> | Prisma.ExtensionPayloadCreateWithoutUserInput[] | Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput | Prisma.ExtensionPayloadCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.ExtensionPayloadUpsertWithWhereUniqueWithoutUserInput | Prisma.ExtensionPayloadUpsertWithWhereUniqueWithoutUserInput[]
+  createMany?: Prisma.ExtensionPayloadCreateManyUserInputEnvelope
+  set?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  disconnect?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  delete?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  connect?: Prisma.ExtensionPayloadWhereUniqueInput | Prisma.ExtensionPayloadWhereUniqueInput[]
+  update?: Prisma.ExtensionPayloadUpdateWithWhereUniqueWithoutUserInput | Prisma.ExtensionPayloadUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.ExtensionPayloadUpdateManyWithWhereWithoutUserInput | Prisma.ExtensionPayloadUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.ExtensionPayloadScalarWhereInput | Prisma.ExtensionPayloadScalarWhereInput[]
+}
+
+export type ExtensionPayloadCreateWithoutUserInput = {
+  id?: string
+  hash: string
+  payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ExtensionPayloadUncheckedCreateWithoutUserInput = {
+  id?: string
+  hash: string
+  payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ExtensionPayloadCreateOrConnectWithoutUserInput = {
+  where: Prisma.ExtensionPayloadWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExtensionPayloadCreateWithoutUserInput, Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput>
+}
+
+export type ExtensionPayloadCreateManyUserInputEnvelope = {
+  data: Prisma.ExtensionPayloadCreateManyUserInput | Prisma.ExtensionPayloadCreateManyUserInput[]
+  skipDuplicates?: boolean
+}
+
+export type ExtensionPayloadUpsertWithWhereUniqueWithoutUserInput = {
+  where: Prisma.ExtensionPayloadWhereUniqueInput
+  update: Prisma.XOR<Prisma.ExtensionPayloadUpdateWithoutUserInput, Prisma.ExtensionPayloadUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.ExtensionPayloadCreateWithoutUserInput, Prisma.ExtensionPayloadUncheckedCreateWithoutUserInput>
+}
+
+export type ExtensionPayloadUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.ExtensionPayloadWhereUniqueInput
+  data: Prisma.XOR<Prisma.ExtensionPayloadUpdateWithoutUserInput, Prisma.ExtensionPayloadUncheckedUpdateWithoutUserInput>
+}
+
+export type ExtensionPayloadUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.ExtensionPayloadScalarWhereInput
+  data: Prisma.XOR<Prisma.ExtensionPayloadUpdateManyMutationInput, Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserInput>
+}
+
+export type ExtensionPayloadScalarWhereInput = {
+  AND?: Prisma.ExtensionPayloadScalarWhereInput | Prisma.ExtensionPayloadScalarWhereInput[]
+  OR?: Prisma.ExtensionPayloadScalarWhereInput[]
+  NOT?: Prisma.ExtensionPayloadScalarWhereInput | Prisma.ExtensionPayloadScalarWhereInput[]
+  id?: Prisma.StringFilter<"ExtensionPayload"> | string
+  hash?: Prisma.StringFilter<"ExtensionPayload"> | string
+  payload?: Prisma.JsonNullableFilter<"ExtensionPayload">
+  userId?: Prisma.StringFilter<"ExtensionPayload"> | string
+  createdAt?: Prisma.DateTimeFilter<"ExtensionPayload"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"ExtensionPayload"> | Date | string
+}
+
+export type ExtensionPayloadCreateManyUserInput = {
+  id?: string
+  hash: string
+  payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ExtensionPayloadUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  hash?: Prisma.StringFieldUpdateOperationsInput | string
+  payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ExtensionPayloadUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  hash?: Prisma.StringFieldUpdateOperationsInput | string
+  payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ExtensionPayloadUncheckedUpdateManyWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  hash?: Prisma.StringFieldUpdateOperationsInput | string
+  payload?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
 
 export type ExtensionPayloadSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  userId?: boolean
   hash?: boolean
   payload?: boolean
+  userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["extensionPayload"]>
 
 export type ExtensionPayloadSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  userId?: boolean
   hash?: boolean
   payload?: boolean
+  userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["extensionPayload"]>
 
 export type ExtensionPayloadSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  userId?: boolean
   hash?: boolean
   payload?: boolean
+  userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["extensionPayload"]>
 
 export type ExtensionPayloadSelectScalar = {
   id?: boolean
-  userId?: boolean
   hash?: boolean
   payload?: boolean
+  userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ExtensionPayloadOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "hash" | "payload" | "createdAt" | "updatedAt", ExtArgs["result"]["extensionPayload"]>
+export type ExtensionPayloadOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "hash" | "payload" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["extensionPayload"]>
+export type ExtensionPayloadInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
+export type ExtensionPayloadIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
+export type ExtensionPayloadIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+}
 
 export type $ExtensionPayloadPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ExtensionPayload"
-  objects: {}
+  objects: {
+    user: Prisma.$UserPayload<ExtArgs>
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    userId: string
     hash: string
     payload: runtime.JsonValue | null
+    userId: string
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["extensionPayload"]>
@@ -765,6 +919,7 @@ readonly fields: ExtensionPayloadFieldRefs;
  */
 export interface Prisma__ExtensionPayloadClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -795,9 +950,9 @@ export interface Prisma__ExtensionPayloadClient<T, Null = never, ExtArgs extends
  */
 export interface ExtensionPayloadFieldRefs {
   readonly id: Prisma.FieldRef<"ExtensionPayload", 'String'>
-  readonly userId: Prisma.FieldRef<"ExtensionPayload", 'String'>
   readonly hash: Prisma.FieldRef<"ExtensionPayload", 'String'>
   readonly payload: Prisma.FieldRef<"ExtensionPayload", 'Json'>
+  readonly userId: Prisma.FieldRef<"ExtensionPayload", 'String'>
   readonly createdAt: Prisma.FieldRef<"ExtensionPayload", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"ExtensionPayload", 'DateTime'>
 }
@@ -817,6 +972,10 @@ export type ExtensionPayloadFindUniqueArgs<ExtArgs extends runtime.Types.Extensi
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
+  /**
    * Filter, which ExtensionPayload to fetch.
    */
   where: Prisma.ExtensionPayloadWhereUniqueInput
@@ -835,6 +994,10 @@ export type ExtensionPayloadFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
+  /**
    * Filter, which ExtensionPayload to fetch.
    */
   where: Prisma.ExtensionPayloadWhereUniqueInput
@@ -852,6 +1015,10 @@ export type ExtensionPayloadFindFirstArgs<ExtArgs extends runtime.Types.Extensio
    * Omit specific fields from the ExtensionPayload
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
   /**
    * Filter, which ExtensionPayload to fetch.
    */
@@ -901,6 +1068,10 @@ export type ExtensionPayloadFindFirstOrThrowArgs<ExtArgs extends runtime.Types.E
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
+  /**
    * Filter, which ExtensionPayload to fetch.
    */
   where?: Prisma.ExtensionPayloadWhereInput
@@ -949,6 +1120,10 @@ export type ExtensionPayloadFindManyArgs<ExtArgs extends runtime.Types.Extension
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
+  /**
    * Filter, which ExtensionPayloads to fetch.
    */
   where?: Prisma.ExtensionPayloadWhereInput
@@ -992,6 +1167,10 @@ export type ExtensionPayloadCreateArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
+  /**
    * The data needed to create a ExtensionPayload.
    */
   data: Prisma.XOR<Prisma.ExtensionPayloadCreateInput, Prisma.ExtensionPayloadUncheckedCreateInput>
@@ -1025,6 +1204,10 @@ export type ExtensionPayloadCreateManyAndReturnArgs<ExtArgs extends runtime.Type
    */
   data: Prisma.ExtensionPayloadCreateManyInput | Prisma.ExtensionPayloadCreateManyInput[]
   skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1039,6 +1222,10 @@ export type ExtensionPayloadUpdateArgs<ExtArgs extends runtime.Types.Extensions.
    * Omit specific fields from the ExtensionPayload
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
   /**
    * The data needed to update a ExtensionPayload.
    */
@@ -1091,6 +1278,10 @@ export type ExtensionPayloadUpdateManyAndReturnArgs<ExtArgs extends runtime.Type
    * Limit how many ExtensionPayloads to update.
    */
   limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1105,6 +1296,10 @@ export type ExtensionPayloadUpsertArgs<ExtArgs extends runtime.Types.Extensions.
    * Omit specific fields from the ExtensionPayload
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
   /**
    * The filter to search for the ExtensionPayload to update in case it exists.
    */
@@ -1131,6 +1326,10 @@ export type ExtensionPayloadDeleteArgs<ExtArgs extends runtime.Types.Extensions.
    * Omit specific fields from the ExtensionPayload
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
   /**
    * Filter which ExtensionPayload to delete.
    */
@@ -1163,4 +1362,8 @@ export type ExtensionPayloadDefaultArgs<ExtArgs extends runtime.Types.Extensions
    * Omit specific fields from the ExtensionPayload
    */
   omit?: Prisma.ExtensionPayloadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtensionPayloadInclude<ExtArgs> | null
 }

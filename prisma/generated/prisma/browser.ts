@@ -67,3 +67,8 @@ export type SequenceStep = Prisma.SequenceStepModel
  * 
  */
 export type ExtensionPayload = Prisma.ExtensionPayloadModel
+/**
+ * Model QueueJob
+ * 
+ */
+export type QueueJob = Prisma.QueueJobModel

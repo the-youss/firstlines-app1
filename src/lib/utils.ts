@@ -65,3 +65,5 @@ export const getNamesFromName = (name: string) => {
   };
 };
 
+export const getServerUTCDate = () => new Date().toUTCString()
+

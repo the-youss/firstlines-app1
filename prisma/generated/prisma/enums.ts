@@ -16,3 +16,20 @@ export const StepType = {
 } as const
 
 export type StepType = (typeof StepType)[keyof typeof StepType]
+
+
+export const QueueJobType = {
+  sales_nav_extraction: 'sales_nav_extraction'
+} as const
+
+export type QueueJobType = (typeof QueueJobType)[keyof typeof QueueJobType]
+
+
+export const QueueJobStatus = {
+  todo: 'todo',
+  processing: 'processing',
+  completed: 'completed',
+  cancelled: 'cancelled'
+} as const
+
+export type QueueJobStatus = (typeof QueueJobStatus)[keyof typeof QueueJobStatus]

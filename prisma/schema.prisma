@@ -72,6 +72,8 @@ model User {
   accounts Account[]
   lists List[]
   campaigns Campaign[]
+  extensionPayload ExtensionPayload[]
+  queueJobs QueueJob[]
 
   @@index([email])
 }
@@ -195,12 +197,45 @@ model SequenceStep {
 
 model ExtensionPayload {
   id         String   @id @default(cuid())
-  userId String
   hash String @unique
   payload Json?
+
+  userId String
+  user User @relation(fields: [userId],references: [id],onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([userId, hash])
+}
+
+
+enum QueueJobType {
+  sales_nav_extraction
+}
+
+enum QueueJobStatus {
+  todo
+  processing
+  completed
+  cancelled
+}
+
+model QueueJob {
+  id String @id @default(uuid())
+  status QueueJobStatus @default(todo)
+  type QueueJobType
+  input Json
+  lastMessage String?
+  logs String[]
+  isFailed Boolean @default(false)
+
+  userId String
+  user User @relation(fields: [userId],references: [id],onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId,status])
+  @@index([userId])
 }

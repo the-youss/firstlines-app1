@@ -60,7 +60,8 @@ export const ModelName = {
   Company: 'Company',
   Campaign: 'Campaign',
   SequenceStep: 'SequenceStep',
-  ExtensionPayload: 'ExtensionPayload'
+  ExtensionPayload: 'ExtensionPayload',
+  QueueJob: 'QueueJob'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -212,14 +213,30 @@ export type SequenceStepScalarFieldEnum = (typeof SequenceStepScalarFieldEnum)[k
 
 export const ExtensionPayloadScalarFieldEnum = {
   id: 'id',
-  userId: 'userId',
   hash: 'hash',
   payload: 'payload',
+  userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
 export type ExtensionPayloadScalarFieldEnum = (typeof ExtensionPayloadScalarFieldEnum)[keyof typeof ExtensionPayloadScalarFieldEnum]
+
+
+export const QueueJobScalarFieldEnum = {
+  id: 'id',
+  status: 'status',
+  type: 'type',
+  input: 'input',
+  lastMessage: 'lastMessage',
+  logs: 'logs',
+  isFailed: 'isFailed',
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type QueueJobScalarFieldEnum = (typeof QueueJobScalarFieldEnum)[keyof typeof QueueJobScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -236,6 +253,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: 'JsonNull'
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
