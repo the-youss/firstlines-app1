@@ -392,7 +392,8 @@ export const ModelName = {
   Lead: 'Lead',
   Company: 'Company',
   Campaign: 'Campaign',
-  SequenceStep: 'SequenceStep'
+  SequenceStep: 'SequenceStep',
+  ExtensionPayload: 'ExtensionPayload'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -408,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep"
+    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1078,6 +1079,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ExtensionPayload: {
+      payload: Prisma.$ExtensionPayloadPayload<ExtArgs>
+      fields: Prisma.ExtensionPayloadFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ExtensionPayloadFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ExtensionPayloadFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>
+        }
+        findFirst: {
+          args: Prisma.ExtensionPayloadFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ExtensionPayloadFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>
+        }
+        findMany: {
+          args: Prisma.ExtensionPayloadFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>[]
+        }
+        create: {
+          args: Prisma.ExtensionPayloadCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>
+        }
+        createMany: {
+          args: Prisma.ExtensionPayloadCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ExtensionPayloadCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>[]
+        }
+        delete: {
+          args: Prisma.ExtensionPayloadDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>
+        }
+        update: {
+          args: Prisma.ExtensionPayloadUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>
+        }
+        deleteMany: {
+          args: Prisma.ExtensionPayloadDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ExtensionPayloadUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ExtensionPayloadUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>[]
+        }
+        upsert: {
+          args: Prisma.ExtensionPayloadUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtensionPayloadPayload>
+        }
+        aggregate: {
+          args: Prisma.ExtensionPayloadAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateExtensionPayload>
+        }
+        groupBy: {
+          args: Prisma.ExtensionPayloadGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExtensionPayloadGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ExtensionPayloadCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExtensionPayloadCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1248,12 +1323,32 @@ export const SequenceStepScalarFieldEnum = {
 export type SequenceStepScalarFieldEnum = (typeof SequenceStepScalarFieldEnum)[keyof typeof SequenceStepScalarFieldEnum]
 
 
+export const ExtensionPayloadScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  hash: 'hash',
+  payload: 'payload',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ExtensionPayloadScalarFieldEnum = (typeof ExtensionPayloadScalarFieldEnum)[keyof typeof ExtensionPayloadScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -1270,6 +1365,15 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 
@@ -1338,6 +1442,20 @@ export type EnumStepTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
  * Reference to a field of type 'StepType[]'
  */
 export type ListEnumStepTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StepType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 
@@ -1442,6 +1560,7 @@ export type GlobalOmitConfig = {
   company?: Prisma.CompanyOmit
   campaign?: Prisma.CampaignOmit
   sequenceStep?: Prisma.SequenceStepOmit
+  extensionPayload?: Prisma.ExtensionPayloadOmit
 }
 
 /* Types for Logging */

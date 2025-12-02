@@ -62,3 +62,8 @@ export type Campaign = Prisma.CampaignModel
  * 
  */
 export type SequenceStep = Prisma.SequenceStepModel
+/**
+ * Model ExtensionPayload
+ * 
+ */
+export type ExtensionPayload = Prisma.ExtensionPayloadModel
