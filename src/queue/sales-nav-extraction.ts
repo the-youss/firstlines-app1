@@ -1,4 +1,4 @@
-import { db } from '@/lib/db';
+import { db, List, Prisma } from '@/lib/db';
 import { getServerUTCDate } from '@/lib/utils';
 import Queue, { worker } from 'fastq';
 
@@ -30,6 +30,14 @@ const __WORKER__: worker<any, { queueId: string }, boolean> = async (arg, cb) =>
       id: arg.queueId,
     }
   })
+  const queueInput = queue.input as unknown as { linkedinPayload: object, list: List };
+  const list = queueInput.list;
+
+  // await db.lead.createMany({
+  //   data:[{
+  //     listId: list.id
+  //   }]
+  // })
   cb(null, true)
 }
 
