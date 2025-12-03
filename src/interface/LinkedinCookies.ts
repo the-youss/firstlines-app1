@@ -3,3 +3,7 @@ export interface LinkedinCookies {
   li_at?: string;
   JSESSIONID?: string;
 }
+export type LinkedinHeaders = Array<{
+  name: string,
+  value: string,
+}>

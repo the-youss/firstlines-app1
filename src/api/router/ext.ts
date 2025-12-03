@@ -1,11 +1,47 @@
 
+import { LinkedinClient } from "@/Linkedin-API";
 import type { TRPCRouterRecord } from "@trpc/server";
 import md5 from 'md5';
 import z from "zod";
 import { protectedProcedure, publicProcedure } from "../trpc";
-import { headers } from "next/headers";
 
 export const extensionRouter = {
+  syncLinkedinSession: protectedProcedure
+    .input(z.object({
+      cookies: z.object({
+        li_a: z.string(),
+        li_at: z.string(),
+        JSESSIONID: z.string()
+      }).partial(),
+      headers: z.array(z.object({
+        name: z.string(),
+        value: z.string(),
+      })),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const client = new LinkedinClient({
+        cookies: input.cookies,
+        linkedinHeaders: input.headers,
+      })
+      const status = Boolean(await client.profile.getOwnProfile()) ? 'active' : 'inactive';
+      await ctx.db.linkedInSession.upsert({
+        create: {
+          userId: ctx.session.user.id,
+          cookies: input.cookies,
+          headers: input.headers,
+          status
+        },
+        update: {
+          cookies: input.cookies,
+          headers: input.headers,
+          status
+        },
+        where: {
+          userId: ctx.session.user.id,
+        }
+      })
+      return null
+    }),
   createPayload: publicProcedure
     .input(z.object({
       payload: z.object({

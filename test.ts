@@ -17,11 +17,11 @@ const run = async () => {
     cookies: props.cookies,
     linkedinHeaders: props.headers
   })
-  const searchResult = await lk.salesnavSearch.scrapeSearchResult(url,
-    async (args) => {
-      fs.writeFileSync('search-result.json', JSON.stringify(args, null, 2))
-      return true
-    }
+  const searchResult = await lk.salesnavSearch.fetchMetas(url,
+    // async (args) => {
+    //   fs.writeFileSync('search-result.json', JSON.stringify(args, null, 2))
+    //   return true
+    // }
   )
   console.log('searchResult', searchResult)
 }

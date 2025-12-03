@@ -94,3 +94,8 @@ export type ExtensionPayload = Prisma.ExtensionPayloadModel
  * 
  */
 export type QueueJob = Prisma.QueueJobModel
+/**
+ * Model LinkedInSession
+ * 
+ */
+export type LinkedInSession = Prisma.LinkedInSessionModel

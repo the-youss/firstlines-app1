@@ -3,9 +3,9 @@ import { type Auth } from '.';
 
 export const authClient = createAuthClient({
   fetchOptions: {
-    credentials: "include"
+    credentials: "include",
   },
-  plugins: []
+  plugins: [],
 })
 
 
