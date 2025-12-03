@@ -14,6 +14,14 @@ export class SalesNavSearchRepository {
   constructor({ client }: { client: LinkedinClient }) {
     this.client = client;
   }
+  async fetchMetas(
+    sourceUrl: string,
+  ) {
+    return this.client.request.salesnavSearch.getSalesNavSearch(sourceUrl, {
+      start: 0,
+      limit: 1,
+    });
+  }
   async scrapeSearchResult(
     sourceUrl: string,
     onProgress: (args: {
@@ -48,7 +56,7 @@ export class SalesNavSearchRepository {
       const allowed = SEARCH_RESULT_MAX_ITEMS_COUNT - start;
       console.warn(
         `Requested leadsLimit ${opts.leadsLimit} with offset ${start} goes past ${SEARCH_RESULT_MAX_ITEMS_COUNT}.` +
-          ` Trimming to ${allowed}.`
+        ` Trimming to ${allowed}.`
       );
       opts.leadsLimit = allowed;
     }
@@ -159,10 +167,10 @@ export class SalesNavSearchRepository {
             companyLinkedinUrl:
               pos.companyUrnResolutionResult?.flagshipCompanyUrl,
             companySize: (pos.companyUrnResolutionResult?.employeeCountRange ===
-            "myself only"
+              "myself only"
               ? "1"
               : pos.companyUrnResolutionResult
-                  ?.employeeCountRange) as CompanySize,
+                ?.employeeCountRange) as CompanySize,
             industry: pos.companyUrnResolutionResult?.industry,
           };
         });

@@ -61,7 +61,8 @@ export const ModelName = {
   Campaign: 'Campaign',
   SequenceStep: 'SequenceStep',
   ExtensionPayload: 'ExtensionPayload',
-  QueueJob: 'QueueJob'
+  QueueJob: 'QueueJob',
+  LinkedInSession: 'LinkedInSession'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -237,6 +238,19 @@ export const QueueJobScalarFieldEnum = {
 } as const
 
 export type QueueJobScalarFieldEnum = (typeof QueueJobScalarFieldEnum)[keyof typeof QueueJobScalarFieldEnum]
+
+
+export const LinkedInSessionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  cookies: 'cookies',
+  headers: 'headers',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type LinkedInSessionScalarFieldEnum = (typeof LinkedInSessionScalarFieldEnum)[keyof typeof LinkedInSessionScalarFieldEnum]
 
 
 export const SortOrder = {

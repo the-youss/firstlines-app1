@@ -394,7 +394,8 @@ export const ModelName = {
   Campaign: 'Campaign',
   SequenceStep: 'SequenceStep',
   ExtensionPayload: 'ExtensionPayload',
-  QueueJob: 'QueueJob'
+  QueueJob: 'QueueJob',
+  LinkedInSession: 'LinkedInSession'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -410,7 +411,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload" | "queueJob"
+    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload" | "queueJob" | "linkedInSession"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1228,6 +1229,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    LinkedInSession: {
+      payload: Prisma.$LinkedInSessionPayload<ExtArgs>
+      fields: Prisma.LinkedInSessionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LinkedInSessionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LinkedInSessionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>
+        }
+        findFirst: {
+          args: Prisma.LinkedInSessionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LinkedInSessionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>
+        }
+        findMany: {
+          args: Prisma.LinkedInSessionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>[]
+        }
+        create: {
+          args: Prisma.LinkedInSessionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>
+        }
+        createMany: {
+          args: Prisma.LinkedInSessionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LinkedInSessionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>[]
+        }
+        delete: {
+          args: Prisma.LinkedInSessionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>
+        }
+        update: {
+          args: Prisma.LinkedInSessionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>
+        }
+        deleteMany: {
+          args: Prisma.LinkedInSessionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LinkedInSessionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LinkedInSessionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>[]
+        }
+        upsert: {
+          args: Prisma.LinkedInSessionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedInSessionPayload>
+        }
+        aggregate: {
+          args: Prisma.LinkedInSessionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLinkedInSession>
+        }
+        groupBy: {
+          args: Prisma.LinkedInSessionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LinkedInSessionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LinkedInSessionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LinkedInSessionCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1426,6 +1501,19 @@ export const QueueJobScalarFieldEnum = {
 export type QueueJobScalarFieldEnum = (typeof QueueJobScalarFieldEnum)[keyof typeof QueueJobScalarFieldEnum]
 
 
+export const LinkedInSessionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  cookies: 'cookies',
+  headers: 'headers',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type LinkedInSessionScalarFieldEnum = (typeof LinkedInSessionScalarFieldEnum)[keyof typeof LinkedInSessionScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1586,6 +1674,27 @@ export type ListEnumQueueJobTypeFieldRefInput<$PrismaModel> = FieldRefInputType<
 
 
 /**
+ * Reference to a field of type 'Json[]'
+ */
+export type ListJsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json[]'>
+    
+
+
+/**
+ * Reference to a field of type 'LinkedInSessionStatus'
+ */
+export type EnumLinkedInSessionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LinkedInSessionStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'LinkedInSessionStatus[]'
+ */
+export type ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LinkedInSessionStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -1688,6 +1797,7 @@ export type GlobalOmitConfig = {
   sequenceStep?: Prisma.SequenceStepOmit
   extensionPayload?: Prisma.ExtensionPayloadOmit
   queueJob?: Prisma.QueueJobOmit
+  linkedInSession?: Prisma.LinkedInSessionOmit
 }
 
 /* Types for Logging */

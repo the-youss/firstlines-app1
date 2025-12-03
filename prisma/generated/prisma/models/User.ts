@@ -204,6 +204,7 @@ export type UserWhereInput = {
   campaigns?: Prisma.CampaignListRelationFilter
   extensionPayload?: Prisma.ExtensionPayloadListRelationFilter
   queueJobs?: Prisma.QueueJobListRelationFilter
+  linkedinSessions?: Prisma.XOR<Prisma.LinkedInSessionNullableScalarRelationFilter, Prisma.LinkedInSessionWhereInput> | null
 }
 
 export type UserOrderByWithRelationInput = {
@@ -220,6 +221,7 @@ export type UserOrderByWithRelationInput = {
   campaigns?: Prisma.CampaignOrderByRelationAggregateInput
   extensionPayload?: Prisma.ExtensionPayloadOrderByRelationAggregateInput
   queueJobs?: Prisma.QueueJobOrderByRelationAggregateInput
+  linkedinSessions?: Prisma.LinkedInSessionOrderByWithRelationInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -239,6 +241,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   campaigns?: Prisma.CampaignListRelationFilter
   extensionPayload?: Prisma.ExtensionPayloadListRelationFilter
   queueJobs?: Prisma.QueueJobListRelationFilter
+  linkedinSessions?: Prisma.XOR<Prisma.LinkedInSessionNullableScalarRelationFilter, Prisma.LinkedInSessionWhereInput> | null
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -281,6 +284,7 @@ export type UserCreateInput = {
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -297,6 +301,7 @@ export type UserUncheckedCreateInput = {
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -313,6 +318,7 @@ export type UserUpdateInput = {
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -329,6 +335,7 @@ export type UserUncheckedUpdateInput = {
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -484,6 +491,20 @@ export type UserUpdateOneRequiredWithoutQueueJobsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutQueueJobsInput, Prisma.UserUpdateWithoutQueueJobsInput>, Prisma.UserUncheckedUpdateWithoutQueueJobsInput>
 }
 
+export type UserCreateNestedOneWithoutLinkedinSessionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLinkedinSessionsInput, Prisma.UserUncheckedCreateWithoutLinkedinSessionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLinkedinSessionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutLinkedinSessionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLinkedinSessionsInput, Prisma.UserUncheckedCreateWithoutLinkedinSessionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLinkedinSessionsInput
+  upsert?: Prisma.UserUpsertWithoutLinkedinSessionsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLinkedinSessionsInput, Prisma.UserUpdateWithoutLinkedinSessionsInput>, Prisma.UserUncheckedUpdateWithoutLinkedinSessionsInput>
+}
+
 export type UserCreateWithoutAccountsInput = {
   id?: string
   name: string
@@ -497,6 +518,7 @@ export type UserCreateWithoutAccountsInput = {
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -512,6 +534,7 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -543,6 +566,7 @@ export type UserUpdateWithoutAccountsInput = {
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -558,6 +582,7 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateWithoutSessionsInput = {
@@ -573,6 +598,7 @@ export type UserCreateWithoutSessionsInput = {
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -588,6 +614,7 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -619,6 +646,7 @@ export type UserUpdateWithoutSessionsInput = {
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -634,6 +662,7 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateWithoutListsInput = {
@@ -649,6 +678,7 @@ export type UserCreateWithoutListsInput = {
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutListsInput = {
@@ -664,6 +694,7 @@ export type UserUncheckedCreateWithoutListsInput = {
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutListsInput = {
@@ -695,6 +726,7 @@ export type UserUpdateWithoutListsInput = {
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutListsInput = {
@@ -710,6 +742,7 @@ export type UserUncheckedUpdateWithoutListsInput = {
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateWithoutCampaignsInput = {
@@ -725,6 +758,7 @@ export type UserCreateWithoutCampaignsInput = {
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCampaignsInput = {
@@ -740,6 +774,7 @@ export type UserUncheckedCreateWithoutCampaignsInput = {
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCampaignsInput = {
@@ -771,6 +806,7 @@ export type UserUpdateWithoutCampaignsInput = {
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCampaignsInput = {
@@ -786,6 +822,7 @@ export type UserUncheckedUpdateWithoutCampaignsInput = {
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateWithoutExtensionPayloadInput = {
@@ -801,6 +838,7 @@ export type UserCreateWithoutExtensionPayloadInput = {
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutExtensionPayloadInput = {
@@ -816,6 +854,7 @@ export type UserUncheckedCreateWithoutExtensionPayloadInput = {
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
   queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutExtensionPayloadInput = {
@@ -847,6 +886,7 @@ export type UserUpdateWithoutExtensionPayloadInput = {
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutExtensionPayloadInput = {
@@ -862,6 +902,7 @@ export type UserUncheckedUpdateWithoutExtensionPayloadInput = {
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
   queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
 }
 
 export type UserCreateWithoutQueueJobsInput = {
@@ -877,6 +918,7 @@ export type UserCreateWithoutQueueJobsInput = {
   lists?: Prisma.ListCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutQueueJobsInput = {
@@ -892,6 +934,7 @@ export type UserUncheckedCreateWithoutQueueJobsInput = {
   lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
   campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedCreateNestedOneWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutQueueJobsInput = {
@@ -923,6 +966,7 @@ export type UserUpdateWithoutQueueJobsInput = {
   lists?: Prisma.ListUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutQueueJobsInput = {
@@ -938,6 +982,87 @@ export type UserUncheckedUpdateWithoutQueueJobsInput = {
   lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
   campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
   extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  linkedinSessions?: Prisma.LinkedInSessionUncheckedUpdateOneWithoutUserNestedInput
+}
+
+export type UserCreateWithoutLinkedinSessionsInput = {
+  id?: string
+  name: string
+  email: string
+  emailVerified: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  lists?: Prisma.ListCreateNestedManyWithoutUserInput
+  campaigns?: Prisma.CampaignCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutLinkedinSessionsInput = {
+  id?: string
+  name: string
+  email: string
+  emailVerified: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  lists?: Prisma.ListUncheckedCreateNestedManyWithoutUserInput
+  campaigns?: Prisma.CampaignUncheckedCreateNestedManyWithoutUserInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedCreateNestedManyWithoutUserInput
+  queueJobs?: Prisma.QueueJobUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutLinkedinSessionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLinkedinSessionsInput, Prisma.UserUncheckedCreateWithoutLinkedinSessionsInput>
+}
+
+export type UserUpsertWithoutLinkedinSessionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLinkedinSessionsInput, Prisma.UserUncheckedUpdateWithoutLinkedinSessionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLinkedinSessionsInput, Prisma.UserUncheckedCreateWithoutLinkedinSessionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLinkedinSessionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLinkedinSessionsInput, Prisma.UserUncheckedUpdateWithoutLinkedinSessionsInput>
+}
+
+export type UserUpdateWithoutLinkedinSessionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  lists?: Prisma.ListUpdateManyWithoutUserNestedInput
+  campaigns?: Prisma.CampaignUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLinkedinSessionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  lists?: Prisma.ListUncheckedUpdateManyWithoutUserNestedInput
+  campaigns?: Prisma.CampaignUncheckedUpdateManyWithoutUserNestedInput
+  extensionPayload?: Prisma.ExtensionPayloadUncheckedUpdateManyWithoutUserNestedInput
+  queueJobs?: Prisma.QueueJobUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -1030,6 +1155,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   campaigns?: boolean | Prisma.User$campaignsArgs<ExtArgs>
   extensionPayload?: boolean | Prisma.User$extensionPayloadArgs<ExtArgs>
   queueJobs?: boolean | Prisma.User$queueJobsArgs<ExtArgs>
+  linkedinSessions?: boolean | Prisma.User$linkedinSessionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1071,6 +1197,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   campaigns?: boolean | Prisma.User$campaignsArgs<ExtArgs>
   extensionPayload?: boolean | Prisma.User$extensionPayloadArgs<ExtArgs>
   queueJobs?: boolean | Prisma.User$queueJobsArgs<ExtArgs>
+  linkedinSessions?: boolean | Prisma.User$linkedinSessionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1085,6 +1212,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     campaigns: Prisma.$CampaignPayload<ExtArgs>[]
     extensionPayload: Prisma.$ExtensionPayloadPayload<ExtArgs>[]
     queueJobs: Prisma.$QueueJobPayload<ExtArgs>[]
+    linkedinSessions: Prisma.$LinkedInSessionPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1494,6 +1622,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   campaigns<T extends Prisma.User$campaignsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$campaignsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CampaignPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   extensionPayload<T extends Prisma.User$extensionPayloadArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$extensionPayloadArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExtensionPayloadPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   queueJobs<T extends Prisma.User$queueJobsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$queueJobsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QueueJobPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  linkedinSessions<T extends Prisma.User$linkedinSessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$linkedinSessionsArgs<ExtArgs>>): Prisma.Prisma__LinkedInSessionClient<runtime.Types.Result.GetResult<Prisma.$LinkedInSessionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2059,6 +2188,25 @@ export type User$queueJobsArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.QueueJobScalarFieldEnum | Prisma.QueueJobScalarFieldEnum[]
+}
+
+/**
+ * User.linkedinSessions
+ */
+export type User$linkedinSessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LinkedInSession
+   */
+  select?: Prisma.LinkedInSessionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LinkedInSession
+   */
+  omit?: Prisma.LinkedInSessionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LinkedInSessionInclude<ExtArgs> | null
+  where?: Prisma.LinkedInSessionWhereInput
 }
 
 /**

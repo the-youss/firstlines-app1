@@ -33,3 +33,11 @@ export const QueueJobStatus = {
 } as const
 
 export type QueueJobStatus = (typeof QueueJobStatus)[keyof typeof QueueJobStatus]
+
+
+export const LinkedInSessionStatus = {
+  active: 'active',
+  inactive: 'inactive'
+} as const
+
+export type LinkedInSessionStatus = (typeof LinkedInSessionStatus)[keyof typeof LinkedInSessionStatus]

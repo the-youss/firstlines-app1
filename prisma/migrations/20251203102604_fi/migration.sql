@@ -1,0 +1,21 @@
+-- CreateEnum
+CREATE TYPE "LinkedInSessionStatus" AS ENUM ('active', 'inactive');
+
+-- CreateTable
+CREATE TABLE "LinkedInSession" (
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
+    "cookies" JSONB,
+    "headers" JSONB[],
+    "status" "LinkedInSessionStatus" NOT NULL DEFAULT 'inactive',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "LinkedInSession_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "LinkedInSession_userId_key" ON "LinkedInSession"("userId");
+
+-- AddForeignKey
+ALTER TABLE "LinkedInSession" ADD CONSTRAINT "LinkedInSession_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

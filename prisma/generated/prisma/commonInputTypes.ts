@@ -355,6 +355,23 @@ export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
   _max?: Prisma.NestedJsonFilter<$PrismaModel>
 }
 
+export type EnumLinkedInSessionStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LinkedInSessionStatus | Prisma.EnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLinkedInSessionStatusFilter<$PrismaModel> | $Enums.LinkedInSessionStatus
+}
+
+export type EnumLinkedInSessionStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LinkedInSessionStatus | Prisma.EnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLinkedInSessionStatusWithAggregatesFilter<$PrismaModel> | $Enums.LinkedInSessionStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLinkedInSessionStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLinkedInSessionStatusFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -653,6 +670,23 @@ export type NestedJsonFilterBase<$PrismaModel = never> = {
   gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type NestedEnumLinkedInSessionStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LinkedInSessionStatus | Prisma.EnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLinkedInSessionStatusFilter<$PrismaModel> | $Enums.LinkedInSessionStatus
+}
+
+export type NestedEnumLinkedInSessionStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LinkedInSessionStatus | Prisma.EnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LinkedInSessionStatus[] | Prisma.ListEnumLinkedInSessionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLinkedInSessionStatusWithAggregatesFilter<$PrismaModel> | $Enums.LinkedInSessionStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLinkedInSessionStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLinkedInSessionStatusFilter<$PrismaModel>
 }
 
 

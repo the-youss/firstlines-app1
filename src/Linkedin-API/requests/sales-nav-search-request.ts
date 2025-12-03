@@ -39,88 +39,92 @@ export class SalesNavSearchRequest extends Request {
         `Adjusted limit to ${limit} because start=${start} would exceed max=${SEARCH_RESULT_MAX_ITEMS_COUNT}`
       );
     }
-    let seachParams = this._getSearchPageUrlParams(sourceUrl);
+    const searchParams = new URLSearchParams(sourceUrl);
+    searchParams.delete('decorationId');
+    searchParams.delete('start');
+    searchParams.delete('count');
 
-    // No search params
-    if (
-      (!seachParams.isSearchingInSavedPeopleList &&
-        !seachParams.query &&
-        !seachParams.recentSearchId &&
-        !seachParams.savedSearchId) ||
-      (seachParams.isSearchingInSavedPeopleList && !seachParams.leadListId)
-    ) {
-      // Sales Nav can wrap search params under url hash, lets see if this is the case
-      const hash = new URL(sourceUrl).hash;
-      if (hash) {
-        const params = hash.replace(/^#/, "");
-        const newUrl = new URL(sourceUrl);
-        newUrl.search = params;
-        console.log("Search params are wrapped inside url hash");
-        seachParams = this._getSearchPageUrlParams(newUrl.toString());
-      }
-    }
-    const {
-      isSearchingInSavedPeopleList,
-      query,
-      recentSearchId,
-      savedSearchId,
-      leadListId,
-      lastViewedAt,
-    } = seachParams;
+    // let seachParams = this._getSearchPageUrlParams(sourceUrl);
 
-    if (
-      !isSearchingInSavedPeopleList &&
-      !query &&
-      !recentSearchId &&
-      !savedSearchId
-    ) {
-      throw new Error(
-        "_scrapeOneSearchResultPage sourceUrl is missing query param 'query' or 'recentSearchId' or 'savedSearchId'"
-      );
-    } else if (isSearchingInSavedPeopleList && !leadListId) {
-      throw new Error(
-        "_scrapeOneSearchResultPage sourceUrl is missing leadListId if param"
-      );
-    }
+    // // No search params
+    // if (
+    //   (!seachParams.isSearchingInSavedPeopleList &&
+    //     !seachParams.query &&
+    //     !seachParams.recentSearchId &&
+    //     !seachParams.savedSearchId) ||
+    //   (seachParams.isSearchingInSavedPeopleList && !seachParams.leadListId)
+    // ) {
+    //   // Sales Nav can wrap search params under url hash, lets see if this is the case
+    //   const hash = new URL(sourceUrl).hash;
+    //   if (hash) {
+    //     const params = hash.replace(/^#/, "");
+    //     const newUrl = new URL(sourceUrl);
+    //     newUrl.search = params;
+    //     console.log("Search params are wrapped inside url hash");
+    //     seachParams = this._getSearchPageUrlParams(newUrl.toString());
+    //   }
+    // }
+    // const {
+    //   isSearchingInSavedPeopleList,
+    //   query,
+    //   recentSearchId,
+    //   savedSearchId,
+    //   leadListId,
+    //   lastViewedAt,
+    // } = seachParams;
 
-    let endpointUrl = ``;
+    // if (
+    //   !isSearchingInSavedPeopleList &&
+    //   !query &&
+    //   !recentSearchId &&
+    //   !savedSearchId
+    // ) {
+    //   throw new Error(
+    //     "_scrapeOneSearchResultPage sourceUrl is missing query param 'query' or 'recentSearchId' or 'savedSearchId'"
+    //   );
+    // } else if (isSearchingInSavedPeopleList && !leadListId) {
+    //   throw new Error(
+    //     "_scrapeOneSearchResultPage sourceUrl is missing leadListId if param"
+    //   );
+    // }
 
-    endpointUrl += isSearchingInSavedPeopleList
-      ? "salesApiPeopleSearch"
-      : "salesApiLeadSearch";
-    endpointUrl +=
-      "?q=" +
-      (isSearchingInSavedPeopleList
-        ? "peopleSearchQuery"
-        : query
-        ? "searchQuery"
-        : savedSearchId
-        ? "savedSearchId"
-        : "recentSearchId");
-    endpointUrl +=
-      "&" +
-      (isSearchingInSavedPeopleList
-        ? `query=(spotlightParam:(selectedType:ALL),doFetchSpotlights:true,doFetchHits:true,doFetchFilters:false,pivotParam:(com.linkedin.sales.search.LeadListPivotRequest:(list:urn%3Ali%3Afs_salesList%3A${leadListId},sortCriteria:CREATED_TIME,sortOrder:DESCENDING)),list:(scope:LEAD,includeAll:false,excludeAll:false,includedValues:List((id:${leadListId}))))`
-        : query
-        ? `query=${query}`
-        : savedSearchId
-        ? `savedSearchId=${savedSearchId}`
-        : `recentSearchId=${recentSearchId}`);
+    // let endpointUrl = ``;
 
-    // This allows to scrape new results that appeared in a saved search
-    if (savedSearchId && lastViewedAt) {
-      endpointUrl += "&lastViewedAt=" + lastViewedAt;
-    }
+    // endpointUrl += isSearchingInSavedPeopleList
+    //   ? "salesApiPeopleSearch"
+    //   : "salesApiLeadSearch";
+    // endpointUrl +=
+    //   "?q=" +
+    //   (isSearchingInSavedPeopleList
+    //     ? "peopleSearchQuery"
+    //     : query
+    //     ? "searchQuery"
+    //     : savedSearchId
+    //     ? "savedSearchId"
+    //     : "recentSearchId");
+    // endpointUrl +=
+    //   "&" +
+    //   (isSearchingInSavedPeopleList
+    //     ? `query=(spotlightParam:(selectedType:ALL),doFetchSpotlights:true,doFetchHits:true,doFetchFilters:false,pivotParam:(com.linkedin.sales.search.LeadListPivotRequest:(list:urn%3Ali%3Afs_salesList%3A${leadListId},sortCriteria:CREATED_TIME,sortOrder:DESCENDING)),list:(scope:LEAD,includeAll:false,excludeAll:false,includedValues:List((id:${leadListId}))))`
+    //     : query
+    //     ? `query=${query}`
+    //     : savedSearchId
+    //     ? `savedSearchId=${savedSearchId}`
+    //     : `recentSearchId=${recentSearchId}`);
 
-    endpointUrl += "&start=" + start;
-    endpointUrl += "&count=" + limit;
-    endpointUrl += "&decoration=" + this._craftSearchUrlDecoration();
-
+    // // This allows to scrape new results that appeared in a saved search
+    // if (savedSearchId && lastViewedAt) {
+    //   endpointUrl += "&lastViewedAt=" + lastViewedAt;
+    // }
+    searchParams.set('start', start.toString());
+    searchParams.set('count', limit.toString());
+    searchParams.set('decoration', this._craftSearchUrlDecoration());
+    const endpointUrl = searchParams.toString()
     await this.sleepRandomDelayBetweenRequests();
 
     let json: GetSalesNavSearchResponse | undefined = undefined;
     try {
-      json = await this.fetchJson<GetSalesNavSearchResponse>(endpointUrl);
+      json = await this.fetchJson<GetSalesNavSearchResponse>(decodeURIComponent(endpointUrl));
     } catch (error) {
       console.error(
         "_scrapeOneSearchResultPage error, cannot parse json content, see http response above",
@@ -174,7 +178,7 @@ export class SalesNavSearchRequest extends Request {
   }
   private overwriteHeaders(headers: Headers) {
     delete headers["content-encoding" as keyof typeof headers];
-    headers["accept"] = "*/*";
+    headers.set("accept", "*/*");
   }
   private _getSearchPageUrlParams(sourceUrl: string) {
     const url = new URL(sourceUrl);
@@ -205,8 +209,8 @@ export class SalesNavSearchRequest extends Request {
       omitLeadData
         ? "(entityUrn)"
         : `(firstName,lastName,entityUrn~fs_salesProfile${this._craftProfileUrlDecoration(
-            true
-          )})`
+          true
+        )})`
     )
       .replace(/\(/g, "%28")
       .replace(/\)/g, "%29");
