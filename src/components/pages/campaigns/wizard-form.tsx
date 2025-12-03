@@ -199,11 +199,9 @@ export const CampaignWizard = () => {
                   <SelectValue placeholder="Select a list" />
                 </SelectTrigger>
                 <SelectContent>
-                  <ImportLeadsDialog>
-                    <SelectItem value="import-new" className="text-blue-600 font-medium">
-                      + Import New Leads
-                    </SelectItem>
-                  </ImportLeadsDialog>
+                  <SelectItem value="import-new" className="text-blue-600 font-medium" onClick={() => setIsImportDialogOpen(true)}>
+                    + Import New Leads
+                  </SelectItem>
                   <Separator className="my-1" />
                   {lists.map((list) => (
                     <SelectItem key={list.id} value={list.id}>
@@ -212,6 +210,7 @@ export const CampaignWizard = () => {
                   ))}
                 </SelectContent>
               </Select>
+              <ImportLeadsDialog children={null} open={isImportDialogOpen} setOpen={setIsImportDialogOpen} />
 
             </div>
             <div className="flex items-center justify-between rounded-lg border p-4">
