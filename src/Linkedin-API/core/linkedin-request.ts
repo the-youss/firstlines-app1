@@ -23,7 +23,7 @@ export class LinkedInRequest {
     return new SalesNavRequest({ ...this._opts, baseURL });
   }
   get salesnavSearch() {
-    const baseURL = `https://www.linkedin.com/sales-api/`;
+    const baseURL = `https://www.linkedin.com/`;
     return new SalesNavSearchRequest({ ...this._opts, baseURL });
   }
 
