@@ -1,11 +1,11 @@
 import { LinkedinHeaders, LinkedinCookies } from "@/interface/LinkedinCookies";
 import { db } from "@/lib/db"
 import { LinkedinClient, } from "@/Linkedin-API";
-
+import cron from "node-cron";
 
 const shouldCheckInterval = 2 * 24 * 60 * 1000; // 2 days in milliseconds
 
-export const checkLinkedInCookieStatus = async () => {
+const checkLinkedInCookieStatus = async () => {
   const linkedInSessions = await db.linkedInSession.findMany({
     where: {
       status: 'active',
@@ -29,4 +29,11 @@ export const checkLinkedInCookieStatus = async () => {
       })
     }
   }
+}
+
+
+export const checkLinkedInCookieStatusCron = async () => {
+  cron.schedule('0 */6 * * *', () => {
+    checkLinkedInCookieStatus()
+  }, { name: "Check LinkedIn Cookie Status", noOverlap: true });
 }
