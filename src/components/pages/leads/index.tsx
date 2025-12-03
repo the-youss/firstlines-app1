@@ -18,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowDown, ArrowUp, ArrowUpDown, Filter, Plus, Search, Trash2, Upload, UserPlus } from "lucide-react";
 import { useMemo, useState } from "react";
 import { LeadsTable } from "./table";
+import { ImportLeadsDialog } from "./import-leads-dialog";
 
 type SortKey = 'name' | 'title' | 'company' | 'country' | 'industry' | 'source' | 'list';
 type SortDirection = 'asc' | 'desc' | null;
@@ -37,7 +38,6 @@ interface Lead {
 }
 
 export const Leads = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLeads, setSelectedLeads] = useState<Set<string>>(new Set());
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
@@ -225,76 +225,12 @@ export const Leads = () => {
             {filteredLeads.length} {filteredLeads.length === 1 ? "lead" : "leads"} found
           </p>
         </div>
-        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger asChild>
-            <Button>
-              <Upload className="mr-2 h-4 w-4" />
-              Import Leads
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-2xl">
-            <DialogHeader>
-              <DialogTitle>Import Leads</DialogTitle>
-              <DialogDescription>
-                Add new leads to your database via CSV upload or manual entry
-              </DialogDescription>
-            </DialogHeader>
-            <Tabs defaultValue="csv">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="csv">CSV Upload</TabsTrigger>
-                <TabsTrigger value="manual">Manual Entry</TabsTrigger>
-              </TabsList>
-              <TabsContent value="csv" className="space-y-4">
-                <div className="border-2 border-dashed rounded-lg p-12 text-center">
-                  <Upload className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Drag and drop your CSV file here, or click to browse
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Choose File
-                  </Button>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="list-name">Import to List</Label>
-                  <Input id="list-name" placeholder="Enter list name" />
-                </div>
-                <Button className="w-full">Upload & Import</Button>
-              </TabsContent>
-              <TabsContent value="manual" className="space-y-4">
-                <div className="grid gap-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" placeholder="John Doe" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="linkedin">LinkedIn URL</Label>
-                      <Input id="linkedin" placeholder="https://linkedin.com/in/..." />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="title">Job Title</Label>
-                      <Input id="title" placeholder="VP of Sales" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company</Label>
-                      <Input id="company" placeholder="Acme Corp" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="list">Add to List</Label>
-                    <Input id="list" placeholder="Enter list name" />
-                  </div>
-                </div>
-                <Button className="w-full">
-                  <UserPlus className="mr-2 h-4 w-4" />
-                  Add Lead
-                </Button>
-              </TabsContent>
-            </Tabs>
-          </DialogContent>
-        </Dialog>
+        <ImportLeadsDialog>
+          <Button>
+            <Upload className="mr-2 h-4 w-4" />
+            Import Leads
+          </Button>
+        </ImportLeadsDialog>
       </div>
 
       <div className="flex items-center justify-between gap-4">
