@@ -1,4 +1,4 @@
-import { createAuthClient } from "better-auth/react";
+import { createAuthClient, ErrorContext } from "better-auth/react";
 import { type Auth } from '.';
 
 export const authClient = createAuthClient({

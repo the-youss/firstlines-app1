@@ -1,5 +1,5 @@
 
-import { ProfileSettings } from "./_client";
+import { ProfileSettings } from "@/components/pages/profile";
 
 export default function Profile() {
   return (

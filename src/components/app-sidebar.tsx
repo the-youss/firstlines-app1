@@ -26,7 +26,7 @@ const menuItems = [
   { title: "Inbox", url: appRoutes.appInbox, icon: MessageSquare, unreadCount: 2 },
   { title: "Leads", url: appRoutes.appLeads, icon: Users },
   { title: "Campaigns", url: appRoutes.appCampaigns, icon: Megaphone },
-  { title: "Profile", url: appRoutes.appProfile, icon: Settings },
+  { title: "Setting", url: appRoutes.appProfile, icon: Settings },
 ];
 
 

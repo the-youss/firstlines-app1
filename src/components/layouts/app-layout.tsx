@@ -16,6 +16,7 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/s
 import { AlertCircle, Bell, CheckCircle, Linkedin, MessageSquare } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ReactNode, useMemo, useState } from "react";
+import { LinkedInSessionStatus } from "../linkedin-session-status";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -93,24 +94,7 @@ export const AppLayout = ({ children, }: AppLayoutProps) => {
 
             <div className="ml-auto flex items-center gap-3">
               {/* LinkedIn Status Indicator */}
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsLinkedInConnected(!isLinkedInConnected)}
-                className={`gap-2 ${isLinkedInConnected
-                  ? "text-green-600 hover:text-green-700 hover:bg-green-50"
-                  : "text-red-600 hover:text-red-700 hover:bg-red-50"
-                  }`}
-              >
-                <span
-                  className={`h-2 w-2 rounded-full ${isLinkedInConnected ? "bg-green-600" : "bg-red-600"
-                    }`}
-                />
-                <Linkedin className="h-4 w-4" />
-                <span className="text-sm font-medium">
-                  {isLinkedInConnected ? "Account Connected" : "Account Disconnected"}
-                </span>
-              </Button>
+              <LinkedInSessionStatus />
 
               {/* Notification Bell */}
               <Popover>
