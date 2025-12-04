@@ -128,20 +128,21 @@ model Lead {
 model Company {
   id String @id @default(uuid())
 
-  companyName        String?
-  companyWebsite     String?
-  companySize        String?
-  companyLinkedinUrl String?
+  name        String
+  domain     String @unique
+  size        String?
+  linkedinUrl String?
+  industry    String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   leads Lead[]
 
-  @@index([companyName])
-  @@index([companyWebsite])
-  @@index([companyName, companyWebsite])
-  @@index([companySize])
+  @@index([name])
+  @@index([domain])
+  @@index([name, domain])
+  @@index([size])
 }
 
 model Campaign {

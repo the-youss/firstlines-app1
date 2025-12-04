@@ -1,1930 +1,334 @@
 {
-  "progress": 100,
+  "progress": 200,
   "scrapedLeads": [
     {
       "lead": {
-        "firstName": "Josh",
-        "lastName": "Bereano",
-        "linkedinId": "793801075",
-        "profileHash": "ACwAAC9QcXMBFjpaNN6OBKBIC2aM--Lbimj5uDc",
-        "country": "US",
-        "city": "Bellevue",
+        "firstName": "Charles",
+        "lastName": "Higson Smith",
+        "linkedinId": "412501125",
+        "profileHash": "ACwAABiWRIUBXGYH8X9ys3fz8WI9-2NGX4jwImo",
+        "country": "HK",
+        "city": "Hong Kong",
         "isLinkedinPremium": true,
-        "companyName": "Bereano Partners",
-        "companyWebsite": "https://bereanopartners.com/",
-        "companySize": "2-10",
-        "jobTitle": "President of Bereano Partners | Digital Marketing Strategies For A Digital-First Economy",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bereanopartnersmarketing/"
-      },
-      "currentJobs": {
-        "jobTitle": "President of Bereano Partners | Digital Marketing Strategies For A Digital-First Economy",
-        "companyName": "Bereano Partners",
-        "companyWebsite": "https://bereanopartners.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bereanopartnersmarketing/",
-        "companySize": "2-10",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "João",
-        "lastName": "Bocas",
-        "linkedinId": "66936184",
-        "profileHash": "ACwAAAP9XXgB5kmXDu8zACciUFIdTlsS5R1A53s",
-        "country": "GB",
-        "city": "London",
-        "isLinkedinPremium": true,
-        "companyName": "Digital Salutem",
-        "companyWebsite": "http://www.digitalsalutem.com",
-        "companySize": "2-10",
-        "jobTitle": "CEO & World's #1 Digital Health Influencer | Speaker | Advisor | The Wearables Expert™",
-        "industry": "Hospitals and Health Care",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/digitalsalutem/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO & World's #1 Digital Health Influencer | Speaker | Advisor | The Wearables Expert™",
-        "companyName": "Digital Salutem",
-        "companyWebsite": "http://www.digitalsalutem.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/digitalsalutem/",
-        "companySize": "2-10",
-        "industry": "Hospitals and Health Care"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Mikael ",
-        "lastName": "K.",
-        "linkedinId": "104685926",
-        "profileHash": "ACwAAAY9YWYBoTJW8IHZTf4CPD6yboHuVolzb7I",
-        "country": "GB",
-        "city": "London",
-        "isLinkedinPremium": true,
-        "companyName": "Electric Octopus®",
-        "companyWebsite": "https://electricoctopus.agency/",
-        "companySize": "2-10",
-        "jobTitle": "Founder B2B Marketing Agency | GTM Engineering, Marketing Data Analytics , SEO , Paid Ads & PPC",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/electricoctopus/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder B2B Marketing Agency | GTM Engineering, Marketing Data Analytics , SEO , Paid Ads & PPC",
-        "companyName": "Electric Octopus®",
-        "companyWebsite": "https://electricoctopus.agency/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/electricoctopus/",
-        "companySize": "2-10",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Vimal Kumar",
-        "lastName": "Rai",
-        "linkedinId": "5998195",
-        "profileHash": "ACwAAABbhnMBhL_8wv8kCDwy5V_kH3SKPdKKdV8",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": true,
-        "companyName": "Commercial Excellence Partners",
-        "companyWebsite": "https://commercialexcellence.co/",
-        "companySize": "2-10",
-        "jobTitle": "Co-Founder & Managing Partner | CX Transformation Partner",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/commercialexcellencepartners/"
-      },
-      "currentJobs": {
-        "jobTitle": "Co-Founder & Managing Partner | CX Transformation Partner",
-        "companyName": "Commercial Excellence Partners",
-        "companyWebsite": "https://commercialexcellence.co/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/commercialexcellencepartners/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Rupesh",
-        "lastName": "Garg ⭐️",
-        "linkedinId": "21373433",
-        "profileHash": "ACwAAAFGIfkBINlpN59R5qmacOuUm5FUUp9gEAo",
-        "country": "IO",
-        "city": "Hyderabad",
-        "isLinkedinPremium": true,
-        "companyName": "FrugalTesting",
-        "companyWebsite": "http://www.frugaltesting.com",
+        "companyName": "Ethos BeathChapman",
+        "companyWebsite": "http://www.ethosbc.com",
         "companySize": "51-200",
-        "jobTitle": "Founder and Chief Architect",
-        "industry": "IT Services and IT Consulting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/frugaltesting/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder and Chief Architect",
-        "companyName": "FrugalTesting",
-        "companyWebsite": "http://www.frugaltesting.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/frugaltesting/",
-        "companySize": "51-200",
-        "industry": "IT Services and IT Consulting"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "François",
-        "lastName": "MARTIN-CHAVE",
-        "linkedinId": "16232612",
-        "profileHash": "ACwAAAD3sKQB7IYoyKlOcHfh-kFtJy-ibmPL1tU",
-        "city": "Paris",
-        "isLinkedinPremium": true,
-        "companyName": "Orange",
-        "companyWebsite": "https://www.orange.com",
-        "companySize": "10001+",
-        "jobTitle": "Lead Manager RPA/BPM",
-        "industry": "Telecommunications",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/orange/"
-      },
-      "currentJobs": {
-        "jobTitle": "Lead Manager RPA/BPM",
-        "companyName": "Orange",
-        "companyWebsite": "https://www.orange.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/orange/",
-        "companySize": "10001+",
-        "industry": "Telecommunications"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Steve",
-        "lastName": "Bidinger",
-        "linkedinId": "636035",
-        "profileHash": "ACwAAAAJtIMBLIurjZ3TPS26_TxEMaa16fXGdxA",
-        "city": "Tokyo",
-        "isLinkedinPremium": true,
-        "companyName": "ShizenSaron Private Limited (not the brand name)",
-        "jobTitle": "Founder & CEO"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder & CEO",
-        "companyName": "ShizenSaron Private Limited (not the brand name)"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Adrian M",
-        "lastName": "Odgers",
-        "linkedinId": "3342714",
-        "profileHash": "ACwAAAAzAXoBIYKUqpc71vAWKHxY7-fBx8NtL34",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": false,
-        "companyName": "DE3PBIO (by The Live Green Group Inc)",
-        "companyWebsite": "http://www.DE3PBIO.com",
-        "companySize": "11-50",
-        "jobTitle": "Chief Operating Officer",
-        "industry": "Biotechnology Research",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/de3pbio/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Operating Officer",
-        "companyName": "DE3PBIO (by The Live Green Group Inc)",
-        "companyWebsite": "http://www.DE3PBIO.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/de3pbio/",
-        "companySize": "11-50",
-        "industry": "Biotechnology Research"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Andrew",
-        "lastName": "Shuttleworth",
-        "linkedinId": "2920",
-        "profileHash": "ACwAAAAAC2gBiyAhE7XcLYZsxbgtom_JeMUvGLo",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": false,
-        "companyName": "Obayashi Construction-Tech Lab Singapore",
-        "companyWebsite": "https://www.obayashi.co.jp/chronicle/130th/en/tri/",
-        "companySize": "11-50",
-        "jobTitle": "Chief Strategy Officer (CSO)",
-        "industry": "Construction",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/obayashi-construction-tech-lab-singapore/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Strategy Officer (CSO)",
-        "companyName": "Obayashi Construction-Tech Lab Singapore",
-        "companyWebsite": "https://www.obayashi.co.jp/chronicle/130th/en/tri/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/obayashi-construction-tech-lab-singapore/",
-        "companySize": "11-50",
-        "industry": "Construction"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Eman",
-        "lastName": "M. L",
-        "linkedinId": "390114995",
-        "profileHash": "ACwAABdArrMBFYxl0jZ1ffRFHWB84BHfgQPa2CM",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": false,
-        "companyName": "INSPIRIE Agency for Digital Marketing Solutions",
-        "jobTitle": "Founder - CEO"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder - CEO",
-        "companyName": "INSPIRIE Agency for Digital Marketing Solutions"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Wilson",
-        "lastName": "Favre-Delerue",
-        "linkedinId": "2492610",
-        "profileHash": "ACwAAAAmCMIBm2ftDaRcAAryyfdNy7RE4TpNlEI",
-        "city": "Geneva",
-        "isLinkedinPremium": true,
-        "companyName": "MATIS",
-        "companyWebsite": "https://www.matis.art",
-        "companySize": "2-10",
-        "jobTitle": "Chief Operating Officer",
-        "industry": "Technology, Information and Media",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/matis-art/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Operating Officer",
-        "companyName": "MATIS",
-        "companyWebsite": "https://www.matis.art",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/matis-art/",
-        "companySize": "2-10",
-        "industry": "Technology, Information and Media"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Rena",
-        "lastName": "Tan (陈俐霖)",
-        "linkedinId": "3015424",
-        "profileHash": "ACwAAAAuAwABENvfwb7RBt7UXTnYsgMSD0AeUlE",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": true,
-        "companyName": "Singapore Management University",
-        "companyWebsite": "http://www.smu.edu.sg/",
-        "companySize": "501-1000",
-        "jobTitle": "Head of Brand and Corporate Communications",
-        "industry": "Higher Education",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/singapore-management-university/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head of Brand and Corporate Communications",
-        "companyName": "Singapore Management University",
-        "companyWebsite": "http://www.smu.edu.sg/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/singapore-management-university/",
-        "companySize": "501-1000",
-        "industry": "Higher Education"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Marielle",
-        "lastName": "Camba",
-        "linkedinId": "821227017",
-        "profileHash": "ACwAADDy7gkBWRq38GBTjb5X-p9X646J4WZjv7M",
-        "country": "PH",
-        "city": "Laguna",
-        "isLinkedinPremium": false,
-        "companyName": "Growth Engine X",
-        "companyWebsite": "http://growthenginex.com",
-        "companySize": "2-10",
-        "jobTitle": "GTM Engineer",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/growth-engine-x/"
-      },
-      "currentJobs": {
-        "jobTitle": "GTM Engineer",
-        "companyName": "Growth Engine X",
-        "companyWebsite": "http://growthenginex.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/growth-engine-x/",
-        "companySize": "2-10",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Rehan",
-        "lastName": "Safdar",
-        "linkedinId": "588206191",
-        "profileHash": "ACwAACMPUG8B5fIfGxueY6X_iftia2c1pjPOtXo",
-        "country": "US",
-        "city": "Jamestown",
-        "isLinkedinPremium": true,
-        "companyName": "Luminetics",
-        "companyWebsite": "https://www.luminetics.io/",
-        "companySize": "2-10",
-        "jobTitle": "Client Partner",
-        "industry": "Professional Training and Coaching",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/lumi-linkedin-training/"
-      },
-      "currentJobs": {
-        "jobTitle": "Client Partner",
-        "companyName": "Luminetics",
-        "companyWebsite": "https://www.luminetics.io/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/lumi-linkedin-training/",
-        "companySize": "2-10",
-        "industry": "Professional Training and Coaching"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Atul",
-        "lastName": "Gupta",
-        "linkedinId": "39417857",
-        "profileHash": "ACwAAAJZeAEBYVGkqaWSauKCPpXPsuq4byn995E",
-        "country": "IO",
-        "city": "Delhi",
-        "isLinkedinPremium": true,
-        "companyName": "CloudVandana Solutions",
-        "companyWebsite": "http://www.cloudvandana.com",
-        "companySize": "11-50",
-        "jobTitle": "Founder, CEO",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/cloudvandana/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder, CEO",
-        "companyName": "CloudVandana Solutions",
-        "companyWebsite": "http://www.cloudvandana.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/cloudvandana/",
-        "companySize": "11-50",
-        "industry": "Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Campbell",
-        "lastName": "Ohrlis",
-        "linkedinId": "3895758",
-        "profileHash": "ACwAAAA7cc4Bh41Yzy0dJKFg7ViBdPXeUi3AGCs",
-        "country": "CA",
-        "city": "East York",
-        "isLinkedinPremium": false,
-        "companyName": "onbrdIQ",
-        "companyWebsite": "https://onbrdiq.com",
-        "companySize": "2-10",
-        "jobTitle": "Chief Executive Officer",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/onbrdiq/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Executive Officer",
-        "companyName": "onbrdIQ",
-        "companyWebsite": "https://onbrdiq.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/onbrdiq/",
-        "companySize": "2-10",
-        "industry": "Technology, Information and Internet"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Anthony",
-        "lastName": "Liu",
-        "linkedinId": "77577806",
-        "profileHash": "ACwAAASfvk4Bjzu5QaGX1XZ5C9uNO8pjN6CTQNA",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "Goodman",
-        "companyWebsite": "http://www.goodman.com",
-        "companySize": "1001-5000",
-        "jobTitle": "Head of Technology and Innovation, Asia",
-        "industry": "Real Estate",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/goodman/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head of Technology and Innovation, Asia",
-        "companyName": "Goodman",
-        "companyWebsite": "http://www.goodman.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/goodman/",
-        "companySize": "1001-5000",
-        "industry": "Real Estate"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Jeremy",
-        "lastName": "Schiff",
-        "linkedinId": "4985170",
-        "profileHash": "ACwAAABMEVIBDE5v0UEPajLMR5unDSBvyF8eM-I",
-        "city": "San Francisco",
-        "isLinkedinPremium": false,
-        "companyName": "Salesbot",
-        "companyWebsite": "www.salesbot.io",
-        "companySize": "11-50",
-        "jobTitle": "CEO",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/salesbot-io/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO",
-        "companyName": "Salesbot",
-        "companyWebsite": "www.salesbot.io",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/salesbot-io/",
-        "companySize": "11-50",
-        "industry": "Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Chamara",
-        "lastName": "Somaratne",
-        "linkedinId": "8232170",
-        "profileHash": "ACwAAAB9nOoBDBg1t6ZgOB21ZG6CuxtqZfJnpPM",
-        "city": "Melbourne",
-        "isLinkedinPremium": true,
-        "companyName": "Human Dignity Project",
-        "companyWebsite": "https://www.tenpercent.social/initiatives/",
-        "companySize": "2-10",
-        "jobTitle": "Co-Founder (with my 8-year-old son)",
-        "industry": "Non-profit Organizations",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/humandignityproject/"
-      },
-      "currentJobs": {
-        "jobTitle": "Co-Founder (with my 8-year-old son)",
-        "companyName": "Human Dignity Project",
-        "companyWebsite": "https://www.tenpercent.social/initiatives/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/humandignityproject/",
-        "companySize": "2-10",
-        "industry": "Non-profit Organizations"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Ollie",
-        "lastName": "S.",
-        "linkedinId": "74994907",
-        "profileHash": "ACwAAAR4VNsB39wdpYzq1-h6v7Oky36vig1A5GQ",
-        "country": "GB",
-        "isLinkedinPremium": true,
-        "companyName": "Revolut",
-        "companyWebsite": "https://www.revolut.com",
-        "companySize": "10001+",
-        "jobTitle": "People Product Sales",
-        "industry": "Financial Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/revolut/"
-      },
-      "currentJobs": {
-        "jobTitle": "People Product Sales",
-        "companyName": "Revolut",
-        "companyWebsite": "https://www.revolut.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/revolut/",
-        "companySize": "10001+",
-        "industry": "Financial Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Terry",
-        "lastName": "Chan",
-        "linkedinId": "75305733",
-        "profileHash": "ACwAAAR9EwUBzbg3M9uipPh8CLpbO_kHmlHK9vU",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "JUSTT GROUP",
-        "companyWebsite": "https://www.justtgroup.com",
-        "companySize": "2-10",
-        "jobTitle": "Founder, Group CEO - We're hiring! ",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/justt-group/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder, Group CEO - We're hiring! ",
-        "companyName": "JUSTT GROUP",
-        "companyWebsite": "https://www.justtgroup.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/justt-group/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Kamal",
-        "lastName": "Lutfi, MBET كمال",
-        "linkedinId": "586824689",
-        "profileHash": "ACwAACL6O_EB57qNCAmIylnvqcWZYte2kwh4O0Y",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": false,
-        "companyName": "KL MedTech Innovation Advisory",
-        "companyWebsite": "http://www.kl-advisory.ae",
-        "companySize": "2-10",
-        "jobTitle": "Principal & Strategic Advisor - GCC",
-        "industry": "Medical Equipment Manufacturing",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/kl-medtech-innovation-advisory/"
-      },
-      "currentJobs": {
-        "jobTitle": "Principal & Strategic Advisor - GCC",
-        "companyName": "KL MedTech Innovation Advisory",
-        "companyWebsite": "http://www.kl-advisory.ae",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/kl-medtech-innovation-advisory/",
-        "companySize": "2-10",
-        "industry": "Medical Equipment Manufacturing"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Matt",
-        "lastName": "Savarick",
-        "linkedinId": "29533241",
-        "profileHash": "ACwAAAHCpDkB_jORNni7F-YPepnQ7Fj3pobOooI",
-        "country": "US",
-        "isLinkedinPremium": true,
-        "companyName": "Vibe GTM",
-        "companyWebsite": "https://www.vibe-gtm.com/",
-        "companySize": "2-10",
-        "jobTitle": "CEO and Co-Founder",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/vibe-gtm/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO and Co-Founder",
-        "companyName": "Vibe GTM",
-        "companyWebsite": "https://www.vibe-gtm.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/vibe-gtm/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Naga",
-        "lastName": "Venkatesan",
-        "linkedinId": "28508714",
-        "profileHash": "ACwAAAGzAioB84_2EOxvOLwPb4jPbb1D9MMUYYw",
-        "country": "CA",
-        "city": "Mississauga",
-        "isLinkedinPremium": false,
-        "companyName": "ThruLiquid",
-        "companyWebsite": "https://thruliquid.com/",
-        "companySize": "11-50",
-        "jobTitle": "Chief Growth Officer",
-        "industry": "IT Services and IT Consulting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/thruliquid/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Growth Officer",
-        "companyName": "ThruLiquid",
-        "companyWebsite": "https://thruliquid.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/thruliquid/",
-        "companySize": "11-50",
-        "industry": "IT Services and IT Consulting"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Koen ",
-        "lastName": "Van Lysebetten ",
-        "linkedinId": "154377991",
-        "profileHash": "ACwAAAkznwcBCI-HInLpPGxDbUEavoWYWIhLZV0",
-        "city": "Brussels",
-        "isLinkedinPremium": true,
-        "companyName": "DevGap",
-        "companyWebsite": "https://www.devgap.uk/",
-        "companySize": "11-50",
-        "jobTitle": "Co-founder & Head of AI",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/devgap-agency/"
-      },
-      "currentJobs": {
-        "jobTitle": "Co-founder & Head of AI",
-        "companyName": "DevGap",
-        "companyWebsite": "https://www.devgap.uk/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/devgap-agency/",
-        "companySize": "11-50",
-        "industry": "Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Ariful",
-        "lastName": "Haque",
-        "linkedinId": "298285225",
-        "profileHash": "ACwAABHHeKkBG3em8m5fpcYGyfvHGpi-iPWq55Y",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": false
-      }
-    },
-    {
-      "lead": {
-        "firstName": "🍇 Kirstin",
-        "lastName": "Hunter",
-        "linkedinId": "6233991",
-        "profileHash": "ACwAAABfH4cBR9HdDBq5ai9DAF9JKt3MnEj0OKw",
-        "country": "AU",
-        "city": "Sydney",
-        "isLinkedinPremium": false,
-        "companyName": "Birchal",
-        "companyWebsite": "https://www.birchal.com/",
-        "companySize": "11-50",
-        "jobTitle": "Chief Executive Officer",
-        "industry": "Financial Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/birchal/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Executive Officer",
-        "companyName": "Birchal",
-        "companyWebsite": "https://www.birchal.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/birchal/",
-        "companySize": "11-50",
-        "industry": "Financial Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Badri Narayanan",
-        "lastName": "Gopalakrishnan, PhD",
-        "linkedinId": "10723848",
-        "profileHash": "ACwAAACjoggBYfdHSHDlYC6yt3QEOksRrbxlaKM",
-        "country": "US",
-        "city": "Sammamish",
-        "isLinkedinPremium": true,
-        "companyName": "Infinite Sum Modelling (Infisum or ISM)",
-        "companyWebsite": "http://www.infisum.com/",
-        "companySize": "11-50",
-        "jobTitle": "Founder",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/infisum/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder",
-        "companyName": "Infinite Sum Modelling (Infisum or ISM)",
-        "companyWebsite": "http://www.infisum.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/infisum/",
-        "companySize": "11-50",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Mia",
-        "lastName": "Bostic",
-        "linkedinId": "234661763",
-        "profileHash": "ACwAAA38p4MBeLHtSBc94yQGP30KDZ5rkNT14qg",
-        "city": "Chicago",
-        "isLinkedinPremium": false,
-        "companyName": "Waypoint Energy",
-        "companyWebsite": "https://www.waypoint-energy.com/",
-        "companySize": "11-50",
-        "jobTitle": "Sales Development Representative - Energy Efficiency",
-        "industry": "Leasing Non-residential Real Estate",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/waypoint-energy/"
-      },
-      "currentJobs": {
-        "jobTitle": "Sales Development Representative - Energy Efficiency",
-        "companyName": "Waypoint Energy",
-        "companyWebsite": "https://www.waypoint-energy.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/waypoint-energy/",
-        "companySize": "11-50",
-        "industry": "Leasing Non-residential Real Estate"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Brian",
-        "lastName": "Lim",
-        "linkedinId": "287510360",
-        "profileHash": "ACwAABEjD1gBCEeMEDWI7GKOswuZ326w5BJZ3tE",
-        "country": "JP",
-        "city": "Osaka",
-        "isLinkedinPremium": true,
-        "companyName": "encognize G.K.",
-        "companyWebsite": "http://www.encognize.com",
-        "companySize": "2-10",
-        "jobTitle": "COO",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/encognize/"
-      },
-      "currentJobs": {
-        "jobTitle": "COO",
-        "companyName": "encognize G.K.",
-        "companyWebsite": "http://www.encognize.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/encognize/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Marcelo",
-        "lastName": "Cortez 🦅",
-        "linkedinId": "108822545",
-        "profileHash": "ACwAAAZ8gBEBnQb17r0NTQ-R59BTe0mMBuZ2zLg",
-        "country": "MX",
-        "city": "Monterrey",
-        "isLinkedinPremium": false,
-        "companyName": "Hunter Prospecta ",
-        "companySize": "2-10",
-        "jobTitle": "Formador & consultor en prospección y ventas B2B industriales",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/hunterprospecta/"
-      },
-      "currentJobs": {
-        "jobTitle": "Formador & consultor en prospección y ventas B2B industriales",
-        "companyName": "Hunter Prospecta ",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/hunterprospecta/",
-        "companySize": "2-10",
-        "industry": "Technology, Information and Internet"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Ken",
-        "lastName": "Ghata",
-        "linkedinId": "977570",
-        "profileHash": "ACwAAAAO6qIBaZigwiIkBsRCnkFYcm_3YFdFxUU",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "KG Global Partners. Business Transformation with AI. Private Equity.",
-        "jobTitle": "Chairman"
-      },
-      "currentJobs": {
-        "jobTitle": "Chairman",
-        "companyName": "KG Global Partners. Business Transformation with AI. Private Equity."
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Daniel",
-        "lastName": "Sexton",
-        "linkedinId": "17191851",
-        "profileHash": "ACwAAAEGU6sBpI-q6k6zNkf7FtXL0pQqWeKxQrI",
-        "city": "Cleveland",
-        "isLinkedinPremium": true,
-        "companyName": "AccuChain Talent",
-        "companyWebsite": "accuchaintalent.com",
-        "companySize": "2-10",
-        "jobTitle": "Founder & CEO",
+        "jobTitle": "APJ Head of Talent Acquisition and L&D",
         "industry": "Staffing and Recruiting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/accuchain-talent/"
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ethos-corporation/"
       },
       "currentJobs": {
-        "jobTitle": "Founder & CEO",
-        "companyName": "AccuChain Talent",
-        "companyWebsite": "accuchaintalent.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/accuchain-talent/",
-        "companySize": "2-10",
+        "jobTitle": "APJ Head of Talent Acquisition and L&D",
+        "companyName": "Ethos BeathChapman",
+        "companyWebsite": "http://www.ethosbc.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ethos-corporation/",
+        "companySize": "51-200",
         "industry": "Staffing and Recruiting"
       }
     },
     {
       "lead": {
-        "firstName": "Leander",
-        "lastName": "Howard II",
-        "linkedinId": "604524505",
-        "profileHash": "ACwAACQIT9kBaDAdPEWaNVFiK-OMZDBWo5L5_wU",
-        "country": "US",
-        "city": "Atlanta",
-        "isLinkedinPremium": false,
-        "companyName": "WriteSea",
-        "companyWebsite": "https://www.writesea.com",
-        "companySize": "2-10",
-        "jobTitle": "Co Founder & Chief Marketing Officer",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/writesea/"
+        "firstName": "Sam",
+        "lastName": "BALZAN",
+        "linkedinId": "1642111",
+        "profileHash": "ACwAAAAZDn8B4qByBGkEW1WEEKvp-R270kv0wkA",
+        "country": "CA",
+        "city": "Toronto",
+        "isLinkedinPremium": true,
+        "companyName": "Pegasus Tech Ventures",
+        "companyWebsite": "http://www.pegasustechventures.com",
+        "companySize": "51-200",
+        "jobTitle": "Director of Business Development",
+        "industry": "Investment Management",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pegasus-tech-ventures/"
       },
       "currentJobs": {
-        "jobTitle": "Co Founder & Chief Marketing Officer",
-        "companyName": "WriteSea",
-        "companyWebsite": "https://www.writesea.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/writesea/",
-        "companySize": "2-10",
-        "industry": "Technology, Information and Internet"
+        "jobTitle": "Director of Business Development",
+        "companyName": "Pegasus Tech Ventures",
+        "companyWebsite": "http://www.pegasustechventures.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pegasus-tech-ventures/",
+        "companySize": "51-200",
+        "industry": "Investment Management"
       }
     },
     {
       "lead": {
-        "firstName": "Kevin",
-        "lastName": "Mann",
-        "linkedinId": "35978347",
-        "profileHash": "ACwAAAIk_GsB6PZ6V8JOzjMH5uvL47t1spk0nVA",
-        "country": "CN",
-        "city": "Shanghai",
-        "isLinkedinPremium": false
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Xavier",
-        "lastName": "Roso",
-        "linkedinId": "316351315",
-        "profileHash": "ACwAABLbI1MBMoUVWMyePttJF4tA0auPYztMzd8",
+        "firstName": "Celine",
+        "lastName": "Herren",
+        "linkedinId": "264783318",
+        "profileHash": "ACwAAA_IRdYB9GN1d1BRwE2iXryinFe5UCI6KRo",
         "country": "HK",
         "city": "Hong Kong",
         "isLinkedinPremium": false,
-        "companyName": "Expando AI™",
-        "companyWebsite": "https://www.expando.ai",
+        "companyName": "Conspiracy Chocolate",
+        "companyWebsite": "https://www.conspiracychocolate.com/",
         "companySize": "2-10",
-        "jobTitle": "Co-Founder & CEO",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/expando-ai/"
+        "jobTitle": "Co-Founder, COO & Chocolate Maker",
+        "industry": "Food and Beverage Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/conspiracy-chocolate/"
       },
       "currentJobs": {
-        "jobTitle": "Co-Founder & CEO",
-        "companyName": "Expando AI™",
-        "companyWebsite": "https://www.expando.ai",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/expando-ai/",
+        "jobTitle": "Co-Founder, COO & Chocolate Maker",
+        "companyName": "Conspiracy Chocolate",
+        "companyWebsite": "https://www.conspiracychocolate.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/conspiracy-chocolate/",
         "companySize": "2-10",
-        "industry": "Software Development"
+        "industry": "Food and Beverage Services"
       }
     },
     {
       "lead": {
-        "firstName": "Sameer",
-        "lastName": "Nizamuddin",
-        "linkedinId": "82099394",
-        "profileHash": "ACwAAATkvMIBjGKfbgX7NKJitQ2gt8xV7cJYqU8",
-        "city": "San Francisco",
-        "isLinkedinPremium": true,
-        "companyName": "Cornerstone OnDemand",
-        "companyWebsite": "https://www.cornerstoneondemand.com/company/",
-        "companySize": "1001-5000",
-        "jobTitle": "Digital Transformation | IT Shared Services Leader",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/cornerstoneondemand/"
-      },
-      "currentJobs": {
-        "jobTitle": "Digital Transformation | IT Shared Services Leader",
-        "companyName": "Cornerstone OnDemand",
-        "companyWebsite": "https://www.cornerstoneondemand.com/company/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/cornerstoneondemand/",
-        "companySize": "1001-5000",
-        "industry": "Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Arnaud",
-        "lastName": "Renoux",
-        "linkedinId": "172912497",
-        "profileHash": "ACwAAApOb3EBMr_5HxKbElDraNQX4zEhqIGCfP8",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": true,
-        "companyName": "Scalelist",
-        "companyWebsite": "https://www.scalelist.com",
-        "companySize": "2-10",
-        "jobTitle": "Co-Founder",
-        "industry": "Desktop Computing Software Products",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/scalelist/"
-      },
-      "currentJobs": {
-        "jobTitle": "Co-Founder",
-        "companyName": "Scalelist",
-        "companyWebsite": "https://www.scalelist.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/scalelist/",
-        "companySize": "2-10",
-        "industry": "Desktop Computing Software Products"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Mark",
-        "lastName": "R.",
-        "linkedinId": "318832",
-        "profileHash": "ACwAAAAE3XABvcOz3TpD0t7MRhq3-kgtP00qSbc",
-        "country": "AU",
-        "isLinkedinPremium": false,
-        "companyName": "Australia Go to Market Pty Ltd",
-        "companyWebsite": "www.australiagtm.com",
-        "companySize": "2-10",
-        "jobTitle": "GTM Advisor & Fractional CRO",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/australiagtm/"
-      },
-      "currentJobs": {
-        "jobTitle": "GTM Advisor & Fractional CRO",
-        "companyName": "Australia Go to Market Pty Ltd",
-        "companyWebsite": "www.australiagtm.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/australiagtm/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Hunain",
-        "lastName": "Shahid",
-        "linkedinId": "341521837",
-        "profileHash": "ACwAABRbNa0BJr72hsqZLVybT6PhkbXW3clfC68",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": false,
-        "companyName": "Infoquest",
-        "companyWebsite": "https://www.iqnetwork.co/?utm_source=linkedin&utm_medium=page&utm_campaign=general",
-        "companySize": "51-200",
-        "jobTitle": "Advisory Member",
-        "industry": "Information Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/infoquestnetwork/"
-      },
-      "currentJobs": {
-        "jobTitle": "Advisory Member",
-        "companyName": "Infoquest",
-        "companyWebsite": "https://www.iqnetwork.co/?utm_source=linkedin&utm_medium=page&utm_campaign=general",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/infoquestnetwork/",
-        "companySize": "51-200",
-        "industry": "Information Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Fazal",
-        "lastName": "Marakkar",
-        "linkedinId": "60556988",
-        "profileHash": "ACwAAAOcBrwB5nb7vnDnA3UkvHMnX5HkDd2RM-8",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": true,
-        "companyName": "Fazal Marakkar Academy",
-        "companyWebsite": "https://topmate.io/fazalmarakkar/382863",
-        "companySize": "2-10",
-        "jobTitle": "LinkedIn™ Marketing Consultant & Trainer | LinkedIn™ Coach",
-        "industry": "Advertising Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/fazalmarakkaracademy/"
-      },
-      "currentJobs": {
-        "jobTitle": "LinkedIn™ Marketing Consultant & Trainer | LinkedIn™ Coach",
-        "companyName": "Fazal Marakkar Academy",
-        "companyWebsite": "https://topmate.io/fazalmarakkar/382863",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/fazalmarakkaracademy/",
-        "companySize": "2-10",
-        "industry": "Advertising Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Anthony",
-        "lastName": "Clery",
-        "linkedinId": "146971776",
-        "profileHash": "ACwAAAjCnIABvbMukiIUOr1E-lhThjod6e0F1rc",
-        "country": "IE",
-        "city": "Bray",
-        "isLinkedinPremium": true,
-        "companyName": "Revolut",
-        "companyWebsite": "https://www.revolut.com",
-        "companySize": "10001+",
-        "jobTitle": "Senior Account Executive - People Product",
-        "industry": "Financial Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/revolut/"
-      },
-      "currentJobs": {
-        "jobTitle": "Senior Account Executive - People Product",
-        "companyName": "Revolut",
-        "companyWebsite": "https://www.revolut.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/revolut/",
-        "companySize": "10001+",
-        "industry": "Financial Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Alfonso",
-        "lastName": "Ballesteros",
-        "linkedinId": "17807911",
-        "profileHash": "ACwAAAEPuicBvWlENiJPVKWVlxOFHWu-lPg07LQ",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": true,
-        "companyName": "Crossbow",
-        "companyWebsite": "https://www.crossbow-ventures.com",
-        "companySize": "2-10",
-        "jobTitle": "Managing Director",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/crossbowventures/"
-      },
-      "currentJobs": {
-        "jobTitle": "Managing Director",
-        "companyName": "Crossbow",
-        "companyWebsite": "https://www.crossbow-ventures.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/crossbowventures/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Daniiar",
-        "lastName": "Sher",
-        "linkedinId": "547403514",
-        "profileHash": "ACwAACCgtvoB1WaSuWXbVfvUHXSSjeGhU23khuw",
-        "country": "ES",
-        "city": "Colmenar Viejo",
-        "isLinkedinPremium": false,
-        "companyName": "Automa8e",
-        "companyWebsite": "https://taplink.cc/automa8e.com",
-        "companySize": "11-50",
-        "jobTitle": "GTM & Sales",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/automa8e/"
-      },
-      "currentJobs": {
-        "jobTitle": "GTM & Sales",
-        "companyName": "Automa8e",
-        "companyWebsite": "https://taplink.cc/automa8e.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/automa8e/",
-        "companySize": "11-50",
-        "industry": "Technology, Information and Internet"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Pascal",
-        "lastName": "FREULON",
-        "linkedinId": "61997390",
-        "profileHash": "ACwAAAOyAU4BZjUMeGXnFc1hvo-w5DHePk2m3ao",
-        "country": "FR",
-        "city": "Paris",
-        "isLinkedinPremium": false,
-        "companyName": "https://produitfrance.com ",
-        "jobTitle": "Principal CEO"
-      },
-      "currentJobs": {
-        "jobTitle": "Principal CEO",
-        "companyName": "https://produitfrance.com "
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Mounir",
-        "lastName": "Khouzami",
-        "linkedinId": "270508322",
-        "profileHash": "ACwAABAfoSIB4aA8B9g-4zi2nUB80xXz-7MmbaU",
-        "country": "CH",
-        "city": "Zurich",
-        "isLinkedinPremium": false,
-        "companyName": "Zurich Champions",
-        "companySize": "2-10",
-        "jobTitle": "CEO & Founder",
-        "industry": "Retail Luxury Goods and Jewelry",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/zurich-champions/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO & Founder",
-        "companyName": "Zurich Champions",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/zurich-champions/",
-        "companySize": "2-10",
-        "industry": "Retail Luxury Goods and Jewelry"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Leon",
-        "lastName": "Farrant",
-        "linkedinId": "59468738",
-        "profileHash": "ACwAAAOLa8IBc6Qzio72_GVvWPr5gCdLMw4v6GY",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": false,
-        "companyName": "Green Li-ion",
-        "companyWebsite": "http://www.greenli-ion.com",
-        "companySize": "51-200",
-        "jobTitle": "Chief Executive Officer & Co-Founder",
-        "industry": "Renewable Energy Equipment Manufacturing",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/green-li-ion/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Executive Officer & Co-Founder",
-        "companyName": "Green Li-ion",
-        "companyWebsite": "http://www.greenli-ion.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/green-li-ion/",
-        "companySize": "51-200",
-        "industry": "Renewable Energy Equipment Manufacturing"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "B",
-        "lastName": "G",
-        "linkedinId": "242354420",
-        "profileHash": "ACwAAA5yCPQBSm_tENAjKHIegQ6PCOgbSE729m0",
-        "country": "IO",
-        "city": "Bengaluru",
-        "isLinkedinPremium": false,
-        "companyName": "Inbox Pirates",
-        "companyWebsite": "https://inboxpiratesconsulting.com/",
-        "companySize": "2-10",
-        "jobTitle": "Founder",
-        "industry": "IT Services and IT Consulting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/inboxpirates/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder",
-        "companyName": "Inbox Pirates",
-        "companyWebsite": "https://inboxpiratesconsulting.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/inboxpirates/",
-        "companySize": "2-10",
-        "industry": "IT Services and IT Consulting"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Thibaut",
-        "lastName": "Briere",
-        "linkedinId": "6870449",
-        "profileHash": "ACwAAABo1bEBD8ybrrytMuechTAHQbGEKMy8Y9k",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": true,
-        "companyName": "Growth Marketing Studio",
-        "companyWebsite": "https://growthmarketingstudio.co",
-        "companySize": "2-10",
-        "jobTitle": "Founder",
-        "industry": "Advertising Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/growthmarketingstudio/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder",
-        "companyName": "Growth Marketing Studio",
-        "companyWebsite": "https://growthmarketingstudio.co",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/growthmarketingstudio/",
-        "companySize": "2-10",
-        "industry": "Advertising Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Alina",
-        "lastName": "Lyn",
-        "linkedinId": "446170836",
-        "profileHash": "ACwAABqYBtQBqTKBLKUxcJybGeT3CUrOg1MnY5c",
-        "country": "UA",
-        "city": "Rivne",
-        "isLinkedinPremium": false,
-        "companyName": "Honeycomb Software",
-        "companyWebsite": "https://honeycombsoft.com",
-        "companySize": "51-200",
-        "jobTitle": "Head Of Business Development",
-        "industry": "IT System Custom Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/honeycombsoft/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head Of Business Development",
-        "companyName": "Honeycomb Software",
-        "companyWebsite": "https://honeycombsoft.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/honeycombsoft/",
-        "companySize": "51-200",
-        "industry": "IT System Custom Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Tobias",
-        "lastName": "de Bont",
-        "linkedinId": "1103790",
-        "profileHash": "ACwAAAAQ164BM_I47xIIz6AQ2_YGRgMUKJlt-lg",
-        "country": "GB",
-        "city": "London",
-        "isLinkedinPremium": true,
-        "companyName": "DBCG Expert Circle",
-        "companyWebsite": "http://tobiasdebont.nl",
-        "companySize": "2-10",
-        "jobTitle": "Managing Director / Partner",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/de-bont-consultancy-global/"
-      },
-      "currentJobs": {
-        "jobTitle": "Managing Director / Partner",
-        "companyName": "DBCG Expert Circle",
-        "companyWebsite": "http://tobiasdebont.nl",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/de-bont-consultancy-global/",
-        "companySize": "2-10",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Chin Yung (CY)",
-        "lastName": "LU",
-        "linkedinId": "284618651",
-        "profileHash": "ACwAABD275sB26TYpI3Sd2lbWkcnV65-xzQWqRI",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "Invest Hong Kong",
-        "companyWebsite": "http://www.investhk.gov.hk",
-        "companySize": "51-200",
-        "jobTitle": "Senior Vice President, Startups",
-        "industry": "International Trade and Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/invest-hong-kong/"
-      },
-      "currentJobs": {
-        "jobTitle": "Senior Vice President, Startups",
-        "companyName": "Invest Hong Kong",
-        "companyWebsite": "http://www.investhk.gov.hk",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/invest-hong-kong/",
-        "companySize": "51-200",
-        "industry": "International Trade and Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Shiv",
-        "lastName": "Goel, M.D.",
-        "linkedinId": "185419797",
-        "profileHash": "ACwAAAsNSBUBdAo12do-rYRBJetuUd5uzLyfm38",
-        "country": "US",
-        "city": "San Antonio",
-        "isLinkedinPremium": true,
-        "companyName": "𝗩𝗶𝘁𝗮𝗹𝗶𝘁𝘆 𝗛𝗲𝗮𝗹𝘁𝗵 𝗮𝘁 𝗬𝗼𝘂𝗿 𝗗𝗼𝗼𝗿",
-        "jobTitle": "𝗠𝗲𝗱𝗶𝗰𝗮𝗹 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿 & 𝗖.𝗘.𝗢."
-      },
-      "currentJobs": {
-        "jobTitle": "𝗠𝗲𝗱𝗶𝗰𝗮𝗹 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿 & 𝗖.𝗘.𝗢.",
-        "companyName": "𝗩𝗶𝘁𝗮𝗹𝗶𝘁𝘆 𝗛𝗲𝗮𝗹𝘁𝗵 𝗮𝘁 𝗬𝗼𝘂𝗿 𝗗𝗼𝗼𝗿"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Giuseppe",
-        "lastName": "Di Lieto",
-        "linkedinId": "5099201",
-        "profileHash": "ACwAAABNzsEB3B9O84bnG0N8NTCGKJ5qVHDsz3s",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": true,
-        "companyName": "Exponasia Growth Partners",
-        "companyWebsite": "www.growexponasia.com",
-        "companySize": "1",
-        "jobTitle": "Founder & Managing Director",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/exponasia-growth-partners/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder & Managing Director",
-        "companyName": "Exponasia Growth Partners",
-        "companyWebsite": "www.growexponasia.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/exponasia-growth-partners/",
-        "companySize": "1",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Pierre-Mayeul",
-        "lastName": "de Nicolaÿ",
-        "linkedinId": "170199259",
-        "profileHash": "ACwAAAolCNsBG6ka5sdhyd0ottkqBrNyETNNR-k",
-        "country": "FR",
-        "isLinkedinPremium": true,
-        "companyName": "Bring4You",
-        "companyWebsite": "https://bring4you.com/",
-        "companySize": "11-50",
-        "jobTitle": "CEO & Co-fondateur / CEO & Co-founder ",
-        "industry": "Transportation, Logistics, Supply Chain and Storage",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bring4you/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO & Co-fondateur / CEO & Co-founder ",
-        "companyName": "Bring4You",
-        "companyWebsite": "https://bring4you.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bring4you/",
-        "companySize": "11-50",
-        "industry": "Transportation, Logistics, Supply Chain and Storage"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Marouane",
-        "lastName": "Ziani",
-        "linkedinId": "291777631",
-        "profileHash": "ACwAABFkLF8Bm4CvyCnlXcH9uiiJnJ1hx02GfYU",
-        "country": "FR",
-        "isLinkedinPremium": true
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Aryaman",
-        "lastName": "Jazzy",
-        "linkedinId": "438654610",
-        "profileHash": "ACwAABolVpIBxAIhC-urlSdHpxrq3fvrWAxXKKM",
-        "country": "US",
-        "isLinkedinPremium": true,
-        "companyName": "Crustdata (YC F24)",
-        "companyWebsite": "https://crustdata.com?utm_source=linkedin_bio",
-        "companySize": "11-50",
-        "jobTitle": "Founding GTM Engineer",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/crustdata/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founding GTM Engineer",
-        "companyName": "Crustdata (YC F24)",
-        "companyWebsite": "https://crustdata.com?utm_source=linkedin_bio",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/crustdata/",
-        "companySize": "11-50",
-        "industry": "Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Subhendu",
-        "lastName": "J (Shawn)",
-        "linkedinId": "814478500",
-        "profileHash": "ACwAADCL9KQB7Rff2goP_wK0AxFBkhx2AHliHJg",
-        "country": "US",
-        "isLinkedinPremium": true,
-        "companyName": "B2BX-clusive",
-        "companyWebsite": "https://b2bxclusive.com/",
-        "companySize": "2-10",
-        "jobTitle": "CEO & Founder ",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/b2bx-clusive/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO & Founder ",
-        "companyName": "B2BX-clusive",
-        "companyWebsite": "https://b2bxclusive.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/b2bx-clusive/",
-        "companySize": "2-10",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Gaspard",
-        "lastName": "Pastural",
-        "linkedinId": "747819550",
-        "profileHash": "ACwAACyS0h4B8HHgOkdt3e0pxfITIHdJgxSTxh8",
-        "city": "Paris",
-        "isLinkedinPremium": true,
-        "companyName": "TractionStories",
-        "companyWebsite": "https://gaspardpastural.substack.com/podcast",
-        "companySize": "1",
-        "jobTitle": "Podcaster",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/tractionstories/"
-      },
-      "currentJobs": {
-        "jobTitle": "Podcaster",
-        "companyName": "TractionStories",
-        "companyWebsite": "https://gaspardpastural.substack.com/podcast",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/tractionstories/",
-        "companySize": "1",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Jeff",
-        "lastName": "Glazer",
-        "linkedinId": "44026182",
-        "profileHash": "ACwAAAKfyUYBfx7p8H1HH1MrDEn8yIllF4yWFxM",
-        "city": "Sydney",
-        "isLinkedinPremium": false,
-        "companyName": "Coldbuster Floor Heating",
-        "companyWebsite": "http://coldbuster.com.au",
-        "companySize": "11-50",
-        "jobTitle": "Head of Marketing and Communications",
-        "industry": "Construction",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/coldbusterfloorheating/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head of Marketing and Communications",
-        "companyName": "Coldbuster Floor Heating",
-        "companyWebsite": "http://coldbuster.com.au",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/coldbusterfloorheating/",
-        "companySize": "11-50",
-        "industry": "Construction"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Alamin",
-        "lastName": "Islam",
-        "linkedinId": "840312888",
-        "profileHash": "ACwAADIWKDgBwwllDERZix72QUYUaK_sevoTMcA",
-        "country": "BD",
-        "city": "Dinajpur",
-        "isLinkedinPremium": false,
-        "companyName": "FindAnyLead – Your White Label Team for Leads & Cold Email + LinkedIn Outreach",
-        "companyWebsite": "https://findanylead.com/",
-        "companySize": "2-10",
-        "jobTitle": "Founder & Team Leader",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/findanylead/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder & Team Leader",
-        "companyName": "FindAnyLead – Your White Label Team for Leads & Cold Email + LinkedIn Outreach",
-        "companyWebsite": "https://findanylead.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/findanylead/",
-        "companySize": "2-10",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Nouka",
-        "lastName": "Puriël",
-        "linkedinId": "47506754",
-        "profileHash": "ACwAAALU5UIBm6fCvp3D779ybh6xm-YbuqrlC_c",
-        "country": "QA",
-        "city": "Doha",
-        "isLinkedinPremium": false,
-        "companyName": "AMPLIFY ESG",
-        "companyWebsite": "www.amplifyesg.com",
-        "companySize": "2-10",
-        "jobTitle": "Founder & Architect",
-        "industry": "Environmental Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/amplify-esg/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder & Architect",
-        "companyName": "AMPLIFY ESG",
-        "companyWebsite": "www.amplifyesg.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/amplify-esg/",
-        "companySize": "2-10",
-        "industry": "Environmental Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Micky",
-        "lastName": "Gangwani",
-        "linkedinId": "193086696",
-        "profileHash": "ACwAAAuCROgBUaGsVm6tc7-qzZteleinGFmtVhY",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "Web Summit",
-        "companyWebsite": "https://websummit.com/careers",
-        "companySize": "201-500",
-        "jobTitle": "Head of Partnerships",
-        "industry": "Events Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/web-summit/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head of Partnerships",
-        "companyName": "Web Summit",
-        "companyWebsite": "https://websummit.com/careers",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/web-summit/",
-        "companySize": "201-500",
-        "industry": "Events Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Aurelien",
-        "lastName": "Vasinis",
-        "linkedinId": "161936875",
-        "profileHash": "ACwAAAmm9esBs0iH6d36uq6TrddijR6AwQ5eXG4",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": true,
-        "companyName": "Kuration AI",
-        "companyWebsite": "https://kuration.ai/?utm_source=LinkedIn&utm_medium=view&utm_id=linkedin_overview_description",
-        "companySize": "2-10",
-        "jobTitle": "Founder & CEO",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/kuration-ai/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder & CEO",
-        "companyName": "Kuration AI",
-        "companyWebsite": "https://kuration.ai/?utm_source=LinkedIn&utm_medium=view&utm_id=linkedin_overview_description",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/kuration-ai/",
-        "companySize": "2-10",
-        "industry": "Software Development"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Calvin",
-        "lastName": "Lui",
-        "linkedinId": "56602643",
-        "profileHash": "ACwAAANfsBMBqIeMl5nZyJlXsa35_09sB3aZ5ag",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "Pintar Investments",
-        "companySize": "11-50",
-        "jobTitle": "Founding Advisor",
-        "industry": "Financial Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/pintar-investment-group/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founding Advisor",
-        "companyName": "Pintar Investments",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/pintar-investment-group/",
-        "companySize": "11-50",
-        "industry": "Financial Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Ericson",
-        "lastName": "Dalusong",
-        "linkedinId": "92295457",
-        "profileHash": "ACwAAAWAUSEBocAn9zAp1eOn7bT9ipcSiZn_VP0",
-        "city": "Metro Manila",
-        "isLinkedinPremium": false,
-        "companyName": "Lead Assassin",
-        "companyWebsite": "https://leadassassin.com/",
-        "companySize": "2-10",
-        "jobTitle": "Founder ",
-        "industry": "Marketing Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/leadassassin/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder ",
-        "companyName": "Lead Assassin",
-        "companyWebsite": "https://leadassassin.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/leadassassin/",
-        "companySize": "2-10",
-        "industry": "Marketing Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Glaiza Mae",
-        "lastName": "A.",
-        "linkedinId": "374989191",
-        "profileHash": "ACwAABZZ4YcBzc9HUOw0is-FPanen_G4JwECWUg",
-        "country": "US",
-        "isLinkedinPremium": true,
-        "companyName": "S Universe | NetSuite Alliance Partner",
-        "companyWebsite": "https://www.suniverse.io/",
-        "companySize": "51-200",
-        "jobTitle": "NetSuite Partner ",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/suniverse/"
-      },
-      "currentJobs": {
-        "jobTitle": "NetSuite Partner ",
-        "companyName": "S Universe | NetSuite Alliance Partner",
-        "companyWebsite": "https://www.suniverse.io/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/suniverse/",
-        "companySize": "51-200",
-        "industry": "Business Consulting and Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Samuel",
-        "lastName": "Hui",
-        "linkedinId": "83047903",
-        "profileHash": "ACwAAATzNd8BN7sEllfDKyJNLrEP2aSHPujMtSM",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "HKBN Enterprise Solutions",
-        "companyWebsite": "https://hkbnes.com",
-        "companySize": "5001-10000",
-        "jobTitle": "Chief Operating Officer",
-        "industry": "Telecommunications",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/hkbnes/"
-      },
-      "currentJobs": {
-        "jobTitle": "Chief Operating Officer",
-        "companyName": "HKBN Enterprise Solutions",
-        "companyWebsite": "https://hkbnes.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/hkbnes/",
-        "companySize": "5001-10000",
-        "industry": "Telecommunications"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Daniel",
-        "lastName": "George",
-        "linkedinId": "298087980",
-        "profileHash": "ACwAABHEdiwBoCgsR7-wuXZo48Vhv5i68GVmpGQ",
-        "country": "AU",
-        "city": "Sydney",
-        "isLinkedinPremium": false,
-        "companyName": "invesThis",
-        "companyWebsite": "http://www.investhis.com",
-        "companySize": "2-10",
-        "jobTitle": "Co-Founder | Director | Investor | Entrepreneur",
-        "industry": "Investment Banking",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/investhis/"
-      },
-      "currentJobs": {
-        "jobTitle": "Co-Founder | Director | Investor | Entrepreneur",
-        "companyName": "invesThis",
-        "companyWebsite": "http://www.investhis.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/investhis/",
-        "companySize": "2-10",
-        "industry": "Investment Banking"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Lindsay",
-        "lastName": "Pimontel",
-        "linkedinId": "16446158",
-        "profileHash": "ACwAAAD68s4B5ou3-ioaEAakqUS9OB-YAuiRGwU",
-        "country": "NL",
-        "city": "Amsterdam",
-        "isLinkedinPremium": false,
-        "companyName": "Bon Ton Toys (B Corp)",
-        "companyWebsite": "http://www.bontontoys.com",
-        "companySize": "11-50",
-        "jobTitle": "Head of Marketing & Brand Strategy",
-        "industry": "Consumer Goods",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bon-ton-toys-b-corp/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head of Marketing & Brand Strategy",
-        "companyName": "Bon Ton Toys (B Corp)",
-        "companyWebsite": "http://www.bontontoys.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bon-ton-toys-b-corp/",
-        "companySize": "11-50",
-        "industry": "Consumer Goods"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Sai Roshini",
-        "lastName": "Daswani",
-        "linkedinId": "96233808",
-        "profileHash": "ACwAAAW8aVABYhxEt_n-cPoGsbxMVwKpb8Hc48c",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "Finoverse",
-        "companyWebsite": "http://www.finoverse.com",
-        "companySize": "11-50",
-        "jobTitle": "Head of Marketing",
-        "industry": "Financial Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/finnovasia/"
-      },
-      "currentJobs": {
-        "jobTitle": "Head of Marketing",
-        "companyName": "Finoverse",
-        "companyWebsite": "http://www.finoverse.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/finnovasia/",
-        "companySize": "11-50",
-        "industry": "Financial Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Abdellah",
-        "lastName": "BOURTI",
-        "linkedinId": "71528846",
-        "profileHash": "ACwAAARDcY4BZRrb9u8ANteFaN-BoK05XuTEf-g",
-        "country": "MA",
-        "city": "Agadir",
-        "isLinkedinPremium": false,
-        "companyName": "Ecole Mohammadia Des Ingenieurs",
-        "jobTitle": "ingenieur d etat Réseau et Telecom/Programmeur J2EE"
-      },
-      "currentJobs": {
-        "jobTitle": "ingenieur d etat Réseau et Telecom/Programmeur J2EE",
-        "companyName": "Ecole Mohammadia Des Ingenieurs"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Sebastien",
-        "lastName": "Gaudin",
-        "linkedinId": "2019858",
-        "profileHash": "ACwAAAAe0hIB7cguF8kDr-M-j-1rbT4qyB_QKkM",
-        "country": "BE",
-        "city": "Brussels",
-        "isLinkedinPremium": false,
-        "companyName": "The CareVoice",
-        "companyWebsite": "http://www.thecarevoice.com/",
-        "companySize": "51-200",
-        "jobTitle": "CEO & Co-founder",
-        "industry": "Insurance",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/the-carevoice-ltd/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO & Co-founder",
-        "companyName": "The CareVoice",
-        "companyWebsite": "http://www.thecarevoice.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/the-carevoice-ltd/",
-        "companySize": "51-200",
-        "industry": "Insurance"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Carlo",
-        "lastName": "A.",
-        "linkedinId": "5520804",
-        "profileHash": "ACwAAABUPaQBrUdpwy0jX5CJWtyc7NPTgDSYddw",
-        "country": "AE",
-        "city": "Dubai",
-        "isLinkedinPremium": true,
-        "companyName": "DSI FZE",
-        "companyWebsite": "https://www.dsi-pbl.com/cms/cms.php",
-        "companySize": "51-200",
-        "jobTitle": "Global Head of QHSE, Sustainability & ESG",
-        "industry": "Oil and Gas",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/dsi-fze-bypass-systems/"
-      },
-      "currentJobs": {
-        "jobTitle": "Global Head of QHSE, Sustainability & ESG",
-        "companyName": "DSI FZE",
-        "companyWebsite": "https://www.dsi-pbl.com/cms/cms.php",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/dsi-fze-bypass-systems/",
-        "companySize": "51-200",
-        "industry": "Oil and Gas"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Nazim",
-        "lastName": "Zidi",
-        "linkedinId": "532192555",
-        "profileHash": "ACwAAB-4nSsBiG0dMK331tYUq4BKS7twY77osh4",
-        "country": "FR",
-        "city": "Paris",
-        "isLinkedinPremium": false,
-        "companyName": "Stealth AI Startup",
-        "companySize": "11-50",
-        "jobTitle": "Founder | The last way software gets built ",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/stealthaistartup/"
-      },
-      "currentJobs": {
-        "jobTitle": "Founder | The last way software gets built ",
-        "companyName": "Stealth AI Startup",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/stealthaistartup/",
-        "companySize": "11-50",
-        "industry": "Technology, Information and Internet"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Tausif Ahmed",
-        "lastName": "Khan",
-        "linkedinId": "133118468",
-        "profileHash": "ACwAAAfvOgQBrPml63WMdYohJ1IO6ZMRsuGUcro",
+        "firstName": "Manoj",
+        "lastName": "Surya",
+        "linkedinId": "117995201",
+        "profileHash": "ACwAAAcIdsEB7ZS4oBazwU4kTLw_4HX1Wbn-3FQ",
         "country": "IO",
         "city": "Hyderabad",
         "isLinkedinPremium": true,
-        "companyName": "Mobius by Gaian",
-        "companyWebsite": "http://www.mobiusdtaas.ai",
-        "companySize": "201-500",
-        "jobTitle": "Sales Director",
-        "industry": "Information Technology & Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/mobius-by-gaian/"
-      },
-      "currentJobs": {
-        "jobTitle": "Sales Director",
-        "companyName": "Mobius by Gaian",
-        "companyWebsite": "http://www.mobiusdtaas.ai",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/mobius-by-gaian/",
-        "companySize": "201-500",
-        "industry": "Information Technology & Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Ankit",
-        "lastName": "Sethi",
-        "linkedinId": "2711666",
-        "profileHash": "ACwAAAApYHIBrRJ4oU_Zt5g65SX6XzsaZ0EQgIE",
-        "country": "HK",
-        "city": "Hong Kong",
-        "isLinkedinPremium": false,
-        "companyName": "HKSTP - Hong Kong Science and Technology Parks Corporation",
-        "companyWebsite": "http://www.hkstp.org",
-        "companySize": "501-1000",
-        "jobTitle": "Senior Manager - Regional Partnerships & Channel Development (Middle East)",
+        "companyName": "Alohaa",
+        "companyWebsite": "https://www.alohaa.ai",
+        "companySize": "51-200",
+        "jobTitle": "Head of Growth",
         "industry": "IT Services and IT Consulting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/hong-kong-science-and-technology-parks-corporation/"
+        "companyLinkedinUrl": "https://www.linkedin.com/company/alohaa-official/"
       },
       "currentJobs": {
-        "jobTitle": "Senior Manager - Regional Partnerships & Channel Development (Middle East)",
-        "companyName": "HKSTP - Hong Kong Science and Technology Parks Corporation",
-        "companyWebsite": "http://www.hkstp.org",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/hong-kong-science-and-technology-parks-corporation/",
-        "companySize": "501-1000",
+        "jobTitle": "Head of Growth",
+        "companyName": "Alohaa",
+        "companyWebsite": "https://www.alohaa.ai",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/alohaa-official/",
+        "companySize": "51-200",
         "industry": "IT Services and IT Consulting"
       }
     },
     {
       "lead": {
-        "firstName": "Paul",
-        "lastName": "McCauley",
-        "linkedinId": "234314208",
-        "profileHash": "ACwAAA33WeAB6xRMQGob5tVLOW-gRqIkOqiKF_E",
-        "city": "Dublin",
-        "isLinkedinPremium": false,
-        "companyName": "MedCareCoin",
-        "companyWebsite": "www.MedCareCoin.com",
-        "companySize": "2-10",
-        "jobTitle": "CEO",
-        "industry": "Civic and Social Organizations",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/medcarecrowd/"
-      },
-      "currentJobs": {
-        "jobTitle": "CEO",
-        "companyName": "MedCareCoin",
-        "companyWebsite": "www.MedCareCoin.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/medcarecrowd/",
-        "companySize": "2-10",
-        "industry": "Civic and Social Organizations"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Alan",
-        "lastName": "Lee",
-        "linkedinId": "75464703",
-        "profileHash": "ACwAAAR_f_8Bdd3-a14BMuLFAWqk76s4Qo8zrXk",
+        "firstName": "Florian M",
+        "lastName": "Spiegl",
+        "linkedinId": "5385526",
+        "profileHash": "ACwAAABSLTYBKhSKzmd4pLHYIH00OX-SbK2zUEs",
         "country": "HK",
         "city": "Hong Kong",
         "isLinkedinPremium": true,
-        "companyName": "Dash Living",
-        "companyWebsite": "https://www.dash.co",
+        "companyName": "EVIDENT",
+        "companyWebsite": "https://www.evident.capital",
         "companySize": "51-200",
-        "jobTitle": "General Manager",
-        "industry": "Hospitality",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/dashliving/"
+        "jobTitle": "Founder & CEO",
+        "industry": "Financial Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/evidentcap/"
       },
       "currentJobs": {
-        "jobTitle": "General Manager",
-        "companyName": "Dash Living",
-        "companyWebsite": "https://www.dash.co",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/dashliving/",
+        "jobTitle": "Founder & CEO",
+        "companyName": "EVIDENT",
+        "companyWebsite": "https://www.evident.capital",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/evidentcap/",
         "companySize": "51-200",
-        "industry": "Hospitality"
+        "industry": "Financial Services"
       }
     },
     {
       "lead": {
-        "firstName": "Neeraj",
-        "lastName": "Kumar",
-        "linkedinId": "214992976",
-        "profileHash": "ACwAAAzQiFAB25PvJc7YGnSAtEvf-gkJJsqGQtE",
-        "country": "IO",
-        "city": "New Delhi",
-        "isLinkedinPremium": true,
-        "companyName": "FullFunnel",
-        "companyWebsite": "https://www.fullfunnel.co",
-        "companySize": "51-200",
-        "jobTitle": "Director of GTM Engineering",
+        "firstName": "Birgit Luise",
+        "lastName": "Thümecke",
+        "linkedinId": "528039339",
+        "profileHash": "ACwAAB95PasBc3gSLILZBSFuIfRhbz0V_OB_6H0",
+        "country": "DE",
+        "isLinkedinPremium": false,
+        "companyName": "Act 5 Ventures LLC",
+        "companyWebsite": "http://www.act5llc.com",
+        "companySize": "2-10",
+        "jobTitle": "Managing Partner",
         "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/fullfunnel/"
+        "companyLinkedinUrl": "https://www.linkedin.com/company/act5venturesllc/"
       },
       "currentJobs": {
-        "jobTitle": "Director of GTM Engineering",
-        "companyName": "FullFunnel",
-        "companyWebsite": "https://www.fullfunnel.co",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/fullfunnel/",
-        "companySize": "51-200",
+        "jobTitle": "Managing Partner",
+        "companyName": "Act 5 Ventures LLC",
+        "companyWebsite": "http://www.act5llc.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/act5venturesllc/",
+        "companySize": "2-10",
         "industry": "Business Consulting and Services"
       }
     },
     {
       "lead": {
-        "firstName": "Andrei 安迪",
-        "lastName": "Roudenko",
-        "linkedinId": "2840736",
-        "profileHash": "ACwAAAArWKABPu3aBTUZlU1YZgD9gByHcOoklzY",
-        "country": "SG",
-        "city": "Singapore",
+        "firstName": "Can",
+        "lastName": "Timağur",
+        "linkedinId": "438446232",
+        "profileHash": "ACwAABoiKJgBAkG-Ss2eX7NO9QbNDkWtKS02IaI",
+        "city": "İzmir",
         "isLinkedinPremium": false,
-        "companyName": "Healthy Tec",
-        "companyWebsite": "https://www.healthy-tec.com/",
-        "companySize": "2-10",
-        "jobTitle": "Co-Founder",
-        "industry": "Home Health Care Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/healthy-tec/"
+        "companyName": "Allbound OS",
+        "companySize": "1",
+        "jobTitle": "Founder",
+        "industry": "Advertising Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/allbound-os/"
       },
       "currentJobs": {
-        "jobTitle": "Co-Founder",
-        "companyName": "Healthy Tec",
-        "companyWebsite": "https://www.healthy-tec.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/healthy-tec/",
-        "companySize": "2-10",
-        "industry": "Home Health Care Services"
+        "jobTitle": "Founder",
+        "companyName": "Allbound OS",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/allbound-os/",
+        "companySize": "1",
+        "industry": "Advertising Services"
       }
     },
     {
       "lead": {
-        "firstName": "Joe",
-        "lastName": "Nash",
-        "linkedinId": "1511065",
-        "profileHash": "ACwAAAAXDpkBndaXemclEM4u5wh_SH-QY_rqSIQ",
+        "firstName": "Ari",
+        "lastName": "Massoudi",
+        "linkedinId": "13122107",
+        "profileHash": "ACwAAADIOjsBSIDTixE6k2NSfbNlSVUwgsBmH3c",
+        "country": "CH",
+        "city": "Neuchâtel",
+        "isLinkedinPremium": false,
+        "companyName": "Calisson & Macaron",
+        "companyWebsite": "https://www.calissonmacaron.com/",
+        "companySize": "1",
+        "jobTitle": "Founder",
+        "industry": "Professional Training and Coaching",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/calisson-macaron/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder",
+        "companyName": "Calisson & Macaron",
+        "companyWebsite": "https://www.calissonmacaron.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/calisson-macaron/",
+        "companySize": "1",
+        "industry": "Professional Training and Coaching"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Vivienne",
+        "lastName": "Tang",
+        "linkedinId": "46406690",
+        "profileHash": "ACwAAALEHCIB7zMU6SaiGx5mxu2_xXP_y1Gpfj4",
+        "country": "CH",
+        "isLinkedinPremium": false,
+        "companyName": "Destination Deluxe",
+        "companyWebsite": "https://destinationdeluxe.com",
+        "companySize": "2-10",
+        "jobTitle": "Founder & CEO",
+        "industry": "Media Production",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/destinationdeluxe/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & CEO",
+        "companyName": "Destination Deluxe",
+        "companyWebsite": "https://destinationdeluxe.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/destinationdeluxe/",
+        "companySize": "2-10",
+        "industry": "Media Production"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Derek",
+        "lastName": "Burke",
+        "linkedinId": "7844717",
+        "profileHash": "ACwAAAB3s20Bv5FbSuDx2KSL9WTsXGHB1fT1cb8",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": " Independent / Portfolio",
+        "jobTitle": "Advisory & Venture Roles (Complementary to Full-Time Executive Mandates)"
+      },
+      "currentJobs": {
+        "jobTitle": "Advisory & Venture Roles (Complementary to Full-Time Executive Mandates)",
+        "companyName": " Independent / Portfolio"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Alice",
+        "lastName": "Schütt",
+        "linkedinId": "12700487",
+        "profileHash": "ACwAAADBy0cBxRq9huo2PBQaJ-ndK_WaHqXmVVI",
+        "city": "Cologne Bonn",
+        "isLinkedinPremium": true,
+        "companyName": "Dermalogica Deutschland",
+        "companyWebsite": "http://www.dermalogica.de",
+        "companySize": "51-200",
+        "jobTitle": "HR Manager (DE, FR, AUT)",
+        "industry": "Cosmetics",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/dermalogica-deutschland/"
+      },
+      "currentJobs": {
+        "jobTitle": "HR Manager (DE, FR, AUT)",
+        "companyName": "Dermalogica Deutschland",
+        "companyWebsite": "http://www.dermalogica.de",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/dermalogica-deutschland/",
+        "companySize": "51-200",
+        "industry": "Cosmetics"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Richard",
+        "lastName": "Wainwright",
+        "linkedinId": "4726216",
+        "profileHash": "ACwAAABIHcgBn-yDKVH5EoZWF5nRpgPIN2l1tcc",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true,
+        "companyName": "Saturday Art Club - Asia",
+        "companyWebsite": "https://saturdayartclub.asia",
+        "companySize": "1",
+        "jobTitle": "Founder & CEO",
+        "industry": "Artists and Writers",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/saturday-art-club-asia/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & CEO",
+        "companyName": "Saturday Art Club - Asia",
+        "companyWebsite": "https://saturdayartclub.asia",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/saturday-art-club-asia/",
+        "companySize": "1",
+        "industry": "Artists and Writers"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Fury Oktria",
+        "lastName": "P.",
+        "linkedinId": "477457750",
+        "profileHash": "ACwAABx1bVYBmnZRrToqOwF7VCMAIgaEMGRNMpQ",
+        "city": "Jakarta",
+        "isLinkedinPremium": false,
+        "companyName": "Bareksa",
+        "companyWebsite": "https://www.bareksa.com?utm_source=lk_linkedin&utm_medium=lk_linkedin&utm_campaign=profilebutton",
+        "companySize": "51-200",
+        "jobTitle": "Senior Product Manager",
+        "industry": "Capital Markets",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/bareksacom/"
+      },
+      "currentJobs": {
+        "jobTitle": "Senior Product Manager",
+        "companyName": "Bareksa",
+        "companyWebsite": "https://www.bareksa.com?utm_source=lk_linkedin&utm_medium=lk_linkedin&utm_campaign=profilebutton",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/bareksacom/",
+        "companySize": "51-200",
+        "industry": "Capital Markets"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nick",
+        "lastName": "Evered",
+        "linkedinId": "25200216",
+        "profileHash": "ACwAAAGAhlgBGq6g9aMB_IILZZMUGPysVhQ-12s",
         "country": "SG",
         "city": "Singapore",
         "isLinkedinPremium": true,
         "companyName": "Sales Innovation",
         "companyWebsite": "http://www.salesinnovation.io",
         "companySize": "11-50",
-        "jobTitle": "CFO & Executive Director",
+        "jobTitle": "COO and Executive Director",
         "industry": "Information Services",
         "companyLinkedinUrl": "https://www.linkedin.com/company/salesinnovationio/"
       },
       "currentJobs": {
-        "jobTitle": "CFO & Executive Director",
+        "jobTitle": "COO and Executive Director",
         "companyName": "Sales Innovation",
         "companyWebsite": "http://www.salesinnovation.io",
         "companyLinkedinUrl": "https://www.linkedin.com/company/salesinnovationio/",
@@ -1934,437 +338,2039 @@
     },
     {
       "lead": {
-        "firstName": "Marlene",
-        "lastName": "Vicaire",
-        "linkedinId": "8660261",
-        "profileHash": "ACwAAACEJSUB73YvD3UfYIVIliJNEgHdIIRaLqo",
+        "firstName": "Manabu",
+        "lastName": "Miyazaki",
+        "linkedinId": "212208796",
+        "profileHash": "ACwAAAymDJwBkul8eHUtzIvm0fAwb-FSh5RecsM",
+        "country": "JP",
+        "city": "Tokyo",
+        "isLinkedinPremium": false,
+        "companyName": "Aristol",
+        "companyWebsite": "https://aristol.jp/",
+        "companySize": "11-50",
+        "jobTitle": "Chief Executive Officer",
+        "industry": "IT Services and IT Consulting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/beatfit/"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief Executive Officer",
+        "companyName": "Aristol",
+        "companyWebsite": "https://aristol.jp/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/beatfit/",
+        "companySize": "11-50",
+        "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Chaw Sing",
+        "lastName": "HO",
+        "linkedinId": "14066647",
+        "profileHash": "ACwAAADWo9cBaXZ1ML5YjvCK0Lk4zZRhxSgyM1E",
         "country": "SG",
         "city": "Singapore",
         "isLinkedinPremium": true,
-        "companyName": "LexisNexis Risk Solutions",
-        "companyWebsite": "http://risk.lexisnexis.com",
-        "companySize": "10001+",
-        "jobTitle": "Senior Director, APAC Market Planning - Fraud & Identity",
-        "industry": "Data Infrastructure and Analytics",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/lexisnexis-risk-solutions/"
+        "companyName": "A*STAR - Agency for Science, Technology and Research",
+        "companyWebsite": "http://www.a-star.edu.sg/",
+        "companySize": "5001-10000",
+        "jobTitle": "Executive Director, Science and Engineering Research Council",
+        "industry": "Research Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/astarsg/"
       },
       "currentJobs": {
-        "jobTitle": "Senior Director, APAC Market Planning - Fraud & Identity",
-        "companyName": "LexisNexis Risk Solutions",
-        "companyWebsite": "http://risk.lexisnexis.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/lexisnexis-risk-solutions/",
-        "companySize": "10001+",
-        "industry": "Data Infrastructure and Analytics"
+        "jobTitle": "Executive Director, Science and Engineering Research Council",
+        "companyName": "A*STAR - Agency for Science, Technology and Research",
+        "companyWebsite": "http://www.a-star.edu.sg/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/astarsg/",
+        "companySize": "5001-10000",
+        "industry": "Research Services"
       }
     },
     {
       "lead": {
-        "firstName": "Sandy",
-        "lastName": "Lau",
-        "linkedinId": "13547053",
-        "profileHash": "ACwAAADOti0BdTR-tKamBS6Ml1W7mL-ChDUS4MM",
+        "firstName": "Ghali",
+        "lastName": "Taoussi",
+        "linkedinId": "684787774",
+        "profileHash": "ACwAACjRCD4Bh-bA_sFuTehAKDsaZK-8f4kfJRk",
+        "country": "US",
+        "city": "San Francisco",
+        "isLinkedinPremium": true,
+        "companyName": "Elite Admissions",
+        "companyWebsite": "https://elite-admissions.com/",
+        "companySize": "11-50",
+        "jobTitle": "Co-Founder & Managing Partner",
+        "industry": "Education",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/eliteadmissions/"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-Founder & Managing Partner",
+        "companyName": "Elite Admissions",
+        "companyWebsite": "https://elite-admissions.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/eliteadmissions/",
+        "companySize": "11-50",
+        "industry": "Education"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Collins",
+        "lastName": "Ogiki",
+        "linkedinId": "908367762",
+        "profileHash": "ACwAADYkl5IBx1AFJhou2lecm2qRaFbk866FKAY",
+        "country": "US",
+        "city": "Memphis",
+        "isLinkedinPremium": false,
+        "companyName": "Dela Security",
+        "companyWebsite": "https://delasecurity.com",
+        "companySize": "2-10",
+        "jobTitle": "Sales Development Specialist",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/dela-security/"
+      },
+      "currentJobs": {
+        "jobTitle": "Sales Development Specialist",
+        "companyName": "Dela Security",
+        "companyWebsite": "https://delasecurity.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/dela-security/",
+        "companySize": "2-10",
+        "industry": "Software Development"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Brent",
+        "lastName": "H.",
+        "linkedinId": "54977433",
+        "profileHash": "ACwAAANG45kBAJdhVjdCjsxwY6hrKRlRfGvKyEA",
+        "country": "US",
+        "isLinkedinPremium": true,
+        "companyName": "GTM Dart",
+        "companyWebsite": "www.gtmdart.com",
+        "companySize": "2-10",
+        "jobTitle": "GTM Leader ",
+        "industry": "IT Services and IT Consulting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/gtm-dart/"
+      },
+      "currentJobs": {
+        "jobTitle": "GTM Leader ",
+        "companyName": "GTM Dart",
+        "companyWebsite": "www.gtmdart.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/gtm-dart/",
+        "companySize": "2-10",
+        "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Grace",
+        "lastName": "Clapham",
+        "linkedinId": "34276423",
+        "profileHash": "ACwAAAILBEcBWtpd5aIROAUbkHLNBgGFTcRa51s",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": true,
+        "companyName": "The Community Club",
+        "companyWebsite": "https://community.club",
+        "companySize": "1",
+        "jobTitle": "Board Member",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/the-community-club/"
+      },
+      "currentJobs": {
+        "jobTitle": "Board Member",
+        "companyName": "The Community Club",
+        "companyWebsite": "https://community.club",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/the-community-club/",
+        "companySize": "1",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Pierre",
+        "lastName": "Herubel",
+        "linkedinId": "173016768",
+        "profileHash": "ACwAAApQBsAB2KqmdwrrukmUyXJ27E13T_XO7JQ",
+        "country": "TH",
+        "city": "Bangkok",
+        "isLinkedinPremium": true,
+        "companyName": "Content-First Ecosystem",
+        "companyWebsite": "https://www.pierreherubel.com/course",
+        "companySize": "1",
+        "jobTitle": "Course Instructor",
+        "industry": "Education",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/content-first-ecosystem/"
+      },
+      "currentJobs": {
+        "jobTitle": "Course Instructor",
+        "companyName": "Content-First Ecosystem",
+        "companyWebsite": "https://www.pierreherubel.com/course",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/content-first-ecosystem/",
+        "companySize": "1",
+        "industry": "Education"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Saad (سعد)",
+        "lastName": "Belda",
+        "linkedinId": "297932716",
+        "profileHash": "ACwAABHCF6wBdEbb8lrobjTNDLhTCuuYFJ4XB5Y",
+        "country": "AE",
+        "isLinkedinPremium": true,
+        "companyName": "STAGEXX",
+        "companyWebsite": "http://www.stagexxventures.com",
+        "companySize": "2-10",
+        "jobTitle": "Director of Strategy and Operations",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/stagexx/"
+      },
+      "currentJobs": {
+        "jobTitle": "Director of Strategy and Operations",
+        "companyName": "STAGEXX",
+        "companyWebsite": "http://www.stagexxventures.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/stagexx/",
+        "companySize": "2-10",
+        "industry": "Business Consulting and Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Haidar",
+        "lastName": "Omais",
+        "linkedinId": "90368014",
+        "profileHash": "ACwAAAVi6A4Bknpk-acDIYs2OwvILbjxrIT4IkI",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "Kitcod",
+        "companyWebsite": "https://kitcod.io",
+        "companySize": "2-10",
+        "jobTitle": "Co-Founder & COO",
+        "industry": "Information Technology & Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kitcod/"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-Founder & COO",
+        "companyName": "Kitcod",
+        "companyWebsite": "https://kitcod.io",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kitcod/",
+        "companySize": "2-10",
+        "industry": "Information Technology & Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Hervé ",
+        "lastName": "PERRIN",
+        "linkedinId": "5356693",
+        "profileHash": "ACwAAABRvJUBFNaYjh097H0TxI0rjKuljVK-7jI",
+        "country": "FR",
+        "city": "Reims",
+        "isLinkedinPremium": false,
+        "companyName": "Kairos Groupe",
+        "companyWebsite": "http://www.kairos.group",
+        "companySize": "11-50",
+        "jobTitle": "Timeshare Director - Associate • Purchasing & CSR Director",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kairos-groupe/"
+      },
+      "currentJobs": {
+        "jobTitle": "Timeshare Director - Associate • Purchasing & CSR Director",
+        "companyName": "Kairos Groupe",
+        "companyWebsite": "http://www.kairos.group",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kairos-groupe/",
+        "companySize": "11-50",
+        "industry": "Business Consulting and Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nelson",
+        "lastName": "McKey",
+        "linkedinId": "10354636",
+        "profileHash": "ACwAAACd_8wBDkLQMd5gSV9tH5s6N9d3EpB6N2Q",
         "country": "HK",
         "city": "Hong Kong",
         "isLinkedinPremium": false,
-        "companyName": "Self-employed",
-        "jobTitle": "Fractional CMO | Growth-Focused Executive | Scaling Businesses in HK & Asia"
+        "companyName": "Chaos Theory",
+        "companyWebsite": "https://www.chaostheory.hk/",
+        "companySize": "51-200",
+        "jobTitle": "Head of Crypto Partnerships and Business Development",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/chaostheoryhk/"
       },
       "currentJobs": {
-        "jobTitle": "Fractional CMO | Growth-Focused Executive | Scaling Businesses in HK & Asia",
-        "companyName": "Self-employed"
+        "jobTitle": "Head of Crypto Partnerships and Business Development",
+        "companyName": "Chaos Theory",
+        "companyWebsite": "https://www.chaostheory.hk/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/chaostheoryhk/",
+        "companySize": "51-200",
+        "industry": "Software Development"
       }
     },
     {
       "lead": {
-        "firstName": "Victoria",
-        "lastName": "Cheung",
-        "linkedinId": "209064593",
-        "profileHash": "ACwAAAx2EpEBwo7tdRQUdsf7QPru2bGtOk9UUuQ",
+        "firstName": "Florian",
+        "lastName": "Gaudel",
+        "linkedinId": "74556312",
+        "profileHash": "ACwAAARxo5gB4BBSfj_R7xqF9BWDs-8zKNEZjGw",
+        "country": "US",
+        "city": "Brooklyn",
+        "isLinkedinPremium": false,
+        "companyName": "Standard Insights",
+        "companyWebsite": "https://standard-insights.com/",
+        "companySize": "11-50",
+        "jobTitle": "Founder & CEO",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/si-standard-insights/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & CEO",
+        "companyName": "Standard Insights",
+        "companyWebsite": "https://standard-insights.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/si-standard-insights/",
+        "companySize": "11-50",
+        "industry": "Software Development"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Tony",
+        "lastName": "DeGennaro",
+        "linkedinId": "167482558",
+        "profileHash": "ACwAAAn7lL4Bu3gQoxe6jIfulWbl3z36681E59I",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "First Page",
+        "companyWebsite": "https://www.firstpage.com.au",
+        "companySize": "201-500",
+        "jobTitle": "Head of Strategy",
+        "industry": "Advertising Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/firstpage-digital/"
+      },
+      "currentJobs": {
+        "jobTitle": "Head of Strategy",
+        "companyName": "First Page",
+        "companyWebsite": "https://www.firstpage.com.au",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/firstpage-digital/",
+        "companySize": "201-500",
+        "industry": "Advertising Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Ambroise",
+        "lastName": "Couissin",
+        "linkedinId": "109592106",
+        "profileHash": "ACwAAAaIPioBH_qLTyPvy9G_2kBPBr9NIlEGkuY",
         "country": "HK",
         "city": "Hong Kong",
         "isLinkedinPremium": true,
-        "companyName": "MTR Lab Company Limited",
-        "companyWebsite": "https://www.mtrlab.com.hk/",
+        "companyName": "Mazecare",
+        "companyWebsite": "https://www.mazecare.com",
         "companySize": "11-50",
-        "jobTitle": "Business Development Manager",
-        "industry": "Venture Capital and Private Equity Principals",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/mtrlab/"
+        "jobTitle": "CEO & Founder",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mazecare/"
       },
       "currentJobs": {
-        "jobTitle": "Business Development Manager",
-        "companyName": "MTR Lab Company Limited",
-        "companyWebsite": "https://www.mtrlab.com.hk/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/mtrlab/",
+        "jobTitle": "CEO & Founder",
+        "companyName": "Mazecare",
+        "companyWebsite": "https://www.mazecare.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mazecare/",
+        "companySize": "11-50",
+        "industry": "Software Development"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Kevin",
+        "lastName": "Clark",
+        "linkedinId": "14320309",
+        "profileHash": "ACwAAADagrUBVSJt7XNDQTGBD36ivgcJO2Ax79s",
+        "city": "Columbus",
+        "isLinkedinPremium": true,
+        "companyName": "Synup",
+        "companyWebsite": "http://www.synup.com/?utm_source=LinkedIn+&utm_medium=LinkedIn_company_page+",
+        "companySize": "201-500",
+        "jobTitle": "VP of Reseller & Agency Partnerships",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/synup/"
+      },
+      "currentJobs": {
+        "jobTitle": "VP of Reseller & Agency Partnerships",
+        "companyName": "Synup",
+        "companyWebsite": "http://www.synup.com/?utm_source=LinkedIn+&utm_medium=LinkedIn_company_page+",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/synup/",
+        "companySize": "201-500",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nha",
+        "lastName": "Tran",
+        "linkedinId": "494477717",
+        "profileHash": "ACwAAB15IZUBOWvpnGfTyJ8WcFkEa196Hn93b2k",
+        "city": "Hanoi",
+        "isLinkedinPremium": true,
+        "companyName": "Varmeta",
+        "companyWebsite": "https://www.var-meta.com/",
+        "companySize": "51-200",
+        "jobTitle": "Founder & CEO",
+        "industry": "IT Services and IT Consulting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/var-meta/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & CEO",
+        "companyName": "Varmeta",
+        "companyWebsite": "https://www.var-meta.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/var-meta/",
+        "companySize": "51-200",
+        "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Sanchit",
+        "lastName": "Bansal",
+        "linkedinId": "493213714",
+        "profileHash": "ACwAAB1l2BIBKalGOIOjsuuxhyOycsQY2ccadoo",
+        "country": "HK",
+        "city": "Kowloon",
+        "isLinkedinPremium": false,
+        "companyName": "Hex Trust",
+        "companyWebsite": "https://www.hextrust.com",
+        "companySize": "51-200",
+        "jobTitle": "Vice President Operations",
+        "industry": "Financial Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/hextrust/"
+      },
+      "currentJobs": {
+        "jobTitle": "Vice President Operations",
+        "companyName": "Hex Trust",
+        "companyWebsite": "https://www.hextrust.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/hextrust/",
+        "companySize": "51-200",
+        "industry": "Financial Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "S. Lucia",
+        "lastName": "Kanter St. Amour",
+        "linkedinId": "30202915",
+        "profileHash": "ACwAAAHM3CMBRpJ5VXXFZWbbvMg91u9fJdOg7No",
+        "country": "US",
+        "city": "San Francisco",
+        "isLinkedinPremium": false,
+        "companyName": "Pactum Factum",
+        "companyWebsite": "http://www.pactumfactum.com",
+        "companySize": "2-10",
+        "jobTitle": "Attorney | CLO",
+        "industry": "Law Practice",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pactum-factum/"
+      },
+      "currentJobs": {
+        "jobTitle": "Attorney | CLO",
+        "companyName": "Pactum Factum",
+        "companyWebsite": "http://www.pactumfactum.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pactum-factum/",
+        "companySize": "2-10",
+        "industry": "Law Practice"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Monir",
+        "lastName": "Khan 簡文龍",
+        "linkedinId": "449935558",
+        "profileHash": "ACwAABrReMYBTOC_yw1cz6G-MBgH1vxI1Lx5Thc",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "Finda Cloud Technology",
+        "companyWebsite": "https://finda.cloud/",
+        "companySize": "11-50",
+        "jobTitle": "Channel Manager ANZ & SEA",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/finda-cloud/"
+      },
+      "currentJobs": {
+        "jobTitle": "Channel Manager ANZ & SEA",
+        "companyName": "Finda Cloud Technology",
+        "companyWebsite": "https://finda.cloud/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/finda-cloud/",
+        "companySize": "11-50",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Ahmed",
+        "lastName": "Benjas ( أحمد بنجاس )",
+        "linkedinId": "25966809",
+        "profileHash": "ACwAAAGMONkBRX7n-ZQ1WEHpMKXDOtPYacoUeaY",
+        "country": "AE",
+        "city": "Dubai",
+        "isLinkedinPremium": true,
+        "companyName": "Cevitas",
+        "companySize": "11-50",
+        "jobTitle": "CEO I Co-founder",
+        "industry": "Real Estate",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/cevitas-uae/"
+      },
+      "currentJobs": {
+        "jobTitle": "CEO I Co-founder",
+        "companyName": "Cevitas",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/cevitas-uae/",
+        "companySize": "11-50",
+        "industry": "Real Estate"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nicolas",
+        "lastName": "F.",
+        "linkedinId": "5432450",
+        "profileHash": "ACwAAABS5IIBuZZ13l4vQ0JWRc9ISmYb8L_7DQE",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "Stealth Startup",
+        "companyWebsite": "https://harmonic.ai/get-discovered",
+        "companySize": "11-50",
+        "jobTitle": "Founder - CEO",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/stealth-startup-community/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder - CEO",
+        "companyName": "Stealth Startup",
+        "companyWebsite": "https://harmonic.ai/get-discovered",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/stealth-startup-community/",
+        "companySize": "11-50",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Edouard",
+        "lastName": "Leneveu",
+        "linkedinId": "151694875",
+        "profileHash": "ACwAAAkKrhsBkpWx_233bTvbmMAdohbrYsrXYFQ",
+        "country": "GB",
+        "isLinkedinPremium": true,
+        "companyName": "Kayzen",
+        "companyWebsite": "http://www.kayzen.io",
+        "companySize": "51-200",
+        "jobTitle": "Sales Director - Apps",
+        "industry": "Advertising Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kayzen/"
+      },
+      "currentJobs": {
+        "jobTitle": "Sales Director - Apps",
+        "companyName": "Kayzen",
+        "companyWebsite": "http://www.kayzen.io",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kayzen/",
+        "companySize": "51-200",
+        "industry": "Advertising Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Adel",
+        "lastName": "Rahimi",
+        "linkedinId": "34116232",
+        "profileHash": "ACwAAAIIkogBrh0PcnaI3mU1ZiZeLahC-_Zs-uE",
+        "country": "BH",
+        "isLinkedinPremium": false,
+        "companyName": "Venture Projects W.L.L.",
+        "companyWebsite": "http://www.ventureprojects.net",
+        "companySize": "2-10",
+        "jobTitle": "CEO",
+        "industry": "Investment Management",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/venture-projects-w.l.l./"
+      },
+      "currentJobs": {
+        "jobTitle": "CEO",
+        "companyName": "Venture Projects W.L.L.",
+        "companyWebsite": "http://www.ventureprojects.net",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/venture-projects-w.l.l./",
+        "companySize": "2-10",
+        "industry": "Investment Management"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Abhinav",
+        "lastName": "Nagpal",
+        "linkedinId": "69057988",
+        "profileHash": "ACwAAAQdvcQBGcnJiI5jk3YAYrBB6260FvJFqmc",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": true,
+        "companyName": "BioCatch",
+        "companyWebsite": "http://www.biocatch.com",
+        "companySize": "201-500",
+        "jobTitle": "Regional Sales - ASEAN",
+        "industry": "Computer and Network Security",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/biocatch/"
+      },
+      "currentJobs": {
+        "jobTitle": "Regional Sales - ASEAN",
+        "companyName": "BioCatch",
+        "companyWebsite": "http://www.biocatch.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/biocatch/",
+        "companySize": "201-500",
+        "industry": "Computer and Network Security"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Natalia",
+        "lastName": "Mykhaylova",
+        "linkedinId": "71327695",
+        "profileHash": "ACwAAARAX88BwO0L2a9gGOOpfBZpDRp_NTqiLyY",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "WeavAir",
+        "companyWebsite": "http://weavair.com/",
+        "companySize": "2-10",
+        "jobTitle": "Founder and CEO (backed by Techstars & ADB)",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/weavair/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder and CEO (backed by Techstars & ADB)",
+        "companyName": "WeavAir",
+        "companyWebsite": "http://weavair.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/weavair/",
+        "companySize": "2-10",
+        "industry": "Software Development"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Rita",
+        "lastName": "Vannithone",
+        "linkedinId": "6897055",
+        "profileHash": "ACwAAABpPZ8BHxh0y8T6bIwu3BdpVuNJDDr8QhY",
+        "country": "CY",
+        "isLinkedinPremium": false,
+        "companyName": "ODM Group",
+        "companyWebsite": "http://www.theODMgroup.com",
+        "companySize": "11-50",
+        "jobTitle": "Managing Director (Previously Strategic Advisor)",
+        "industry": "Marketing Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/odm-group/"
+      },
+      "currentJobs": {
+        "jobTitle": "Managing Director (Previously Strategic Advisor)",
+        "companyName": "ODM Group",
+        "companyWebsite": "http://www.theODMgroup.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/odm-group/",
+        "companySize": "11-50",
+        "industry": "Marketing Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Cintia",
+        "lastName": "Nunes",
+        "linkedinId": "206988034",
+        "profileHash": "ACwAAAxWYwIBouniODIEhos8158IxrsxlXqJh-Q",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true,
+        "companyName": "The Mills Fabrica",
+        "companyWebsite": "http://www.themillsfabrica.com",
+        "companySize": "11-50",
+        "jobTitle": "General Manager, Head of Asia",
+        "industry": "Venture Capital and Private Equity Principals",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/the-mills-fabrica/"
+      },
+      "currentJobs": {
+        "jobTitle": "General Manager, Head of Asia",
+        "companyName": "The Mills Fabrica",
+        "companyWebsite": "http://www.themillsfabrica.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/the-mills-fabrica/",
         "companySize": "11-50",
         "industry": "Venture Capital and Private Equity Principals"
       }
     },
     {
       "lead": {
-        "firstName": "Tahir",
-        "lastName": "Alam",
-        "linkedinId": "25570734",
-        "profileHash": "ACwAAAGGLa4BgPeUUJ9AWwHdRftU5wEuN74bUo4",
-        "country": "AU",
-        "city": "Sydney",
+        "firstName": "Cory",
+        "lastName": "Cabral",
+        "linkedinId": "10142938",
+        "profileHash": "ACwAAACaxNoBXjG3w6blEQ_QjXoQd-o36GTOQdI",
+        "country": "US",
         "isLinkedinPremium": false,
-        "companyName": "IAG - Insurance Australia Group",
-        "companyWebsite": "http://www.iag.com.au",
-        "companySize": "10001+",
-        "jobTitle": "Finance Transformation Strategy and Architecture",
-        "industry": "Insurance",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/iag/"
+        "companyName": "Bouken Capital",
+        "companyWebsite": "http://www.boukencapital.com",
+        "companySize": "51-200",
+        "jobTitle": "Venture Scout",
+        "industry": "Venture Capital and Private Equity Principals",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/bouken-capital/"
       },
       "currentJobs": {
-        "jobTitle": "Finance Transformation Strategy and Architecture",
-        "companyName": "IAG - Insurance Australia Group",
-        "companyWebsite": "http://www.iag.com.au",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/iag/",
-        "companySize": "10001+",
-        "industry": "Insurance"
+        "jobTitle": "Venture Scout",
+        "companyName": "Bouken Capital",
+        "companyWebsite": "http://www.boukencapital.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/bouken-capital/",
+        "companySize": "51-200",
+        "industry": "Venture Capital and Private Equity Principals"
       }
     },
     {
       "lead": {
-        "firstName": "Jessica",
-        "lastName": "Cheung",
-        "linkedinId": "239478851",
-        "profileHash": "ACwAAA5GKEMBG_JELpBOJbx1hg4O1NtV3yLLj_c",
+        "firstName": "Karie",
+        "lastName": "Chan",
+        "linkedinId": "62085221",
+        "profileHash": "ACwAAAOzWGUBYfGqteCrFudcbNe1oJ97E2aFJgA",
         "country": "HK",
         "city": "Hong Kong",
         "isLinkedinPremium": false,
-        "companyName": "Day Zero Platform",
-        "companyWebsite": "https://d0.academy/",
-        "companySize": "2-10",
-        "jobTitle": "Founder",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/day-zero-academy/"
+        "companyName": "DIGICOM Consultancy",
+        "jobTitle": "Founder & Director of Marketing"
       },
       "currentJobs": {
-        "jobTitle": "Founder",
-        "companyName": "Day Zero Platform",
-        "companyWebsite": "https://d0.academy/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/day-zero-academy/",
-        "companySize": "2-10",
+        "jobTitle": "Founder & Director of Marketing",
+        "companyName": "DIGICOM Consultancy"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Josh",
+        "lastName": "Zak",
+        "linkedinId": "44084909",
+        "profileHash": "ACwAAAKgrq0BK7CCsCKqctHTxrc0TrN7IxpBDiU",
+        "country": "CA",
+        "city": "Vancouver",
+        "isLinkedinPremium": false,
+        "companyName": "Turtle",
+        "companyWebsite": "https://turtle.design/",
+        "companySize": "51-200",
+        "jobTitle": "Managing Director, Co-Founder ",
+        "industry": "Design",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/turtledesign/"
+      },
+      "currentJobs": {
+        "jobTitle": "Managing Director, Co-Founder ",
+        "companyName": "Turtle",
+        "companyWebsite": "https://turtle.design/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/turtledesign/",
+        "companySize": "51-200",
+        "industry": "Design"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Amitay",
+        "lastName": "Yaffe",
+        "linkedinId": "159650958",
+        "profileHash": "ACwAAAmEFI4B1QU8qQkhTxyTgBeQ59UKHYOZ0gk",
+        "country": "CL",
+        "isLinkedinPremium": true,
+        "companyName": "Brussels Heart of Chocolate",
+        "jobTitle": "Chief Growth Officer"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief Growth Officer",
+        "companyName": "Brussels Heart of Chocolate"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Frank W.",
+        "lastName": "Jacob",
+        "linkedinId": "3426955",
+        "profileHash": "ACwAAAA0SosBl0VSx_eyrNcZNVEWb-yLTn3VK1k",
+        "city": "Hamburg",
+        "isLinkedinPremium": false,
+        "companyName": "Afileon",
+        "companySize": "501-1000",
+        "jobTitle": "Chief Commercial Officer (CCO)",
+        "industry": "Professional Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/afileon/"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief Commercial Officer (CCO)",
+        "companyName": "Afileon",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/afileon/",
+        "companySize": "501-1000",
+        "industry": "Professional Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Abhishek",
+        "lastName": "Mishra",
+        "linkedinId": "355357877",
+        "profileHash": "ACwAABUuVLUBYMIGJRxRdCKvWf-HOa2FFu8yXQo",
+        "country": "IO",
+        "city": "Bengaluru",
+        "isLinkedinPremium": true,
+        "companyName": "Thesys",
+        "companyWebsite": "https://www.thesys.dev",
+        "companySize": "11-50",
+        "jobTitle": "Growth",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/thesysdev/"
+      },
+      "currentJobs": {
+        "jobTitle": "Growth",
+        "companyName": "Thesys",
+        "companyWebsite": "https://www.thesys.dev",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/thesysdev/",
+        "companySize": "11-50",
         "industry": "Software Development"
       }
     },
     {
       "lead": {
-        "firstName": "Loon",
-        "lastName": "Lo",
-        "linkedinId": "92778183",
-        "profileHash": "ACwAAAWHrscBYAlyjSU96AkJyZ_FRZH1oo0oPCc",
-        "country": "HK",
-        "city": "Hong Kong",
+        "firstName": "Avishek",
+        "lastName": "T.",
+        "linkedinId": "845825612",
+        "profileHash": "ACwAADJqRkwBSv970DMMkGj9ctY7NOxA4PD4eBI",
+        "country": "IO",
+        "city": "Mumbai",
         "isLinkedinPremium": true,
-        "companyName": "Accenture",
-        "companyWebsite": "http://www.accenture.com",
+        "companyName": "Vodafone Idea Limited",
+        "companyWebsite": "https://www.myvi.in/",
         "companySize": "10001+",
-        "jobTitle": "Director, Strategy and Consulting",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/accenture/"
+        "jobTitle": "Head of Marketing & Strategic Partnerships",
+        "industry": "Telecommunications",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/vodafone-idea-limited/"
       },
       "currentJobs": {
-        "jobTitle": "Director, Strategy and Consulting",
-        "companyName": "Accenture",
-        "companyWebsite": "http://www.accenture.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/accenture/",
+        "jobTitle": "Head of Marketing & Strategic Partnerships",
+        "companyName": "Vodafone Idea Limited",
+        "companyWebsite": "https://www.myvi.in/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/vodafone-idea-limited/",
         "companySize": "10001+",
+        "industry": "Telecommunications"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Hugo",
+        "lastName": "Dupont",
+        "linkedinId": "635630123",
+        "profileHash": "ACwAACXi8isBZYN-DpbbxgeHF3U_oBs2mrGSsaI",
+        "country": "GB",
+        "city": "London",
+        "isLinkedinPremium": true,
+        "companyName": "Empra Labs",
+        "companyWebsite": "https://www.empralabs.com/",
+        "companySize": "2-10",
+        "jobTitle": "CEO & Co-Founder",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/empra-labs/"
+      },
+      "currentJobs": {
+        "jobTitle": "CEO & Co-Founder",
+        "companyName": "Empra Labs",
+        "companyWebsite": "https://www.empralabs.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/empra-labs/",
+        "companySize": "2-10",
         "industry": "Business Consulting and Services"
       }
     },
     {
       "lead": {
-        "firstName": "Adam",
-        "lastName": "Juhasz",
-        "linkedinId": "337492253",
-        "profileHash": "ACwAABQduR0BxqhxCTT7Xru02kNXCA-Y7UZizBc",
+        "firstName": "Keirn",
+        "lastName": "O'Connor",
+        "linkedinId": "2020432",
+        "profileHash": "ACwAAAAe1FABj0sU8TPWV25zQExFYm1OGrgRwCQ",
         "country": "SG",
         "city": "Singapore",
         "isLinkedinPremium": false,
-        "companyName": "HealthSeed AG",
-        "companyWebsite": "https://healthseed.vc/",
-        "companySize": "2-10",
-        "jobTitle": "Founding Partner",
-        "industry": "Business Consulting and Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/healthseed/"
+        "companyName": "Single Family Office",
+        "companyWebsite": "http://-",
+        "companySize": "51-200",
+        "jobTitle": "Single Family Office ",
+        "industry": "Executive Offices",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/single-family-office/"
       },
       "currentJobs": {
-        "jobTitle": "Founding Partner",
-        "companyName": "HealthSeed AG",
-        "companyWebsite": "https://healthseed.vc/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/healthseed/",
+        "jobTitle": "Single Family Office ",
+        "companyName": "Single Family Office",
+        "companyWebsite": "http://-",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/single-family-office/",
+        "companySize": "51-200",
+        "industry": "Executive Offices"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Anthony",
+        "lastName": "Chon Lane",
+        "linkedinId": "6215371",
+        "profileHash": "ACwAAABe1ssBFKflyaNfV2rDfdHY-k206Updogc",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": true,
+        "companyName": "Ignition Studio",
+        "companyWebsite": "ignitionstudio.co",
+        "companySize": "2-10",
+        "jobTitle": "Founder & Director",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ignitionofficial/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & Director",
+        "companyName": "Ignition Studio",
+        "companyWebsite": "ignitionstudio.co",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ignitionofficial/",
         "companySize": "2-10",
         "industry": "Business Consulting and Services"
       }
     },
     {
       "lead": {
-        "firstName": "Patrick",
-        "lastName": "Yu",
-        "linkedinId": "8765027",
-        "profileHash": "ACwAAACFvmMB0iaOPkF2RaPCJcg_L652457YK3U",
-        "country": "HK",
-        "city": "Hong Kong",
+        "firstName": "Kenneth",
+        "lastName": "Edward",
+        "linkedinId": "609896818",
+        "profileHash": "ACwAACRaSXIBFCSsoIxqVw7AwR1UsTa9-6-yYTg",
+        "country": "SG",
+        "city": "Singapore",
         "isLinkedinPremium": false,
-        "companyName": "FleishmanHillard",
-        "companyWebsite": "http://fleishmanhillard.com",
-        "companySize": "1001-5000",
-        "jobTitle": "GM, SVP & Sr. Partner, Head of Asia Pacific Financial and Prof. Services Sector at FleishmanHillard",
-        "industry": "Public Relations and Communications Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/fleishmanhillard/"
+        "companyName": "Mirror World",
+        "companyWebsite": "https://mirror-world.carrd.co/",
+        "companySize": "2-10",
+        "jobTitle": "Co-Founder",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mirror-worlds/"
       },
       "currentJobs": {
-        "jobTitle": "GM, SVP & Sr. Partner, Head of Asia Pacific Financial and Prof. Services Sector at FleishmanHillard",
-        "companyName": "FleishmanHillard",
-        "companyWebsite": "http://fleishmanhillard.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/fleishmanhillard/",
+        "jobTitle": "Co-Founder",
+        "companyName": "Mirror World",
+        "companyWebsite": "https://mirror-world.carrd.co/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mirror-worlds/",
+        "companySize": "2-10",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Angeline ",
+        "lastName": "Tan",
+        "linkedinId": "638958727",
+        "profileHash": "ACwAACYVvIcBb92aMX2vjh6uGg9AhpbkQzx-cS8",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "Live Action",
+        "companyWebsite": "http://liveaction.org/",
+        "companySize": "11-50",
+        "jobTitle": "Journalist",
+        "industry": "Non-profit Organizations",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/live-action-films/"
+      },
+      "currentJobs": {
+        "jobTitle": "Journalist",
+        "companyName": "Live Action",
+        "companyWebsite": "http://liveaction.org/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/live-action-films/",
+        "companySize": "11-50",
+        "industry": "Non-profit Organizations"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Hamza",
+        "lastName": "R.",
+        "linkedinId": "525775249",
+        "profileHash": "ACwAAB9WsZEBZf_zQKAJPD9J2ZZDg0wj8vkM_Ec",
+        "country": "AE",
+        "city": "Dubai",
+        "isLinkedinPremium": false
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Alan",
+        "lastName": "Halfenger",
+        "linkedinId": "14229359",
+        "profileHash": "ACwAAADZH28BwJcDfXrdEa0pggPTapyEFjHuZWI",
+        "country": "US",
+        "isLinkedinPremium": false,
+        "companyName": "Arctaris Impact Investors",
+        "companyWebsite": "http://arctaris.com/",
+        "companySize": "11-50",
+        "jobTitle": "Chief Compliance Officer",
+        "industry": "Venture Capital and Private Equity Principals",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/arctaris-impact-investors-llc/"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief Compliance Officer",
+        "companyName": "Arctaris Impact Investors",
+        "companyWebsite": "http://arctaris.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/arctaris-impact-investors-llc/",
+        "companySize": "11-50",
+        "industry": "Venture Capital and Private Equity Principals"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "xavier",
+        "lastName": "fisselier",
+        "linkedinId": "5638554",
+        "profileHash": "ACwAAABWCZoBFF9sGQ2Jc2prJwNkojmU31belKE",
+        "country": "ES",
+        "isLinkedinPremium": false,
+        "companyName": "WYP.agency | What's Your Problem Agency !",
+        "companyWebsite": "http://wyp.agency",
+        "companySize": "2-10",
+        "jobTitle": "Co-fondateur",
+        "industry": "Advertising Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/wyp-agency/"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-fondateur",
+        "companyName": "WYP.agency | What's Your Problem Agency !",
+        "companyWebsite": "http://wyp.agency",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/wyp-agency/",
+        "companySize": "2-10",
+        "industry": "Advertising Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Elaine",
+        "lastName": "Zhang",
+        "linkedinId": "673855224",
+        "profileHash": "ACwAACgqNvgBke7vWJ1-w9l7XzPivJ4kTjk-csc",
+        "country": "FR",
+        "city": "Paris",
+        "isLinkedinPremium": false,
+        "companyName": "MEXC",
+        "companyWebsite": "https://www.mexc.com",
         "companySize": "1001-5000",
+        "jobTitle": "Channel Partner",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mexcofficial/"
+      },
+      "currentJobs": {
+        "jobTitle": "Channel Partner",
+        "companyName": "MEXC",
+        "companyWebsite": "https://www.mexc.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mexcofficial/",
+        "companySize": "1001-5000",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Krishna",
+        "lastName": "Arani",
+        "linkedinId": "567415",
+        "profileHash": "ACwAAAAIqHcBbS1tQdcisuGxeUHghVbkyaiKD9I",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": true,
+        "companyName": "Alteus.net",
+        "jobTitle": "Co-Founder & Partner"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-Founder & Partner",
+        "companyName": "Alteus.net"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "🚐 Ryan",
+        "lastName": "Van",
+        "linkedinId": "633735148",
+        "profileHash": "ACwAACXGB-wBOwYxCBVM61ekEcQnpuEUfvHW0YM",
+        "country": "US",
+        "city": "New York",
+        "isLinkedinPremium": false,
+        "companyName": "Cassidy",
+        "companyWebsite": "https://www.cassidyai.com/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_profile&utm_content=learn_more_link",
+        "companySize": "51-200",
+        "jobTitle": "Founding Marketer",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/cassidyai/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founding Marketer",
+        "companyName": "Cassidy",
+        "companyWebsite": "https://www.cassidyai.com/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin_profile&utm_content=learn_more_link",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/cassidyai/",
+        "companySize": "51-200",
+        "industry": "Software Development"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Jean",
+        "lastName": "Tuloup",
+        "linkedinId": "257481632",
+        "profileHash": "ACwAAA9Y26ABUZ7J7Swv8klsQzThrt8fGVr7Z5Q",
+        "country": "FR",
+        "city": "Paris",
+        "isLinkedinPremium": false,
+        "companyName": "Punchie",
+        "companyWebsite": "http://www.punchie.fr",
+        "companySize": "2-10",
+        "jobTitle": "Coach de Dirigeant·e·s",
+        "industry": "Public Relations and Communications Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/punchiecoachdedirigeants/"
+      },
+      "currentJobs": {
+        "jobTitle": "Coach de Dirigeant·e·s",
+        "companyName": "Punchie",
+        "companyWebsite": "http://www.punchie.fr",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/punchiecoachdedirigeants/",
+        "companySize": "2-10",
         "industry": "Public Relations and Communications Services"
       }
     },
     {
       "lead": {
-        "firstName": "Aleksandar",
-        "lastName": "Simic",
-        "linkedinId": "1196671",
-        "profileHash": "ACwAAAASQn8B_iCji-9AmvM6eT7cwOU4rklZxw4",
-        "country": "RS",
+        "firstName": "Zahidul",
+        "lastName": "Islam",
+        "linkedinId": "80686594",
+        "profileHash": "ACwAAATPLgIBueUZw1atLsrp5fiKM06q0BRo3n0",
+        "country": "BD",
+        "city": "Dhaka",
         "isLinkedinPremium": false,
-        "companyName": "Ottometric",
-        "companyWebsite": "http://ottometric.com",
+        "companyName": "Faz Solution",
+        "companyWebsite": "http://www.usefaz.com/",
         "companySize": "11-50",
-        "jobTitle": "Senior Marketing Manager",
-        "industry": "IT Services and IT Consulting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/ottometric/"
-      },
-      "currentJobs": {
-        "jobTitle": "Senior Marketing Manager",
-        "companyName": "Ottometric",
-        "companyWebsite": "http://ottometric.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/ottometric/",
-        "companySize": "11-50",
-        "industry": "IT Services and IT Consulting"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Kwansup",
-        "lastName": "Lee",
-        "linkedinId": "41091642",
-        "profileHash": "ACwAAAJzAjoBgtAzZf-Xoz2OTFveDEsTm4Br-AE",
-        "city": "Seoul Incheon",
-        "isLinkedinPremium": false,
-        "companyName": "Eastern IB Partners Inc.",
-        "jobTitle": "Founder & CEO"
+        "jobTitle": "Founder & CEO",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/fazsolution/"
       },
       "currentJobs": {
         "jobTitle": "Founder & CEO",
-        "companyName": "Eastern IB Partners Inc."
+        "companyName": "Faz Solution",
+        "companyWebsite": "http://www.usefaz.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/fazsolution/",
+        "companySize": "11-50",
+        "industry": "Business Consulting and Services"
       }
     },
     {
       "lead": {
-        "firstName": "Pauline",
-        "lastName": "Wetzer",
-        "linkedinId": "209696912",
-        "profileHash": "ACwAAAx_uJABgqW_jT84k14tbwWQmwmGMP43yNU",
+        "firstName": "Yann",
+        "lastName": "Malka",
+        "linkedinId": "225717066",
+        "profileHash": "ACwAAA10K0oBd0xjf6rFv9pVSpi9R1oP0HcraHE",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "TR Capital Group",
+        "companyWebsite": "http://www.tr-capital.com",
+        "companySize": "11-50",
+        "jobTitle": "Managing Director Investment (secondaries), Head of Business Development",
+        "industry": "Venture Capital and Private Equity Principals",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/tr-capital-group/"
+      },
+      "currentJobs": {
+        "jobTitle": "Managing Director Investment (secondaries), Head of Business Development",
+        "companyName": "TR Capital Group",
+        "companyWebsite": "http://www.tr-capital.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/tr-capital-group/",
+        "companySize": "11-50",
+        "industry": "Venture Capital and Private Equity Principals"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nirav",
+        "lastName": "Patel",
+        "linkedinId": "25770020",
+        "profileHash": "ACwAAAGJOCQBMyOhXnwAO9yyMa1QLjnVwHVtWxQ",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "Global Private Banker",
+        "companyWebsite": "https://globalprivatebanker.net/",
+        "companySize": "11-50",
+        "jobTitle": "Chief Executive Officer",
+        "industry": "Book and Periodical Publishing",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/global-private-banker/"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief Executive Officer",
+        "companyName": "Global Private Banker",
+        "companyWebsite": "https://globalprivatebanker.net/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/global-private-banker/",
+        "companySize": "11-50",
+        "industry": "Book and Periodical Publishing"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Yuan Lee",
+        "lastName": "Chung",
+        "linkedinId": "49117721",
+        "profileHash": "ACwAAALtehkByrWr2IZvKSCDKcsS4vEqUkBGheY",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": false,
+        "companyName": "Cento Ventures",
+        "companyWebsite": "http://www.cento.vc",
+        "companySize": "11-50",
+        "jobTitle": "Partner",
+        "industry": "Venture Capital and Private Equity Principals",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/cento-ventures/"
+      },
+      "currentJobs": {
+        "jobTitle": "Partner",
+        "companyName": "Cento Ventures",
+        "companyWebsite": "http://www.cento.vc",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/cento-ventures/",
+        "companySize": "11-50",
+        "industry": "Venture Capital and Private Equity Principals"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Pierre",
+        "lastName": "Everling",
+        "linkedinId": "93216560",
+        "profileHash": "ACwAAAWOXzABymjx4IzeE_pGEzn9kuR-eyjKht8",
+        "country": "PT",
+        "isLinkedinPremium": false,
+        "companyName": "Loop Forward",
+        "companySize": "1",
+        "jobTitle": "Founder",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/loop-forward/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder",
+        "companyName": "Loop Forward",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/loop-forward/",
+        "companySize": "1",
+        "industry": "Business Consulting and Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Steve",
+        "lastName": "Safarowic",
+        "linkedinId": "42716452",
+        "profileHash": "ACwAAAKLzSQBfV4yYEx4F6kBS7_sKCCEiY1qA0s",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "Export Now Asia",
+        "companyWebsite": "https://www.exportnowasia.com/",
+        "companySize": "51-200",
+        "jobTitle": "Director of Business Development",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/export-now/"
+      },
+      "currentJobs": {
+        "jobTitle": "Director of Business Development",
+        "companyName": "Export Now Asia",
+        "companyWebsite": "https://www.exportnowasia.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/export-now/",
+        "companySize": "51-200",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nicolas",
+        "lastName": "Husson",
+        "linkedinId": "399894222",
+        "profileHash": "ACwAABfV5s4BGehsyVkHUjdaMmsY9g_6cFsGkuQ",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "ESCAPAD",
+        "companySize": "2-10",
+        "jobTitle": "Co-Founder",
+        "industry": "Sports Teams and Clubs",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/escapad-sport/"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-Founder",
+        "companyName": "ESCAPAD",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/escapad-sport/",
+        "companySize": "2-10",
+        "industry": "Sports Teams and Clubs"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Deb",
+        "lastName": "Caulet",
+        "linkedinId": "103602667",
+        "profileHash": "ACwAAAYs2esBzEpLYbem6XoAONtqyB-TqQAU4v8",
         "country": "DE",
         "city": "Berlin",
         "isLinkedinPremium": false,
-        "companyName": "ZenAdmin",
-        "companyWebsite": "https://www.zenadmin.ai/",
-        "companySize": "11-50",
-        "jobTitle": "Co-Founder",
-        "industry": "Software Development",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/zenadmin-ai/"
+        "companyName": "Aligned Collective",
+        "companyWebsite": "https://www.aligned-collective.com/",
+        "companySize": "2-10",
+        "jobTitle": "Leadership Coach, Trainer & Consultant",
+        "industry": "Human Resources Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/aligned-collective-hr/"
       },
       "currentJobs": {
-        "jobTitle": "Co-Founder",
-        "companyName": "ZenAdmin",
-        "companyWebsite": "https://www.zenadmin.ai/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/zenadmin-ai/",
-        "companySize": "11-50",
-        "industry": "Software Development"
+        "jobTitle": "Leadership Coach, Trainer & Consultant",
+        "companyName": "Aligned Collective",
+        "companyWebsite": "https://www.aligned-collective.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/aligned-collective-hr/",
+        "companySize": "2-10",
+        "industry": "Human Resources Services"
       }
     },
     {
       "lead": {
-        "firstName": "Stefano",
-        "lastName": "Viani, 卫青",
-        "linkedinId": "80927768",
-        "profileHash": "ACwAAATS3BgBpWzcq1d8o9LW0lljQUO00hDzuSU",
-        "country": "PH",
-        "city": "National Capital",
-        "isLinkedinPremium": false,
-        "companyName": "Page Executive",
-        "companyWebsite": "http://www.pageexecutive.com",
-        "companySize": "5001-10000",
-        "jobTitle": "Associate Partner",
-        "industry": "Staffing and Recruiting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/page-executive/"
+        "firstName": "Mark",
+        "lastName": "Czyzewski",
+        "linkedinId": "296351190",
+        "profileHash": "ACwAABGp9dYBobNBgbixbfbXEF__9SgijDVhWBI",
+        "country": "PL",
+        "city": "Poznan",
+        "isLinkedinPremium": true,
+        "companyName": "PRAVNA.pl - znaki towarowe, IP BOX i restrukturyzacja ",
+        "companyWebsite": "https://pravna.pl/li/",
+        "companySize": "51-200",
+        "jobTitle": "Chief Of Growth",
+        "industry": "Legal Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pravna-group-sp-z-o-o/"
       },
       "currentJobs": {
-        "jobTitle": "Associate Partner",
-        "companyName": "Page Executive",
-        "companyWebsite": "http://www.pageexecutive.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/page-executive/",
-        "companySize": "5001-10000",
+        "jobTitle": "Chief Of Growth",
+        "companyName": "PRAVNA.pl - znaki towarowe, IP BOX i restrukturyzacja ",
+        "companyWebsite": "https://pravna.pl/li/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pravna-group-sp-z-o-o/",
+        "companySize": "51-200",
+        "industry": "Legal Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Nalin",
+        "lastName": "Pathiranage",
+        "linkedinId": "85074213",
+        "profileHash": "ACwAAAUSISUBNAg8YeVYvT1klFIjwxjtnQFWVrg",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Er. Ujjual",
+        "lastName": "Baburaj ACMA, CGMA, UAECA",
+        "linkedinId": "36038036",
+        "profileHash": "ACwAAAIl5ZQBYofFdaBZsQAD-NxOb7KE8ZoZj4k",
+        "country": "AE",
+        "city": "Dubai",
+        "isLinkedinPremium": false,
+        "companyName": "Al Jadeed Cars Rental LLC",
+        "companyWebsite": "http://www.jadeedcarsrental.com",
+        "companySize": "2-10",
+        "jobTitle": "Managing Director",
+        "industry": "Transportation, Logistics, Supply Chain and Storage",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/jadeedcarsrental/"
+      },
+      "currentJobs": {
+        "jobTitle": "Managing Director",
+        "companyName": "Al Jadeed Cars Rental LLC",
+        "companyWebsite": "http://www.jadeedcarsrental.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/jadeedcarsrental/",
+        "companySize": "2-10",
+        "industry": "Transportation, Logistics, Supply Chain and Storage"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Kebelyn",
+        "lastName": "L.",
+        "linkedinId": "421249284",
+        "profileHash": "ACwAABkbwQQBDc5KHB-SJ7PEDfKxdaD5Qh4Ru1Q",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Gilbert",
+        "lastName": "N.",
+        "linkedinId": "162153145",
+        "profileHash": "ACwAAAmqQrkBU07_OeNG89TieNMxb43EmI6Bn8k",
+        "city": "Vietnam",
+        "isLinkedinPremium": false,
+        "companyName": "Invest Vietnam",
+        "companyWebsite": "http://investvietnam.co/",
+        "companySize": "2-10",
+        "jobTitle": "Managing Partner",
+        "industry": "Financial Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/invest-vietnam/"
+      },
+      "currentJobs": {
+        "jobTitle": "Managing Partner",
+        "companyName": "Invest Vietnam",
+        "companyWebsite": "http://investvietnam.co/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/invest-vietnam/",
+        "companySize": "2-10",
+        "industry": "Financial Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Lucy",
+        "lastName": "Greenleaf 叶青慧",
+        "linkedinId": "354851105",
+        "profileHash": "ACwAABUmmSEBqtOo9NO_qMS90bdaAymrt24KmPw",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true,
+        "companyName": "E1 Team Drogba Global Africa",
+        "companyWebsite": "https://teamdrogba.com/",
+        "companySize": "11-50",
+        "jobTitle": "Chief of Staff",
+        "industry": "Sports Teams and Clubs",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/e1-team-drogba/"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief of Staff",
+        "companyName": "E1 Team Drogba Global Africa",
+        "companyWebsite": "https://teamdrogba.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/e1-team-drogba/",
+        "companySize": "11-50",
+        "industry": "Sports Teams and Clubs"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Alex",
+        "lastName": "Y.",
+        "linkedinId": "219495659",
+        "profileHash": "ACwAAA0VPOsBYflgq0chjDH4VbClztGtpAaiKjQ",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true,
+        "companyName": "Gentlemen Who Brunch",
+        "companyWebsite": "https://gentlemenwhobrunch.com/",
+        "companySize": "2-10",
+        "jobTitle": "Co-Founder | Managing Director and Operations",
+        "industry": "Retail Apparel and Fashion",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/gentlemen-who-brunch/"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-Founder | Managing Director and Operations",
+        "companyName": "Gentlemen Who Brunch",
+        "companyWebsite": "https://gentlemenwhobrunch.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/gentlemen-who-brunch/",
+        "companySize": "2-10",
+        "industry": "Retail Apparel and Fashion"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Jackaline",
+        "lastName": "Tang",
+        "linkedinId": "253480087",
+        "profileHash": "ACwAAA8bzJcBqe7R_fW8np71pK3KpjC3chmG6lU",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "True Stars",
+        "companyWebsite": "https://www.truestars.media",
+        "companySize": "2-10",
+        "jobTitle": "Chief Community Officer, Founding Team",
+        "industry": "Technology, Information and Media",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/true-stars/"
+      },
+      "currentJobs": {
+        "jobTitle": "Chief Community Officer, Founding Team",
+        "companyName": "True Stars",
+        "companyWebsite": "https://www.truestars.media",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/true-stars/",
+        "companySize": "2-10",
+        "industry": "Technology, Information and Media"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Salma",
+        "lastName": "Miss",
+        "linkedinId": "53744149",
+        "profileHash": "ACwAAAM0EhUBpfDWqgQO7fRzDhkq0VxwlVB1ceg",
+        "country": "ES",
+        "isLinkedinPremium": false
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Alan",
+        "lastName": "Anwar",
+        "linkedinId": "15882526",
+        "profileHash": "ACwAAADyWR4B3TfH2KxI2bPRGh4U2bZcVUuAs5E",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": true,
+        "companyName": "Datasearch Consulting",
+        "companyWebsite": "http://www.datasearchconsulting.com",
+        "companySize": "11-50",
+        "jobTitle": "CEO - Technology & Data",
+        "industry": "Staffing and Recruiting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/datasearch-consulting/"
+      },
+      "currentJobs": {
+        "jobTitle": "CEO - Technology & Data",
+        "companyName": "Datasearch Consulting",
+        "companyWebsite": "http://www.datasearchconsulting.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/datasearch-consulting/",
+        "companySize": "11-50",
         "industry": "Staffing and Recruiting"
       }
     },
     {
       "lead": {
-        "firstName": "Megan",
-        "lastName": "Lam",
-        "linkedinId": "214675873",
-        "profileHash": "ACwAAAzLsaEBRJyES1E5TUO-oMlFJu44Xugbwho",
+        "firstName": "Gogo",
+        "lastName": "Cheng",
+        "linkedinId": "204435037",
+        "profileHash": "ACwAAAwvbl0BweCwh0nWZXegTXq3qy1CkCWJPl4",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true,
+        "companyName": "Gogo Cheng Consulting Limited",
+        "companyWebsite": "www.gogocheng-consulting.com",
+        "companySize": "2-10",
+        "jobTitle": "Founder & Managing Director",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/gogo-cheng-consulting/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & Managing Director",
+        "companyName": "Gogo Cheng Consulting Limited",
+        "companyWebsite": "www.gogocheng-consulting.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/gogo-cheng-consulting/",
+        "companySize": "2-10",
+        "industry": "Business Consulting and Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "David",
+        "lastName": "Gan",
+        "linkedinId": "237014709",
+        "profileHash": "ACwAAA4gjrUBoLufTJ6C8ZNg23NGQWl5wzhvWXA",
+        "country": "US",
+        "city": "New York",
+        "isLinkedinPremium": false,
+        "companyName": "Inception Capital",
+        "companyWebsite": "https://www.inception.capital/",
+        "companySize": "11-50",
+        "jobTitle": "Founder and General Partner",
+        "industry": "Venture Capital and Private Equity Principals",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/inceptionvc/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder and General Partner",
+        "companyName": "Inception Capital",
+        "companyWebsite": "https://www.inception.capital/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/inceptionvc/",
+        "companySize": "11-50",
+        "industry": "Venture Capital and Private Equity Principals"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Marc-Antoine",
+        "lastName": "Hager",
+        "linkedinId": "10771938",
+        "profileHash": "ACwAAACkXeIBijXadj8rmg1pQejkarqcX1PHT0Q",
+        "country": "SG",
+        "city": "Singapore",
+        "isLinkedinPremium": true,
+        "companyName": "CleverTap",
+        "companyWebsite": "https://clevertap.com",
+        "companySize": "501-1000",
+        "jobTitle": "Regional Head - SEA",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/clevertap/"
+      },
+      "currentJobs": {
+        "jobTitle": "Regional Head - SEA",
+        "companyName": "CleverTap",
+        "companyWebsite": "https://clevertap.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/clevertap/",
+        "companySize": "501-1000",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Ming",
+        "lastName": "Wong 黄本明",
+        "linkedinId": "7637164",
+        "profileHash": "ACwAAAB0iKwBOCqIyF69Ut8yxUQdrW5oVemhKUk",
         "country": "HK",
         "city": "Hong Kong",
         "isLinkedinPremium": false,
-        "companyName": "Neurum Health",
-        "companyWebsite": "http://www.neurumhealth.com",
-        "companySize": "2-10",
-        "jobTitle": "Co-Founder & CEO",
-        "industry": "Mental Health Care",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/neurum-health/"
-      },
-      "currentJobs": {
-        "jobTitle": "Co-Founder & CEO",
-        "companyName": "Neurum Health",
-        "companyWebsite": "http://www.neurumhealth.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/neurum-health/",
-        "companySize": "2-10",
-        "industry": "Mental Health Care"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Muhammad",
-        "lastName": "Shamoon 🚀",
-        "linkedinId": "692774285",
-        "profileHash": "ACwAAClK5Y0Blv2lyx0OlwcS4_nWavQQAh2Utxo",
-        "country": "PK",
-        "city": "Karachi Central District",
-        "isLinkedinPremium": true,
-        "companyName": "Deepsink",
-        "companyWebsite": "deepsink.co",
-        "companySize": "2-10",
-        "jobTitle": "GTM Engineer",
-        "industry": "Environmental Services",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/deepsink/"
-      },
-      "currentJobs": {
-        "jobTitle": "GTM Engineer",
-        "companyName": "Deepsink",
-        "companyWebsite": "deepsink.co",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/deepsink/",
-        "companySize": "2-10",
-        "industry": "Environmental Services"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Badar",
-        "lastName": "Khushnood",
-        "linkedinId": "3076886",
-        "profileHash": "ACwAAAAu8xYBPCR_Gsf_mVZr4yUmhWeZbrtWyGA",
-        "country": "PK",
-        "city": "Lahore",
-        "isLinkedinPremium": false,
-        "companyName": "Bramerz",
-        "companyWebsite": "http://www.bramerz.com/",
+        "companyName": "Enuma, Inc.",
+        "companyWebsite": "http://www.enuma.com",
         "companySize": "51-200",
-        "jobTitle": "Co-Founder",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bramerzdigital/"
+        "jobTitle": "Vice President, Government Relations & Strategic Partnerships",
+        "industry": "E-Learning Providers",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/enuma-inc/"
       },
       "currentJobs": {
-        "jobTitle": "Co-Founder",
-        "companyName": "Bramerz",
-        "companyWebsite": "http://www.bramerz.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/bramerzdigital/",
+        "jobTitle": "Vice President, Government Relations & Strategic Partnerships",
+        "companyName": "Enuma, Inc.",
+        "companyWebsite": "http://www.enuma.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/enuma-inc/",
         "companySize": "51-200",
-        "industry": "Technology, Information and Internet"
+        "industry": "E-Learning Providers"
       }
     },
     {
       "lead": {
-        "firstName": "Peter",
-        "lastName": "Mackness",
-        "linkedinId": "48037049",
-        "profileHash": "ACwAAALc_LkBSzl5SEU0Q4iHaHofkDQzeBSSsuQ",
-        "country": "GB",
-        "city": "Exmouth",
+        "firstName": "Jean-Baptiste",
+        "lastName": "Allemandou",
+        "linkedinId": "147508894",
+        "profileHash": "ACwAAAjKzp4BlJQj3PcYyB3M8d_yhVXuk7Hbi5o",
+        "country": "HK",
+        "city": "Hong Kong",
         "isLinkedinPremium": true,
-        "companyName": "The Wolfestone Group",
-        "companyWebsite": "https://wolfestonegroup.com/",
-        "companySize": "11-50",
-        "jobTitle": "Senior Business Development Manager",
-        "industry": "Translation and Localization",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/the-wolfestone-group/"
-      },
-      "currentJobs": {
-        "jobTitle": "Senior Business Development Manager",
-        "companyName": "The Wolfestone Group",
-        "companyWebsite": "https://wolfestonegroup.com/",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/the-wolfestone-group/",
-        "companySize": "11-50",
-        "industry": "Translation and Localization"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Rasul",
-        "lastName": "Shaikh 🇮🇳",
-        "linkedinId": "862336226",
-        "profileHash": "ACwAADNmNOIBaacYvT5Iiv9JrMI_kR39YiEiij8",
-        "country": "IO",
-        "city": "Pune",
-        "isLinkedinPremium": true,
-        "companyName": "Omnibound AI",
-        "companyWebsite": "https://www.omnibound.ai",
-        "companySize": "11-50",
-        "jobTitle": "AI GTM Engineer",
-        "industry": "Technology, Information and Internet",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/omniboundai/"
-      },
-      "currentJobs": {
-        "jobTitle": "AI GTM Engineer",
-        "companyName": "Omnibound AI",
-        "companyWebsite": "https://www.omnibound.ai",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/omniboundai/",
-        "companySize": "11-50",
-        "industry": "Technology, Information and Internet"
-      }
-    },
-    {
-      "lead": {
-        "firstName": "Frank",
-        "lastName": "Bomers",
-        "linkedinId": "7606922",
-        "profileHash": "ACwAAAB0EooBpqN70WPaGx09v4gQJviNpD4EQqk",
-        "country": "SG",
-        "city": "Singapore",
-        "isLinkedinPremium": false,
-        "companyName": "AccelerAsia",
-        "companyWebsite": "https://accelerasia.com",
-        "companySize": "11-50",
-        "jobTitle": "Founding Partner",
+        "companyName": "Sopra Steria",
+        "companyWebsite": "http://www.soprasteria.com",
+        "companySize": "10001+",
+        "jobTitle": "APAC Sales Director",
         "industry": "IT Services and IT Consulting",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/accelerasia/"
+        "companyLinkedinUrl": "https://www.linkedin.com/company/soprasteria/"
       },
       "currentJobs": {
-        "jobTitle": "Founding Partner",
-        "companyName": "AccelerAsia",
-        "companyWebsite": "https://accelerasia.com",
-        "companyLinkedinUrl": "https://www.linkedin.com/company/accelerasia/",
-        "companySize": "11-50",
+        "jobTitle": "APAC Sales Director",
+        "companyName": "Sopra Steria",
+        "companyWebsite": "http://www.soprasteria.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/soprasteria/",
+        "companySize": "10001+",
         "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Rob",
+        "lastName": "LaPorta",
+        "linkedinId": "1648626",
+        "profileHash": "ACwAAAAZJ_IB31wcbl2eWv3ghqt0JBuoDM-M39Q",
+        "city": "Chicago",
+        "isLinkedinPremium": true,
+        "companyName": "IBM",
+        "companyWebsite": "http://www.ibm.com",
+        "companySize": "10001+",
+        "jobTitle": "Principal, IBM Technology Expert Labs, Services Seller - US National Market IL-WI",
+        "industry": "IT Services and IT Consulting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ibm/"
+      },
+      "currentJobs": {
+        "jobTitle": "Principal, IBM Technology Expert Labs, Services Seller - US National Market IL-WI",
+        "companyName": "IBM",
+        "companyWebsite": "http://www.ibm.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ibm/",
+        "companySize": "10001+",
+        "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Sandy",
+        "lastName": "Ng",
+        "linkedinId": "190268861",
+        "profileHash": "ACwAAAtXRb0BSBVznoj8jbuWfKf2sQAhxQ6dRNY",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": true,
+        "companyName": "HKPC - Hong Kong Productivity Council",
+        "companyWebsite": "http://www.hkpc.org",
+        "companySize": "501-1000",
+        "jobTitle": "Manager, Digital Marketing",
+        "industry": "IT Services and IT Consulting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/hong-kong-productivity-council/"
+      },
+      "currentJobs": {
+        "jobTitle": "Manager, Digital Marketing",
+        "companyName": "HKPC - Hong Kong Productivity Council",
+        "companyWebsite": "http://www.hkpc.org",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/hong-kong-productivity-council/",
+        "companySize": "501-1000",
+        "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Medhy",
+        "lastName": "Souidi",
+        "linkedinId": "79872240",
+        "profileHash": "ACwAAATCwPABoc9BnsCHTrPuaS4xIERJ0IzDBLs",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "DBS Bank",
+        "companyWebsite": "https://www.dbs.com/default.page",
+        "companySize": "10001+",
+        "jobTitle": "Transformation Lead",
+        "industry": "Banking",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/dbs-bank/"
+      },
+      "currentJobs": {
+        "jobTitle": "Transformation Lead",
+        "companyName": "DBS Bank",
+        "companyWebsite": "https://www.dbs.com/default.page",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/dbs-bank/",
+        "companySize": "10001+",
+        "industry": "Banking"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Inês",
+        "lastName": "Marques",
+        "linkedinId": "143698666",
+        "profileHash": "ACwAAAiQquoBtO4lX5q9gFNwlOLalAspfyaxb5w",
+        "country": "PT",
+        "isLinkedinPremium": false,
+        "companyName": "Pointer5",
+        "companyWebsite": "https://pointer5.com/",
+        "companySize": "2-10",
+        "jobTitle": "Founder & CEO",
+        "industry": "Business Consulting and Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pointer-5/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & CEO",
+        "companyName": "Pointer5",
+        "companyWebsite": "https://pointer5.com/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/pointer-5/",
+        "companySize": "2-10",
+        "industry": "Business Consulting and Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Shilpi",
+        "lastName": "Goel",
+        "linkedinId": "242699776",
+        "profileHash": "ACwAAA53TgABjF0IUgxc8K4gj2eY7QgsCYQniiQ",
+        "country": "IO",
+        "city": "New Delhi",
+        "isLinkedinPremium": false,
+        "companyName": "LeadsTheWay",
+        "companyWebsite": "leadstheway.in",
+        "companySize": "2-10",
+        "jobTitle": "Founder & CEO",
+        "industry": "Marketing Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/leadstheway/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder & CEO",
+        "companyName": "LeadsTheWay",
+        "companyWebsite": "leadstheway.in",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/leadstheway/",
+        "companySize": "2-10",
+        "industry": "Marketing Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Fahad",
+        "lastName": "Nasir",
+        "linkedinId": "158842730",
+        "profileHash": "ACwAAAl3v2oBuYUTPKone7gazl3AQC1wpxO7Qw4",
+        "country": "PK",
+        "isLinkedinPremium": true,
+        "companyName": "LinkedB2B",
+        "companyWebsite": "www.linkedb2b.com",
+        "companySize": "2-10",
+        "jobTitle": "Founder",
+        "industry": "Marketing Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/linkedb2bremote/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder",
+        "companyName": "LinkedB2B",
+        "companyWebsite": "www.linkedb2b.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/linkedb2bremote/",
+        "companySize": "2-10",
+        "industry": "Marketing Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Emma (Tianqi)",
+        "lastName": "YU",
+        "linkedinId": "209314361",
+        "profileHash": "ACwAAAx54jkBq_Re3qM6MoTezt6X2qz5BRovGKE",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "OKX",
+        "companyWebsite": "http://www.okx.com",
+        "companySize": "1001-5000",
+        "jobTitle": "Principal Product Manager",
+        "industry": "IT Services and IT Consulting",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/okxofficial/"
+      },
+      "currentJobs": {
+        "jobTitle": "Principal Product Manager",
+        "companyName": "OKX",
+        "companyWebsite": "http://www.okx.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/okxofficial/",
+        "companySize": "1001-5000",
+        "industry": "IT Services and IT Consulting"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Ruth",
+        "lastName": "Healy",
+        "linkedinId": "346725158",
+        "profileHash": "ACwAABSqmyYBek986L7vP1EaRVz_x1u6tqJwG9g",
+        "country": "DE",
+        "city": "Berlin",
+        "isLinkedinPremium": false,
+        "companyName": "Vista",
+        "companyWebsite": "http://www.vistaprint.com",
+        "companySize": "5001-10000",
+        "jobTitle": "Marketing Manager, Content Strategy & Operations",
+        "industry": "Software Development",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/vistaprint/"
+      },
+      "currentJobs": {
+        "jobTitle": "Marketing Manager, Content Strategy & Operations",
+        "companyName": "Vista",
+        "companyWebsite": "http://www.vistaprint.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/vistaprint/",
+        "companySize": "5001-10000",
+        "industry": "Software Development"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Mouloukou",
+        "lastName": "Sanoh",
+        "linkedinId": "461937268",
+        "profileHash": "ACwAABuImnQBlMDaGRjcUQThUMvuVhL1Xc_JDXs",
+        "country": "AE",
+        "city": "Dubai",
+        "isLinkedinPremium": false,
+        "companyName": "MANSA",
+        "companyWebsite": "www.mansafinance.co",
+        "companySize": "11-50",
+        "jobTitle": "Co-Founder & CEO",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mansa-finance-def/"
+      },
+      "currentJobs": {
+        "jobTitle": "Co-Founder & CEO",
+        "companyName": "MANSA",
+        "companyWebsite": "www.mansafinance.co",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/mansa-finance-def/",
+        "companySize": "11-50",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Josh",
+        "lastName": "Collins",
+        "linkedinId": "77158639",
+        "profileHash": "ACwAAASZWO8B9GjePvzFvqhXOQCys03_mcFAJm0",
+        "country": "AU",
+        "city": "Albury",
+        "isLinkedinPremium": false,
+        "companyName": "Lightwood",
+        "companyWebsite": "https://www.lightwoodgroup.com.au/",
+        "companySize": "2-10",
+        "jobTitle": "Operations Director",
+        "industry": "Farming",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/lightwood/"
+      },
+      "currentJobs": {
+        "jobTitle": "Operations Director",
+        "companyName": "Lightwood",
+        "companyWebsite": "https://www.lightwoodgroup.com.au/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/lightwood/",
+        "companySize": "2-10",
+        "industry": "Farming"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Mathieu",
+        "lastName": "Borgé  🚀",
+        "linkedinId": "70054713",
+        "profileHash": "ACwAAAQs8zkBMb2ckl3LLhUcpijO-VQ_aA3pyic",
+        "country": "FR",
+        "city": "Paris",
+        "isLinkedinPremium": true,
+        "companyName": "AI for Business",
+        "jobTitle": "𝗔𝗜 𝗮𝗻𝗱 𝗕𝘂𝘀𝗶𝗻𝗲𝘀𝘀 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿 / 𝗖𝗼𝗻𝘀𝘂𝗹𝘁𝗶𝗻𝗴 𝗮𝗻𝗱 𝗧𝗿𝗮𝗶𝗻𝗶𝗻𝗴"
+      },
+      "currentJobs": {
+        "jobTitle": "𝗔𝗜 𝗮𝗻𝗱 𝗕𝘂𝘀𝗶𝗻𝗲𝘀𝘀 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿 / 𝗖𝗼𝗻𝘀𝘂𝗹𝘁𝗶𝗻𝗴 𝗮𝗻𝗱 𝗧𝗿𝗮𝗶𝗻𝗶𝗻𝗴",
+        "companyName": "AI for Business"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Hoi Yan Johanna",
+        "lastName": "C.",
+        "linkedinId": "91786271",
+        "profileHash": "ACwAAAV4jB8B38nx6ZsWyr6ddvpLa9y0aIktTt8",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "Kadoorie Farm and Botanic Garden",
+        "companyWebsite": "https://www.kfbg.org/",
+        "companySize": "201-500",
+        "jobTitle": "Head of Development and Partnerships",
+        "industry": "Non-profit Organizations",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kfbg/"
+      },
+      "currentJobs": {
+        "jobTitle": "Head of Development and Partnerships",
+        "companyName": "Kadoorie Farm and Botanic Garden",
+        "companyWebsite": "https://www.kfbg.org/",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/kfbg/",
+        "companySize": "201-500",
+        "industry": "Non-profit Organizations"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Tiffany",
+        "lastName": "Wong",
+        "linkedinId": "535573177",
+        "profileHash": "ACwAAB_sMrkBxUYk2tL5T1gPWe4SLvOo5UI4Up4",
+        "country": "HK",
+        "city": "Central & Western District",
+        "isLinkedinPremium": true,
+        "companyName": "FWD Insurance",
+        "companyWebsite": "http://www.fwd.com",
+        "companySize": "5001-10000",
+        "jobTitle": "AVP, Cloud and GenAI Proces Re-engineering Lead",
+        "industry": "Insurance",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/fwd-insurance/"
+      },
+      "currentJobs": {
+        "jobTitle": "AVP, Cloud and GenAI Proces Re-engineering Lead",
+        "companyName": "FWD Insurance",
+        "companyWebsite": "http://www.fwd.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/fwd-insurance/",
+        "companySize": "5001-10000",
+        "industry": "Insurance"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Hans-Dieter",
+        "lastName": "Jostarndt",
+        "linkedinId": "584844874",
+        "profileHash": "ACwAACLcBkoBmEk7YsVjKdBP-Pr-kbKA6hrngz0",
+        "country": "DE",
+        "city": "Aachen",
+        "isLinkedinPremium": true,
+        "companyName": "Ceilix AG",
+        "companyWebsite": "www.ceilix.com",
+        "companySize": "2-10",
+        "jobTitle": "Vice Chairman of the Supervisory Board and Co-Founder",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ceilix/"
+      },
+      "currentJobs": {
+        "jobTitle": "Vice Chairman of the Supervisory Board and Co-Founder",
+        "companyName": "Ceilix AG",
+        "companyWebsite": "www.ceilix.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/ceilix/",
+        "companySize": "2-10",
+        "industry": "Technology, Information and Internet"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Sasa",
+        "lastName": "Spasic",
+        "linkedinId": "205475596",
+        "profileHash": "ACwAAAw_TwwBcZgFVe1kmyuJ_EmqxkGvmQqpSNA",
+        "city": "Zagreb",
+        "isLinkedinPremium": true,
+        "companyName": "Innovation Authority",
+        "companyWebsite": "https://innovationauthority.com",
+        "companySize": "11-50",
+        "jobTitle": "Founder",
+        "industry": "Business Content",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/innovationauthority/"
+      },
+      "currentJobs": {
+        "jobTitle": "Founder",
+        "companyName": "Innovation Authority",
+        "companyWebsite": "https://innovationauthority.com",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/innovationauthority/",
+        "companySize": "11-50",
+        "industry": "Business Content"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Thierry",
+        "lastName": "MICHEL",
+        "linkedinId": "1694798",
+        "profileHash": "ACwAAAAZ3E4BdIw6--gqJj0xKBM1R-nLR8YgW44",
+        "country": "IE",
+        "isLinkedinPremium": false,
+        "companyName": "Web Summit",
+        "companyWebsite": "https://websummit.com/careers",
+        "companySize": "201-500",
+        "jobTitle": "SVP of Operations",
+        "industry": "Events Services",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/web-summit/"
+      },
+      "currentJobs": {
+        "jobTitle": "SVP of Operations",
+        "companyName": "Web Summit",
+        "companyWebsite": "https://websummit.com/careers",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/web-summit/",
+        "companySize": "201-500",
+        "industry": "Events Services"
+      }
+    },
+    {
+      "lead": {
+        "firstName": "Yury",
+        "lastName": "Kotov 尤里",
+        "linkedinId": "157673720",
+        "profileHash": "ACwAAAll6PgBfNZsLZOeQ3yJ9e-GsC1uPVQ9cH4",
+        "country": "HK",
+        "city": "Hong Kong",
+        "isLinkedinPremium": false,
+        "companyName": "UrbanChain Group",
+        "companyWebsite": "http://www.urbanchain.world",
+        "companySize": "11-50",
+        "jobTitle": "Asia/China Partner",
+        "industry": "Technology, Information and Internet",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/urbanchain-group/"
+      },
+      "currentJobs": {
+        "jobTitle": "Asia/China Partner",
+        "companyName": "UrbanChain Group",
+        "companyWebsite": "http://www.urbanchain.world",
+        "companyLinkedinUrl": "https://www.linkedin.com/company/urbanchain-group/",
+        "companySize": "11-50",
+        "industry": "Technology, Information and Internet"
       }
     }
   ],
-  "scrapedPage": 0,
+  "scrapedPage": 1,
   "total": 1193
 }

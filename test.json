@@ -2,7 +2,7 @@
   "metadata": {
     "suggestedFilters": [],
     "totalDisplayCount": "1K+",
-    "recentSearchId": 4085588633,
+    "recentSearchId": 4085589169,
     "filters": [
       {
         "singleFilterMetadata": {
@@ -1077,47 +1077,15 @@
     ],
     "searchTitle": "Following your company",
     "tracking": {
-      "requestId": "SDrdC6PhTOWIkEjJYd9rDw==",
+      "requestId": "C+l8KvhZRpClounRwFeAcg==",
       "sessionId": "9MB6+iWTQIy7YOPSLnSuLg=="
     }
   },
-  "elements": [
-    {
-      "firstName": "Josh",
-      "lastName": "Bereano",
-      "entityUrn": "urn:li:fs_salesProfile:(ACwAAC9QcXMBFjpaNN6OBKBIC2aM--Lbimj5uDc,NAME_SEARCH,XOVT)",
-      "entityUrnResolutionResult": {
-        "lastName": "Bereano",
-        "objectUrn": "urn:li:member:793801075",
-        "positions": [
-          {
-            "current": true,
-            "companyName": "Bereano Partners",
-            "title": "President of Bereano Partners | Digital Marketing Strategies For A Digital-First Economy",
-            "companyUrnResolutionResult": {
-              "employeeCountRange": "2-10",
-              "website": "https://bereanopartners.com/",
-              "flagshipCompanyUrl": "https://www.linkedin.com/company/bereanopartnersmarketing/",
-              "industry": "Marketing Services"
-            },
-            "companyUrn": "urn:li:fs_salesCompany:81940901"
-          }
-        ],
-        "firstName": "Josh",
-        "memberBadges": {
-          "premium": true,
-          "openLink": true,
-          "jobSeeker": false
-        },
-        "entityUrn": "urn:li:fs_salesProfile:(ACwAAC9QcXMBFjpaNN6OBKBIC2aM--Lbimj5uDc,NAME_SEARCH,XOVT)",
-        "location": "Bellevue, Washington, United States"
-      }
-    }
-  ],
+  "elements": [],
   "paging": {
     "total": 1193,
-    "count": 1,
-    "start": 0,
+    "count": 100,
+    "start": 1192,
     "links": []
   }
 }

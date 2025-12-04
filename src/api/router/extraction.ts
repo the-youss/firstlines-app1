@@ -6,7 +6,6 @@ import { LinkedinClient } from "@/Linkedin-API";
 import { TRPCError, type TRPCRouterRecord } from "@trpc/server";
 import z from "zod";
 import { protectedProcedure } from "../trpc";
-import md5 from "md5";
 
 export const extractionRouter = {
   fetchMeta: protectedProcedure
@@ -54,14 +53,15 @@ export const extractionRouter = {
           userId: ctx.session.user.id,
         }
       })
-      return ctx.db.queueJob.create({
+      const queue = await ctx.db.queueJob.create({
         data: {
           input: { list, linkedinPayload: payload.payload },
           type: QueueJobType.sales_nav_extraction,
           userId: ctx.session.user.id,
-          logs: [`Extraction add to queue at ${getServerUTCDate()}`],
+          logs: [`Added to queue at ${getServerUTCDate()}`],
         }
       })
+      return queue
     }),
   cancelSalesNavExtraction: protectedProcedure
     .input(z.object({ queueId: z.string() }))
@@ -86,7 +86,7 @@ export const extractionRouter = {
         data: {
           status: QueueJobStatus.cancelled,
           logs: {
-            push: `Extraction cancelled at ${getServerUTCDate()}`
+            push: `Cancelled at ${getServerUTCDate()}`
           }
         }
       })

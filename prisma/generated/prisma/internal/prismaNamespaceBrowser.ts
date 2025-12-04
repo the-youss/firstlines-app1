@@ -172,10 +172,11 @@ export type LeadScalarFieldEnum = (typeof LeadScalarFieldEnum)[keyof typeof Lead
 
 export const CompanyScalarFieldEnum = {
   id: 'id',
-  companyName: 'companyName',
-  companyWebsite: 'companyWebsite',
-  companySize: 'companySize',
-  companyLinkedinUrl: 'companyLinkedinUrl',
+  name: 'name',
+  domain: 'domain',
+  size: 'size',
+  linkedinUrl: 'linkedinUrl',
+  industry: 'industry',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

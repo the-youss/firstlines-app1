@@ -26,30 +26,33 @@ export type AggregateCompany = {
 
 export type CompanyMinAggregateOutputType = {
   id: string | null
-  companyName: string | null
-  companyWebsite: string | null
-  companySize: string | null
-  companyLinkedinUrl: string | null
+  name: string | null
+  domain: string | null
+  size: string | null
+  linkedinUrl: string | null
+  industry: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
 export type CompanyMaxAggregateOutputType = {
   id: string | null
-  companyName: string | null
-  companyWebsite: string | null
-  companySize: string | null
-  companyLinkedinUrl: string | null
+  name: string | null
+  domain: string | null
+  size: string | null
+  linkedinUrl: string | null
+  industry: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
 
 export type CompanyCountAggregateOutputType = {
   id: number
-  companyName: number
-  companyWebsite: number
-  companySize: number
-  companyLinkedinUrl: number
+  name: number
+  domain: number
+  size: number
+  linkedinUrl: number
+  industry: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -58,30 +61,33 @@ export type CompanyCountAggregateOutputType = {
 
 export type CompanyMinAggregateInputType = {
   id?: true
-  companyName?: true
-  companyWebsite?: true
-  companySize?: true
-  companyLinkedinUrl?: true
+  name?: true
+  domain?: true
+  size?: true
+  linkedinUrl?: true
+  industry?: true
   createdAt?: true
   updatedAt?: true
 }
 
 export type CompanyMaxAggregateInputType = {
   id?: true
-  companyName?: true
-  companyWebsite?: true
-  companySize?: true
-  companyLinkedinUrl?: true
+  name?: true
+  domain?: true
+  size?: true
+  linkedinUrl?: true
+  industry?: true
   createdAt?: true
   updatedAt?: true
 }
 
 export type CompanyCountAggregateInputType = {
   id?: true
-  companyName?: true
-  companyWebsite?: true
-  companySize?: true
-  companyLinkedinUrl?: true
+  name?: true
+  domain?: true
+  size?: true
+  linkedinUrl?: true
+  industry?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -161,10 +167,11 @@ export type CompanyGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 
 export type CompanyGroupByOutputType = {
   id: string
-  companyName: string | null
-  companyWebsite: string | null
-  companySize: string | null
-  companyLinkedinUrl: string | null
+  name: string
+  domain: string
+  size: string | null
+  linkedinUrl: string | null
+  industry: string | null
   createdAt: Date
   updatedAt: Date
   _count: CompanyCountAggregateOutputType | null
@@ -192,10 +199,11 @@ export type CompanyWhereInput = {
   OR?: Prisma.CompanyWhereInput[]
   NOT?: Prisma.CompanyWhereInput | Prisma.CompanyWhereInput[]
   id?: Prisma.StringFilter<"Company"> | string
-  companyName?: Prisma.StringNullableFilter<"Company"> | string | null
-  companyWebsite?: Prisma.StringNullableFilter<"Company"> | string | null
-  companySize?: Prisma.StringNullableFilter<"Company"> | string | null
-  companyLinkedinUrl?: Prisma.StringNullableFilter<"Company"> | string | null
+  name?: Prisma.StringFilter<"Company"> | string
+  domain?: Prisma.StringFilter<"Company"> | string
+  size?: Prisma.StringNullableFilter<"Company"> | string | null
+  linkedinUrl?: Prisma.StringNullableFilter<"Company"> | string | null
+  industry?: Prisma.StringNullableFilter<"Company"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Company"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Company"> | Date | string
   leads?: Prisma.LeadListRelationFilter
@@ -203,10 +211,11 @@ export type CompanyWhereInput = {
 
 export type CompanyOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  companyName?: Prisma.SortOrderInput | Prisma.SortOrder
-  companyWebsite?: Prisma.SortOrderInput | Prisma.SortOrder
-  companySize?: Prisma.SortOrderInput | Prisma.SortOrder
-  companyLinkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  name?: Prisma.SortOrder
+  domain?: Prisma.SortOrder
+  size?: Prisma.SortOrderInput | Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  industry?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   leads?: Prisma.LeadOrderByRelationAggregateInput
@@ -214,24 +223,26 @@ export type CompanyOrderByWithRelationInput = {
 
 export type CompanyWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  domain?: string
   AND?: Prisma.CompanyWhereInput | Prisma.CompanyWhereInput[]
   OR?: Prisma.CompanyWhereInput[]
   NOT?: Prisma.CompanyWhereInput | Prisma.CompanyWhereInput[]
-  companyName?: Prisma.StringNullableFilter<"Company"> | string | null
-  companyWebsite?: Prisma.StringNullableFilter<"Company"> | string | null
-  companySize?: Prisma.StringNullableFilter<"Company"> | string | null
-  companyLinkedinUrl?: Prisma.StringNullableFilter<"Company"> | string | null
+  name?: Prisma.StringFilter<"Company"> | string
+  size?: Prisma.StringNullableFilter<"Company"> | string | null
+  linkedinUrl?: Prisma.StringNullableFilter<"Company"> | string | null
+  industry?: Prisma.StringNullableFilter<"Company"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Company"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Company"> | Date | string
   leads?: Prisma.LeadListRelationFilter
-}, "id">
+}, "id" | "domain">
 
 export type CompanyOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  companyName?: Prisma.SortOrderInput | Prisma.SortOrder
-  companyWebsite?: Prisma.SortOrderInput | Prisma.SortOrder
-  companySize?: Prisma.SortOrderInput | Prisma.SortOrder
-  companyLinkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  name?: Prisma.SortOrder
+  domain?: Prisma.SortOrder
+  size?: Prisma.SortOrderInput | Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  industry?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.CompanyCountOrderByAggregateInput
@@ -244,20 +255,22 @@ export type CompanyScalarWhereWithAggregatesInput = {
   OR?: Prisma.CompanyScalarWhereWithAggregatesInput[]
   NOT?: Prisma.CompanyScalarWhereWithAggregatesInput | Prisma.CompanyScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Company"> | string
-  companyName?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
-  companyWebsite?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
-  companySize?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
-  companyLinkedinUrl?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
+  name?: Prisma.StringWithAggregatesFilter<"Company"> | string
+  domain?: Prisma.StringWithAggregatesFilter<"Company"> | string
+  size?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
+  linkedinUrl?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
+  industry?: Prisma.StringNullableWithAggregatesFilter<"Company"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Company"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Company"> | Date | string
 }
 
 export type CompanyCreateInput = {
   id?: string
-  companyName?: string | null
-  companyWebsite?: string | null
-  companySize?: string | null
-  companyLinkedinUrl?: string | null
+  name: string
+  domain: string
+  size?: string | null
+  linkedinUrl?: string | null
+  industry?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   leads?: Prisma.LeadCreateNestedManyWithoutCompanyInput
@@ -265,10 +278,11 @@ export type CompanyCreateInput = {
 
 export type CompanyUncheckedCreateInput = {
   id?: string
-  companyName?: string | null
-  companyWebsite?: string | null
-  companySize?: string | null
-  companyLinkedinUrl?: string | null
+  name: string
+  domain: string
+  size?: string | null
+  linkedinUrl?: string | null
+  industry?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   leads?: Prisma.LeadUncheckedCreateNestedManyWithoutCompanyInput
@@ -276,10 +290,11 @@ export type CompanyUncheckedCreateInput = {
 
 export type CompanyUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  companyName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyWebsite?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companySize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyLinkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  domain?: Prisma.StringFieldUpdateOperationsInput | string
+  size?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   leads?: Prisma.LeadUpdateManyWithoutCompanyNestedInput
@@ -287,10 +302,11 @@ export type CompanyUpdateInput = {
 
 export type CompanyUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  companyName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyWebsite?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companySize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyLinkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  domain?: Prisma.StringFieldUpdateOperationsInput | string
+  size?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   leads?: Prisma.LeadUncheckedUpdateManyWithoutCompanyNestedInput
@@ -298,30 +314,33 @@ export type CompanyUncheckedUpdateInput = {
 
 export type CompanyCreateManyInput = {
   id?: string
-  companyName?: string | null
-  companyWebsite?: string | null
-  companySize?: string | null
-  companyLinkedinUrl?: string | null
+  name: string
+  domain: string
+  size?: string | null
+  linkedinUrl?: string | null
+  industry?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
 export type CompanyUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  companyName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyWebsite?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companySize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyLinkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  domain?: Prisma.StringFieldUpdateOperationsInput | string
+  size?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CompanyUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  companyName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyWebsite?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companySize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyLinkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  domain?: Prisma.StringFieldUpdateOperationsInput | string
+  size?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -333,30 +352,33 @@ export type CompanyNullableScalarRelationFilter = {
 
 export type CompanyCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  companyName?: Prisma.SortOrder
-  companyWebsite?: Prisma.SortOrder
-  companySize?: Prisma.SortOrder
-  companyLinkedinUrl?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  domain?: Prisma.SortOrder
+  size?: Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrder
+  industry?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
 export type CompanyMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  companyName?: Prisma.SortOrder
-  companyWebsite?: Prisma.SortOrder
-  companySize?: Prisma.SortOrder
-  companyLinkedinUrl?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  domain?: Prisma.SortOrder
+  size?: Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrder
+  industry?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
 export type CompanyMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  companyName?: Prisma.SortOrder
-  companyWebsite?: Prisma.SortOrder
-  companySize?: Prisma.SortOrder
-  companyLinkedinUrl?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  domain?: Prisma.SortOrder
+  size?: Prisma.SortOrder
+  linkedinUrl?: Prisma.SortOrder
+  industry?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -379,20 +401,22 @@ export type CompanyUpdateOneWithoutLeadsNestedInput = {
 
 export type CompanyCreateWithoutLeadsInput = {
   id?: string
-  companyName?: string | null
-  companyWebsite?: string | null
-  companySize?: string | null
-  companyLinkedinUrl?: string | null
+  name: string
+  domain: string
+  size?: string | null
+  linkedinUrl?: string | null
+  industry?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
 export type CompanyUncheckedCreateWithoutLeadsInput = {
   id?: string
-  companyName?: string | null
-  companyWebsite?: string | null
-  companySize?: string | null
-  companyLinkedinUrl?: string | null
+  name: string
+  domain: string
+  size?: string | null
+  linkedinUrl?: string | null
+  industry?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -415,20 +439,22 @@ export type CompanyUpdateToOneWithWhereWithoutLeadsInput = {
 
 export type CompanyUpdateWithoutLeadsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  companyName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyWebsite?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companySize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyLinkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  domain?: Prisma.StringFieldUpdateOperationsInput | string
+  size?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CompanyUncheckedUpdateWithoutLeadsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  companyName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyWebsite?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companySize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  companyLinkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  domain?: Prisma.StringFieldUpdateOperationsInput | string
+  size?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -466,10 +492,11 @@ export type CompanyCountOutputTypeCountLeadsArgs<ExtArgs extends runtime.Types.E
 
 export type CompanySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  companyName?: boolean
-  companyWebsite?: boolean
-  companySize?: boolean
-  companyLinkedinUrl?: boolean
+  name?: boolean
+  domain?: boolean
+  size?: boolean
+  linkedinUrl?: boolean
+  industry?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   leads?: boolean | Prisma.Company$leadsArgs<ExtArgs>
@@ -478,35 +505,38 @@ export type CompanySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
 
 export type CompanySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  companyName?: boolean
-  companyWebsite?: boolean
-  companySize?: boolean
-  companyLinkedinUrl?: boolean
+  name?: boolean
+  domain?: boolean
+  size?: boolean
+  linkedinUrl?: boolean
+  industry?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["company"]>
 
 export type CompanySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  companyName?: boolean
-  companyWebsite?: boolean
-  companySize?: boolean
-  companyLinkedinUrl?: boolean
+  name?: boolean
+  domain?: boolean
+  size?: boolean
+  linkedinUrl?: boolean
+  industry?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["company"]>
 
 export type CompanySelectScalar = {
   id?: boolean
-  companyName?: boolean
-  companyWebsite?: boolean
-  companySize?: boolean
-  companyLinkedinUrl?: boolean
+  name?: boolean
+  domain?: boolean
+  size?: boolean
+  linkedinUrl?: boolean
+  industry?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type CompanyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "companyName" | "companyWebsite" | "companySize" | "companyLinkedinUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["company"]>
+export type CompanyOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "domain" | "size" | "linkedinUrl" | "industry" | "createdAt" | "updatedAt", ExtArgs["result"]["company"]>
 export type CompanyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   leads?: boolean | Prisma.Company$leadsArgs<ExtArgs>
   _count?: boolean | Prisma.CompanyCountOutputTypeDefaultArgs<ExtArgs>
@@ -521,10 +551,11 @@ export type $CompanyPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    companyName: string | null
-    companyWebsite: string | null
-    companySize: string | null
-    companyLinkedinUrl: string | null
+    name: string
+    domain: string
+    size: string | null
+    linkedinUrl: string | null
+    industry: string | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["company"]>
@@ -952,10 +983,11 @@ export interface Prisma__CompanyClient<T, Null = never, ExtArgs extends runtime.
  */
 export interface CompanyFieldRefs {
   readonly id: Prisma.FieldRef<"Company", 'String'>
-  readonly companyName: Prisma.FieldRef<"Company", 'String'>
-  readonly companyWebsite: Prisma.FieldRef<"Company", 'String'>
-  readonly companySize: Prisma.FieldRef<"Company", 'String'>
-  readonly companyLinkedinUrl: Prisma.FieldRef<"Company", 'String'>
+  readonly name: Prisma.FieldRef<"Company", 'String'>
+  readonly domain: Prisma.FieldRef<"Company", 'String'>
+  readonly size: Prisma.FieldRef<"Company", 'String'>
+  readonly linkedinUrl: Prisma.FieldRef<"Company", 'String'>
+  readonly industry: Prisma.FieldRef<"Company", 'String'>
   readonly createdAt: Prisma.FieldRef<"Company", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Company", 'DateTime'>
 }
