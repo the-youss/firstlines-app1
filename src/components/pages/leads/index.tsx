@@ -42,12 +42,14 @@ interface Lead {
 
 export const Leads = () => {
   const trpc = useTRPC();
+  const [query, setQuery] = useState('')
+  const [pagination, setPagination] = useState({ page: 1, limit: 50 })
   const searchParams = useSearchParams()
   const { data, isLoading } = useQuery(
     trpc.list.leads.queryOptions({
-      q: searchParams.get('q') || '',
-      page: Number(searchParams.get('page') === '0' ? '1' : searchParams.get('page') || '1'),
-      limit: Number(searchParams.get('limit') || '50'),
+      q: query || '',
+      page: pagination.page === 0 ? 1 : pagination.page || 1,
+      limit: pagination.limit || 50,
     })
   )
 
@@ -68,7 +70,7 @@ export const Leads = () => {
         </ImportLeadsDialog>
       </div>
 
-      <LeadsTable count={data?.count || 0} rows={data?.rows || []} isLoading={isLoading} />
+      <LeadsTable count={data?.count || 0} rows={data?.rows || []} isLoading={isLoading} setQuery={setQuery} setPagination={setPagination} />
     </div>
   );
 };

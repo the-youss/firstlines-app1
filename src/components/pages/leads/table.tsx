@@ -33,12 +33,15 @@ export interface Lead {
   linkedinUrl: string;
 }
 
-
-
 type APIResponse = RouterOutputs['list']['leads']
 export type Rows = APIResponse['rows'][number]
-type LeadsTableProps = APIResponse & { isLoading: boolean }
-export function LeadsTable({ rows, count, isLoading }: LeadsTableProps) {
+type LeadsTableProps = APIResponse & {
+  isLoading: boolean,
+  setQuery: (query: string) => void
+  setPagination: (pagination: { page: number, limit: number }) => void
+}
+
+export function LeadsTable({ rows, count, isLoading, setQuery, setPagination }: LeadsTableProps) {
   const columns = useLeadsColumn()
   const [onRowSelectionChange, setOnRowSelectionChange] = useState<number>(0)
   const ref = useRef<{ table: MRT_TableInstance<Rows> }>(null)
@@ -50,10 +53,8 @@ export function LeadsTable({ rows, count, isLoading }: LeadsTableProps) {
   const _pagination = useCallback(() => {
     const s = new URLSearchParams(searchParams)
     const pagination = ref.current?.table.getState().pagination;
-    s.set('page', pagination?.pageIndex?.toString() || '1')
-    s.set('limit', pagination?.pageSize?.toString() || '20')
-    router.push(`${pathname}?${s.toString()}`)
-  }, [searchParams, router, pathname])
+    setPagination({ page: pagination?.pageIndex || 1, limit: pagination?.pageSize || 20 })
+  }, [searchParams, router, pathname, setPagination])
 
   return (
     <DataTable<Rows>
@@ -73,13 +74,8 @@ export function LeadsTable({ rows, count, isLoading }: LeadsTableProps) {
         setTimeout(_pagination, 0)
       }}
       onGlobalFilterChange={(value) => {
-        const s = new URLSearchParams(searchParams)
-        if (!value) {
-          s.delete('q')
-        } else {
-          s.set('q', value)
-        }
-        router.push(`${pathname}?${s.toString()}`)
+        setQuery(value)
+        setPagination({ page: 1, limit: 50 })
       }}
       columns={columns} />
   )
