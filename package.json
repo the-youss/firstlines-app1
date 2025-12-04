@@ -16,7 +16,8 @@
     "build:worker": "tsup --config _worker/tsup.config.ts",
     "start:worker": "node _worker/dist/index.js",
     "build:webnworker": "pnpm build:worker && pnpm build",
-    "dev:worker": "tsx watch _worker/index.ts"
+    "dev:worker": "tsx watch _worker/index.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
