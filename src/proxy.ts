@@ -7,8 +7,9 @@ export async function proxy(request: NextRequest) {
 
   let session: AuthClient | null = null;
   try {
+    const cookie = request.cookies.toString()
     session = (await authClient.getSession({
-      fetchOptions: { headers: request.headers },
+      fetchOptions: { headers: { cookie }, },
     })).data;
   } catch (error: any) {
     console.log('[proxy] error', error.message)
