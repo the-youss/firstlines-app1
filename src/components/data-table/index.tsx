@@ -38,8 +38,8 @@ const RenderTopToolbar = ({ table, toolbar }: { table: MRT_TableInstance<any>, t
         {!isFullScreen && (
           <Fragment>
             {/* <DataTableViewOptions table={table} /> */}
-            <DataTableFilterList table={table} debounceMs={300} />
-            <DataTableSortList table={table} />
+            {/* <DataTableFilterList table={table} debounceMs={300} />
+            <DataTableSortList table={table} /> */}
           </Fragment>
         )}
         <InputGroup>
