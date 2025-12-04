@@ -45,16 +45,12 @@ export function LeadsTable({ rows, count, isLoading, setQuery, setPagination }: 
   const columns = useLeadsColumn()
   const [onRowSelectionChange, setOnRowSelectionChange] = useState<number>(0)
   const ref = useRef<{ table: MRT_TableInstance<Rows> }>(null)
-  const searchParams = useSearchParams()
-  const pathname = usePathname()
-  const router = useRouter()
 
 
   const _pagination = useCallback(() => {
-    const s = new URLSearchParams(searchParams)
     const pagination = ref.current?.table.getState().pagination;
     setPagination({ page: pagination?.pageIndex || 1, limit: pagination?.pageSize || 20 })
-  }, [searchParams, router, pathname, setPagination])
+  }, [setPagination])
 
   return (
     <DataTable<Rows>
