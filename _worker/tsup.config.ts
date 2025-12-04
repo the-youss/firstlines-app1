@@ -7,8 +7,9 @@ export default defineConfig({
   clean: true,
   outDir: "_worker/dist",
   format: ['cjs'],
-  external: ["pg",'node-fetch','lodash'],
+  external: ["@prisma/client",'lodash'],
   skipNodeModulesBundle: true,
+  target:"esnext",
   minify:true,
   treeshake:true
 });

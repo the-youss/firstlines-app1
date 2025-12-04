@@ -15,6 +15,7 @@
     "db:generate": "prisma generate",
     "build:worker": "tsup --config _worker/tsup.config.ts",
     "start:worker": "node _worker/dist/index.js",
+    "build:webnworker": "pnpm build:worker && pnpm build",
     "dev:worker": "tsx watch _worker/index.ts"
   },
   "dependencies": {
