@@ -29,12 +29,14 @@ export const extensionRouter = {
           userId: ctx.session.user.id,
           cookies: input.cookies,
           headers: input.headers,
-          status
+          status,
+          lastCheckedAt: new Date(),
         },
         update: {
           cookies: input.cookies,
           headers: input.headers,
-          status
+          status,
+          lastCheckedAt: new Date(),
         },
         where: {
           userId: ctx.session.user.id,

@@ -1,3 +1,5 @@
+import { LINKEDIN_SALES_NAV_HOME_PAGE } from "@/lib/utils";
+import { createQueryClient } from "@/trpc/query-client";
 import { useTRPC } from "@/trpc/react";
 import { useQuery } from "@tanstack/react-query";
 import { Linkedin } from "lucide-react";
@@ -5,14 +7,15 @@ import React, { useCallback } from "react";
 import { Button } from "./ui/button";
 import { Spinner } from "./ui/spinner";
 
+
 export function LinkedInSessionStatus({ children }: { children?: (status: boolean) => React.ReactNode }) {
   const trpc = useTRPC()
-  const { data: status, isPending } = useQuery(trpc.auth.checkLinkedinSessionStatus.queryOptions())
+  const { data: status, isPending } = useQuery(trpc.auth.checkLinkedinSessionStatus.queryOptions(), createQueryClient({ refetchOnWindowFocus: true }))
   const isLinkedInConnected = status === 'active';
 
   const _onClick = useCallback(() => {
     if (isLinkedInConnected === false) {
-      window.open(`https://www.linkedin.com/sales/login`, '_blank')
+      window.open(`${LINKEDIN_SALES_NAV_HOME_PAGE}?from=fl_lk_status_check`, '_blank')
     }
   }, [isLinkedInConnected])
 

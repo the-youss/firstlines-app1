@@ -1,73 +1,1123 @@
 {
-  "plainId": 170757011,
-  "miniProfile": {
-    "memorialized": false,
-    "firstName": "Youssef",
-    "lastName": "El Kaddioui",
-    "dashEntityUrn": "urn:li:fsd_profile:ACoAAAoti5MBjGkbVEGPZ5pEroudHA9wDwISDmg",
-    "occupation": "Founder & CEO @ Scalelist.com | AI SaaS | Forbes 30 under 30 | ex-Googler",
-    "objectUrn": "urn:li:member:170757011",
-    "entityUrn": "urn:li:fs_miniProfile:ACoAAAoti5MBjGkbVEGPZ5pEroudHA9wDwISDmg",
-    "backgroundImage": {
-      "com.linkedin.common.VectorImage": {
-        "artifacts": [
-          {
-            "width": 1400,
-            "fileIdentifyingUrlPathSegment": "350_1400/B4DZpXBZtGH0Ag-/0/1762396577438?e=1766620800&v=beta&t=GyDvRWqeN3iUV6438uKq55ks8crrw_RtM87s6l4QCc0",
-            "expiresAt": 1766620800000,
-            "height": 350
-          },
-          {
-            "width": 800,
-            "fileIdentifyingUrlPathSegment": "200_800/B4DZpXBZtGH0Ac-/0/1762396577438?e=1766620800&v=beta&t=mOewFc8XjY09EH9TKGQIgo-vMoDkRaV69J5_5mWkTyk",
-            "expiresAt": 1766620800000,
-            "height": 200
-          }
-        ],
-        "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQHWO89HJbhNsg/profile-displaybackgroundimage-shrink_"
-      }
-    },
-    "publicIdentifier": "youssefelkaddioui",
-    "picture": {
-      "com.linkedin.common.VectorImage": {
-        "artifacts": [
-          {
-            "width": 100,
-            "fileIdentifyingUrlPathSegment": "scale_100_100/B4DZlhXOj.HsAc-/0/1758275103819?e=1766620800&v=beta&t=UfPt0nLsaNSJNCCyfCe33iqXgvBxmL6hqmmjnkqSuig",
-            "expiresAt": 1766620800000,
-            "height": 100
-          },
-          {
-            "width": 200,
-            "fileIdentifyingUrlPathSegment": "scale_200_200/B4DZlhXOj.HsAY-/0/1758275103819?e=1766620800&v=beta&t=GObxkh_L2TQtebcG1JSmV4xNlLLZ4iN7lk3182ZS9Cc",
-            "expiresAt": 1766620800000,
-            "height": 200
-          },
-          {
-            "width": 800,
-            "fileIdentifyingUrlPathSegment": "crop_800_800/B4DZlhXOj.HsAI-/0/1758275103731?e=1766620800&v=beta&t=rPBt_02OVo0Tz0NAGDOF8RH854wZuMyEDwdhHeuZLXU",
-            "expiresAt": 1766620800000,
-            "height": 800
-          },
-          {
-            "width": 400,
-            "fileIdentifyingUrlPathSegment": "scale_400_400/B4DZlhXOj.HsAg-/0/1758275103819?e=1766620800&v=beta&t=EtRhCWDYnSheS-J8_Hb0h7jhAP4IAXSO73qJLuJaBIg",
-            "expiresAt": 1766620800000,
-            "height": 400
-          }
-        ],
-        "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQHxO-SFyJHPow/profile-displayphoto-"
-      }
-    },
-    "trackingId": "o9VwKL7DQ6qHMwhtdVg3Kg=="
-  },
-  "publicContactInfo": {
-    "twitterHandles": [
+  "metadata": {
+    "suggestedFilters": [],
+    "totalDisplayCount": "1K+",
+    "recentSearchId": 4085588633,
+    "filters": [
       {
-        "name": "_youss",
-        "credentialId": "urn:li:member:170757011;340073266"
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "RevGenius",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B4EZgaAPKYGUAY-/0/1752782926854/revgenius_logo?e=1766620800&v=beta&t=wbDyLierOSys-ILJaYa3g0oq5CSidT5nKhjmC79YPIQ",
+                    "height": 400
+                  },
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B4EZgaAPKYGUAI-/0/1752782926854/revgenius_logo?e=1766620800&v=beta&t=3jrk9YPPUYl24iNLl-15SJBjxCNmAN_jSoNwXOdBiC0",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B4EZgaAPKYGUAQ-/0/1752782926854/revgenius_logo?e=1766620800&v=beta&t=VOtJf9hluIwBpnGdZ022A5Emn6gAARIobBSvnXvVL38",
+                    "height": 100
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQH5Q2_JOW7BFw/company-logo_"
+              },
+              "id": "urn:li:organization:11701026"
+            },
+            {
+              "displayValue": "Upwork",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1727104517379/upwork_logo?e=1766620800&v=beta&t=SpNhm4CBYRTLI02ECwXSaxJvxvkEghbFYOOVyWZp570",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1727104517379/upwork_logo?e=1766620800&v=beta&t=bH9vZtiavgKJNFVA88CDmsJfi98xZhfjrdOBVRGGoqA",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1727104517379/upwork_logo?e=1766620800&v=beta&t=YAq9WegFg34sbYIBQYSfrIUDHoUy_KGAV-XQiv332BE",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D560BAQFHVb6ZSCipCw/company-logo_"
+              },
+              "id": "urn:li:organization:4827017"
+            },
+            {
+              "displayValue": "Team for the Planet",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1630586467289/time_for_the_planet_logo?e=1766620800&v=beta&t=4Fmc7ZckeCnODOzunCjtiAlQ1fLzDrCCPZMqMUd-Fog",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1630586467289/time_for_the_planet_logo?e=1766620800&v=beta&t=YIeeCoTrbtQEmZt3SayDip0yDWd_uZ12UAADowxWJsw",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1630586467289/time_for_the_planet_logo?e=1766620800&v=beta&t=KgkTJmRu3zrhRBBABBJlSfYl0cX0rLtzuud2hoxlSSI",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQEa1RVp4n1JjA/company-logo_"
+              },
+              "id": "urn:li:organization:19100412"
+            },
+            {
+              "displayValue": "Hard Skill Exchange",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B4DZpkEWhoHsAQ-/0/1762615455293/hard_skill_exchange_logo?e=1766620800&v=beta&t=2k2GVTrmZjuoO4Pbbt20g4s0GLv9WVz4Fc-8wMuAzx4",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B4DZpkEWhoHsAY-/0/1762615455293/hard_skill_exchange_logo?e=1766620800&v=beta&t=uSAPs02Ga8bWWhRtHrVfU12IvMjfL89SDU7vory9ofI",
+                    "height": 400
+                  },
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B4DZpkEWhoHsAI-/0/1762615455293/hard_skill_exchange_logo?e=1766620800&v=beta&t=8hr9vTieU4sZNy5kTsPacO71A9lwvNhA8ZTgJpYc4q4",
+                    "height": 200
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHsPFkAETT5ig/company-logo_"
+              },
+              "id": "urn:li:organization:88691659"
+            },
+            {
+              "displayValue": "Web Summit",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1726488385362/web_summit_logo?e=1766620800&v=beta&t=kU_ruaZsYtG0YKSapTC8m4bKEF03NVgUiTNMmyzTIms",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1726488385362/web_summit_logo?e=1766620800&v=beta&t=cnHSU_ldRM4f6s3ONDLTTCuk2_4VB-mMENNw7ffqVec",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1726488385362/web_summit_logo?e=1766620800&v=beta&t=KjakIb6qaBOM5eFX9Csk8DZlYSdsRD_zDbEN6kuWSTE",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGEwmvhu0iN1A/company-logo_"
+              },
+              "id": "urn:li:organization:730631"
+            },
+            {
+              "displayValue": "Scalelist",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1678787116591/scalelist_logo?e=1766620800&v=beta&t=7mLDFQNvycn3vKVw_h34_yzzUuxc7xwf2ZeRqplK-WE",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1678787116591/scalelist_logo?e=1766620800&v=beta&t=GCi_NLpegtUWzTkKq39I39Y3LpUL9vIpsEEI2SkF6Qk",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1678787116591/scalelist_logo?e=1766620800&v=beta&t=NHuv8QieJbzBVWEhvULjGd8IoPsWXdM8KAls725_LjY",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHMByVIXABtDw/company-logo_"
+              },
+              "id": "urn:li:organization:93089148"
+            },
+            {
+              "displayValue": "Exit Five",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1715028743853/exitfive_logo?e=1766620800&v=beta&t=sej0GNqFxZBo-e_g-gAw4lJ26At6WMVUDZRpVrebL3Q",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1715028743853/exitfive_logo?e=1766620800&v=beta&t=lxsDhAUlnj9hr3EzjWIUd4lvlRXOheT5voGogGqgXvI",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1715028743853/exitfive_logo?e=1766620800&v=beta&t=LzZgkExRK_wwkMCsFFDams4ITcOLGyBmOUNcKK3jLSQ",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D560BAQEAa0CL6wLIrg/company-logo_"
+              },
+              "id": "urn:li:organization:68569288"
+            },
+            {
+              "displayValue": "Airwallex",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1630593999399/airwallex_logo?e=1766620800&v=beta&t=lPlrRpzCGGXCb4cxe0lPXz930Rj5zxRET0GVJoKhLto",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1630593999400/airwallex_logo?e=1766620800&v=beta&t=nDjCyg2HoZcdnYrysm0wDxkuzoV2FG8goxCDQftxPoU",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1630593999400/airwallex_logo?e=1766620800&v=beta&t=sNXkWYS4o2uT1nR6tKJMWZPbq3GrkQRXhx5V-LSDrxQ",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQE0x1xIVWaQgw/company-logo_"
+              },
+              "id": "urn:li:organization:7572649"
+            },
+            {
+              "displayValue": "Fiverr",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B4DZieWv6LHYAM-/0/1755003421024/fiverr_com_logo?e=1766620800&v=beta&t=yraO5rZIai9QUDbBbwzY9LohjWDD838ORubNN7NZ8vQ",
+                    "height": 200
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B4DZieWv6LHYAc-/0/1755003421024/fiverr_com_logo?e=1766620800&v=beta&t=OkhIQfbbE74HRN_C0rti21rQGisyfMezD5uf1Nrebew",
+                    "height": 400
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B4DZieWv6LHYAU-/0/1755003421024/fiverr_com_logo?e=1766620800&v=beta&t=yYKJUB7zNlvK30OeV1Zh3yMVRBePqQ2fCtolWbyhndE",
+                    "height": 100
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFP29TmS5PQeQ/company-logo_"
+              },
+              "id": "urn:li:organization:861427"
+            },
+            {
+              "displayValue": "Sales Innovation",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B56Zeqk6rFHoAQ-/0/1750913494820/salesinnovationio_logo?e=1766620800&v=beta&t=jDw_B4QJ_WKzqnxYmEqxhll2z6jZi_FCWL0u2sf2rRk",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B56Zeqk6rFHoAY-/0/1750913494820/salesinnovationio_logo?e=1766620800&v=beta&t=P3-gWG1aHgvilcGCYOtl-C4YXkEum15_Vf5W7Rqmqfo",
+                    "height": 400
+                  },
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B56Zeqk6rFHoAI-/0/1750913494820/salesinnovationio_logo?e=1766620800&v=beta&t=CYv06KAL3_jxlHjIVBO0_dBSgmoSlYej28nn8dP1xqM",
+                    "height": 200
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D560BAQHfkjB_zEZmjg/company-logo_"
+              },
+              "id": "urn:li:organization:91329294"
+            }
+          ],
+          "type": "CURRENT_COMPANY"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "HSBC",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4E0BAQGF7uhTJxFBvQ/img-crop_100/img-crop_100/0/1717419425342?e=1766620800&v=beta&t=7LJuamlCtugebsM79mcQDjMIQOuz5UOLl853KfM6wFo",
+                    "height": 100
+                  }
+                ]
+              },
+              "displayCount": "20",
+              "id": "urn:li:organization:1241"
+            },
+            {
+              "displayValue": "EY",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1630570672166/ernstandyoung_logo?e=1766620800&v=beta&t=id03OcF_rEb95P1v3CleDjsE6HBXqzMwe3-D8g2xiv8",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1630570672166/ernstandyoung_logo?e=1766620800&v=beta&t=bojNFVEzKbE11uS_eE044H4tUcUvA2gTFF6z7aGeQWY",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1630570672166/ernstandyoung_logo?e=1766620800&v=beta&t=lMMPAyGQXdBCj_HY4gywAENESDXSwn8UKrm-JZmvh9s",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/C510BAQGpRhkpxp5A9A/company-logo_"
+              },
+              "displayCount": "19",
+              "id": "urn:li:organization:1073"
+            },
+            {
+              "displayValue": "Google",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1766620800&v=beta&t=z98b-Rmxi0L_V1KC0fODQFWN7JjdvN7jwGYm8DfU8tE",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B4EZmhegXHGcAc-/0/1759350753990/google_logo?e=1766620800&v=beta&t=1Ha9l9ZmEku3fLH6kXZXKfOAfDAZ970eSaEfIoTCHzM",
+                    "height": 400
+                  },
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B4EZmhegXHGcAM-/0/1759350753990/google_logo?e=1766620800&v=beta&t=HlGNE7zfTA_4KZgQP7vvYZG9izScjLWoTC0lVF-sqUA",
+                    "height": 200
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_"
+              },
+              "displayCount": "17",
+              "id": "urn:li:organization:1441"
+            },
+            {
+              "displayValue": "The Scalelab (acquired by Reachly.co)",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1630655814048/the_scalelab_logo?e=1766620800&v=beta&t=tZbqv-cOQJDlwq5zQqbGfR0FUIL1ur3sn7WMz8v9OSs",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1630655814048/the_scalelab_logo?e=1766620800&v=beta&t=fuhyfhjt48SIdO4zWDtEt8xjXDWDn4c17ypAB2silF8",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1630655814048/the_scalelab_logo?e=1766620800&v=beta&t=sk4jxDKNolf8Rb1oKIlghrDGMe2xStVZ4aiee3bQ4HU",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQGSe3-8ReZCRg/company-logo_"
+              },
+              "displayCount": "16",
+              "id": "urn:li:organization:28687528"
+            },
+            {
+              "displayValue": "Accenture",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B4DZfqEQWkHAAQ-/0/1751978673981/accenture_logo?e=1766620800&v=beta&t=dClSABG7hIVu3cz7nR1iCb_InFQVJx1qyXC9CCm_6zk",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B4DZfqEQWkHAAY-/0/1751978673981/accenture_logo?e=1766620800&v=beta&t=goHAfoNPMZ5zsfgcm0F726ZjhORI5p6mRy2Im5F6mZM",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B4DZfqEQWkHAAg-/0/1751978673981/accenture_logo?e=1766620800&v=beta&t=YRKrCMp_L1eaaCdEFj2mgsoVegrKQWbszmyetXAUsO4",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEgtOEcxlXMog/company-logo_"
+              },
+              "displayCount": "15",
+              "id": "urn:li:organization:1033"
+            },
+            {
+              "displayValue": "Deloitte",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1662120928214/deloitte_logo?e=1766620800&v=beta&t=f9w1XneObS4TAZWHsphUd2u8sGOn_ecrvkSNK84KCWc",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1662120928214/deloitte_logo?e=1766620800&v=beta&t=ZvwTiW4775kJWhQzWfCcZPpIVymdVLh1GtgfclhvIGQ",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1662120928214/deloitte_logo?e=1766620800&v=beta&t=y9l58x0BW-iIjaHo6j8tAy7pJN3MGiiST4CcSriw-D8",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/C560BAQGNtpblgQpJoQ/company-logo_"
+              },
+              "displayCount": "14",
+              "id": "urn:li:organization:1038"
+            },
+            {
+              "displayValue": "Upwork",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1727104517379/upwork_logo?e=1766620800&v=beta&t=SpNhm4CBYRTLI02ECwXSaxJvxvkEghbFYOOVyWZp570",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1727104517379/upwork_logo?e=1766620800&v=beta&t=bH9vZtiavgKJNFVA88CDmsJfi98xZhfjrdOBVRGGoqA",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1727104517379/upwork_logo?e=1766620800&v=beta&t=YAq9WegFg34sbYIBQYSfrIUDHoUy_KGAV-XQiv332BE",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D560BAQFHVb6ZSCipCw/company-logo_"
+              },
+              "displayCount": "14",
+              "id": "urn:li:organization:4827017"
+            },
+            {
+              "displayValue": "Web Summit",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1726488385362/web_summit_logo?e=1766620800&v=beta&t=kU_ruaZsYtG0YKSapTC8m4bKEF03NVgUiTNMmyzTIms",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1726488385362/web_summit_logo?e=1766620800&v=beta&t=cnHSU_ldRM4f6s3ONDLTTCuk2_4VB-mMENNw7ffqVec",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1726488385362/web_summit_logo?e=1766620800&v=beta&t=KjakIb6qaBOM5eFX9Csk8DZlYSdsRD_zDbEN6kuWSTE",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGEwmvhu0iN1A/company-logo_"
+              },
+              "displayCount": "11",
+              "id": "urn:li:organization:730631"
+            },
+            {
+              "displayValue": "Fiverr",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/B4DZieWv6LHYAM-/0/1755003421024/fiverr_com_logo?e=1766620800&v=beta&t=yraO5rZIai9QUDbBbwzY9LohjWDD838ORubNN7NZ8vQ",
+                    "height": 200
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/B4DZieWv6LHYAc-/0/1755003421024/fiverr_com_logo?e=1766620800&v=beta&t=OkhIQfbbE74HRN_C0rti21rQGisyfMezD5uf1Nrebew",
+                    "height": 400
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/B4DZieWv6LHYAU-/0/1755003421024/fiverr_com_logo?e=1766620800&v=beta&t=yYKJUB7zNlvK30OeV1Zh3yMVRBePqQ2fCtolWbyhndE",
+                    "height": 100
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFP29TmS5PQeQ/company-logo_"
+              },
+              "displayCount": "6",
+              "id": "urn:li:organization:861427"
+            },
+            {
+              "displayValue": "Business France",
+              "parent": {
+                "id": "0"
+              },
+              "displayImage": {
+                "artifacts": [
+                  {
+                    "width": 200,
+                    "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1730737447937/business_france_logo?e=1766620800&v=beta&t=ZZe65GmP6jIzgXSQkyH-AbNZcUkkGZvlWNrNHG5UcDw",
+                    "height": 200
+                  },
+                  {
+                    "width": 100,
+                    "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1730737447937/business_france_logo?e=1766620800&v=beta&t=Z7V6EDXtIW0Rwwi2g-ca_ie_9Fky86ZFyuwhsjXKD-g",
+                    "height": 100
+                  },
+                  {
+                    "width": 400,
+                    "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1730737447937/business_france_logo?e=1766620800&v=beta&t=BNKmTJNX7SUyM4Q2fx4W0z2vbCRyPjaxPCoIdBy92KE",
+                    "height": 400
+                  }
+                ],
+                "rootUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHsQRVe9BJ4YQ/company-logo_"
+              },
+              "displayCount": "5",
+              "id": "urn:li:organization:9247782"
+            }
+          ],
+          "type": "PAST_COMPANY"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Entry Level",
+              "id": "110"
+            },
+            {
+              "displayValue": "Director",
+              "id": "220"
+            },
+            {
+              "displayValue": "In Training",
+              "id": "100"
+            },
+            {
+              "displayValue": "Experienced Manager",
+              "id": "210"
+            },
+            {
+              "displayValue": "Owner / Partner",
+              "id": "320"
+            },
+            {
+              "displayValue": "Entry Level Manager",
+              "id": "200"
+            },
+            {
+              "displayValue": "CXO",
+              "id": "310"
+            },
+            {
+              "displayValue": "Vice President",
+              "id": "300"
+            },
+            {
+              "displayValue": "Strategic",
+              "id": "130"
+            },
+            {
+              "displayValue": "Senior",
+              "id": "120"
+            }
+          ],
+          "type": "SENIORITY_LEVEL"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Self-employed",
+              "displayCount": "138",
+              "id": "A"
+            },
+            {
+              "displayValue": "1-10",
+              "displayCount": "358",
+              "id": "B"
+            },
+            {
+              "displayValue": "11-50",
+              "displayCount": "295",
+              "id": "C"
+            },
+            {
+              "displayValue": "51-200",
+              "displayCount": "189",
+              "id": "D"
+            },
+            {
+              "displayValue": "201-500",
+              "displayCount": "103",
+              "id": "E"
+            },
+            {
+              "displayValue": "501-1000",
+              "displayCount": "62",
+              "id": "F"
+            },
+            {
+              "displayValue": "1001-5000",
+              "displayCount": "114",
+              "id": "G"
+            },
+            {
+              "displayValue": "5001-10,000",
+              "displayCount": "50",
+              "id": "H"
+            },
+            {
+              "displayValue": "10,000+",
+              "displayCount": "141",
+              "id": "I"
+            }
+          ],
+          "type": "COMPANY_HEADCOUNT"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "IT Services and IT Consulting",
+              "displayCount": "151",
+              "id": "96"
+            },
+            {
+              "displayValue": "Technology, Information and Internet",
+              "displayCount": "140",
+              "id": "6"
+            },
+            {
+              "displayValue": "Business Consulting and Services",
+              "displayCount": "89",
+              "id": "11"
+            },
+            {
+              "displayValue": "Marketing Services",
+              "displayCount": "89",
+              "id": "1862"
+            },
+            {
+              "displayValue": "Software Development",
+              "displayCount": "79",
+              "id": "4"
+            },
+            {
+              "displayValue": "Advertising Services",
+              "displayCount": "76",
+              "id": "80"
+            },
+            {
+              "displayValue": "Financial Services",
+              "displayCount": "67",
+              "id": "43"
+            },
+            {
+              "displayValue": "Higher Education",
+              "displayCount": "15",
+              "id": "68"
+            },
+            {
+              "displayValue": "Technology, Information and Media",
+              "displayCount": "13",
+              "id": "1594"
+            },
+            {
+              "displayValue": "Investment Management",
+              "displayCount": "13",
+              "id": "46"
+            }
+          ],
+          "type": "INDUSTRY"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "NEOMA Business School",
+              "displayCount": "36",
+              "id": "3330082"
+            },
+            {
+              "displayValue": "National University of Singapore",
+              "displayCount": "18",
+              "id": "5524"
+            },
+            {
+              "displayValue": "The University of Hong Kong",
+              "displayCount": "17",
+              "id": "675376"
+            },
+            {
+              "displayValue": "The Chinese University of Hong Kong",
+              "displayCount": "11",
+              "id": "13045"
+            },
+            {
+              "displayValue": "Harvard Business School",
+              "displayCount": "11",
+              "id": "4867"
+            },
+            {
+              "displayValue": "The London School of Economics and Political Science (LSE)",
+              "displayCount": "10",
+              "id": "6544"
+            },
+            {
+              "displayValue": "Harvard Business School Online",
+              "displayCount": "10",
+              "id": "9220773"
+            },
+            {
+              "displayValue": "Le Wagon",
+              "displayCount": "7",
+              "id": "5046700"
+            },
+            {
+              "displayValue": "INSEAD",
+              "displayCount": "7",
+              "id": "5176"
+            },
+            {
+              "displayValue": "London Business School",
+              "displayCount": "6",
+              "id": "5954"
+            }
+          ],
+          "type": "SCHOOL"
+        }
+      },
+      {
+        "aggregatedFilterMetadata": {
+          "type": "GEOGRAPHY",
+          "selected": "REGION",
+          "values": [
+            {
+              "values": [
+                {
+                  "displayValue": "Asia",
+                  "displayCount": "656",
+                  "id": "102393603"
+                },
+                {
+                  "displayValue": "APAC",
+                  "displayCount": "623",
+                  "id": "91000003"
+                },
+                {
+                  "displayValue": "APJ",
+                  "displayCount": "623",
+                  "id": "91000004"
+                },
+                {
+                  "displayValue": "EMEA",
+                  "displayCount": "398",
+                  "id": "91000007"
+                },
+                {
+                  "displayValue": "Europe",
+                  "displayCount": "282",
+                  "id": "100506914"
+                },
+                {
+                  "displayValue": "European Economic Area",
+                  "displayCount": "212",
+                  "id": "91000002"
+                },
+                {
+                  "displayValue": "European Union",
+                  "displayCount": "211",
+                  "id": "91000000"
+                },
+                {
+                  "displayValue": "Southeast Asia",
+                  "displayCount": "209",
+                  "id": "91000014"
+                },
+                {
+                  "displayValue": "Schengen Area",
+                  "displayCount": "207",
+                  "id": "91000024"
+                },
+                {
+                  "displayValue": "South Asia",
+                  "displayCount": "192",
+                  "id": "91000013"
+                }
+              ],
+              "type": "REGION"
+            },
+            {
+              "selectedSubFilter": "5",
+              "values": [],
+              "type": "POSTAL_CODE"
+            }
+          ]
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Business Development",
+              "id": "4"
+            },
+            {
+              "displayValue": "Marketing",
+              "id": "15"
+            },
+            {
+              "displayValue": "Sales",
+              "id": "25"
+            },
+            {
+              "displayValue": "Operations",
+              "id": "18"
+            },
+            {
+              "displayValue": "Entrepreneurship",
+              "id": "9"
+            },
+            {
+              "displayValue": "Information Technology",
+              "id": "13"
+            },
+            {
+              "displayValue": "Media and Communication",
+              "id": "16"
+            },
+            {
+              "displayValue": "Community and Social Services",
+              "id": "5"
+            },
+            {
+              "displayValue": "Customer Success and Support",
+              "id": "26"
+            },
+            {
+              "displayValue": "Arts and Design",
+              "id": "3"
+            }
+          ],
+          "type": "FUNCTION"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Changed jobs in last 90 days",
+              "displayCount": "56",
+              "id": "RPC"
+            },
+            {
+              "displayValue": "Mentioned in news in last 30 days",
+              "displayCount": "0",
+              "id": "MITN"
+            },
+            {
+              "displayValue": "Posted on linkedin in 30 days",
+              "displayCount": "427",
+              "id": "RPOL"
+            },
+            {
+              "displayValue": "Have shared experiences with you",
+              "displayCount": "378",
+              "id": "COMM"
+            },
+            {
+              "displayValue": "Following your company",
+              "displayCount": "1K+",
+              "id": "CF"
+            },
+            {
+              "displayValue": "With teamlink intro through your executives",
+              "displayCount": "0",
+              "id": "ETL"
+            },
+            {
+              "displayValue": "Past colleague",
+              "displayCount": "56",
+              "id": "PCOLL"
+            },
+            {
+              "displayValue": "Viewed your profile in last 90 days",
+              "displayCount": "29",
+              "id": "VYP"
+            }
+          ],
+          "type": "LEAD_HIGHLIGHTS"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "North America",
+              "displayCount": "315",
+              "id": "102221843"
+            },
+            {
+              "displayValue": "Asia",
+              "displayCount": "312",
+              "id": "102393603"
+            },
+            {
+              "displayValue": "United States",
+              "displayCount": "288",
+              "id": "103644278"
+            },
+            {
+              "displayValue": "Europe",
+              "displayCount": "263",
+              "id": "100506914"
+            },
+            {
+              "displayValue": "EMEA",
+              "displayCount": "224",
+              "id": "91000007"
+            },
+            {
+              "displayValue": "APAC",
+              "displayCount": "214",
+              "id": "91000003"
+            },
+            {
+              "displayValue": "APJ",
+              "displayCount": "213",
+              "id": "91000004"
+            },
+            {
+              "displayValue": "NAMER",
+              "displayCount": "199",
+              "id": "91000022"
+            },
+            {
+              "displayValue": "Schengen Area",
+              "displayCount": "127",
+              "id": "91000024"
+            },
+            {
+              "displayValue": "European Union",
+              "displayCount": "122",
+              "id": "91000000"
+            }
+          ],
+          "type": "COMPANY_HEADQUARTERS"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Following your company",
+              "selectionType": "INCLUDED",
+              "displayCount": "1K+",
+              "id": "CF"
+            }
+          ],
+          "type": "FOLLOWS_YOUR_COMPANY"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Viewed your profile recently",
+              "displayCount": "29",
+              "id": "VYP"
+            }
+          ],
+          "type": "VIEWED_YOUR_PROFILE"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Past customer",
+              "displayCount": "0",
+              "id": "PCUS"
+            }
+          ],
+          "type": "PAST_CUSTOMER"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Past colleague",
+              "displayCount": "56",
+              "id": "PCOLL"
+            }
+          ],
+          "type": "PAST_COLLEAGUE"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Shared experiences",
+              "displayCount": "378",
+              "id": "COMM"
+            }
+          ],
+          "type": "WITH_SHARED_EXPERIENCES"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Changed jobs",
+              "displayCount": "56",
+              "id": "RPC"
+            }
+          ],
+          "type": "RECENTLY_CHANGED_JOBS"
+        }
+      },
+      {
+        "singleFilterMetadata": {
+          "values": [
+            {
+              "displayValue": "Posted on LinkedIn",
+              "displayCount": "427",
+              "id": "RPOL"
+            }
+          ],
+          "type": "POSTED_ON_LINKEDIN"
+        }
       }
-    ]
+    ],
+    "searchTitle": "Following your company",
+    "tracking": {
+      "requestId": "SDrdC6PhTOWIkEjJYd9rDw==",
+      "sessionId": "9MB6+iWTQIy7YOPSLnSuLg=="
+    }
   },
-  "premiumSubscriber": true
+  "elements": [
+    {
+      "firstName": "Josh",
+      "lastName": "Bereano",
+      "entityUrn": "urn:li:fs_salesProfile:(ACwAAC9QcXMBFjpaNN6OBKBIC2aM--Lbimj5uDc,NAME_SEARCH,XOVT)",
+      "entityUrnResolutionResult": {
+        "lastName": "Bereano",
+        "objectUrn": "urn:li:member:793801075",
+        "positions": [
+          {
+            "current": true,
+            "companyName": "Bereano Partners",
+            "title": "President of Bereano Partners | Digital Marketing Strategies For A Digital-First Economy",
+            "companyUrnResolutionResult": {
+              "employeeCountRange": "2-10",
+              "website": "https://bereanopartners.com/",
+              "flagshipCompanyUrl": "https://www.linkedin.com/company/bereanopartnersmarketing/",
+              "industry": "Marketing Services"
+            },
+            "companyUrn": "urn:li:fs_salesCompany:81940901"
+          }
+        ],
+        "firstName": "Josh",
+        "memberBadges": {
+          "premium": true,
+          "openLink": true,
+          "jobSeeker": false
+        },
+        "entityUrn": "urn:li:fs_salesProfile:(ACwAAC9QcXMBFjpaNN6OBKBIC2aM--Lbimj5uDc,NAME_SEARCH,XOVT)",
+        "location": "Bellevue, Washington, United States"
+      }
+    }
+  ],
+  "paging": {
+    "total": 1193,
+    "count": 1,
+    "start": 0,
+    "links": []
+  }
 }

@@ -6,6 +6,7 @@ import { LinkedinClient } from "@/Linkedin-API";
 import { TRPCError, type TRPCRouterRecord } from "@trpc/server";
 import z from "zod";
 import { protectedProcedure } from "../trpc";
+import md5 from "md5";
 
 export const extractionRouter = {
   fetchMeta: protectedProcedure
