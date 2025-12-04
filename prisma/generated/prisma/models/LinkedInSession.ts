@@ -27,6 +27,7 @@ export type AggregateLinkedInSession = {
 export type LinkedInSessionMinAggregateOutputType = {
   id: string | null
   userId: string | null
+  lastCheckedAt: Date | null
   status: $Enums.LinkedInSessionStatus | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -35,6 +36,7 @@ export type LinkedInSessionMinAggregateOutputType = {
 export type LinkedInSessionMaxAggregateOutputType = {
   id: string | null
   userId: string | null
+  lastCheckedAt: Date | null
   status: $Enums.LinkedInSessionStatus | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -45,6 +47,7 @@ export type LinkedInSessionCountAggregateOutputType = {
   userId: number
   cookies: number
   headers: number
+  lastCheckedAt: number
   status: number
   createdAt: number
   updatedAt: number
@@ -55,6 +58,7 @@ export type LinkedInSessionCountAggregateOutputType = {
 export type LinkedInSessionMinAggregateInputType = {
   id?: true
   userId?: true
+  lastCheckedAt?: true
   status?: true
   createdAt?: true
   updatedAt?: true
@@ -63,6 +67,7 @@ export type LinkedInSessionMinAggregateInputType = {
 export type LinkedInSessionMaxAggregateInputType = {
   id?: true
   userId?: true
+  lastCheckedAt?: true
   status?: true
   createdAt?: true
   updatedAt?: true
@@ -73,6 +78,7 @@ export type LinkedInSessionCountAggregateInputType = {
   userId?: true
   cookies?: true
   headers?: true
+  lastCheckedAt?: true
   status?: true
   createdAt?: true
   updatedAt?: true
@@ -156,6 +162,7 @@ export type LinkedInSessionGroupByOutputType = {
   userId: string
   cookies: runtime.JsonValue | null
   headers: runtime.JsonValue[]
+  lastCheckedAt: Date | null
   status: $Enums.LinkedInSessionStatus
   createdAt: Date
   updatedAt: Date
@@ -187,6 +194,7 @@ export type LinkedInSessionWhereInput = {
   userId?: Prisma.StringFilter<"LinkedInSession"> | string
   cookies?: Prisma.JsonNullableFilter<"LinkedInSession">
   headers?: Prisma.JsonNullableListFilter<"LinkedInSession">
+  lastCheckedAt?: Prisma.DateTimeNullableFilter<"LinkedInSession"> | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFilter<"LinkedInSession"> | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFilter<"LinkedInSession"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"LinkedInSession"> | Date | string
@@ -198,6 +206,7 @@ export type LinkedInSessionOrderByWithRelationInput = {
   userId?: Prisma.SortOrder
   cookies?: Prisma.SortOrderInput | Prisma.SortOrder
   headers?: Prisma.SortOrder
+  lastCheckedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -212,6 +221,7 @@ export type LinkedInSessionWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.LinkedInSessionWhereInput | Prisma.LinkedInSessionWhereInput[]
   cookies?: Prisma.JsonNullableFilter<"LinkedInSession">
   headers?: Prisma.JsonNullableListFilter<"LinkedInSession">
+  lastCheckedAt?: Prisma.DateTimeNullableFilter<"LinkedInSession"> | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFilter<"LinkedInSession"> | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFilter<"LinkedInSession"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"LinkedInSession"> | Date | string
@@ -223,6 +233,7 @@ export type LinkedInSessionOrderByWithAggregationInput = {
   userId?: Prisma.SortOrder
   cookies?: Prisma.SortOrderInput | Prisma.SortOrder
   headers?: Prisma.SortOrder
+  lastCheckedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -239,6 +250,7 @@ export type LinkedInSessionScalarWhereWithAggregatesInput = {
   userId?: Prisma.StringWithAggregatesFilter<"LinkedInSession"> | string
   cookies?: Prisma.JsonNullableWithAggregatesFilter<"LinkedInSession">
   headers?: Prisma.JsonNullableListFilter<"LinkedInSession">
+  lastCheckedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"LinkedInSession"> | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusWithAggregatesFilter<"LinkedInSession"> | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"LinkedInSession"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"LinkedInSession"> | Date | string
@@ -248,6 +260,7 @@ export type LinkedInSessionCreateInput = {
   id?: string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionCreateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Date | string | null
   status?: $Enums.LinkedInSessionStatus
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -259,6 +272,7 @@ export type LinkedInSessionUncheckedCreateInput = {
   userId: string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionCreateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Date | string | null
   status?: $Enums.LinkedInSessionStatus
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -268,6 +282,7 @@ export type LinkedInSessionUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionUpdateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFieldUpdateOperationsInput | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -279,6 +294,7 @@ export type LinkedInSessionUncheckedUpdateInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionUpdateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFieldUpdateOperationsInput | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -289,6 +305,7 @@ export type LinkedInSessionCreateManyInput = {
   userId: string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionCreateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Date | string | null
   status?: $Enums.LinkedInSessionStatus
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -298,6 +315,7 @@ export type LinkedInSessionUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionUpdateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFieldUpdateOperationsInput | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -308,6 +326,7 @@ export type LinkedInSessionUncheckedUpdateManyInput = {
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionUpdateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFieldUpdateOperationsInput | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -338,6 +357,7 @@ export type LinkedInSessionCountOrderByAggregateInput = {
   userId?: Prisma.SortOrder
   cookies?: Prisma.SortOrder
   headers?: Prisma.SortOrder
+  lastCheckedAt?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -346,6 +366,7 @@ export type LinkedInSessionCountOrderByAggregateInput = {
 export type LinkedInSessionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
+  lastCheckedAt?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -354,6 +375,7 @@ export type LinkedInSessionMaxOrderByAggregateInput = {
 export type LinkedInSessionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder
+  lastCheckedAt?: Prisma.SortOrder
   status?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -408,6 +430,7 @@ export type LinkedInSessionCreateWithoutUserInput = {
   id?: string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionCreateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Date | string | null
   status?: $Enums.LinkedInSessionStatus
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -417,6 +440,7 @@ export type LinkedInSessionUncheckedCreateWithoutUserInput = {
   id?: string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionCreateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Date | string | null
   status?: $Enums.LinkedInSessionStatus
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -442,6 +466,7 @@ export type LinkedInSessionUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionUpdateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFieldUpdateOperationsInput | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -451,6 +476,7 @@ export type LinkedInSessionUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cookies?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   headers?: Prisma.LinkedInSessionUpdateheadersInput | runtime.InputJsonValue[]
+  lastCheckedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumLinkedInSessionStatusFieldUpdateOperationsInput | $Enums.LinkedInSessionStatus
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -463,6 +489,7 @@ export type LinkedInSessionSelect<ExtArgs extends runtime.Types.Extensions.Inter
   userId?: boolean
   cookies?: boolean
   headers?: boolean
+  lastCheckedAt?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -474,6 +501,7 @@ export type LinkedInSessionSelectCreateManyAndReturn<ExtArgs extends runtime.Typ
   userId?: boolean
   cookies?: boolean
   headers?: boolean
+  lastCheckedAt?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -485,6 +513,7 @@ export type LinkedInSessionSelectUpdateManyAndReturn<ExtArgs extends runtime.Typ
   userId?: boolean
   cookies?: boolean
   headers?: boolean
+  lastCheckedAt?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -496,12 +525,13 @@ export type LinkedInSessionSelectScalar = {
   userId?: boolean
   cookies?: boolean
   headers?: boolean
+  lastCheckedAt?: boolean
   status?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type LinkedInSessionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "cookies" | "headers" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["linkedInSession"]>
+export type LinkedInSessionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "cookies" | "headers" | "lastCheckedAt" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["linkedInSession"]>
 export type LinkedInSessionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -522,6 +552,7 @@ export type $LinkedInSessionPayload<ExtArgs extends runtime.Types.Extensions.Int
     userId: string
     cookies: runtime.JsonValue | null
     headers: runtime.JsonValue[]
+    lastCheckedAt: Date | null
     status: $Enums.LinkedInSessionStatus
     createdAt: Date
     updatedAt: Date
@@ -953,6 +984,7 @@ export interface LinkedInSessionFieldRefs {
   readonly userId: Prisma.FieldRef<"LinkedInSession", 'String'>
   readonly cookies: Prisma.FieldRef<"LinkedInSession", 'Json'>
   readonly headers: Prisma.FieldRef<"LinkedInSession", 'Json[]'>
+  readonly lastCheckedAt: Prisma.FieldRef<"LinkedInSession", 'DateTime'>
   readonly status: Prisma.FieldRef<"LinkedInSession", 'LinkedInSessionStatus'>
   readonly createdAt: Prisma.FieldRef<"LinkedInSession", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"LinkedInSession", 'DateTime'>

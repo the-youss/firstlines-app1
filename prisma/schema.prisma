@@ -246,6 +246,7 @@ model LinkedInSession {
   user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   cookies Json?
   headers Json[]
+  lastCheckedAt DateTime?
 
   status LinkedInSessionStatus @default(inactive)
 

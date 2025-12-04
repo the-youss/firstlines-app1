@@ -1506,6 +1506,7 @@ export const LinkedInSessionScalarFieldEnum = {
   userId: 'userId',
   cookies: 'cookies',
   headers: 'headers',
+  lastCheckedAt: 'lastCheckedAt',
   status: 'status',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

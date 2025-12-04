@@ -67,3 +67,5 @@ export const getNamesFromName = (name: string) => {
 
 export const getServerUTCDate = () => new Date().toUTCString()
 
+
+export const DEFAULT_LINKEDIN_SESSION_INTERVAL = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
