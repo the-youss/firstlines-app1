@@ -4,6 +4,7 @@ import {
   MaterialReactTable,
   MRT_ColumnDef,
   MRT_DensityState,
+  MRT_PaginationState,
   MRT_RowData,
   MRT_TableInstance,
   MRT_ToggleFullScreenButton,
@@ -87,7 +88,9 @@ interface DataTableProps<TData extends MRT_RowData> {
   calcWidth?: `${number}px`
   toolbar?: Array<{ node: React.ReactNode, position?: "left" | "right" | "2nd-left" | "2nd-right" }>
   onRowSelectionChange?: () => void
+  onPaginationChange?: (pagination: MRT_PaginationState) => void
   density?: MRT_DensityState
+  count?: number
 }
 
 export type DataTableRef<TData extends MRT_RowData> = { table: MRT_TableInstance<TData> }
@@ -96,6 +99,7 @@ export const _DataTableBase = <TData extends MRT_RowData>(
   ref: React.Ref<DataTableRef<TData>>
 ) => {
   const [rowSelection, setRowSelection] = useState({});
+  const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 20 });
   const columns = useMemo<MRT_ColumnDef<TData>[]>(
     () => props.columns,
     [props.columns],
@@ -104,7 +108,7 @@ export const _DataTableBase = <TData extends MRT_RowData>(
   const table = useMaterialReactTable<TData>({
     columns,
     data: props.data,
-    enablePagination: false,
+    enablePagination: true,
     enableMultiSort: true,
     enableSorting: true,
     enableGlobalFilter: true,
@@ -119,6 +123,11 @@ export const _DataTableBase = <TData extends MRT_RowData>(
     enableBottomToolbar: true,
     enableRowVirtualization: true,
     enableRowSelection: true,
+    onPaginationChange: (state) => {
+      if (typeof state !== 'object') return
+      setPagination(state);
+      props.onPaginationChange?.(state);
+    },
     onRowSelectionChange: (state) => {
       setRowSelection(state);
       props.onRowSelectionChange?.();
@@ -135,14 +144,16 @@ export const _DataTableBase = <TData extends MRT_RowData>(
     enableFilters: true,
     enableGlobalFilterRankedResults: false,
     renderTopToolbar: ({ table }) => <RenderTopToolbar table={table} toolbar={props.toolbar} />,
-    renderBottomToolbar: ({ table }) => <RenderBottomToolbar table={table} />,
+    // renderBottomToolbar: ({ table }) => <RenderBottomToolbar table={table} />,
     enableCellActions: true,
     enableClickToCopy: 'context-menu',
     enableEditing: true,
     columnFilterDisplayMode: 'popover',
     editDisplayMode: 'cell',
-    manualFiltering: false,
-    manualSorting: false,
+    manualFiltering: true,
+    manualPagination: true,
+    manualSorting: true,
+    rowCount: props.count || 0,
     // Tailwind/ShadCN styles for table
     muiTableContainerProps: ({ table }) => (
       {

@@ -88,24 +88,30 @@ model List {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String
 
-  leads    Lead[]
-  campaign Campaign[]
+  leads Lead[]
 
   @@index([userId])
   @@index([id, userId])
 }
 
+enum LeadSource {
+  sales_nav
+  linkedin_search
+  manual_entry
+}
+
 model Lead {
-  id                String  @id @default(uuid())
+  id                String     @id @default(uuid())
   firstName         String
   lastName          String
   country           String?
   city              String?
-  isLinkedinPremium Boolean @default(false)
+  isLinkedinPremium Boolean    @default(false)
   linkedinId        String?
   linkedinHash      String?
   jobTitle          String?
   industry          String?
+  source            LeadSource
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -115,6 +121,7 @@ model Lead {
 
   listId String
   list   List   @relation(fields: [listId], references: [id], onDelete: Cascade)
+  campaign   Campaign[]
 
   @@index([firstName, lastName])
   @@index([firstName, lastName, country])
@@ -129,7 +136,7 @@ model Company {
   id String @id @default(uuid())
 
   name        String
-  domain     String @unique
+  domain      String  @unique
   size        String?
   linkedinUrl String?
   industry    String?
@@ -152,11 +159,11 @@ model Campaign {
   excludeActive Boolean @default(true)
   dailyLimit    Int     @default(25)
 
-  userId String
-  user   User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  listId String?        @unique
-  list   List?          @relation(fields: [listId], references: [id], onDelete: Cascade)
-  steps  SequenceStep[]
+  userId  String
+  user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listId  String?        @unique
+  steps   SequenceStep[]
+  leads   Lead[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -242,11 +249,11 @@ enum LinkedInSessionStatus {
 }
 
 model LinkedInSession {
-  id      String @id @default(uuid())
-  userId  String @unique
-  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  cookies Json?
-  headers Json[]
+  id            String    @id @default(uuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cookies       Json?
+  headers       Json[]
   lastCheckedAt DateTime?
 
   status LinkedInSessionStatus @default(inactive)

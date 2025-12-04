@@ -16,6 +16,7 @@ import { useRef, useState } from "react";
 import { DataTable } from "@/components/data-table";
 import { Button } from "@/components/ui/button";
 import { useLeadsColumn } from "./column";
+import { RouterOutputs } from "@/api";
 
 export interface Lead {
   id: string;
@@ -424,17 +425,19 @@ const leads: Lead[] = [
   },
 ];
 
-export function LeadsTable() {
+type APIResponse = RouterOutputs['list']['leads']
+export type Rows = APIResponse['rows'][number]
+type LeadsTableProps = APIResponse & { isLoading: boolean }
+export function LeadsTable({ rows, count }: LeadsTableProps) {
   const columns = useLeadsColumn()
   const [loading, setLoading] = useState(false);
-  const [_data, setData] = useState<any[]>(leads)
   const [onRowSelectionChange, setOnRowSelectionChange] = useState<number>(0)
-  const ref = useRef<{ table: MRT_TableInstance<any> }>(null)
+  const ref = useRef<{ table: MRT_TableInstance<Rows> }>(null)
 
 
 
   return (
-    <DataTable
+    <DataTable<Rows>
       ref={ref}
       toolbar={[
         {
@@ -443,9 +446,9 @@ export function LeadsTable() {
         }
       ]}
       calcHeight="366px"
-      data={_data}
-      onRowSelectionChange={() => setOnRowSelectionChange(state => state + 1)
-      }
+      data={rows}
+      onRowSelectionChange={() => setOnRowSelectionChange(state => state + 1)}
+      onPaginationChange={(pagination) => console.log(pagination)}
       columns={columns} />
   )
 }

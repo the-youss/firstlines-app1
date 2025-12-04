@@ -249,8 +249,8 @@ export type CampaignWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Campaign"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Campaign"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  list?: Prisma.XOR<Prisma.ListNullableScalarRelationFilter, Prisma.ListWhereInput> | null
   steps?: Prisma.SequenceStepListRelationFilter
+  leads?: Prisma.LeadListRelationFilter
 }
 
 export type CampaignOrderByWithRelationInput = {
@@ -264,8 +264,8 @@ export type CampaignOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
-  list?: Prisma.ListOrderByWithRelationInput
   steps?: Prisma.SequenceStepOrderByRelationAggregateInput
+  leads?: Prisma.LeadOrderByRelationAggregateInput
 }
 
 export type CampaignWhereUniqueInput = Prisma.AtLeast<{
@@ -282,8 +282,8 @@ export type CampaignWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"Campaign"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Campaign"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  list?: Prisma.XOR<Prisma.ListNullableScalarRelationFilter, Prisma.ListWhereInput> | null
   steps?: Prisma.SequenceStepListRelationFilter
+  leads?: Prisma.LeadListRelationFilter
 }, "id" | "listId">
 
 export type CampaignOrderByWithAggregationInput = {
@@ -324,11 +324,12 @@ export type CampaignCreateInput = {
   timezone?: string
   excludeActive?: boolean
   dailyLimit?: number
+  listId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutCampaignsInput
-  list?: Prisma.ListCreateNestedOneWithoutCampaignInput
   steps?: Prisma.SequenceStepCreateNestedManyWithoutCampaignInput
+  leads?: Prisma.LeadCreateNestedManyWithoutCampaignInput
 }
 
 export type CampaignUncheckedCreateInput = {
@@ -342,6 +343,7 @@ export type CampaignUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   steps?: Prisma.SequenceStepUncheckedCreateNestedManyWithoutCampaignInput
+  leads?: Prisma.LeadUncheckedCreateNestedManyWithoutCampaignInput
 }
 
 export type CampaignUpdateInput = {
@@ -350,11 +352,12 @@ export type CampaignUpdateInput = {
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutCampaignsNestedInput
-  list?: Prisma.ListUpdateOneWithoutCampaignNestedInput
   steps?: Prisma.SequenceStepUpdateManyWithoutCampaignNestedInput
+  leads?: Prisma.LeadUpdateManyWithoutCampaignNestedInput
 }
 
 export type CampaignUncheckedUpdateInput = {
@@ -368,6 +371,7 @@ export type CampaignUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   steps?: Prisma.SequenceStepUncheckedUpdateManyWithoutCampaignNestedInput
+  leads?: Prisma.LeadUncheckedUpdateManyWithoutCampaignNestedInput
 }
 
 export type CampaignCreateManyInput = {
@@ -388,6 +392,7 @@ export type CampaignUpdateManyMutationInput = {
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -505,45 +510,41 @@ export type CampaignUncheckedUpdateManyWithoutUserNestedInput = {
   deleteMany?: Prisma.CampaignScalarWhereInput | Prisma.CampaignScalarWhereInput[]
 }
 
-export type CampaignCreateNestedManyWithoutListInput = {
-  create?: Prisma.XOR<Prisma.CampaignCreateWithoutListInput, Prisma.CampaignUncheckedCreateWithoutListInput> | Prisma.CampaignCreateWithoutListInput[] | Prisma.CampaignUncheckedCreateWithoutListInput[]
-  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutListInput | Prisma.CampaignCreateOrConnectWithoutListInput[]
-  createMany?: Prisma.CampaignCreateManyListInputEnvelope
+export type CampaignCreateNestedManyWithoutLeadsInput = {
+  create?: Prisma.XOR<Prisma.CampaignCreateWithoutLeadsInput, Prisma.CampaignUncheckedCreateWithoutLeadsInput> | Prisma.CampaignCreateWithoutLeadsInput[] | Prisma.CampaignUncheckedCreateWithoutLeadsInput[]
+  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutLeadsInput | Prisma.CampaignCreateOrConnectWithoutLeadsInput[]
   connect?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
 }
 
-export type CampaignUncheckedCreateNestedManyWithoutListInput = {
-  create?: Prisma.XOR<Prisma.CampaignCreateWithoutListInput, Prisma.CampaignUncheckedCreateWithoutListInput> | Prisma.CampaignCreateWithoutListInput[] | Prisma.CampaignUncheckedCreateWithoutListInput[]
-  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutListInput | Prisma.CampaignCreateOrConnectWithoutListInput[]
-  createMany?: Prisma.CampaignCreateManyListInputEnvelope
+export type CampaignUncheckedCreateNestedManyWithoutLeadsInput = {
+  create?: Prisma.XOR<Prisma.CampaignCreateWithoutLeadsInput, Prisma.CampaignUncheckedCreateWithoutLeadsInput> | Prisma.CampaignCreateWithoutLeadsInput[] | Prisma.CampaignUncheckedCreateWithoutLeadsInput[]
+  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutLeadsInput | Prisma.CampaignCreateOrConnectWithoutLeadsInput[]
   connect?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
 }
 
-export type CampaignUpdateManyWithoutListNestedInput = {
-  create?: Prisma.XOR<Prisma.CampaignCreateWithoutListInput, Prisma.CampaignUncheckedCreateWithoutListInput> | Prisma.CampaignCreateWithoutListInput[] | Prisma.CampaignUncheckedCreateWithoutListInput[]
-  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutListInput | Prisma.CampaignCreateOrConnectWithoutListInput[]
-  upsert?: Prisma.CampaignUpsertWithWhereUniqueWithoutListInput | Prisma.CampaignUpsertWithWhereUniqueWithoutListInput[]
-  createMany?: Prisma.CampaignCreateManyListInputEnvelope
+export type CampaignUpdateManyWithoutLeadsNestedInput = {
+  create?: Prisma.XOR<Prisma.CampaignCreateWithoutLeadsInput, Prisma.CampaignUncheckedCreateWithoutLeadsInput> | Prisma.CampaignCreateWithoutLeadsInput[] | Prisma.CampaignUncheckedCreateWithoutLeadsInput[]
+  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutLeadsInput | Prisma.CampaignCreateOrConnectWithoutLeadsInput[]
+  upsert?: Prisma.CampaignUpsertWithWhereUniqueWithoutLeadsInput | Prisma.CampaignUpsertWithWhereUniqueWithoutLeadsInput[]
   set?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
   disconnect?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
   delete?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
   connect?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
-  update?: Prisma.CampaignUpdateWithWhereUniqueWithoutListInput | Prisma.CampaignUpdateWithWhereUniqueWithoutListInput[]
-  updateMany?: Prisma.CampaignUpdateManyWithWhereWithoutListInput | Prisma.CampaignUpdateManyWithWhereWithoutListInput[]
+  update?: Prisma.CampaignUpdateWithWhereUniqueWithoutLeadsInput | Prisma.CampaignUpdateWithWhereUniqueWithoutLeadsInput[]
+  updateMany?: Prisma.CampaignUpdateManyWithWhereWithoutLeadsInput | Prisma.CampaignUpdateManyWithWhereWithoutLeadsInput[]
   deleteMany?: Prisma.CampaignScalarWhereInput | Prisma.CampaignScalarWhereInput[]
 }
 
-export type CampaignUncheckedUpdateManyWithoutListNestedInput = {
-  create?: Prisma.XOR<Prisma.CampaignCreateWithoutListInput, Prisma.CampaignUncheckedCreateWithoutListInput> | Prisma.CampaignCreateWithoutListInput[] | Prisma.CampaignUncheckedCreateWithoutListInput[]
-  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutListInput | Prisma.CampaignCreateOrConnectWithoutListInput[]
-  upsert?: Prisma.CampaignUpsertWithWhereUniqueWithoutListInput | Prisma.CampaignUpsertWithWhereUniqueWithoutListInput[]
-  createMany?: Prisma.CampaignCreateManyListInputEnvelope
+export type CampaignUncheckedUpdateManyWithoutLeadsNestedInput = {
+  create?: Prisma.XOR<Prisma.CampaignCreateWithoutLeadsInput, Prisma.CampaignUncheckedCreateWithoutLeadsInput> | Prisma.CampaignCreateWithoutLeadsInput[] | Prisma.CampaignUncheckedCreateWithoutLeadsInput[]
+  connectOrCreate?: Prisma.CampaignCreateOrConnectWithoutLeadsInput | Prisma.CampaignCreateOrConnectWithoutLeadsInput[]
+  upsert?: Prisma.CampaignUpsertWithWhereUniqueWithoutLeadsInput | Prisma.CampaignUpsertWithWhereUniqueWithoutLeadsInput[]
   set?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
   disconnect?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
   delete?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
   connect?: Prisma.CampaignWhereUniqueInput | Prisma.CampaignWhereUniqueInput[]
-  update?: Prisma.CampaignUpdateWithWhereUniqueWithoutListInput | Prisma.CampaignUpdateWithWhereUniqueWithoutListInput[]
-  updateMany?: Prisma.CampaignUpdateManyWithWhereWithoutListInput | Prisma.CampaignUpdateManyWithWhereWithoutListInput[]
+  update?: Prisma.CampaignUpdateWithWhereUniqueWithoutLeadsInput | Prisma.CampaignUpdateWithWhereUniqueWithoutLeadsInput[]
+  updateMany?: Prisma.CampaignUpdateManyWithWhereWithoutLeadsInput | Prisma.CampaignUpdateManyWithWhereWithoutLeadsInput[]
   deleteMany?: Prisma.CampaignScalarWhereInput | Prisma.CampaignScalarWhereInput[]
 }
 
@@ -575,10 +576,11 @@ export type CampaignCreateWithoutUserInput = {
   timezone?: string
   excludeActive?: boolean
   dailyLimit?: number
+  listId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  list?: Prisma.ListCreateNestedOneWithoutCampaignInput
   steps?: Prisma.SequenceStepCreateNestedManyWithoutCampaignInput
+  leads?: Prisma.LeadCreateNestedManyWithoutCampaignInput
 }
 
 export type CampaignUncheckedCreateWithoutUserInput = {
@@ -591,6 +593,7 @@ export type CampaignUncheckedCreateWithoutUserInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   steps?: Prisma.SequenceStepUncheckedCreateNestedManyWithoutCampaignInput
+  leads?: Prisma.LeadUncheckedCreateNestedManyWithoutCampaignInput
 }
 
 export type CampaignCreateOrConnectWithoutUserInput = {
@@ -634,54 +637,51 @@ export type CampaignScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Campaign"> | Date | string
 }
 
-export type CampaignCreateWithoutListInput = {
+export type CampaignCreateWithoutLeadsInput = {
   id?: string
   name: string
   timezone?: string
   excludeActive?: boolean
   dailyLimit?: number
+  listId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutCampaignsInput
   steps?: Prisma.SequenceStepCreateNestedManyWithoutCampaignInput
 }
 
-export type CampaignUncheckedCreateWithoutListInput = {
+export type CampaignUncheckedCreateWithoutLeadsInput = {
   id?: string
   name: string
   timezone?: string
   excludeActive?: boolean
   dailyLimit?: number
   userId: string
+  listId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   steps?: Prisma.SequenceStepUncheckedCreateNestedManyWithoutCampaignInput
 }
 
-export type CampaignCreateOrConnectWithoutListInput = {
+export type CampaignCreateOrConnectWithoutLeadsInput = {
   where: Prisma.CampaignWhereUniqueInput
-  create: Prisma.XOR<Prisma.CampaignCreateWithoutListInput, Prisma.CampaignUncheckedCreateWithoutListInput>
+  create: Prisma.XOR<Prisma.CampaignCreateWithoutLeadsInput, Prisma.CampaignUncheckedCreateWithoutLeadsInput>
 }
 
-export type CampaignCreateManyListInputEnvelope = {
-  data: Prisma.CampaignCreateManyListInput | Prisma.CampaignCreateManyListInput[]
-  skipDuplicates?: boolean
-}
-
-export type CampaignUpsertWithWhereUniqueWithoutListInput = {
+export type CampaignUpsertWithWhereUniqueWithoutLeadsInput = {
   where: Prisma.CampaignWhereUniqueInput
-  update: Prisma.XOR<Prisma.CampaignUpdateWithoutListInput, Prisma.CampaignUncheckedUpdateWithoutListInput>
-  create: Prisma.XOR<Prisma.CampaignCreateWithoutListInput, Prisma.CampaignUncheckedCreateWithoutListInput>
+  update: Prisma.XOR<Prisma.CampaignUpdateWithoutLeadsInput, Prisma.CampaignUncheckedUpdateWithoutLeadsInput>
+  create: Prisma.XOR<Prisma.CampaignCreateWithoutLeadsInput, Prisma.CampaignUncheckedCreateWithoutLeadsInput>
 }
 
-export type CampaignUpdateWithWhereUniqueWithoutListInput = {
+export type CampaignUpdateWithWhereUniqueWithoutLeadsInput = {
   where: Prisma.CampaignWhereUniqueInput
-  data: Prisma.XOR<Prisma.CampaignUpdateWithoutListInput, Prisma.CampaignUncheckedUpdateWithoutListInput>
+  data: Prisma.XOR<Prisma.CampaignUpdateWithoutLeadsInput, Prisma.CampaignUncheckedUpdateWithoutLeadsInput>
 }
 
-export type CampaignUpdateManyWithWhereWithoutListInput = {
+export type CampaignUpdateManyWithWhereWithoutLeadsInput = {
   where: Prisma.CampaignScalarWhereInput
-  data: Prisma.XOR<Prisma.CampaignUpdateManyMutationInput, Prisma.CampaignUncheckedUpdateManyWithoutListInput>
+  data: Prisma.XOR<Prisma.CampaignUpdateManyMutationInput, Prisma.CampaignUncheckedUpdateManyWithoutLeadsInput>
 }
 
 export type CampaignCreateWithoutStepsInput = {
@@ -690,10 +690,11 @@ export type CampaignCreateWithoutStepsInput = {
   timezone?: string
   excludeActive?: boolean
   dailyLimit?: number
+  listId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutCampaignsInput
-  list?: Prisma.ListCreateNestedOneWithoutCampaignInput
+  leads?: Prisma.LeadCreateNestedManyWithoutCampaignInput
 }
 
 export type CampaignUncheckedCreateWithoutStepsInput = {
@@ -706,6 +707,7 @@ export type CampaignUncheckedCreateWithoutStepsInput = {
   listId?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  leads?: Prisma.LeadUncheckedCreateNestedManyWithoutCampaignInput
 }
 
 export type CampaignCreateOrConnectWithoutStepsInput = {
@@ -730,10 +732,11 @@ export type CampaignUpdateWithoutStepsInput = {
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutCampaignsNestedInput
-  list?: Prisma.ListUpdateOneWithoutCampaignNestedInput
+  leads?: Prisma.LeadUpdateManyWithoutCampaignNestedInput
 }
 
 export type CampaignUncheckedUpdateWithoutStepsInput = {
@@ -746,6 +749,7 @@ export type CampaignUncheckedUpdateWithoutStepsInput = {
   listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  leads?: Prisma.LeadUncheckedUpdateManyWithoutCampaignNestedInput
 }
 
 export type CampaignCreateManyUserInput = {
@@ -765,10 +769,11 @@ export type CampaignUpdateWithoutUserInput = {
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  list?: Prisma.ListUpdateOneWithoutCampaignNestedInput
   steps?: Prisma.SequenceStepUpdateManyWithoutCampaignNestedInput
+  leads?: Prisma.LeadUpdateManyWithoutCampaignNestedInput
 }
 
 export type CampaignUncheckedUpdateWithoutUserInput = {
@@ -781,6 +786,7 @@ export type CampaignUncheckedUpdateWithoutUserInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   steps?: Prisma.SequenceStepUncheckedUpdateManyWithoutCampaignNestedInput
+  leads?: Prisma.LeadUncheckedUpdateManyWithoutCampaignNestedInput
 }
 
 export type CampaignUncheckedUpdateManyWithoutUserInput = {
@@ -794,48 +800,40 @@ export type CampaignUncheckedUpdateManyWithoutUserInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type CampaignCreateManyListInput = {
-  id?: string
-  name: string
-  timezone?: string
-  excludeActive?: boolean
-  dailyLimit?: number
-  userId: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type CampaignUpdateWithoutListInput = {
+export type CampaignUpdateWithoutLeadsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutCampaignsNestedInput
   steps?: Prisma.SequenceStepUpdateManyWithoutCampaignNestedInput
 }
 
-export type CampaignUncheckedUpdateWithoutListInput = {
+export type CampaignUncheckedUpdateWithoutLeadsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   steps?: Prisma.SequenceStepUncheckedUpdateManyWithoutCampaignNestedInput
 }
 
-export type CampaignUncheckedUpdateManyWithoutListInput = {
+export type CampaignUncheckedUpdateManyWithoutLeadsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   timezone?: Prisma.StringFieldUpdateOperationsInput | string
   excludeActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   dailyLimit?: Prisma.IntFieldUpdateOperationsInput | number
   userId?: Prisma.StringFieldUpdateOperationsInput | string
+  listId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -847,10 +845,12 @@ export type CampaignUncheckedUpdateManyWithoutListInput = {
 
 export type CampaignCountOutputType = {
   steps: number
+  leads: number
 }
 
 export type CampaignCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   steps?: boolean | CampaignCountOutputTypeCountStepsArgs
+  leads?: boolean | CampaignCountOutputTypeCountLeadsArgs
 }
 
 /**
@@ -870,6 +870,13 @@ export type CampaignCountOutputTypeCountStepsArgs<ExtArgs extends runtime.Types.
   where?: Prisma.SequenceStepWhereInput
 }
 
+/**
+ * CampaignCountOutputType without action
+ */
+export type CampaignCountOutputTypeCountLeadsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LeadWhereInput
+}
+
 
 export type CampaignSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -882,8 +889,8 @@ export type CampaignSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  list?: boolean | Prisma.Campaign$listArgs<ExtArgs>
   steps?: boolean | Prisma.Campaign$stepsArgs<ExtArgs>
+  leads?: boolean | Prisma.Campaign$leadsArgs<ExtArgs>
   _count?: boolean | Prisma.CampaignCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["campaign"]>
 
@@ -898,7 +905,6 @@ export type CampaignSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  list?: boolean | Prisma.Campaign$listArgs<ExtArgs>
 }, ExtArgs["result"]["campaign"]>
 
 export type CampaignSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -912,7 +918,6 @@ export type CampaignSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  list?: boolean | Prisma.Campaign$listArgs<ExtArgs>
 }, ExtArgs["result"]["campaign"]>
 
 export type CampaignSelectScalar = {
@@ -930,25 +935,23 @@ export type CampaignSelectScalar = {
 export type CampaignOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "timezone" | "excludeActive" | "dailyLimit" | "userId" | "listId" | "createdAt" | "updatedAt", ExtArgs["result"]["campaign"]>
 export type CampaignInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  list?: boolean | Prisma.Campaign$listArgs<ExtArgs>
   steps?: boolean | Prisma.Campaign$stepsArgs<ExtArgs>
+  leads?: boolean | Prisma.Campaign$leadsArgs<ExtArgs>
   _count?: boolean | Prisma.CampaignCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CampaignIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  list?: boolean | Prisma.Campaign$listArgs<ExtArgs>
 }
 export type CampaignIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  list?: boolean | Prisma.Campaign$listArgs<ExtArgs>
 }
 
 export type $CampaignPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Campaign"
   objects: {
     user: Prisma.$UserPayload<ExtArgs>
-    list: Prisma.$ListPayload<ExtArgs> | null
     steps: Prisma.$SequenceStepPayload<ExtArgs>[]
+    leads: Prisma.$LeadPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1355,8 +1358,8 @@ readonly fields: CampaignFieldRefs;
 export interface Prisma__CampaignClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  list<T extends Prisma.Campaign$listArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Campaign$listArgs<ExtArgs>>): Prisma.Prisma__ListClient<runtime.Types.Result.GetResult<Prisma.$ListPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   steps<T extends Prisma.Campaign$stepsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Campaign$stepsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SequenceStepPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  leads<T extends Prisma.Campaign$leadsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Campaign$leadsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LeadPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1791,25 +1794,6 @@ export type CampaignDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Campaign.list
- */
-export type Campaign$listArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the List
-   */
-  select?: Prisma.ListSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the List
-   */
-  omit?: Prisma.ListOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ListInclude<ExtArgs> | null
-  where?: Prisma.ListWhereInput
-}
-
-/**
  * Campaign.steps
  */
 export type Campaign$stepsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1831,6 +1815,30 @@ export type Campaign$stepsArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.SequenceStepScalarFieldEnum | Prisma.SequenceStepScalarFieldEnum[]
+}
+
+/**
+ * Campaign.leads
+ */
+export type Campaign$leadsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Lead
+   */
+  select?: Prisma.LeadSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Lead
+   */
+  omit?: Prisma.LeadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LeadInclude<ExtArgs> | null
+  where?: Prisma.LeadWhereInput
+  orderBy?: Prisma.LeadOrderByWithRelationInput | Prisma.LeadOrderByWithRelationInput[]
+  cursor?: Prisma.LeadWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LeadScalarFieldEnum | Prisma.LeadScalarFieldEnum[]
 }
 
 /**

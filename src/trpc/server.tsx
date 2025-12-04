@@ -27,11 +27,11 @@ const getQueryClient = cache(createQueryClient);
 export const trpc = createTRPCOptionsProxy<AppRouter>({
   router: appRouter,
   ctx: createContext,
-  queryClient: getQueryClient,
+  queryClient: () => getQueryClient({}),
 });
 
 export function HydrateClient(props: { children: React.ReactNode }) {
-  const queryClient = getQueryClient();
+  const queryClient = getQueryClient({});
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       {props.children}
@@ -42,7 +42,7 @@ export function HydrateClient(props: { children: React.ReactNode }) {
 export function prefetch<T extends ReturnType<TRPCQueryOptions<any>>>(
   queryOptions: T,
 ) {
-  const queryClient = getQueryClient();
+  const queryClient = getQueryClient({});
   if (queryOptions.queryKey[1]?.type === "infinite") {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
     void queryClient.prefetchInfiniteQuery(queryOptions as any);

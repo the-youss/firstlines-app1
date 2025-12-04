@@ -68,6 +68,7 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
           jobTitle: lead.jobTitle,
           linkedinId: lead.linkedinId,
           isLinkedinPremium: lead.isLinkedinPremium,
+          source: 'sales_nav',
         }))
         await db.lead.createMany({
           data: input,
@@ -96,7 +97,7 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
     });
     cb(null, true)
   } catch (error) {
-    console.error(error);
+    console.error(`[WORKER SALES_NAV_EXTRACTION] ${(error as Error).message}`);
     await db.queueJob.update({
       where: { id: queue.id },
       data: {

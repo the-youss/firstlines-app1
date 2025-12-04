@@ -9,6 +9,15 @@
 * 🟢 You can import this file directly.
 */
 
+export const LeadSource = {
+  sales_nav: 'sales_nav',
+  linkedin_search: 'linkedin_search',
+  manual_entry: 'manual_entry'
+} as const
+
+export type LeadSource = (typeof LeadSource)[keyof typeof LeadSource]
+
+
 export const StepType = {
   connection: 'connection',
   wait: 'wait',
