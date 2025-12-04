@@ -54,6 +54,7 @@ export const listRouter = {
           select: {
             id: true,
             name: true,
+            source: true,
           }
         },
         company: {

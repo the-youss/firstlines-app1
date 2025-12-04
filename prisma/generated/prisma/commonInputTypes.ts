@@ -148,21 +148,21 @@ export type BoolWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedBoolFilter<$PrismaModel>
 }
 
-export type EnumLeadSourceFilter<$PrismaModel = never> = {
-  equals?: $Enums.LeadSource | Prisma.EnumLeadSourceFieldRefInput<$PrismaModel>
-  in?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  notIn?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumLeadSourceFilter<$PrismaModel> | $Enums.LeadSource
+export type EnumListSourceFilter<$PrismaModel = never> = {
+  equals?: $Enums.ListSource | Prisma.EnumListSourceFieldRefInput<$PrismaModel>
+  in?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumListSourceFilter<$PrismaModel> | $Enums.ListSource
 }
 
-export type EnumLeadSourceWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.LeadSource | Prisma.EnumLeadSourceFieldRefInput<$PrismaModel>
-  in?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  notIn?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumLeadSourceWithAggregatesFilter<$PrismaModel> | $Enums.LeadSource
+export type EnumListSourceWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ListSource | Prisma.EnumListSourceFieldRefInput<$PrismaModel>
+  in?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumListSourceWithAggregatesFilter<$PrismaModel> | $Enums.ListSource
   _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumLeadSourceFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumLeadSourceFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumListSourceFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumListSourceFilter<$PrismaModel>
 }
 
 export type IntFilter<$PrismaModel = never> = {
@@ -536,21 +536,21 @@ export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedBoolFilter<$PrismaModel>
 }
 
-export type NestedEnumLeadSourceFilter<$PrismaModel = never> = {
-  equals?: $Enums.LeadSource | Prisma.EnumLeadSourceFieldRefInput<$PrismaModel>
-  in?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  notIn?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumLeadSourceFilter<$PrismaModel> | $Enums.LeadSource
+export type NestedEnumListSourceFilter<$PrismaModel = never> = {
+  equals?: $Enums.ListSource | Prisma.EnumListSourceFieldRefInput<$PrismaModel>
+  in?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumListSourceFilter<$PrismaModel> | $Enums.ListSource
 }
 
-export type NestedEnumLeadSourceWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.LeadSource | Prisma.EnumLeadSourceFieldRefInput<$PrismaModel>
-  in?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  notIn?: $Enums.LeadSource[] | Prisma.ListEnumLeadSourceFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumLeadSourceWithAggregatesFilter<$PrismaModel> | $Enums.LeadSource
+export type NestedEnumListSourceWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ListSource | Prisma.EnumListSourceFieldRefInput<$PrismaModel>
+  in?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ListSource[] | Prisma.ListEnumListSourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumListSourceWithAggregatesFilter<$PrismaModel> | $Enums.ListSource
   _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumLeadSourceFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumLeadSourceFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumListSourceFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumListSourceFilter<$PrismaModel>
 }
 
 export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {

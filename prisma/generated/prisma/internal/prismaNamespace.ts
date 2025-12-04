@@ -1403,6 +1403,7 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const ListScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  source: 'source',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   userId: 'userId'
@@ -1422,7 +1423,6 @@ export const LeadScalarFieldEnum = {
   linkedinHash: 'linkedinHash',
   jobTitle: 'jobTitle',
   industry: 'industry',
-  source: 'source',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   companyId: 'companyId',
@@ -1607,16 +1607,16 @@ export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
- * Reference to a field of type 'LeadSource'
+ * Reference to a field of type 'ListSource'
  */
-export type EnumLeadSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LeadSource'>
+export type EnumListSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ListSource'>
     
 
 
 /**
- * Reference to a field of type 'LeadSource[]'
+ * Reference to a field of type 'ListSource[]'
  */
-export type ListEnumLeadSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LeadSource[]'>
+export type ListEnumListSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ListSource[]'>
     
 
 

@@ -77,10 +77,15 @@ model User {
 
   @@index([email])
 }
-
+enum ListSource {
+  sales_nav
+  linkedin_search
+  manual_entry
+}
 model List {
   id   String @id @default(uuid())
   name String
+  source            ListSource
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -94,11 +99,7 @@ model List {
   @@index([id, userId])
 }
 
-enum LeadSource {
-  sales_nav
-  linkedin_search
-  manual_entry
-}
+
 
 model Lead {
   id                String     @id @default(uuid())
@@ -111,7 +112,6 @@ model Lead {
   linkedinHash      String?
   jobTitle          String?
   industry          String?
-  source            LeadSource
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

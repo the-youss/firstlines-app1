@@ -68,7 +68,6 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
           jobTitle: lead.jobTitle,
           linkedinId: lead.linkedinId,
           isLinkedinPremium: lead.isLinkedinPremium,
-          source: 'sales_nav',
         }))
         await db.lead.createMany({
           data: input,
