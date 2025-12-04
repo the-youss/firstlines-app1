@@ -41,26 +41,16 @@ interface Lead {
 }
 
 export const Leads = () => {
-  const trpc = useTRPC();
-  const [query, setQuery] = useState('')
-  const [pagination, setPagination] = useState({ page: 1, limit: 50 })
-  const searchParams = useSearchParams()
-  const { data, isLoading } = useQuery(
-    trpc.list.leads.queryOptions({
-      q: query || '',
-      page: pagination.page === 0 ? 1 : pagination.page || 1,
-      limit: pagination.limit || 50,
-    })
-  )
+
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold">Leads</h1>
-          <p className="text-muted-foreground">
+          {/* <p className="text-muted-foreground">
             {data?.count || 0} {data?.count === 1 ? "lead" : "leads"} found
-          </p>
+          </p> */}
         </div>
         <ImportLeadsDialog>
           <Button>
@@ -70,7 +60,7 @@ export const Leads = () => {
         </ImportLeadsDialog>
       </div>
 
-      <LeadsTable count={data?.count || 0} rows={data?.rows || []} isLoading={isLoading} setQuery={setQuery} setPagination={setPagination} />
+      <LeadsTable />
     </div>
   );
 };

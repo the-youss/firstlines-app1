@@ -18,6 +18,8 @@ import { MRT_TableInstance } from "material-react-table";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import { useLeadsColumn } from "./column";
+import { useTRPC } from "@/trpc/react";
+import { useQuery } from "@tanstack/react-query";
 
 export interface Lead {
   id: string;
@@ -35,14 +37,22 @@ export interface Lead {
 
 type APIResponse = RouterOutputs['list']['leads']
 export type Rows = APIResponse['rows'][number]
-type LeadsTableProps = APIResponse & {
-  isLoading: boolean,
-  setQuery: (query: string) => void
-  setPagination: (pagination: { page: number, limit: number }) => void
+type LeadsTableProps = {
+
 }
 
-export function LeadsTable({ rows, count, isLoading, setQuery, setPagination }: LeadsTableProps) {
+export function LeadsTable(props: LeadsTableProps) {
   const columns = useLeadsColumn()
+  const trpc = useTRPC();
+  const [query, setQuery] = useState('')
+  const [pagination, setPagination] = useState({ page: 1, limit: 50 })
+  const { data, isLoading } = useQuery(
+    trpc.list.leads.queryOptions({
+      q: query || '',
+      page: pagination.page === 0 ? 1 : pagination.page || 1,
+      limit: pagination.limit || 50,
+    })
+  )
   const [onRowSelectionChange, setOnRowSelectionChange] = useState<number>(0)
   const ref = useRef<{ table: MRT_TableInstance<Rows> }>(null)
 
@@ -54,7 +64,7 @@ export function LeadsTable({ rows, count, isLoading, setQuery, setPagination }: 
 
   return (
     <DataTable<Rows>
-      count={count}
+      count={data?.count || 0}
       loading={isLoading}
       ref={ref}
       toolbar={[
@@ -64,7 +74,7 @@ export function LeadsTable({ rows, count, isLoading, setQuery, setPagination }: 
         }
       ]}
       calcHeight="366px"
-      data={rows}
+      data={data?.rows || []}
       onRowSelectionChange={() => setOnRowSelectionChange(state => state + 1)}
       onPaginationChange={() => {
         setTimeout(_pagination, 0)
