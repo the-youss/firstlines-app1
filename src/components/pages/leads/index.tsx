@@ -21,6 +21,7 @@ import { LeadsTable } from "./table";
 import { ImportLeadsDialog } from "./import-leads-dialog";
 import { useTRPC } from "@/trpc/react";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "next/navigation";
 
 type SortKey = 'name' | 'title' | 'company' | 'country' | 'industry' | 'source' | 'list';
 type SortDirection = 'asc' | 'desc' | null;
@@ -41,11 +42,12 @@ interface Lead {
 
 export const Leads = () => {
   const trpc = useTRPC();
+  const searchParams = useSearchParams()
   const { data, isLoading } = useQuery(
     trpc.list.leads.queryOptions({
-      // q: searchTerm,
-      page: 1,
-      limit: 50,
+      q: searchParams.get('q') || '',
+      page: Number(searchParams.get('page') === '0' ? '1' : searchParams.get('page') || '1'),
+      limit: Number(searchParams.get('limit') || '50'),
     })
   )
 

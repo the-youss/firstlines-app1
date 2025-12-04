@@ -36,13 +36,13 @@ export const listRouter = {
         },
       }))
       const key2 = ['name', 'domain', 'size'] as (keyof Prisma.CompanyWhereInput)[];
-      filter.company = {
-        OR: key2.map(key => ({
+      filter.OR.push(...key2.map(key => ({
+        company: {
           [key]: {
             contains: q,
           },
-        }))
-      }
+        },
+      })))
     }
 
     const rows = await ctx.db.lead.findMany({

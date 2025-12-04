@@ -16,11 +16,12 @@ import { DataTableFilterList } from './filter-list';
 import { DataTableSortList } from './sort-list';
 import { WithThemeProvider } from './theme';
 import { DataTableViewOptions } from './view-options';
+import { useDebouncedCallback } from '@/hooks/use-debounced-callback';
 
 const RenderTopToolbar = ({ table, toolbar }: { table: MRT_TableInstance<any>, toolbar?: DataTableProps<any>['toolbar'] }) => {
-
+  const [localValue, setLocalValue] = useState('')
   const selectedRows = table.getSelectedRowModel().rows.length;
-  const debounceCb = (value: string) => table.setGlobalFilter(value)
+  const debounceCb = useDebouncedCallback((value: string) => table.setGlobalFilter(value), 500)
   const value = table.getState().globalFilter
   const { left, right, secondLeft, secondRight } = useMemo(() => {
     const left = toolbar?.filter(item => item.position === "left")
@@ -45,9 +46,15 @@ const RenderTopToolbar = ({ table, toolbar }: { table: MRT_TableInstance<any>, t
           <InputGroupAddon>
             <SearchIcon />
           </InputGroupAddon>
-          <InputGroupInput value={value} placeholder="Search..." onChange={(e) => debounceCb(e.target.value)} />
-          {value && (
-            <InputGroupAddon align="inline-end" className='cursor-pointer' onClick={() => table.setGlobalFilter('')}>
+          <InputGroupInput value={localValue} placeholder="Search..." onChange={(e) => {
+            setLocalValue(e.target.value)
+            debounceCb(e.target.value)
+          }} />
+          {localValue && (
+            <InputGroupAddon align="inline-end" className='cursor-pointer' onClick={() => {
+              setLocalValue('')
+              table.setGlobalFilter('')
+            }}>
               <XIcon />
             </InputGroupAddon>
           )}
@@ -88,9 +95,10 @@ interface DataTableProps<TData extends MRT_RowData> {
   calcWidth?: `${number}px`
   toolbar?: Array<{ node: React.ReactNode, position?: "left" | "right" | "2nd-left" | "2nd-right" }>
   onRowSelectionChange?: () => void
-  onPaginationChange?: (pagination: MRT_PaginationState) => void
+  onPaginationChange?: () => void
   density?: MRT_DensityState
-  count?: number
+  count?: number;
+  onGlobalFilterChange?: (value: string) => void
 }
 
 export type DataTableRef<TData extends MRT_RowData> = { table: MRT_TableInstance<TData> }
@@ -99,7 +107,8 @@ export const _DataTableBase = <TData extends MRT_RowData>(
   ref: React.Ref<DataTableRef<TData>>
 ) => {
   const [rowSelection, setRowSelection] = useState({});
-  const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 20 });
+  const [globalFilter, setGlobalFilter] = useState('');
+  const [pagination, setPagination] = useState({ pageIndex: 1, pageSize: 20 });
   const columns = useMemo<MRT_ColumnDef<TData>[]>(
     () => props.columns,
     [props.columns],
@@ -124,13 +133,16 @@ export const _DataTableBase = <TData extends MRT_RowData>(
     enableRowVirtualization: true,
     enableRowSelection: true,
     onPaginationChange: (state) => {
-      if (typeof state !== 'object') return
       setPagination(state);
-      props.onPaginationChange?.(state);
+      props.onPaginationChange?.();
     },
     onRowSelectionChange: (state) => {
       setRowSelection(state);
       props.onRowSelectionChange?.();
+    },
+    onGlobalFilterChange: (value) => {
+      setGlobalFilter(value);
+      props.onGlobalFilterChange?.(value);
     },
     enableMultiRowSelection: true,
     initialState: {
@@ -140,6 +152,8 @@ export const _DataTableBase = <TData extends MRT_RowData>(
     state: {
       showSkeletons: Boolean(props.loading),
       rowSelection,
+      pagination,
+      globalFilter,
     },
     enableFilters: true,
     enableGlobalFilterRankedResults: false,

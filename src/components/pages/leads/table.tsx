@@ -1,4 +1,6 @@
 'use client'
+import { RouterOutputs } from "@/api";
+import { DataTable } from "@/components/data-table";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,13 +12,12 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 import { Plus, Trash2 } from "lucide-react";
 import { MRT_TableInstance } from "material-react-table";
-import { useRef, useState } from "react";
-import { DataTable } from "@/components/data-table";
-import { Button } from "@/components/ui/button";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useRef, useState } from "react";
 import { useLeadsColumn } from "./column";
-import { RouterOutputs } from "@/api";
 
 export interface Lead {
   id: string;
@@ -32,412 +33,32 @@ export interface Lead {
   linkedinUrl: string;
 }
 
-const leads: Lead[] = [
-  {
-    id: "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
-    name: "Sarah Johnson",
-    title: "VP of Sales",
-    company: "TechCorp Inc",
-    country: "United States",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: "Tech Leaders Outreach",
-    avatar: "SJ",
-    linkedinUrl: "https://linkedin.com/in/sarahjohnson",
-  },
-  {
-    id: "b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e",
-    name: "Michael Chen",
-    title: "Marketing Director",
-    company: "Growth Labs",
-    country: "Canada",
-    industry: "Marketing",
-    source: "Sales Nav",
-    list: "Marketing List",
-    campaign: null,
-    avatar: "MC",
-    linkedinUrl: "https://linkedin.com/in/michaelchen",
-  },
-  {
-    id: "c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f",
-    name: "Emily Rodriguez",
-    title: "CEO",
-    company: "Startup XYZ",
-    country: "United Kingdom",
-    industry: "SaaS",
-    source: "CSV",
-    list: "Founders",
-    campaign: "Founder Series",
-    avatar: "ER",
-    linkedinUrl: "https://linkedin.com/in/emilyrodriguez",
-  },
-  {
-    id: "d4e5f6a7-b8c9-4d5e-1f2a-3b4c5d6e7f8a",
-    name: "David Kim",
-    title: "CTO",
-    company: "Innovation Co",
-    country: "Singapore",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Tech Executives",
-    campaign: null,
-    avatar: "DK",
-    linkedinUrl: "https://linkedin.com/in/davidkim",
-  },
-  {
-    id: "e5f6a7b8-c9d0-4e5f-2a3b-4c5d6e7f8a9b",
-    name: "Lisa Anderson",
-    title: "Head of Operations",
-    company: "Global Enterprises",
-    country: "Australia",
-    industry: "Finance",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: null,
-    avatar: "LA",
-    linkedinUrl: "https://linkedin.com/in/lisaanderson",
-  },
-  {
-    id: "f6a7b8c9-d0e1-4f5a-3b4c-5d6e7f8a9b0c",
-    name: "James Wilson",
-    title: "Sales Manager",
-    company: "RetailPro",
-    country: "Germany",
-    industry: "Retail",
-    source: "CSV",
-    list: "Marketing List",
-    campaign: "Tech Leaders Outreach",
-    avatar: "JW",
-    linkedinUrl: "https://linkedin.com/in/jameswilson",
-  },
-  {
-    id: "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
-    name: "Sarah Johnson",
-    title: "VP of Sales",
-    company: "TechCorp Inc",
-    country: "United States",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: "Tech Leaders Outreach",
-    avatar: "SJ",
-    linkedinUrl: "https://linkedin.com/in/sarahjohnson",
-  },
-  {
-    id: "b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e",
-    name: "Michael Chen",
-    title: "Marketing Director",
-    company: "Growth Labs",
-    country: "Canada",
-    industry: "Marketing",
-    source: "Sales Nav",
-    list: "Marketing List",
-    campaign: null,
-    avatar: "MC",
-    linkedinUrl: "https://linkedin.com/in/michaelchen",
-  },
-  {
-    id: "c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f",
-    name: "Emily Rodriguez",
-    title: "CEO",
-    company: "Startup XYZ",
-    country: "United Kingdom",
-    industry: "SaaS",
-    source: "CSV",
-    list: "Founders",
-    campaign: "Founder Series",
-    avatar: "ER",
-    linkedinUrl: "https://linkedin.com/in/emilyrodriguez",
-  },
-  {
-    id: "d4e5f6a7-b8c9-4d5e-1f2a-3b4c5d6e7f8a",
-    name: "David Kim",
-    title: "CTO",
-    company: "Innovation Co",
-    country: "Singapore",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Tech Executives",
-    campaign: null,
-    avatar: "DK",
-    linkedinUrl: "https://linkedin.com/in/davidkim",
-  },
-  {
-    id: "e5f6a7b8-c9d0-4e5f-2a3b-4c5d6e7f8a9b",
-    name: "Lisa Anderson",
-    title: "Head of Operations",
-    company: "Global Enterprises",
-    country: "Australia",
-    industry: "Finance",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: null,
-    avatar: "LA",
-    linkedinUrl: "https://linkedin.com/in/lisaanderson",
-  },
-  {
-    id: "f6a7b8c9-d0e1-4f5a-3b4c-5d6e7f8a9b0c",
-    name: "James Wilson",
-    title: "Sales Manager",
-    company: "RetailPro",
-    country: "Germany",
-    industry: "Retail",
-    source: "CSV",
-    list: "Marketing List",
-    campaign: "Tech Leaders Outreach",
-    avatar: "JW",
-    linkedinUrl: "https://linkedin.com/in/jameswilson",
-  },
-  {
-    id: "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
-    name: "Sarah Johnson",
-    title: "VP of Sales",
-    company: "TechCorp Inc",
-    country: "United States",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: "Tech Leaders Outreach",
-    avatar: "SJ",
-    linkedinUrl: "https://linkedin.com/in/sarahjohnson",
-  },
-  {
-    id: "b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e",
-    name: "Michael Chen",
-    title: "Marketing Director",
-    company: "Growth Labs",
-    country: "Canada",
-    industry: "Marketing",
-    source: "Sales Nav",
-    list: "Marketing List",
-    campaign: null,
-    avatar: "MC",
-    linkedinUrl: "https://linkedin.com/in/michaelchen",
-  },
-  {
-    id: "c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f",
-    name: "Emily Rodriguez",
-    title: "CEO",
-    company: "Startup XYZ",
-    country: "United Kingdom",
-    industry: "SaaS",
-    source: "CSV",
-    list: "Founders",
-    campaign: "Founder Series",
-    avatar: "ER",
-    linkedinUrl: "https://linkedin.com/in/emilyrodriguez",
-  },
-  {
-    id: "d4e5f6a7-b8c9-4d5e-1f2a-3b4c5d6e7f8a",
-    name: "David Kim",
-    title: "CTO",
-    company: "Innovation Co",
-    country: "Singapore",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Tech Executives",
-    campaign: null,
-    avatar: "DK",
-    linkedinUrl: "https://linkedin.com/in/davidkim",
-  },
-  {
-    id: "e5f6a7b8-c9d0-4e5f-2a3b-4c5d6e7f8a9b",
-    name: "Lisa Anderson",
-    title: "Head of Operations",
-    company: "Global Enterprises",
-    country: "Australia",
-    industry: "Finance",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: null,
-    avatar: "LA",
-    linkedinUrl: "https://linkedin.com/in/lisaanderson",
-  },
-  {
-    id: "f6a7b8c9-d0e1-4f5a-3b4c-5d6e7f8a9b0c",
-    name: "James Wilson",
-    title: "Sales Manager",
-    company: "RetailPro",
-    country: "Germany",
-    industry: "Retail",
-    source: "CSV",
-    list: "Marketing List",
-    campaign: "Tech Leaders Outreach",
-    avatar: "JW",
-    linkedinUrl: "https://linkedin.com/in/jameswilson",
-  },
-  {
-    id: "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
-    name: "Sarah Johnson",
-    title: "VP of Sales",
-    company: "TechCorp Inc",
-    country: "United States",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: "Tech Leaders Outreach",
-    avatar: "SJ",
-    linkedinUrl: "https://linkedin.com/in/sarahjohnson",
-  },
-  {
-    id: "b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e",
-    name: "Michael Chen",
-    title: "Marketing Director",
-    company: "Growth Labs",
-    country: "Canada",
-    industry: "Marketing",
-    source: "Sales Nav",
-    list: "Marketing List",
-    campaign: null,
-    avatar: "MC",
-    linkedinUrl: "https://linkedin.com/in/michaelchen",
-  },
-  {
-    id: "c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f",
-    name: "Emily Rodriguez",
-    title: "CEO",
-    company: "Startup XYZ",
-    country: "United Kingdom",
-    industry: "SaaS",
-    source: "CSV",
-    list: "Founders",
-    campaign: "Founder Series",
-    avatar: "ER",
-    linkedinUrl: "https://linkedin.com/in/emilyrodriguez",
-  },
-  {
-    id: "d4e5f6a7-b8c9-4d5e-1f2a-3b4c5d6e7f8a",
-    name: "David Kim",
-    title: "CTO",
-    company: "Innovation Co",
-    country: "Singapore",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Tech Executives",
-    campaign: null,
-    avatar: "DK",
-    linkedinUrl: "https://linkedin.com/in/davidkim",
-  },
-  {
-    id: "e5f6a7b8-c9d0-4e5f-2a3b-4c5d6e7f8a9b",
-    name: "Lisa Anderson",
-    title: "Head of Operations",
-    company: "Global Enterprises",
-    country: "Australia",
-    industry: "Finance",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: null,
-    avatar: "LA",
-    linkedinUrl: "https://linkedin.com/in/lisaanderson",
-  },
-  {
-    id: "f6a7b8c9-d0e1-4f5a-3b4c-5d6e7f8a9b0c",
-    name: "James Wilson",
-    title: "Sales Manager",
-    company: "RetailPro",
-    country: "Germany",
-    industry: "Retail",
-    source: "CSV",
-    list: "Marketing List",
-    campaign: "Tech Leaders Outreach",
-    avatar: "JW",
-    linkedinUrl: "https://linkedin.com/in/jameswilson",
-  },
-  {
-    id: "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
-    name: "Sarah Johnson",
-    title: "VP of Sales",
-    company: "TechCorp Inc",
-    country: "United States",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: "Tech Leaders Outreach",
-    avatar: "SJ",
-    linkedinUrl: "https://linkedin.com/in/sarahjohnson",
-  },
-  {
-    id: "b2c3d4e5-f6a7-4b5c-9d0e-1f2a3b4c5d6e",
-    name: "Michael Chen",
-    title: "Marketing Director",
-    company: "Growth Labs",
-    country: "Canada",
-    industry: "Marketing",
-    source: "Sales Nav",
-    list: "Marketing List",
-    campaign: null,
-    avatar: "MC",
-    linkedinUrl: "https://linkedin.com/in/michaelchen",
-  },
-  {
-    id: "c3d4e5f6-a7b8-4c5d-0e1f-2a3b4c5d6e7f",
-    name: "Emily Rodriguez",
-    title: "CEO",
-    company: "Startup XYZ",
-    country: "United Kingdom",
-    industry: "SaaS",
-    source: "CSV",
-    list: "Founders",
-    campaign: "Founder Series",
-    avatar: "ER",
-    linkedinUrl: "https://linkedin.com/in/emilyrodriguez",
-  },
-  {
-    id: "d4e5f6a7-b8c9-4d5e-1f2a-3b4c5d6e7f8a",
-    name: "David Kim",
-    title: "CTO",
-    company: "Innovation Co",
-    country: "Singapore",
-    industry: "Technology",
-    source: "LinkedIn",
-    list: "Tech Executives",
-    campaign: null,
-    avatar: "DK",
-    linkedinUrl: "https://linkedin.com/in/davidkim",
-  },
-  {
-    id: "e5f6a7b8-c9d0-4e5f-2a3b-4c5d6e7f8a9b",
-    name: "Lisa Anderson",
-    title: "Head of Operations",
-    company: "Global Enterprises",
-    country: "Australia",
-    industry: "Finance",
-    source: "LinkedIn",
-    list: "Q1 Prospects",
-    campaign: null,
-    avatar: "LA",
-    linkedinUrl: "https://linkedin.com/in/lisaanderson",
-  },
-  {
-    id: "f6a7b8c9-d0e1-4f5a-3b4c-5d6e7f8a9b0c",
-    name: "James Wilson",
-    title: "Sales Manager",
-    company: "RetailPro",
-    country: "Germany",
-    industry: "Retail",
-    source: "CSV",
-    list: "Marketing List",
-    campaign: "Tech Leaders Outreach",
-    avatar: "JW",
-    linkedinUrl: "https://linkedin.com/in/jameswilson",
-  },
-];
+
 
 type APIResponse = RouterOutputs['list']['leads']
 export type Rows = APIResponse['rows'][number]
 type LeadsTableProps = APIResponse & { isLoading: boolean }
-export function LeadsTable({ rows, count }: LeadsTableProps) {
+export function LeadsTable({ rows, count, isLoading }: LeadsTableProps) {
   const columns = useLeadsColumn()
-  const [loading, setLoading] = useState(false);
   const [onRowSelectionChange, setOnRowSelectionChange] = useState<number>(0)
   const ref = useRef<{ table: MRT_TableInstance<Rows> }>(null)
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+  const router = useRouter()
 
 
+  const _pagination = useCallback(() => {
+    const s = new URLSearchParams(searchParams)
+    const pagination = ref.current?.table.getState().pagination;
+    s.set('page', pagination?.pageIndex?.toString() || '1')
+    s.set('limit', pagination?.pageSize?.toString() || '20')
+    router.push(`${pathname}?${s.toString()}`)
+  }, [searchParams, router, pathname])
 
   return (
     <DataTable<Rows>
+      count={count}
+      loading={isLoading}
       ref={ref}
       toolbar={[
         {
@@ -448,7 +69,18 @@ export function LeadsTable({ rows, count }: LeadsTableProps) {
       calcHeight="366px"
       data={rows}
       onRowSelectionChange={() => setOnRowSelectionChange(state => state + 1)}
-      onPaginationChange={(pagination) => console.log(pagination)}
+      onPaginationChange={() => {
+        setTimeout(_pagination, 0)
+      }}
+      onGlobalFilterChange={(value) => {
+        const s = new URLSearchParams(searchParams)
+        if (!value) {
+          s.delete('q')
+        } else {
+          s.set('q', value)
+        }
+        router.push(`${pathname}?${s.toString()}`)
+      }}
       columns={columns} />
   )
 }

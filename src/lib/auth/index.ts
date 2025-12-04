@@ -35,7 +35,6 @@ export const auth = betterAuth({
         return hashPassword(password);
       },
       verify: async (data) => {
-        console.log(data);
         return verifyPassword(data.password, data.hash);
       },
     },
