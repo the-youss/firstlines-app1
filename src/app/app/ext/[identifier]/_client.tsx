@@ -57,6 +57,90 @@ export function Client({ identifier }: { identifier: string }) {
   const router = useRouter()
   const { data: meta, isPending: isPendingMetadta } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
   const singleLead = meta?.total === 1 ? 'lead' : 'leads';
+
+
+  // Source data from Chrome extension or mock
+  const sourceData: SourceData = MOCK_SOURCE;
+
+  // Import state
+  // const [state, setState] = useState<ImportState>("review");
+  // const [progress, setProgress] = useState(0);
+  // const [importedCount, setImportedCount] = useState(0);
+
+  // // Reset relevant fields when destination changes
+  // useEffect(() => {
+  //   if (destination === "new-list") {
+  //     setListName(`Search Results - ${new Date().toLocaleDateString()}`);
+  //   }
+  //   setSelectedCampaignId("");
+  //   setSelectedListId("");
+  //   setCreateNewSegment(false);
+  //   setSegmentName("");
+  // }, [destination]);
+
+  // Processing simulation
+  // useEffect(() => {
+  //   if (state === "processing") {
+  //     const interval = setInterval(() => {
+  //       setProgress((prev) => {
+  //         const increment = Math.random() * 8 + 2;
+  //         const newProgress = Math.min(prev + increment, 100);
+  //         setImportedCount(Math.floor((newProgress / 100) * sourceData.leadCount));
+
+  //         if (newProgress >= 100) {
+  //           clearInterval(interval);
+  //           setTimeout(() => setState("success"), 500);
+  //         }
+  //         return newProgress;
+  //       });
+  //     }, 200);
+
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [state, sourceData.leadCount]);
+
+
+
+
+
+
+
+
+
+  return (
+    <div className="flex items-center justify-center min-h-[calc(100vh-112px)]">
+      {false ? <Loading /> : (
+        <div className="w-full max-w-2xl">
+          <Review identifier={identifier} />
+        </div>
+      )}
+    </div >
+  )
+}
+
+
+function Loading() {
+  return (
+    <div className="flex flex-col gap-4 items-center justify-center min-h-screen">
+      <Spinner className="size-10" />
+      <span className="ml-2">Please wait while we fetch the metadata...</span>
+    </div>
+  )
+}
+
+
+function Review({ identifier }: { identifier: string }) {
+  const router = useRouter();
+  const trpc = useTRPC();
+  const sourceData: SourceData = MOCK_SOURCE;
+  const { data: lists } = useQuery(trpc.extension.getLists.queryOptions())
+  // const { data: meta, isPending: isPendingMetadta } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
+  const [destination, setDestination] = useState<ImportDestination>("new-list");
+  const [listName, setListName] = useState(`Search Results - ${new Date().toLocaleDateString()}`);
+  const [selectedCampaignId, setSelectedCampaignId] = useState<string>("");
+  const [selectedListId, setSelectedListId] = useState<string>("");
+  const [createNewSegment, setCreateNewSegment] = useState(false);
+  const [segmentName, setSegmentName] = useState("");
   const { mutate: importLeads, isPending } = useMutation(trpc.extraction.startSalesNavExtraction.mutationOptions({
     onSuccess() {
       toast.info(`Import in progress...`)
@@ -64,76 +148,9 @@ export function Client({ identifier }: { identifier: string }) {
     },
   }))
 
-  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget as HTMLFormElement);
-    const name = formData.get('listName') as string;
-    importLeads({ payloadId: identifier, name })
-  }, [identifier])
-
-  // Source data from Chrome extension or mock
-  const sourceData: SourceData = MOCK_SOURCE;
-
-  // User selections
-  const [destination, setDestination] = useState<ImportDestination>("new-list");
-  const [listName, setListName] = useState(`Search Results - ${new Date().toLocaleDateString()}`);
-  const [selectedCampaignId, setSelectedCampaignId] = useState<string>("");
-  const [selectedListId, setSelectedListId] = useState<string>("");
-  const [createNewSegment, setCreateNewSegment] = useState(false);
-  const [segmentName, setSegmentName] = useState("");
-
-  // Import state
-  const [state, setState] = useState<ImportState>("review");
-  const [progress, setProgress] = useState(0);
-  const [importedCount, setImportedCount] = useState(0);
-
-  // Reset relevant fields when destination changes
-  useEffect(() => {
-    if (destination === "new-list") {
-      setListName(`Search Results - ${new Date().toLocaleDateString()}`);
-    }
-    setSelectedCampaignId("");
-    setSelectedListId("");
-    setCreateNewSegment(false);
-    setSegmentName("");
-  }, [destination]);
-
-  // Processing simulation
-  useEffect(() => {
-    if (state === "processing") {
-      const interval = setInterval(() => {
-        setProgress((prev) => {
-          const increment = Math.random() * 8 + 2;
-          const newProgress = Math.min(prev + increment, 100);
-          setImportedCount(Math.floor((newProgress / 100) * sourceData.leadCount));
-
-          if (newProgress >= 100) {
-            clearInterval(interval);
-            setTimeout(() => setState("success"), 500);
-          }
-          return newProgress;
-        });
-      }, 200);
-
-      return () => clearInterval(interval);
-    }
-  }, [state, sourceData.leadCount]);
-
-  const handleStartImport = () => {
-    setState("processing");
-  };
-
-  const handleCancel = () => {
-    router.back()
-  };
-
-  const handleViewLeads = () => {
-    if (destination === "campaign" && selectedCampaignId) {
-      router.push(appRoutes.appCampaignDetails.replace(":campaignId", selectedCampaignId));
-    } else {
-      router.push(appRoutes.appLeads);
-    }
-  };
+  const handleSubmit = useCallback(() => {
+    console.log('submit', destination, identifier, listName, selectedCampaignId, selectedListId)
+  }, [identifier, destination, listName, selectedCampaignId, selectedListId])
 
   const isImportValid = () => {
     switch (destination) {
@@ -149,7 +166,7 @@ export function Client({ identifier }: { identifier: string }) {
   };
 
   const SourceIcon =
-    sourceData.sourceType === "sales-nav" ? (
+    'sales-nav' === "sales-nav" ? (
       <div className="h-12 w-12 rounded-xl bg-[#0A66C2] flex items-center justify-center">
         <span className="text-white font-bold text-lg">SN</span>
       </div>
@@ -158,7 +175,6 @@ export function Client({ identifier }: { identifier: string }) {
         <Linkedin className="h-6 w-6 text-white" />
       </div>
     );
-
   const getDestinationIcon = () => {
     if (destination === "campaign") {
       return (
@@ -181,246 +197,193 @@ export function Client({ identifier }: { identifier: string }) {
         const campaign = MOCK_CAMPAIGNS.find((c) => c.id === selectedCampaignId);
         return campaign ? campaign.name : "Select a campaign";
       case "existing-list":
-        const list = MOCK_LISTS.find((l) => l.id === selectedListId);
+        const list = lists?.find((l) => l.id === selectedListId);
         return list ? list.name : "Select a list";
     }
   };
+
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      {isPendingMetadta ? <Loading /> : (
-        <div className="flex items-center justify-center py-4">
-          <div className="w-full max-w-2xl">
-            <Card>
-              <CardHeader>
-                <CardTitle>Import Summary</CardTitle>
-                <CardDescription>
-                  {state === "review" && "Choose where to send your leads."}
-                  {state === "processing" && "Import in progress..."}
-                  {state === "success" && "Import completed successfully!"}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {state === "review" && (
-                  <div className="space-y-6">
-                    {/* Source Section */}
-                    <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/50">
-                      {SourceIcon}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <a
-                            href={sourceData.sourceUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-medium hover:underline flex items-center gap-1 text-foreground"
-                          >
-                            {sourceData.sourceType === "sales-nav"
-                              ? "Sales Navigator Results"
-                              : "LinkedIn Search Results"}
-                            <ExternalLink className="h-3.5 w-3.5" />
-                          </a>
-                        </div>
-                        <p className="text-sm text-muted-foreground truncate">{sourceData.sourceUrl}</p>
-                      </div>
-                      <Badge variant="secondary" className="shrink-0">
-                        {sourceData.leadCount.toLocaleString()} leads found
-                      </Badge>
+    <Card>
+      <CardHeader>
+        <CardTitle>Import Summary</CardTitle>
+        <CardDescription>
+          Choose where to send your leads.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-6">
+          {/* Source Section */}
+          <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/50">
+            {SourceIcon}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <a
+                  href={sourceData.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium hover:underline flex items-center gap-1 text-foreground"
+                >
+                  {sourceData.sourceType === "sales-nav"
+                    ? "Sales Navigator Results"
+                    : "LinkedIn Search Results"}
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              </div>
+              <p className="text-sm text-muted-foreground truncate">{sourceData.sourceUrl}</p>
+            </div>
+            <Badge variant="secondary" className="shrink-0">
+              {sourceData.leadCount.toLocaleString()} leads found
+            </Badge>
+          </div>
+
+          {/* Arrow */}
+          <div className="flex justify-center">
+            <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
+              <ArrowDown className="h-5 w-5 text-muted-foreground" />
+            </div>
+          </div>
+
+          {/* Destination Selection */}
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label>Choose where to import leads</Label>
+              <Select value={destination} onValueChange={(val) => setDestination(val as ImportDestination)}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Choose where to import leads" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="new-list">
+                    <div className="flex items-center gap-2">
+                      <Plus className="h-4 w-4" />
+                      <span>New list</span>
                     </div>
-
-                    {/* Arrow */}
-                    <div className="flex justify-center">
-                      <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center">
-                        <ArrowDown className="h-5 w-5 text-muted-foreground" />
-                      </div>
+                  </SelectItem>
+                  <SelectItem value="campaign">
+                    <div className="flex items-center gap-2">
+                      <ArrowRight className="h-4 w-4" />
+                      <span>Add to campaign</span>
                     </div>
-
-                    {/* Destination Selection */}
-                    <div className="space-y-4">
-                      <div className="space-y-2">
-                        <Label>Choose where to import leads</Label>
-                        <Select value={destination} onValueChange={(val) => setDestination(val as ImportDestination)}>
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="new-list">
-                              <div className="flex items-center gap-2">
-                                <Plus className="h-4 w-4" />
-                                <span>New list</span>
-                              </div>
-                            </SelectItem>
-                            <SelectItem value="campaign">
-                              <div className="flex items-center gap-2">
-                                <ArrowRight className="h-4 w-4" />
-                                <span>Add to campaign</span>
-                              </div>
-                            </SelectItem>
-                            <SelectItem value="existing-list">
-                              <div className="flex items-center gap-2">
-                                <List className="h-4 w-4" />
-                                <span>Existing list</span>
-                              </div>
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
+                  </SelectItem>
+                  {lists && lists.length > 0 && (
+                    <SelectItem value="existing-list">
+                      <div className="flex items-center gap-2">
+                        <List className="h-4 w-4" />
+                        <span>Existing list</span>
                       </div>
+                    </SelectItem>
+                  )}
+                </SelectContent>
+              </Select>
+            </div>
 
-                      {/* Dynamic Configuration Based on Selection */}
-                      <div className="p-4 rounded-lg bg-muted/50 space-y-4">
-                        <div className="flex items-center gap-4">
-                          {getDestinationIcon()}
-                          <div className="flex-1">
-                            <p className="font-medium">{getDestinationLabel()}</p>
-                            <p className="text-sm text-muted-foreground">
-                              {destination === "new-list" && "Create a new list for these leads"}
-                              {destination === "campaign" && "Add leads directly to a campaign"}
-                              {destination === "existing-list" && "Merge leads into an existing list"}
-                            </p>
-                          </div>
-                        </div>
+            {/* Dynamic Configuration Based on Selection */}
+            <div className="p-4 rounded-lg bg-muted/50 space-y-4">
+              <div className="flex items-center gap-4">
+                {getDestinationIcon()}
+                <div className="flex-1">
+                  <p className="font-medium">{getDestinationLabel()}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {destination === "new-list" && "Create a new list for these leads"}
+                    {destination === "campaign" && "Add leads directly to a campaign"}
+                    {destination === "existing-list" && "Merge leads into an existing list"}
+                  </p>
+                </div>
+              </div>
 
-                        {/* New List Config */}
-                        {destination === "new-list" && (
-                          <div className="space-y-2 pt-2 border-t">
-                            <Label htmlFor="list-name">List Name</Label>
-                            <Input
-                              id="list-name"
-                              value={listName}
-                              onChange={(e) => setListName(e.target.value)}
-                              placeholder="Enter list name..."
-                            />
-                          </div>
-                        )}
+              {/* New List Config */}
+              {destination === "new-list" && (
+                <div className="space-y-2 pt-2 border-t">
+                  <Label htmlFor="list-name">List Name</Label>
+                  <Input
+                    id="list-name"
+                    value={listName}
+                    onChange={(e) => setListName(e.target.value)}
+                    placeholder="Enter list name..."
+                  />
+                </div>
+              )}
 
-                        {/* Campaign Config */}
-                        {destination === "campaign" && (
-                          <div className="space-y-4 pt-2 border-t">
-                            <div className="space-y-2">
-                              <Label>Select Campaign</Label>
-                              <Select value={selectedCampaignId} onValueChange={setSelectedCampaignId}>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Choose a campaign..." />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  {MOCK_CAMPAIGNS.map((campaign) => (
-                                    <SelectItem key={campaign.id} value={campaign.id}>
-                                      {campaign.name}
-                                    </SelectItem>
-                                  ))}
-                                </SelectContent>
-                              </Select>
-                            </div>
-
-                            <div className="flex items-start space-x-3">
-                              <Checkbox
-                                id="create-segment"
-                                checked={createNewSegment}
-                                onCheckedChange={(checked) => setCreateNewSegment(checked as boolean)}
-                              />
-                              <div className="space-y-1">
-                                <Label htmlFor="create-segment" className="font-medium cursor-pointer">
-                                  Create a new list for this import?
-                                </Label>
-                                <p className="text-sm text-muted-foreground">
-                                  If unchecked, leads will be merged into the campaign's existing main list.
-                                </p>
-                              </div>
-                            </div>
-
-                            {createNewSegment && (
-                              <div className="space-y-2 pl-6">
-                                <Label htmlFor="segment-name">New List Name</Label>
-                                <Input
-                                  id="segment-name"
-                                  value={segmentName}
-                                  onChange={(e) => setSegmentName(e.target.value)}
-                                  placeholder={`Import - ${new Date().toLocaleDateString()}`}
-                                />
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        {/* Existing List Config */}
-                        {destination === "existing-list" && (
-                          <div className="space-y-2 pt-2 border-t">
-                            <Label>Select List</Label>
-                            <Select value={selectedListId} onValueChange={setSelectedListId}>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Choose a list..." />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {MOCK_LISTS.map((list) => (
-                                  <SelectItem key={list.id} value={list.id}>
-                                    {list.name}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-3 pt-4">
-                      <Button variant="outline" className="flex-1" onClick={handleCancel}>
-                        Cancel
-                      </Button>
-                      <Button className="flex-1" onClick={handleStartImport} disabled={!isImportValid()}>
-                        Start Import
-                      </Button>
-                    </div>
+              {/* Campaign Config */}
+              {destination === "campaign" && (
+                <div className="space-y-4 pt-2 border-t">
+                  <div className="space-y-2">
+                    <Label>Select Campaign</Label>
+                    <Select value={selectedCampaignId} onValueChange={setSelectedCampaignId}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Choose a campaign..." />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {MOCK_CAMPAIGNS.map((campaign) => (
+                          <SelectItem key={campaign.id} value={campaign.id}>
+                            {campaign.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
-                )}
 
-                {state === "processing" && (
-                  <div className="space-y-6 py-8">
-                    <div className="flex justify-center">
-                      <Loader2 className="h-12 w-12 text-primary animate-spin" />
-                    </div>
-                    <div className="space-y-3">
-                      <Progress value={progress} className="h-3" />
-                      <p className="text-center text-muted-foreground">
-                        Importing... <span className="font-medium text-foreground">{importedCount.toLocaleString()}</span>{" "}
-                        / {sourceData.leadCount.toLocaleString()} leads collected
+                  <div className="flex items-start space-x-3">
+                    <Checkbox
+                      id="create-segment"
+                      checked={createNewSegment}
+                      onCheckedChange={(checked) => setCreateNewSegment(checked as boolean)}
+                    />
+                    <div className="space-y-1">
+                      <Label htmlFor="create-segment" className="font-medium cursor-pointer">
+                        Create a new list for this import?
+                      </Label>
+                      <p className="text-sm text-muted-foreground">
+                        If unchecked, leads will be merged into the campaign's existing main list.
                       </p>
                     </div>
                   </div>
-                )}
 
-                {state === "success" && (
-                  <div className="space-y-6 py-8">
-                    <div className="flex justify-center">
-                      <div className="h-16 w-16 rounded-full bg-green-500/10 flex items-center justify-center">
-                        <CheckCircle2 className="h-10 w-10 text-green-500" />
-                      </div>
+                  {createNewSegment && (
+                    <div className="space-y-2 pl-6">
+                      <Label htmlFor="segment-name">New List Name</Label>
+                      <Input
+                        id="segment-name"
+                        value={segmentName}
+                        onChange={(e) => setSegmentName(e.target.value)}
+                        placeholder={`Import - ${new Date().toLocaleDateString()}`}
+                      />
                     </div>
-                    <div className="text-center space-y-2">
-                      <h3 className="text-xl font-semibold">Import Complete!</h3>
-                      <p className="text-muted-foreground">
-                        Successfully imported {sourceData.leadCount.toLocaleString()} leads.
-                      </p>
-                    </div>
-                    <div className="flex justify-center">
-                      <Button onClick={handleViewLeads}>View Leads</Button>
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                  )}
+                </div>
+              )}
+
+              {/* Existing List Config */}
+              {lists && lists.length > 0 && destination === "existing-list" && (
+                <div className="space-y-2 pt-2 border-t">
+                  <Label>Select List</Label>
+                  <Select value={selectedListId} onValueChange={setSelectedListId}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Choose a list..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {lists?.map((list) => (
+                        <SelectItem key={list.id} value={list.id}>
+                          {list.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex gap-3 pt-4">
+            <Button variant="outline" className="flex-1" onClick={router.back}>
+              Cancel
+            </Button>
+            <Button className="flex-1" onClick={handleSubmit} disabled={!isImportValid()}>
+              Start Import
+            </Button>
           </div>
         </div>
-      )}
-    </div >
-  )
-}
-
-
-function Loading() {
-  return (
-    <div className="flex flex-col gap-4 items-center justify-center min-h-screen">
-      <Spinner className="size-10" />
-      <span className="ml-2">Please wait while we fetch the metadata...</span>
-    </div>
+      </CardContent>
+    </Card>
   )
 }
