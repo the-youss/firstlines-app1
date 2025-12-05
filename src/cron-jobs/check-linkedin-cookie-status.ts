@@ -15,6 +15,7 @@ const checkLinkedInCookieStatus = async () => {
   for (const session of linkedInSessions) {
     if (session.updatedAt.getTime() > Date.now() - shouldCheckInterval) {
       const client = new LinkedinClient({
+        userId: session.userId,
         cookies: session.cookies as LinkedinCookies,
         linkedinHeaders: session.headers as LinkedinHeaders,
       })

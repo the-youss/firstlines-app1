@@ -395,7 +395,8 @@ export const ModelName = {
   SequenceStep: 'SequenceStep',
   ExtensionPayload: 'ExtensionPayload',
   QueueJob: 'QueueJob',
-  LinkedInSession: 'LinkedInSession'
+  LinkedInSession: 'LinkedInSession',
+  LinkedinAPILogs: 'LinkedinAPILogs'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -411,7 +412,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload" | "queueJob" | "linkedInSession"
+    modelProps: "verification" | "account" | "session" | "user" | "list" | "lead" | "company" | "campaign" | "sequenceStep" | "extensionPayload" | "queueJob" | "linkedInSession" | "linkedinAPILogs"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1303,6 +1304,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    LinkedinAPILogs: {
+      payload: Prisma.$LinkedinAPILogsPayload<ExtArgs>
+      fields: Prisma.LinkedinAPILogsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LinkedinAPILogsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LinkedinAPILogsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>
+        }
+        findFirst: {
+          args: Prisma.LinkedinAPILogsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LinkedinAPILogsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>
+        }
+        findMany: {
+          args: Prisma.LinkedinAPILogsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>[]
+        }
+        create: {
+          args: Prisma.LinkedinAPILogsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>
+        }
+        createMany: {
+          args: Prisma.LinkedinAPILogsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LinkedinAPILogsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>[]
+        }
+        delete: {
+          args: Prisma.LinkedinAPILogsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>
+        }
+        update: {
+          args: Prisma.LinkedinAPILogsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>
+        }
+        deleteMany: {
+          args: Prisma.LinkedinAPILogsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LinkedinAPILogsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LinkedinAPILogsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>[]
+        }
+        upsert: {
+          args: Prisma.LinkedinAPILogsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LinkedinAPILogsPayload>
+        }
+        aggregate: {
+          args: Prisma.LinkedinAPILogsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLinkedinAPILogs>
+        }
+        groupBy: {
+          args: Prisma.LinkedinAPILogsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LinkedinAPILogsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LinkedinAPILogsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LinkedinAPILogsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1520,6 +1595,19 @@ export const LinkedInSessionScalarFieldEnum = {
 } as const
 
 export type LinkedInSessionScalarFieldEnum = (typeof LinkedInSessionScalarFieldEnum)[keyof typeof LinkedInSessionScalarFieldEnum]
+
+
+export const LinkedinAPILogsScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  date: 'date',
+  time: 'time',
+  url: 'url',
+  response: 'response',
+  error: 'error'
+} as const
+
+export type LinkedinAPILogsScalarFieldEnum = (typeof LinkedinAPILogsScalarFieldEnum)[keyof typeof LinkedinAPILogsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1820,6 +1908,7 @@ export type GlobalOmitConfig = {
   extensionPayload?: Prisma.ExtensionPayloadOmit
   queueJob?: Prisma.QueueJobOmit
   linkedInSession?: Prisma.LinkedInSessionOmit
+  linkedinAPILogs?: Prisma.LinkedinAPILogsOmit
 }
 
 /* Types for Logging */

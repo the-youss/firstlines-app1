@@ -73,6 +73,7 @@ model User {
   campaigns        Campaign[]
   extensionPayload ExtensionPayload[]
   queueJobs        QueueJob[]
+  linkedinAPILogs LinkedinAPILogs[]
   linkedinSessions LinkedInSession?
 
   @@index([email])
@@ -269,4 +270,16 @@ model LinkedInSession {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+
+model LinkedinAPILogs {
+  id            String    @id @default(uuid())
+  userId        String   
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date DateTime @db.Date
+  time DateTime @db.Time
+  url String
+  response Json?
+  error Json?
 }

@@ -15,6 +15,7 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
     const props = queue.input as unknown as ExtractionQueueInput
     const url = props.linkedinPayload.url
     const lk = new LinkedinClient({
+      userId: queue.userId,
       cookies: props.linkedinPayload.cookies,
       linkedinHeaders: props.linkedinPayload.headers
     })

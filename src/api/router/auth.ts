@@ -24,6 +24,7 @@ export const authRouter = {
     const shouldCheck = lkSession?.lastCheckedAt ? Date.now() - lkSession.lastCheckedAt.getTime() >= DEFAULT_LINKEDIN_SESSION_INTERVAL : true;
     if (lkSession && shouldCheck) {
       const client = new LinkedinClient({
+        userId: ctx.session.user.id,
         cookies: lkSession.cookies as LinkedinCookies,
         linkedinHeaders: lkSession.headers as LinkedinHeaders,
       })

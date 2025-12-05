@@ -26,6 +26,7 @@ export const extractionRouter = {
       const props = payload.payload as unknown as StartExtractionProps
       const client = new LinkedinClient({
         cookies: props.cookies,
+        userId: ctx.session.user.id,
         linkedinHeaders: props.headers,
       });
       const searchResult = await client.salesnavSearch.fetchMetas(props.url)

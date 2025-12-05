@@ -1,10 +1,12 @@
+import { linkedinLogs } from "@/api/lib/linkedin-logs";
 import fs from "fs";
-import { LinkedinCustomHeaders, LinkedinCookies } from "../entities";
+import { LinkedinCookies, LinkedinCustomHeaders } from "../entities";
 
 export interface RequestOpts {
   cookies: LinkedinCookies;
   linkedinHeaders?: LinkedinCustomHeaders;
   baseURL: string;
+  userId: string
 }
 
 export class Request {
@@ -44,9 +46,11 @@ export class Request {
       json = await res.json();
       fs.writeFileSync("test.json", JSON.stringify(json, null, 2));
     } catch (error) { }
+    const error = `Request failed with status ${res.status} ${JSON.stringify(json)}`
+    linkedinLogs(this.params.userId, url, json, !res.ok ? { error } : undefined)
     if (!res.ok) {
       throw new Error(
-        `Request failed with status ${res.status} ${JSON.stringify(json)}`
+        error
       );
     }
 

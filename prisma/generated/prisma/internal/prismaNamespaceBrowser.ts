@@ -62,7 +62,8 @@ export const ModelName = {
   SequenceStep: 'SequenceStep',
   ExtensionPayload: 'ExtensionPayload',
   QueueJob: 'QueueJob',
-  LinkedInSession: 'LinkedInSession'
+  LinkedInSession: 'LinkedInSession',
+  LinkedinAPILogs: 'LinkedinAPILogs'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -259,6 +260,19 @@ export const LinkedInSessionScalarFieldEnum = {
 } as const
 
 export type LinkedInSessionScalarFieldEnum = (typeof LinkedInSessionScalarFieldEnum)[keyof typeof LinkedInSessionScalarFieldEnum]
+
+
+export const LinkedinAPILogsScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  date: 'date',
+  time: 'time',
+  url: 'url',
+  response: 'response',
+  error: 'error'
+} as const
+
+export type LinkedinAPILogsScalarFieldEnum = (typeof LinkedinAPILogsScalarFieldEnum)[keyof typeof LinkedinAPILogsScalarFieldEnum]
 
 
 export const SortOrder = {

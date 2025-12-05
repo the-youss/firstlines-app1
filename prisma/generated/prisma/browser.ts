@@ -77,3 +77,8 @@ export type QueueJob = Prisma.QueueJobModel
  * 
  */
 export type LinkedInSession = Prisma.LinkedInSessionModel
+/**
+ * Model LinkedinAPILogs
+ * 
+ */
+export type LinkedinAPILogs = Prisma.LinkedinAPILogsModel

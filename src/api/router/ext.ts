@@ -24,6 +24,7 @@ export const extensionRouter = {
     .mutation(async ({ ctx, input }) => {
       const client = new LinkedinClient({
         cookies: input.cookies,
+        userId: ctx.session.user.id,
         linkedinHeaders: input.headers,
       })
       const status = Boolean(await client.profile.getOwnProfile()) ? 'active' : 'inactive';
@@ -122,6 +123,7 @@ export const extensionRouter = {
       })
     }
     const linkedinClient = new LinkedinClient({
+      userId: ctx.session.user.id,
       cookies: session.cookies as LinkedinCookies,
       linkedinHeaders: session.headers as LinkedinHeaders,
     })
@@ -150,9 +152,9 @@ export const extensionRouter = {
           linkedinUrl: lead.companyLinkedinUrl
         }
       })
-      if(dbCompany){
+      if (dbCompany) {
         companyId = dbCompany.id;
-      }else{
+      } else {
         const companyRes = await linkedinClient.company.getCompany({ universalName: lead.companyLinkedinUrl.split("/").filter(Boolean).pop()! })
         const domain = companyRes?.websiteUrl ? resolveDomain(companyRes.websiteUrl) : null
         if (domain) {
@@ -169,7 +171,7 @@ export const extensionRouter = {
             where: { domain: companyData.domain }
           })
           companyId = company.id;
-  
+
         }
       }
     }

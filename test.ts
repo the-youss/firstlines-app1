@@ -22,6 +22,7 @@ const run = async () => {
 
   const linkedinClient = new LinkedinClient({
     cookies: session.cookies as LinkedinCookies,
+    userId: "",
     linkedinHeaders: session.headers as LinkedinHeaders,
   })
 

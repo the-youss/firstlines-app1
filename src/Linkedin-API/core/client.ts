@@ -6,7 +6,9 @@ import { SalesNavSearchRepository } from "../repositries/sales-nav-search.reposi
 import { SalesNavRepository } from "../repositries/sales-nav.repository";
 import { LinkedInRequest, LinkedInRequestOpts } from "./linkedin-request";
 
-interface ClientOpts extends LinkedInRequestOpts { }
+interface ClientOpts extends LinkedInRequestOpts {
+  
+}
 
 export class LinkedinClient {
   request: LinkedInRequest;
