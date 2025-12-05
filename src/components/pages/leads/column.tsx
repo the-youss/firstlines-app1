@@ -21,7 +21,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
   };
   return [
     {
-      accessorKey: 'name',
+      accessorKey: 'firstName',
       header: 'Name',
       filterFn: 'fuzzy',
       Cell(props) {
@@ -50,7 +50,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
       },
     },
     {
-      accessorKey: 'title',
+      accessorKey: 'company.name',
       header: 'Title & Company',
       Cell(props) {
         return (
@@ -91,7 +91,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
       },
     },
     {
-      accessorKey: 'list',
+      accessorKey: 'list.name',
       header: 'List',
       Cell(props) {
         return (
@@ -101,6 +101,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
     },
     {
       accessorKey: 'campaign',
+      enableSorting: false,
       header: 'Active Campaign',
       Cell(props) {
         return props.row.original.campaign.length ? (

@@ -1,28 +1,17 @@
 
 'use client'
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 
-import { DataTableDemo2 } from "@/components/data-table/demo2";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowDown, ArrowUp, ArrowUpDown, Filter, Plus, Search, Trash2, Upload, UserPlus } from "lucide-react";
-import { useMemo, useState } from "react";
-import { LeadsTable } from "./table";
+import { ChevronLeft, Upload } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { ImportLeadsDialog } from "./import-leads-dialog";
+import { ListsTable } from "./list/table";
+import { LeadsTable } from "./table";
 import { useTRPC } from "@/trpc/react";
 import { useQuery } from "@tanstack/react-query";
-import { useSearchParams } from "next/navigation";
-import { ListsTable } from "./list/table";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type SortKey = 'name' | 'title' | 'company' | 'country' | 'industry' | 'source' | 'list';
 type SortDirection = 'asc' | 'desc' | null;
@@ -48,12 +37,36 @@ export const Leads = () => {
 
   return (
     <div className="space-y-6">
+
+
+      {listId ? (
+        <ListPage listId={listId} />
+      ) : (
+        <LeadPage setActiveTab={setActiveTab} activeTab={activeTab} />
+      )}
+    </div>
+  );
+};
+
+function ListPage({ listId }: { listId: string }) {
+  const router = useRouter()
+  const trpc = useTRPC();
+  const { data: list, isLoading } = useQuery(trpc.list.getListById.queryOptions({ listId }))
+  const leadsCount = list?._count.leads || 0
+  return (
+    <>
+      <Button variant='outline' className="mb-6" onClick={router.back}>
+        <ChevronLeft />
+        Back to Lists
+      </Button>
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Leads</h1>
-          {/* <p className="text-muted-foreground">
-            {data?.count || 0} {data?.count === 1 ? "lead" : "leads"} found
-          </p> */}
+          <h1 className="text-3xl font-bold">
+            {isLoading ? <Skeleton className="h-10 w-32" /> : list?.name}
+          </h1>
+          <p className="text-muted-foreground flex items-center gap-2">
+            {isLoading ? <Skeleton className="h-4 w-10 inline-block" /> : leadsCount} {leadsCount === 1 ? "lead" : "leads"} in this list
+          </p>
         </div>
         <ImportLeadsDialog>
           <Button>
@@ -62,26 +75,42 @@ export const Leads = () => {
           </Button>
         </ImportLeadsDialog>
       </div>
+      <LeadsTable listId={listId} />
+    </>
+  )
+}
 
-      {listId ? (
-        <LeadsTable />
-      ) : (
-        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "leads" | "lists")}>
-          <TabsList>
-            <TabsTrigger value="leads">All Leads</TabsTrigger>
-            <TabsTrigger value="lists">Lists</TabsTrigger>
-          </TabsList>
+function LeadPage({ activeTab, setActiveTab }: { activeTab: "leads" | "lists", setActiveTab: React.Dispatch<React.SetStateAction<"leads" | "lists">> }) {
+  return (
+    <>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold">Leads</h1>
+          <p className="text-muted-foreground">
+            Manage your leads and lists
+          </p>
+        </div>
+        <ImportLeadsDialog>
+          <Button>
+            <Upload className="mr-2 h-4 w-4" />
+            Import Leads
+          </Button>
+        </ImportLeadsDialog>
+      </div>
+      <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "leads" | "lists")}>
+        <TabsList>
+          <TabsTrigger className="cursor-pointer" value="leads">All Leads</TabsTrigger>
+          <TabsTrigger value="lists" className="cursor-pointer">Lists</TabsTrigger>
+        </TabsList>
 
-          <TabsContent value="leads" className="mt-6">
-            <LeadsTable />
-          </TabsContent>
+        <TabsContent value="leads" className="mt-6">
+          <LeadsTable />
+        </TabsContent>
 
-          <TabsContent value="lists" className="mt-6">
-            <ListsTable />
-          </TabsContent>
-        </Tabs>
-      )}
-    </div>
-  );
-};
-
+        <TabsContent value="lists" className="mt-6">
+          <ListsTable />
+        </TabsContent>
+      </Tabs>
+    </>
+  )
+}

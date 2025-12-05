@@ -6,9 +6,12 @@ import {
   MRT_DensityState,
   MRT_PaginationState,
   MRT_RowData,
+  MRT_SortingState,
   MRT_TableInstance,
+  MRT_TableOptions,
   MRT_ToggleFullScreenButton,
-  useMaterialReactTable
+  useMaterialReactTable,
+
 } from 'material-react-table';
 import React, { forwardRef, Fragment, useImperativeHandle, useMemo, useState } from 'react';
 import { InputGroup, InputGroupAddon, InputGroupInput } from '../ui/input-group';
@@ -98,7 +101,9 @@ interface DataTableProps<TData extends MRT_RowData> {
   onPaginationChange?: () => void
   density?: MRT_DensityState
   count?: number;
-  onGlobalFilterChange?: (value: string) => void
+  onGlobalFilterChange?: (value: string) => void,
+  option?: Omit<MRT_TableOptions<TData>, 'data' | 'columns'>
+  onSortingChange?: () => void
 }
 
 export type DataTableRef<TData extends MRT_RowData> = { table: MRT_TableInstance<TData> }
@@ -106,9 +111,10 @@ export const _DataTableBase = <TData extends MRT_RowData>(
   props: DataTableProps<TData>,
   ref: React.Ref<DataTableRef<TData>>
 ) => {
+  const [sorting, setSorting] = useState<MRT_SortingState>([])
   const [rowSelection, setRowSelection] = useState({});
   const [globalFilter, setGlobalFilter] = useState('');
-  const [pagination, setPagination] = useState({ pageIndex: 1, pageSize: 20 });
+  const [pagination, setPagination] = useState({ pageIndex: 1, pageSize: 50 });
   const columns = useMemo<MRT_ColumnDef<TData>[]>(
     () => props.columns,
     [props.columns],
@@ -118,7 +124,7 @@ export const _DataTableBase = <TData extends MRT_RowData>(
     columns,
     data: props.data,
     enablePagination: true,
-    enableMultiSort: true,
+    enableMultiSort: false,
     enableSorting: true,
     enableGlobalFilter: true,
     enableTopToolbar: true,
@@ -144,18 +150,26 @@ export const _DataTableBase = <TData extends MRT_RowData>(
       setGlobalFilter(value);
       props.onGlobalFilterChange?.(value);
     },
+    onSortingChange: (sorting) => {
+      setSorting(sorting)
+      props.onSortingChange?.()
+    },
     enableMultiRowSelection: true,
     initialState: {
       density: props.density || 'compact',
-      showSkeletons: Boolean(props.loading),
+      showLoadingOverlay: Boolean(props.loading),
     },
     state: {
-      showSkeletons: Boolean(props.loading),
+      showLoadingOverlay: Boolean(props.loading),
       rowSelection,
       pagination,
       globalFilter,
+      sorting,
     },
-    enableFilters: true,
+    muiPaginationProps: {
+      rowsPerPageOptions: [20, 50, 100],
+    },
+    enableFilters: false,
     enableGlobalFilterRankedResults: false,
     renderTopToolbar: ({ table }) => <RenderTopToolbar table={table} toolbar={props.toolbar} />,
     // renderBottomToolbar: ({ table }) => <RenderBottomToolbar table={table} />,
@@ -179,6 +193,11 @@ export const _DataTableBase = <TData extends MRT_RowData>(
         },
       }
     ),
+    muiCircularProgressProps: {
+      sx: {
+        color: 'var(--primary)'
+      },
+    },
     muiTopToolbarProps: {
       sx: {
         width: '100%', // ensures full width in MUI system
@@ -194,6 +213,7 @@ export const _DataTableBase = <TData extends MRT_RowData>(
     muiTableBodyProps: { className: 'divide-y divide-gray-200' },
     muiTableHeadCellProps: { className: 'bg-primary/10 text-primary font-semibold' },
     muiTableBodyCellProps: { className: 'py-2 px-4 text-gray-800' },
+    ...props.option
   });
   // expose table instance to parent
   useImperativeHandle(ref, () => ({

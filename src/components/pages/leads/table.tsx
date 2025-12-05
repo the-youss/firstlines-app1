@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Plus, Trash2 } from "lucide-react";
-import { MRT_TableInstance } from "material-react-table";
+import { MRT_SortingState, MRT_TableInstance } from "material-react-table";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 import { useLeadsColumn } from "./column";
@@ -38,19 +38,22 @@ export interface Lead {
 type APIResponse = RouterOutputs['list']['leads']
 export type Rows = APIResponse['rows'][number]
 type LeadsTableProps = {
-
+  listId?: string
 }
 
 export function LeadsTable(props: LeadsTableProps) {
   const columns = useLeadsColumn()
   const trpc = useTRPC();
   const [query, setQuery] = useState('')
+  const [sorting, setSorting] = useState<MRT_SortingState>([])
   const [pagination, setPagination] = useState({ page: 1, limit: 50 })
   const { data, isLoading } = useQuery(
     trpc.list.leads.queryOptions({
       q: query || '',
       page: pagination.page === 0 ? 1 : pagination.page || 1,
       limit: pagination.limit || 50,
+      listId: props.listId,
+      sorting
     })
   )
   const [onRowSelectionChange, setOnRowSelectionChange] = useState<number>(0)
@@ -60,7 +63,7 @@ export function LeadsTable(props: LeadsTableProps) {
   const _pagination = useCallback(() => {
     const pagination = ref.current?.table.getState().pagination;
     setPagination({ page: pagination?.pageIndex || 1, limit: pagination?.pageSize || 20 })
-  }, [setPagination])
+  }, [])
 
   return (
     <DataTable<Rows>
@@ -73,7 +76,7 @@ export function LeadsTable(props: LeadsTableProps) {
           position: "2nd-left"
         }
       ]}
-      calcHeight="366px"
+      calcHeight="394px"
       data={data?.rows || []}
       onRowSelectionChange={() => setOnRowSelectionChange(state => state + 1)}
       onPaginationChange={() => {
@@ -83,7 +86,11 @@ export function LeadsTable(props: LeadsTableProps) {
         setQuery(value)
         setPagination({ page: 1, limit: 50 })
       }}
-      columns={columns} />
+      columns={columns}
+      onSortingChange={() => {
+        setSorting(ref.current?.table.getState().sorting || [])
+      }}
+    />
   )
 }
 

@@ -479,14 +479,6 @@ export type EnumStepTypeFieldUpdateOperationsInput = {
   set?: $Enums.StepType
 }
 
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type SequenceStepCreateWithoutCampaignInput = {
   id?: string
   order: number

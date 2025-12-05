@@ -109,7 +109,7 @@ model Lead {
   city              String?
   isLinkedinPremium Boolean    @default(false)
   openToWork        Boolean    @default(false)
-  connection        Int
+  connection        Int?
   linkedinId        String?
   linkedinHash      String
   jobTitle          String?

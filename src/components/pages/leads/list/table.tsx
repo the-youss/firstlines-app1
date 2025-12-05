@@ -59,6 +59,11 @@ export function ListsTable(props: ListsTableProps) {
 
   return (
     <DataTable<Rows>
+      option={{
+        manualFiltering: false,
+        manualPagination: false,
+        enableFilters: true
+      }}
       count={data?.length || 0}
       loading={isLoading}
       ref={ref}
@@ -68,7 +73,7 @@ export function ListsTable(props: ListsTableProps) {
           position: "2nd-left"
         }
       ]}
-      calcHeight="366px"
+      calcHeight="394px"
       data={data || []}
       onRowSelectionChange={() => setOnRowSelectionChange(state => state + 1)}
       onPaginationChange={() => {
