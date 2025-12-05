@@ -58,7 +58,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
         return (
           <div>
             <p className="font-medium">{props.row.original.jobTitle}</p>
-            <ExternalLink href={`https://${props.row.original.company?.domain}`} >{props.row.original.company?.name || props.row.original.company?.domain}</ExternalLink>
+            <ExternalLink className="text-muted-foreground" href={`https://${props.row.original.company?.domain}`} >{props.row.original.company?.name || props.row.original.company?.domain}</ExternalLink>
           </div>
         )
       },

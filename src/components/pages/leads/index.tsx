@@ -12,6 +12,7 @@ import { LeadsTable } from "./table";
 import { useTRPC } from "@/trpc/react";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";
+import { appRoutes } from "@/app-routes";
 
 type SortKey = 'name' | 'title' | 'company' | 'country' | 'industry' | 'source' | 'list';
 type SortDirection = 'asc' | 'desc' | null;
@@ -55,7 +56,7 @@ function ListPage({ listId }: { listId: string }) {
   const leadsCount = list?._count.leads || 0
   return (
     <>
-      <Button variant='outline' className="mb-6" onClick={router.back}>
+      <Button variant='outline' className="mb-6" onClick={() => router.push(appRoutes.appLeads)}>
         <ChevronLeft />
         Back to Lists
       </Button>
