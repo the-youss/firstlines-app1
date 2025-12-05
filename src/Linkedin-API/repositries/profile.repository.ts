@@ -39,7 +39,7 @@ export class ProfileRepository {
         ? "1"
         : `${el.company?.employeeCountRange?.start}-${el.company?.employeeCountRange?.end}`) as CompanySize,
       companyLinkedinUrl: getLinkedinCompanyUrlFromUniversalName(el.company?.universalName),
-      jobTitle: el.title,
+      jobTitle: el.profilePositionInPositionGroup?.elements?.find(e => !e.dateRange?.end)?.title,
       industry: Object.values(el.company?.industry || {})?.[0]?.name,
     }));
     const { country, city } = await this.parseLocation(
@@ -51,7 +51,7 @@ export class ProfileRepository {
         firstName: element.firstName,
         lastName: element.lastName,
         headline: element.headline,
-        profileHash : element.entityUrn.split(":").pop() || '',
+        profileHash: element.entityUrn.split(":").pop() || '',
         isLinkedinPremium: Boolean(element.premium === true),
         linkedinId: element.objectUrn.split(":").pop() || '',
         birthday: this._constructBirthday(element.birthDateOn),

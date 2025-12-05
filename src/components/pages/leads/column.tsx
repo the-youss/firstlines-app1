@@ -7,6 +7,8 @@ import { Rows } from "./table"
 import { $Enums } from "@/lib/db"
 import { createHeading } from "@/lib/utils"
 import { getLinkedinProfileUrlFromHash } from "@/lib/linkedin.utils"
+import Link from "next/link"
+import { appRoutes } from "@/app-routes"
 
 
 
@@ -33,16 +35,16 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-medium">{props.row.original.firstName}</p>
+              <p className="font-medium">{props.row.original.firstName + ' ' + props.row.original.lastName}</p>
               {props.row.original.linkedinHash && (
-                <a
+                <ExternalLink
                   href={getLinkedinProfileUrlFromHash(props.row.original.linkedinHash)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-primary hover:underline inline-flex items-center gap-1"
                 >
                   LinkedIn <ExternalLink className="h-3 w-3" href={''} />
-                </a>
+                </ExternalLink>
               )}
             </div>
           </div>
@@ -56,7 +58,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
         return (
           <div>
             <p className="font-medium">{props.row.original.jobTitle}</p>
-            <p className="text-sm text-muted-foreground">{props.row.original.company?.name || props.row.original.company?.domain}</p>
+            <ExternalLink href={`https://${props.row.original.company?.domain}`} >{props.row.original.company?.name || props.row.original.company?.domain}</ExternalLink>
           </div>
         )
       },
@@ -95,7 +97,9 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
       header: 'List',
       Cell(props) {
         return (
-          <Badge variant="secondary" className="capitalize">{props.row.original.list.name}</Badge>
+          <Link href={{ pathname: appRoutes.appLeads, query: { listId: props.row.original.list.id } }}>
+            <Badge variant="secondary" className="capitalize">{props.row.original.list.name}</Badge>
+          </Link>
         )
       },
     },

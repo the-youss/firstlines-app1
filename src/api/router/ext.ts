@@ -6,6 +6,7 @@ import z from "zod";
 import { protectedProcedure, publicProcedure } from "../trpc";
 import { LinkedinCookies, LinkedinHeaders } from "@/interface/LinkedinCookies";
 import { $Enums, LeadSource } from "@/lib/db";
+import { resolveDomain } from "@/lib/company.utils";
 
 export const extensionRouter = {
   syncLinkedinSession: protectedProcedure
@@ -142,22 +143,35 @@ export const extensionRouter = {
         userId: ctx.session.user.id,
       }
     }).then((list) => list.id);
-
-    const companyData = {
-      name: lead?.companyName!,
-      industry: lead?.industry,
-      size: lead?.companySize,
-      domain: lead?.companyWebsite || `www.${lead?.companyName?.toLowerCase().replace(/\s+/g, '')}.com`,
-      linkedinUrl: lead?.companyLinkedinUrl,
-    }
     let companyId: string | undefined = undefined;
-    if (companyData.name) {
-      const company = await ctx.db.company.upsert({
-        create: companyData,
-        update: companyData,
-        where: { domain: companyData.domain }
+    if (lead.companyLinkedinUrl) {
+      const dbCompany = await ctx.db.company.findFirst({
+        where: {
+          linkedinUrl: lead.companyLinkedinUrl
+        }
       })
-      companyId = company.id;
+      if(dbCompany){
+        companyId = dbCompany.id;
+      }else{
+        const companyRes = await linkedinClient.company.getCompany({ universalName: lead.companyLinkedinUrl.split("/").filter(Boolean).pop()! })
+        const domain = companyRes?.websiteUrl ? resolveDomain(companyRes.websiteUrl) : null
+        if (domain) {
+          const companyData = {
+            name: lead?.companyName!,
+            industry: lead?.industry,
+            size: lead?.companySize,
+            domain,
+            linkedinUrl: lead?.companyLinkedinUrl,
+          }
+          const company = await ctx.db.company.upsert({
+            create: companyData,
+            update: companyData,
+            where: { domain: companyData.domain }
+          })
+          companyId = company.id;
+  
+        }
+      }
     }
     const data = {
       firstName: lead?.firstName,

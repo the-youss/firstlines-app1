@@ -10,7 +10,7 @@ export type GetProfileResponse = {
       year: number
     }
     objectUrn: string,
-    entityUrn:string;
+    entityUrn: string;
     profileEducations?: {
       elements: Array<{
         schoolName: string
@@ -29,7 +29,15 @@ export type GetProfileResponse = {
           start: any
           end?: any
         },
-        title: string
+        profilePositionInPositionGroup?: {
+          elements?: Array<{
+            "dateRange"?: {
+              "start": any;
+              end?: any
+            },
+            title: string
+          }>
+        }
         company?: {
           industry: {
             "urn:li:fsd_industry:96": {

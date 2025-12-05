@@ -11,7 +11,7 @@ export class Request {
   private _scraperMandatoryDelayBtwnRequestsMaxMs = 650;
   private _scraperMandatoryDelayBtwnRequestsMinMs = 350;
 
-  constructor(protected params: RequestOpts) {}
+  constructor(protected params: RequestOpts) { }
 
   public async fetchJson<T extends object>(
     endpoint: string,
@@ -43,7 +43,7 @@ export class Request {
     try {
       json = await res.json();
       fs.writeFileSync("test.json", JSON.stringify(json, null, 2));
-    } catch (error) {}
+    } catch (error) { }
     if (!res.ok) {
       throw new Error(
         `Request failed with status ${res.status} ${JSON.stringify(json)}`
@@ -256,10 +256,10 @@ export class Request {
   async sleepRandomDelayBetweenRequests() {
     const delay = Math.floor(
       Math.random() *
-        (this._scraperMandatoryDelayBtwnRequestsMaxMs -
-          this._scraperMandatoryDelayBtwnRequestsMinMs +
-          1) +
-        this._scraperMandatoryDelayBtwnRequestsMinMs
+      (this._scraperMandatoryDelayBtwnRequestsMaxMs -
+        this._scraperMandatoryDelayBtwnRequestsMinMs +
+        1) +
+      this._scraperMandatoryDelayBtwnRequestsMinMs
     );
     await this.sleep(delay);
   }
@@ -269,12 +269,13 @@ export class Request {
   }
 
   protected buildUrl(endpoint: string, queryParams?: Record<string, string>) {
-    const url = new URL(endpoint, this.params.baseURL);
-    if (queryParams) {
-      Object.entries(queryParams).forEach(([key, value]) => {
-        url.searchParams.set(key, decodeURIComponent(value));
-      });
-    }
-    return url.toString();
+    const base = new URL(endpoint, this.params.baseURL);
+    if (!queryParams) return base.toString();
+
+    const query = Object.entries(queryParams)
+      .map(([k, v]) => `${k}=${v}`)  // no encodeURIComponent()
+      .join("&");
+
+    return `${base.origin}${base.pathname}?${query}`;
   }
 }

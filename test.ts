@@ -13,7 +13,7 @@ import { LinkedinCookies, LinkedinHeaders } from '@/interface/LinkedinCookies'
 const run = async () => {
   const session = await db.linkedInSession.findUnique({
     where: {
-      id: '1e7234a4-2ede-46e5-a887-b242ffc51f3a'
+      id: '0cddbe8f-fbaa-4a6b-afa9-fc84df5a655c'
     }
   })
   if (!session) {
@@ -26,10 +26,9 @@ const run = async () => {
   })
 
   const r = await linkedinClient.profile.getProfile({
-    profileHash: 'jeanchristophebougle'
+    profileHash: 'ACwAABiWRIUBXGYH8X9ys3fz8WI9-2NGX4jwImo'
   })
-
-  writeFileSync('profile.json', JSON.stringify(r, null, 2))
+  console.log(r)
 }
 
 run()

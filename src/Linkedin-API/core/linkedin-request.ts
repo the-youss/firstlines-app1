@@ -1,3 +1,4 @@
+import { CompanyRequest } from "../requests/company.request";
 import { InvitationRequest } from "../requests/invitation.request";
 import { MessageRequest } from "../requests/message.request";
 import { ProfileRequest } from "../requests/profile.request";
@@ -17,7 +18,10 @@ export class LinkedInRequest {
     const baseURL = `https://www.linkedin.com/voyager/api/`;
     return new ProfileRequest({ ...this._opts, baseURL });
   }
-
+  get company() {
+    const baseURL = `https://www.linkedin.com/voyager/api/`;
+    return new CompanyRequest({ ...this._opts, baseURL });
+  }
   get salesnav() {
     const baseURL = `https://www.linkedin.com/sales-api/`;
     return new SalesNavRequest({ ...this._opts, baseURL });
