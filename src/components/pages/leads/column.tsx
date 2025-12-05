@@ -6,6 +6,7 @@ import { MRT_ColumnDef } from "material-react-table"
 import { Rows } from "./table"
 import { $Enums } from "@/lib/db"
 import { createHeading } from "@/lib/utils"
+import { getLinkedinProfileUrlFromHash } from "@/lib/linkedin.utils"
 
 
 
@@ -35,7 +36,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
               <p className="font-medium">{props.row.original.firstName}</p>
               {props.row.original.linkedinHash && (
                 <a
-                  href={props.row.original.linkedinHash}
+                  href={getLinkedinProfileUrlFromHash(props.row.original.linkedinHash)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-primary hover:underline inline-flex items-center gap-1"

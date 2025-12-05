@@ -71,4 +71,4 @@ export const getServerUTCDate = () => new Date().toUTCString()
 export const DEFAULT_LINKEDIN_SESSION_INTERVAL = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
 
 
-export const LINKEDIN_SALES_NAV_HOME_PAGE = 'https://www.linkedin.com/sales/search/people'
+export const LINKEDIN_HOME_PAGE = 'https://www.linkedin.com/feed'

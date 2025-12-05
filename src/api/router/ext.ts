@@ -44,7 +44,7 @@ export const extensionRouter = {
           userId: ctx.session.user.id,
         }
       })
-      return null
+      return { success: true }
     }),
   createPayload: publicProcedure
     .input(z.object({
@@ -150,11 +150,15 @@ export const extensionRouter = {
       domain: lead?.companyWebsite || `www.${lead?.companyName?.toLowerCase().replace(/\s+/g, '')}.com`,
       linkedinUrl: lead?.companyLinkedinUrl,
     }
-    const company = await ctx.db.company.upsert({
-      create: companyData,
-      update: companyData,
-      where: { domain: companyData.domain }
-    })
+    let companyId: string | undefined = undefined;
+    if (companyData.name) {
+      const company = await ctx.db.company.upsert({
+        create: companyData,
+        update: companyData,
+        where: { domain: companyData.domain }
+      })
+      companyId = company.id;
+    }
     const data = {
       firstName: lead?.firstName,
       lastName: lead?.lastName,
@@ -168,7 +172,7 @@ export const extensionRouter = {
       source: input.source,
       city: lead?.city,
       country: lead?.country,
-      companyId: company.id,
+      companyId,
       educations: lead.educations?.map(e => ({
         degree: e.degree || '',
         fieldsOfStudy: e.fieldsOfStudy.filter(Boolean),

@@ -22,6 +22,7 @@ import { ImportLeadsDialog } from "./import-leads-dialog";
 import { useTRPC } from "@/trpc/react";
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
+import { ListsTable } from "./list/table";
 
 type SortKey = 'name' | 'title' | 'company' | 'country' | 'industry' | 'source' | 'list';
 type SortDirection = 'asc' | 'desc' | null;
@@ -41,7 +42,9 @@ interface Lead {
 }
 
 export const Leads = () => {
-
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState<"leads" | "lists">("leads");
+  const listId = searchParams.get('listId') || ''
 
   return (
     <div className="space-y-6">
@@ -60,7 +63,24 @@ export const Leads = () => {
         </ImportLeadsDialog>
       </div>
 
-      <LeadsTable />
+      {listId ? (
+        <LeadsTable />
+      ) : (
+        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as "leads" | "lists")}>
+          <TabsList>
+            <TabsTrigger value="leads">All Leads</TabsTrigger>
+            <TabsTrigger value="lists">Lists</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="leads" className="mt-6">
+            <LeadsTable />
+          </TabsContent>
+
+          <TabsContent value="lists" className="mt-6">
+            <ListsTable />
+          </TabsContent>
+        </Tabs>
+      )}
     </div>
   );
 };

@@ -29,7 +29,7 @@ export class Request {
     }
     const cleanHeaders = this._cleanOutLinkedinHeaders(merged);
     const url = this.buildUrl(endpoint, init?.queryParams);
-    console.log(`[Linkedin API::Request] url => ${url}`);
+    console.log(`${Date.now()} :: [Linkedin API::Request] url => ${url}`);
     await this.sleepRandomDelayBetweenRequests();
     if (init?.overwriteHeaders) {
       init.overwriteHeaders(cleanHeaders);

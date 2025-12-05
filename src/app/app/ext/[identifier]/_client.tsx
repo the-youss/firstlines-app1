@@ -34,11 +34,7 @@ interface SourceData {
   leadCount: number;
 }
 
-const MOCK_LISTS = [
-  { id: "list-1", name: "Q1 Prospects" },
-  { id: "list-2", name: "Marketing Team" },
-  { id: "list-3", name: "Warm Leads" },
-];
+
 const MOCK_CAMPAIGNS = [
   { id: "camp-1", name: "Tech Leaders Outreach" },
   { id: "camp-2", name: "Q1 Sales Push" },
