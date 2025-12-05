@@ -1,6 +1,6 @@
 
 import { StartExtractionProps } from "@/interface/StartExtractionProps";
-import { ListSource, QueueJobStatus, QueueJobType } from "@/lib/db";
+import { QueueJobStatus, QueueJobType } from "@/lib/db";
 import { getServerUTCDate } from "@/lib/utils";
 import { LinkedinClient } from "@/Linkedin-API";
 import { TRPCError, type TRPCRouterRecord } from "@trpc/server";
@@ -51,7 +51,6 @@ export const extractionRouter = {
         data: {
           name: input.name,
           userId: ctx.session.user.id,
-          source: ListSource.sales_nav,
         }
       })
       const queue = await ctx.db.queueJob.create({

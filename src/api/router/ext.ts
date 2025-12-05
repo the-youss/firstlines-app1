@@ -1,9 +1,11 @@
 
 import { LinkedinClient } from "@/Linkedin-API";
-import type { TRPCRouterRecord } from "@trpc/server";
+import { TRPCError, type TRPCRouterRecord } from "@trpc/server";
 import md5 from 'md5';
 import z from "zod";
 import { protectedProcedure, publicProcedure } from "../trpc";
+import { LinkedinCookies, LinkedinHeaders } from "@/interface/LinkedinCookies";
+import { $Enums, LeadSource } from "@/lib/db";
 
 export const extensionRouter = {
   syncLinkedinSession: protectedProcedure
@@ -86,4 +88,106 @@ export const extensionRouter = {
         }
       })
     }),
+
+  getLists: protectedProcedure.query(async ({ ctx }) => {
+    return ctx.db.list.findMany({
+      where: {
+        userId: ctx.session.user.id
+      }
+    })
+  }),
+
+  importSingleProfile: protectedProcedure.input(z.object({
+    listId: z.string().optional(),
+    listName: z.string().optional(),
+    source: z.enum($Enums.LeadSource),
+    identifier: z.string()
+  }).refine((input) => {
+    return Boolean(input.listId || input.listName)
+  }, {
+    message: "Either listId or listName is required"
+  })).mutation(async ({ ctx, input }) => {
+    const session = await ctx.db.linkedInSession.findUnique({
+      where: {
+        userId: ctx.session.user.id,
+        status: 'active',
+      }
+    })
+    if (!session) {
+      throw new TRPCError({
+        code: 'NOT_FOUND',
+        message: 'LinkedIn session not found',
+      })
+    }
+    const linkedinClient = new LinkedinClient({
+      cookies: session.cookies as LinkedinCookies,
+      linkedinHeaders: session.headers as LinkedinHeaders,
+    })
+
+    const profile = await linkedinClient.profile.getProfile({
+      profileHash: input.identifier,
+    })
+    const lead = profile?.lead;
+    if (!lead) {
+      throw new TRPCError({
+        code: 'BAD_REQUEST',
+        message: 'LinkedIn profile not found',
+      })
+    }
+
+    const listId = input.listId ? input.listId : await ctx.db.list.create({
+      data: {
+        name: input.listName!,
+        userId: ctx.session.user.id,
+      }
+    }).then((list) => list.id);
+
+    const companyData = {
+      name: lead?.companyName!,
+      industry: lead?.industry,
+      size: lead?.companySize,
+      domain: lead?.companyWebsite || `www.${lead?.companyName?.toLowerCase().replace(/\s+/g, '')}.com`,
+      linkedinUrl: lead?.companyLinkedinUrl,
+    }
+    const company = await ctx.db.company.upsert({
+      create: companyData,
+      update: companyData,
+      where: { domain: companyData.domain }
+    })
+    const data = {
+      firstName: lead?.firstName,
+      lastName: lead?.lastName,
+      industry: lead?.industry,
+      connection: lead.connection,
+      listId,
+      linkedinHash: lead?.profileHash || '',
+      isLinkedinPremium: lead?.isLinkedinPremium,
+      jobTitle: lead?.jobTitle,
+      birthDate: lead.birthday,
+      source: input.source,
+      city: lead?.city,
+      country: lead?.country,
+      companyId: company.id,
+      educations: lead.educations?.map(e => ({
+        degree: e.degree || '',
+        fieldsOfStudy: e.fieldsOfStudy.filter(Boolean),
+        schoolName: e.schoolName || '',
+      })),
+      headline: lead.headline,
+      linkedinId: lead.linkedinId,
+      openToWork: lead.openToWork,
+    };
+    await ctx.db.lead.upsert({
+      create: data,
+      update: data,
+      where: {
+        linkedinHash_listId: {
+          linkedinHash: data.linkedinHash,
+          listId: data.listId,
+        }
+      }
+    })
+
+    return { listId }
+  })
 } satisfies TRPCRouterRecord;

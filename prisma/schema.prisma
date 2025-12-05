@@ -111,7 +111,7 @@ model Lead {
   openToWork        Boolean    @default(false)
   connection        Int
   linkedinId        String?
-  linkedinHash      String?
+  linkedinHash      String
   jobTitle          String?
   industry          String?
   birthDate         String?
@@ -136,6 +136,7 @@ model Lead {
   @@index([country])
   @@index([city])
   @@index([isLinkedinPremium])
+  @@unique([linkedinHash,listId])
 }
 
 

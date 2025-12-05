@@ -10,6 +10,7 @@ export type GetProfileResponse = {
       year: number
     }
     objectUrn: string,
+    entityUrn:string;
     profileEducations?: {
       elements: Array<{
         schoolName: string

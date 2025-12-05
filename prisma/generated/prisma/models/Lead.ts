@@ -276,7 +276,7 @@ export type LeadGroupByOutputType = {
   openToWork: boolean
   connection: number
   linkedinId: string | null
-  linkedinHash: string | null
+  linkedinHash: string
   jobTitle: string | null
   industry: string | null
   birthDate: string | null
@@ -322,7 +322,7 @@ export type LeadWhereInput = {
   openToWork?: Prisma.BoolFilter<"Lead"> | boolean
   connection?: Prisma.IntFilter<"Lead"> | number
   linkedinId?: Prisma.StringNullableFilter<"Lead"> | string | null
-  linkedinHash?: Prisma.StringNullableFilter<"Lead"> | string | null
+  linkedinHash?: Prisma.StringFilter<"Lead"> | string
   jobTitle?: Prisma.StringNullableFilter<"Lead"> | string | null
   industry?: Prisma.StringNullableFilter<"Lead"> | string | null
   birthDate?: Prisma.StringNullableFilter<"Lead"> | string | null
@@ -348,7 +348,7 @@ export type LeadOrderByWithRelationInput = {
   openToWork?: Prisma.SortOrder
   connection?: Prisma.SortOrder
   linkedinId?: Prisma.SortOrderInput | Prisma.SortOrder
-  linkedinHash?: Prisma.SortOrderInput | Prisma.SortOrder
+  linkedinHash?: Prisma.SortOrder
   jobTitle?: Prisma.SortOrderInput | Prisma.SortOrder
   industry?: Prisma.SortOrderInput | Prisma.SortOrder
   birthDate?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -365,6 +365,7 @@ export type LeadOrderByWithRelationInput = {
 
 export type LeadWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  linkedinHash_listId?: Prisma.LeadLinkedinHashListIdCompoundUniqueInput
   AND?: Prisma.LeadWhereInput | Prisma.LeadWhereInput[]
   OR?: Prisma.LeadWhereInput[]
   NOT?: Prisma.LeadWhereInput | Prisma.LeadWhereInput[]
@@ -377,7 +378,7 @@ export type LeadWhereUniqueInput = Prisma.AtLeast<{
   openToWork?: Prisma.BoolFilter<"Lead"> | boolean
   connection?: Prisma.IntFilter<"Lead"> | number
   linkedinId?: Prisma.StringNullableFilter<"Lead"> | string | null
-  linkedinHash?: Prisma.StringNullableFilter<"Lead"> | string | null
+  linkedinHash?: Prisma.StringFilter<"Lead"> | string
   jobTitle?: Prisma.StringNullableFilter<"Lead"> | string | null
   industry?: Prisma.StringNullableFilter<"Lead"> | string | null
   birthDate?: Prisma.StringNullableFilter<"Lead"> | string | null
@@ -390,7 +391,7 @@ export type LeadWhereUniqueInput = Prisma.AtLeast<{
   company?: Prisma.XOR<Prisma.CompanyNullableScalarRelationFilter, Prisma.CompanyWhereInput> | null
   list?: Prisma.XOR<Prisma.ListScalarRelationFilter, Prisma.ListWhereInput>
   campaign?: Prisma.CampaignListRelationFilter
-}, "id">
+}, "id" | "linkedinHash_listId">
 
 export type LeadOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -403,7 +404,7 @@ export type LeadOrderByWithAggregationInput = {
   openToWork?: Prisma.SortOrder
   connection?: Prisma.SortOrder
   linkedinId?: Prisma.SortOrderInput | Prisma.SortOrder
-  linkedinHash?: Prisma.SortOrderInput | Prisma.SortOrder
+  linkedinHash?: Prisma.SortOrder
   jobTitle?: Prisma.SortOrderInput | Prisma.SortOrder
   industry?: Prisma.SortOrderInput | Prisma.SortOrder
   birthDate?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -434,7 +435,7 @@ export type LeadScalarWhereWithAggregatesInput = {
   openToWork?: Prisma.BoolWithAggregatesFilter<"Lead"> | boolean
   connection?: Prisma.IntWithAggregatesFilter<"Lead"> | number
   linkedinId?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
-  linkedinHash?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
+  linkedinHash?: Prisma.StringWithAggregatesFilter<"Lead"> | string
   jobTitle?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
   industry?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
   birthDate?: Prisma.StringNullableWithAggregatesFilter<"Lead"> | string | null
@@ -457,7 +458,7 @@ export type LeadCreateInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -481,7 +482,7 @@ export type LeadUncheckedCreateInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -505,7 +506,7 @@ export type LeadUpdateInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -529,7 +530,7 @@ export type LeadUncheckedUpdateInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -553,7 +554,7 @@ export type LeadCreateManyInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -576,7 +577,7 @@ export type LeadUpdateManyMutationInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -597,7 +598,7 @@ export type LeadUncheckedUpdateManyInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -632,6 +633,11 @@ export type JsonNullableListFilterBase<$PrismaModel = never> = {
   hasEvery?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel>
   hasSome?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel>
   isEmpty?: boolean
+}
+
+export type LeadLinkedinHashListIdCompoundUniqueInput = {
+  linkedinHash: string
+  listId: string
 }
 
 export type LeadCountOrderByAggregateInput = {
@@ -863,7 +869,7 @@ export type LeadCreateWithoutListInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -886,7 +892,7 @@ export type LeadUncheckedCreateWithoutListInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -938,7 +944,7 @@ export type LeadScalarWhereInput = {
   openToWork?: Prisma.BoolFilter<"Lead"> | boolean
   connection?: Prisma.IntFilter<"Lead"> | number
   linkedinId?: Prisma.StringNullableFilter<"Lead"> | string | null
-  linkedinHash?: Prisma.StringNullableFilter<"Lead"> | string | null
+  linkedinHash?: Prisma.StringFilter<"Lead"> | string
   jobTitle?: Prisma.StringNullableFilter<"Lead"> | string | null
   industry?: Prisma.StringNullableFilter<"Lead"> | string | null
   birthDate?: Prisma.StringNullableFilter<"Lead"> | string | null
@@ -961,7 +967,7 @@ export type LeadCreateWithoutCompanyInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -984,7 +990,7 @@ export type LeadUncheckedCreateWithoutCompanyInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -1033,7 +1039,7 @@ export type LeadCreateWithoutCampaignInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -1056,7 +1062,7 @@ export type LeadUncheckedCreateWithoutCampaignInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -1100,7 +1106,7 @@ export type LeadCreateManyListInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -1122,7 +1128,7 @@ export type LeadUpdateWithoutListInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1145,7 +1151,7 @@ export type LeadUncheckedUpdateWithoutListInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1168,7 +1174,7 @@ export type LeadUncheckedUpdateManyWithoutListInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1190,7 +1196,7 @@ export type LeadCreateManyCompanyInput = {
   openToWork?: boolean
   connection: number
   linkedinId?: string | null
-  linkedinHash?: string | null
+  linkedinHash: string
   jobTitle?: string | null
   industry?: string | null
   birthDate?: string | null
@@ -1212,7 +1218,7 @@ export type LeadUpdateWithoutCompanyInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1235,7 +1241,7 @@ export type LeadUncheckedUpdateWithoutCompanyInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1258,7 +1264,7 @@ export type LeadUncheckedUpdateManyWithoutCompanyInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1280,7 +1286,7 @@ export type LeadUpdateWithoutCampaignInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1303,7 +1309,7 @@ export type LeadUncheckedUpdateWithoutCampaignInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1326,7 +1332,7 @@ export type LeadUncheckedUpdateManyWithoutCampaignInput = {
   openToWork?: Prisma.BoolFieldUpdateOperationsInput | boolean
   connection?: Prisma.IntFieldUpdateOperationsInput | number
   linkedinId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  linkedinHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  linkedinHash?: Prisma.StringFieldUpdateOperationsInput | string
   jobTitle?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   industry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birthDate?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -1503,7 +1509,7 @@ export type $LeadPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     openToWork: boolean
     connection: number
     linkedinId: string | null
-    linkedinHash: string | null
+    linkedinHash: string
     jobTitle: string | null
     industry: string | null
     birthDate: string | null

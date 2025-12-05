@@ -26,7 +26,7 @@ const run = async () => {
   })
 
   const r = await linkedinClient.profile.getProfile({
-    profileHash: 'ACwAAAymDJwBkul8eHUtzIvm0fAwb-FSh5RecsM'
+    profileHash: 'jeanchristophebougle'
   })
 
   writeFileSync('profile.json', JSON.stringify(r, null, 2))

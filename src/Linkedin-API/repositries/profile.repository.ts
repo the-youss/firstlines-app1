@@ -33,7 +33,7 @@ export class ProfileRepository {
     }
     const currentJobs = (element.profilePositionGroups?.elements || []).filter(pos => !pos.dateRange.end).map(el => ({
       companyName: el.company?.name,
-      companyWebsite: el.company?.url,
+      companyWebsite: undefined,
       companySize: (el.company?.employeeCountRange?.start === 1 &&
         el.company?.employeeCountRange?.end === 1
         ? "1"
@@ -51,7 +51,7 @@ export class ProfileRepository {
         firstName: element.firstName,
         lastName: element.lastName,
         headline: element.headline,
-        profileHash,
+        profileHash : element.entityUrn.split(":").pop() || '',
         isLinkedinPremium: Boolean(element.premium === true),
         linkedinId: element.objectUrn.split(":").pop() || '',
         birthday: this._constructBirthday(element.birthDateOn),

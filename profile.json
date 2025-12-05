@@ -1,50 +1,47 @@
 {
   "lead": {
     "openToWork": false,
-    "firstName": "Manabu",
-    "lastName": "Miyazaki",
-    "headline": "CEO at Aristol Inc. | Former VC & Marketing Strategist | Transforming Human Behavior through Digital Innovation | Lecturer in Higher Education & Corporate Instructor",
-    "profileHash": "ACwAAAymDJwBkul8eHUtzIvm0fAwb-FSh5RecsM",
+    "firstName": "Jean-Christophe",
+    "lastName": "Bouglé",
+    "headline": "Get noticed by the right people on Linkedin | Founder, Authentic.ly",
+    "profileHash": "ACoAAAAH8ZEByXtNZGxiwvTIahlVX1VIcqSrIj0",
     "isLinkedinPremium": true,
-    "linkedinId": "212208796",
-    "birthday": "06 Jun 1986",
-    "city": "Tokyo",
-    "country": "JP",
-    "companyLinkedinUrl": "https://linkedin.com/company/beatfit",
-    "industry": "Information Technology & Services",
-    "companySize": "11-50",
-    "companyName": "Aristol",
-    "companyWebsite": "https://www.linkedin.com/company/beatfit/",
+    "linkedinId": "520593",
+    "city": "Singapore",
+    "country": "SG",
+    "companyLinkedinUrl": "https://linkedin.com/company/authenticdotly",
+    "industry": "Computer Software",
+    "companySize": "2-10",
+    "companyName": "Authentic.ly",
     "educations": [
       {
-        "degree": "Master of Engineering (M.Eng.)",
+        "degree": "MBA",
         "fieldsOfStudy": [
-          "Technology Management for Innovation"
+          "General management"
         ],
-        "schoolName": "The University of Tokyo"
+        "schoolName": "INSEAD"
       },
       {
-        "degree": "Bachelor of Arts (B.A.)",
+        "degree": "BBA",
         "fieldsOfStudy": [
-          "International Relationes"
+          "Finance"
         ],
-        "schoolName": "University of Tsukuba"
+        "schoolName": "ESCP"
       },
       {
-        "degree": "an international exchange student",
+        "degree": "na",
         "fieldsOfStudy": [
-          "politics / law"
+          "Finance"
         ],
-        "schoolName": "University of Massachusetts Amherst"
+        "schoolName": "Bayes Business School"
       }
     ],
     "connection": 3
   },
   "currentJobs": {
-    "companyName": "Aristol",
-    "companyWebsite": "https://www.linkedin.com/company/beatfit/",
-    "companySize": "11-50",
-    "companyLinkedinUrl": "https://linkedin.com/company/beatfit",
-    "industry": "Information Technology & Services"
+    "companyName": "Authentic.ly",
+    "companySize": "2-10",
+    "companyLinkedinUrl": "https://linkedin.com/company/authenticdotly",
+    "industry": "Computer Software"
   }
 }
