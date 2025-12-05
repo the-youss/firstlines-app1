@@ -58,7 +58,8 @@ export const extensionRouter = {
           li_a: z.string(),
           li_at: z.string(),
           JSESSIONID: z.string()
-        }).partial()
+        }).partial(),
+        sourceURL: z.string()
       })
     }))
     .mutation(async ({ ctx, input }) => {
