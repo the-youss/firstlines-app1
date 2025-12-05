@@ -3,8 +3,15 @@ export interface GetSalesNavSearchSuccessResponse {
     entityUrn: string;
     firstName: string;
     lastName: string;
+    summary?: string;
+    degree: number;
     // Profile info
     entityUrnResolutionResult: {
+      "birthDateOn"?: {
+        month?: number,
+        day?: number;
+        year?: number;
+      },
       // firstName: string; // They are locked by LK if the profile is not 1st, 2nd or 3rd connection
       // lastName: string; // They are locked by LK if the profile is not 1st, 2nd or 3rd connection
       location: string;
@@ -14,6 +21,7 @@ export interface GetSalesNavSearchSuccessResponse {
       memberBadges?: {
         premium: boolean;
         jobSeeker: boolean;
+        openLink: boolean
       };
       positions?: {
         current: boolean;
@@ -26,11 +34,16 @@ export interface GetSalesNavSearchSuccessResponse {
           flagshipCompanyUrl: string;
         };
       }[];
+      educations?: {
+        degree: string;
+        fieldsOfStudy: string[];
+        schoolName: string;
+      }[];
     };
   }[];
   paging: {
     total: number;
-    count:number
+    count: number
   };
   metadata?: {
     keywords?: string;

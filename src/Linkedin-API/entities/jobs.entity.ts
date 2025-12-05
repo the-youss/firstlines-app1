@@ -15,5 +15,4 @@ export interface Job {
   companyLinkedinUrl?: string;
   jobTitle?: string;
   industry?: string;
-  companyLinkedinUniversalName?: string;
 }

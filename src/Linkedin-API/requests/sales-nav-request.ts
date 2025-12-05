@@ -25,7 +25,7 @@ export class SalesNavRequest extends Request {
 
   private _craftProfileUrlDecoration(omitEncode = false) {
     let deco =
-      "(entityUrn,objectUrn,firstName,lastName,location,flagshipProfileUrl,positions*(companyName,current,new,description,endedOn,startedOn,title,location,companyUrn~fs_salesCompany(entityUrn,name,employeeCountRange,industry)))";
+      "(firstName,lastName,summary,degree,entityUrn~fs_salesProfile(entityUrn,firstName,lastName,birthDateOn,objectUrn,memberBadges,location,positions*(current,title,companyName,companyUrn~fs_salesCompany(industry,flagshipCompanyUrl,website,employeeCountRange)),educations*(degree,schoolName,fieldsOfStudy)))";
     if (omitEncode !== true) {
       deco = encodeURIComponent(deco)
         .replace(/\(/g, "%28")
@@ -36,6 +36,6 @@ export class SalesNavRequest extends Request {
 
   private overwriteHeaders(headers: Headers) {
     delete headers["content-encoding" as keyof typeof headers];
-    headers["accept"] = "*/*";
+    headers.set("accept", "*/*");
   }
 }

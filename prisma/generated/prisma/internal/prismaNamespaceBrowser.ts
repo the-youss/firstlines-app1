@@ -142,7 +142,6 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const ListScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  source: 'source',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   userId: 'userId'
@@ -155,16 +154,22 @@ export const LeadScalarFieldEnum = {
   id: 'id',
   firstName: 'firstName',
   lastName: 'lastName',
+  headline: 'headline',
   country: 'country',
   city: 'city',
   isLinkedinPremium: 'isLinkedinPremium',
+  openToWork: 'openToWork',
+  connection: 'connection',
   linkedinId: 'linkedinId',
   linkedinHash: 'linkedinHash',
   jobTitle: 'jobTitle',
   industry: 'industry',
+  birthDate: 'birthDate',
+  source: 'source',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   companyId: 'companyId',
+  educations: 'educations',
   listId: 'listId'
 } as const
 

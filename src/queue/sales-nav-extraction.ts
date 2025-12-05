@@ -1,6 +1,6 @@
 import { ExtractionQueueInput } from '@/interface/ExtractionQueueInput';
 import { resolveDomain } from '@/lib/company.utils';
-import { db, Prisma, QueueJob } from '@/lib/db';
+import { db, LeadSource, Prisma, QueueJob } from '@/lib/db';
 import { getServerUTCDate } from '@/lib/utils';
 import { LinkedinClient } from '@/Linkedin-API';
 import { Job } from '@/Linkedin-API/entities/jobs.entity';
@@ -68,9 +68,20 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
           jobTitle: lead.jobTitle,
           linkedinId: lead.linkedinId,
           isLinkedinPremium: lead.isLinkedinPremium,
+          connection: lead.connection,
+          birthDate: lead.birthday,
+          headline: lead.headline,
+          openToWork: lead.openToWork,
+          source: LeadSource.sales_nav,
+          educations: lead.educations?.map(e => ({
+            degree: e.degree,
+            fieldsOfStudy: e.fieldsOfStudy,
+            schoolName: e.schoolName,
+          }))
         }))
         await db.lead.createMany({
           data: input,
+          skipDuplicates: true
         })
         return true
       }

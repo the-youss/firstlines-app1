@@ -1,6 +1,7 @@
+import { format } from "date-fns";
 import { LinkedinClient } from "../core/client";
 import { CompanySize, Job } from "../entities/jobs.entity";
-import { SalesNavLead } from "../entities/leads.entity";
+import { Education, SalesNavLead } from "../entities/leads.entity";
 import {
   MAX_PAGE_SIZE,
   SEARCH_RESULT_MAX_ITEMS_COUNT,
@@ -184,16 +185,24 @@ export class SalesNavSearchRepository {
             .split(":")
             .pop()!,
           profileHash,
-          country,
+          headline: elem.summary || "",
           city,
-          isLinkedinPremium:
-            elem.entityUrnResolutionResult.memberBadges?.premium,
+          country,
+          connection: elem.degree,
+          birthday: this._constructBirthday(elem.entityUrnResolutionResult.birthDateOn),
+          isLinkedinPremium: Boolean(elem.entityUrnResolutionResult.memberBadges?.premium === true),
+          openToWork: Boolean(elem.entityUrnResolutionResult.memberBadges?.openLink === true),
           companyName: currentJobs[0]?.companyName,
           companyWebsite: currentJobs[0]?.companyWebsite,
           companySize: currentJobs[0]?.companySize,
           jobTitle: currentJobs[0]?.jobTitle,
           industry: currentJobs[0]?.industry,
           companyLinkedinUrl: currentJobs[0]?.companyLinkedinUrl,
+          educations: (elem.entityUrnResolutionResult?.educations || []).map<Education>((edu) => ({
+            degree: edu.degree,
+            fieldsOfStudy: edu.fieldsOfStudy,
+            schoolName: edu.schoolName,
+          })),
         },
         currentJobs: currentJobs[0],
       });
@@ -305,5 +314,50 @@ export class SalesNavSearchRepository {
     city = city.replace(/st\. /gi, "Saint ").replace(/ st\./gi, " Saint");
 
     return city;
+  };
+
+  private _constructBirthday = (birthDateOn?: {
+    month?: number;
+    day?: number;
+    year?: number;
+  }) => {
+    if (!birthDateOn) return undefined;
+
+    const { day, month, year } = birthDateOn;
+
+    // If everything is missing → nothing to show
+    if (!day && !month && !year) return undefined;
+
+    // If only year → "1999"
+    if (year && !month && !day) {
+      return `${year}`;
+    }
+
+    // If month only → "Mar"
+    if (month && !day && !year) {
+      const d = new Date(2000, month - 1, 1);
+      return format(d, "MMM");
+    }
+
+    // If month + year → "Mar 1999"
+    if (month && year && !day) {
+      const d = new Date(year, month - 1, 1);
+      return format(d, "MMM yyyy");
+    }
+
+    // If day + month → "11 Mar"
+    if (day && month && !year) {
+      const d = new Date(2000, month - 1, day);
+      return format(d, "dd MMM");
+    }
+
+    // FULL DATE → "11 Mar 1999"
+    if (day && month && year) {
+      const d = new Date(year, month - 1, day);
+      return format(d, "dd MMM yyyy");
+    }
+
+    // If we reach here, the data was weird → just return nothing
+    return undefined;
   };
 }

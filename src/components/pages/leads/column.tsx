@@ -10,8 +10,8 @@ import { createHeading } from "@/lib/utils"
 
 
 export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
-  const getSourceBadge = (source: $Enums.ListSource) => {
-    const colors: Record<$Enums.ListSource, string> = {
+  const getSourceBadge = (source: $Enums.LeadSource) => {
+    const colors: Record<$Enums.LeadSource, string> = {
       'linkedin_search': "bg-blue-100 text-blue-800",
       "sales_nav": "bg-purple-100 text-purple-800",
       'manual_entry': "bg-green-100 text-green-800",
@@ -83,8 +83,8 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
       header: 'Source',
       Cell(props) {
         return (
-          <Badge variant="outline" className={getSourceBadge(props.row.original.list.source)}>
-            {createHeading(props.row.original.list.source)}
+          <Badge variant="outline" className={getSourceBadge(props.row.original.source)}>
+            {createHeading(props.row.original.source)}
           </Badge>
         )
       },

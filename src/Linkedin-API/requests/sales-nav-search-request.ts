@@ -1,4 +1,5 @@
 // SalesNavScraper.ts
+import fs from "fs";
 import { Request, RequestOpts } from "../core";
 import { GetSalesNavSearchResponse } from "../responses/sales-nav/search-result.response.get";
 
@@ -162,7 +163,6 @@ export class SalesNavSearchRequest extends Request {
         }
       }
     }
-
     if (json.status === 400) {
       return {
         elements: [],
@@ -208,7 +208,7 @@ export class SalesNavSearchRequest extends Request {
     return encodeURIComponent(
       omitLeadData
         ? "(entityUrn)"
-        : `(firstName,lastName,entityUrn~fs_salesProfile${this._craftProfileUrlDecoration(
+        : `(firstName,lastName,summary,degree,entityUrn~fs_salesProfile${this._craftProfileUrlDecoration(
           true
         )})`
     )
@@ -219,7 +219,7 @@ export class SalesNavSearchRequest extends Request {
   // using this we can search anything we want in Sales Navigator DB
   private _craftProfileUrlDecoration(omitEncode = false) {
     let deco =
-      "(entityUrn,firstName,lastName,objectUrn,memberBadges,location,positions*(current,title,companyName,companyUrn~fs_salesCompany(industry,flagshipCompanyUrl,website,employeeCountRange)))";
+      "(entityUrn,firstName,lastName,birthDateOn,objectUrn,memberBadges,location,positions*(current,title,companyName,companyUrn~fs_salesCompany(industry,flagshipCompanyUrl,website,employeeCountRange)),educations*(degree,schoolName,fieldsOfStudy))";
     if (omitEncode !== true) {
       deco = encodeURIComponent(deco)
         .replace(/\(/g, "%28")

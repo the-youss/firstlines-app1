@@ -1,18 +1,28 @@
 import { Job } from "./jobs.entity";
 
+
+export interface Education {
+  degree: string,
+  schoolName: string,
+  fieldsOfStudy: string[]
+}
+
 export interface SalesNavLead {
   lead: Lead;
   currentJobs?: Job;
-}
 
+}
 export interface Lead extends Job {
+  profileHash: string;
   firstName: string;
   lastName: string;
-  linkedinId: string; // Unique id between sales-nav and linkedin
-  profileHash: string;
-  country?: string; // ISO uppercase
+  headline: string;
   city?: string;
-  isLinkedinPremium?: boolean;
-  email?: string;
-  phone?: string;
+  country?: string;
+  connection: number;
+  birthday?: string;
+  isLinkedinPremium: boolean;
+  openToWork: boolean;
+  linkedinId: string;
+  educations?: Education[]
 }

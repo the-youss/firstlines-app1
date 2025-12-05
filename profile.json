@@ -1,0 +1,50 @@
+{
+  "lead": {
+    "openToWork": false,
+    "firstName": "Manabu",
+    "lastName": "Miyazaki",
+    "headline": "CEO at Aristol Inc. | Former VC & Marketing Strategist | Transforming Human Behavior through Digital Innovation | Lecturer in Higher Education & Corporate Instructor",
+    "profileHash": "ACwAAAymDJwBkul8eHUtzIvm0fAwb-FSh5RecsM",
+    "isLinkedinPremium": true,
+    "linkedinId": "212208796",
+    "birthday": "06 Jun 1986",
+    "city": "Tokyo",
+    "country": "JP",
+    "companyLinkedinUrl": "https://linkedin.com/company/beatfit",
+    "industry": "Information Technology & Services",
+    "companySize": "11-50",
+    "companyName": "Aristol",
+    "companyWebsite": "https://www.linkedin.com/company/beatfit/",
+    "educations": [
+      {
+        "degree": "Master of Engineering (M.Eng.)",
+        "fieldsOfStudy": [
+          "Technology Management for Innovation"
+        ],
+        "schoolName": "The University of Tokyo"
+      },
+      {
+        "degree": "Bachelor of Arts (B.A.)",
+        "fieldsOfStudy": [
+          "International Relationes"
+        ],
+        "schoolName": "University of Tsukuba"
+      },
+      {
+        "degree": "an international exchange student",
+        "fieldsOfStudy": [
+          "politics / law"
+        ],
+        "schoolName": "University of Massachusetts Amherst"
+      }
+    ],
+    "connection": 3
+  },
+  "currentJobs": {
+    "companyName": "Aristol",
+    "companyWebsite": "https://www.linkedin.com/company/beatfit/",
+    "companySize": "11-50",
+    "companyLinkedinUrl": "https://linkedin.com/company/beatfit",
+    "industry": "Information Technology & Services"
+  }
+}

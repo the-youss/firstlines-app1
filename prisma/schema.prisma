@@ -77,15 +77,10 @@ model User {
 
   @@index([email])
 }
-enum ListSource {
-  sales_nav
-  linkedin_search
-  manual_entry
-}
+
 model List {
   id   String @id @default(uuid())
   name String
-  source            ListSource
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -99,19 +94,28 @@ model List {
   @@index([id, userId])
 }
 
-
+enum LeadSource {
+  sales_nav
+  linkedin_search
+  manual_entry
+}
 
 model Lead {
   id                String     @id @default(uuid())
   firstName         String
   lastName          String
+  headline          String?
   country           String?
   city              String?
   isLinkedinPremium Boolean    @default(false)
+  openToWork        Boolean    @default(false)
+  connection        Int
   linkedinId        String?
   linkedinHash      String?
   jobTitle          String?
   industry          String?
+  birthDate         String?
+  source            LeadSource @default(sales_nav)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -119,9 +123,11 @@ model Lead {
   companyId String?
   company   Company? @relation(fields: [companyId], references: [id], onDelete: SetNull)
 
-  listId String
-  list   List   @relation(fields: [listId], references: [id], onDelete: Cascade)
-  campaign   Campaign[]
+  educations Json[]
+
+  listId   String
+  list     List       @relation(fields: [listId], references: [id], onDelete: Cascade)
+  campaign Campaign[]
 
   @@index([firstName, lastName])
   @@index([firstName, lastName, country])
@@ -131,6 +137,8 @@ model Lead {
   @@index([city])
   @@index([isLinkedinPremium])
 }
+
+
 
 model Company {
   id String @id @default(uuid())
@@ -159,11 +167,11 @@ model Campaign {
   excludeActive Boolean @default(true)
   dailyLimit    Int     @default(25)
 
-  userId  String
-  user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  listId  String?        @unique
-  steps   SequenceStep[]
-  leads   Lead[]
+  userId String
+  user   User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listId String?        @unique
+  steps  SequenceStep[]
+  leads  Lead[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

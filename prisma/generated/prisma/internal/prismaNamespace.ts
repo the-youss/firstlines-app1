@@ -1403,7 +1403,6 @@ export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof User
 export const ListScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  source: 'source',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   userId: 'userId'
@@ -1416,16 +1415,22 @@ export const LeadScalarFieldEnum = {
   id: 'id',
   firstName: 'firstName',
   lastName: 'lastName',
+  headline: 'headline',
   country: 'country',
   city: 'city',
   isLinkedinPremium: 'isLinkedinPremium',
+  openToWork: 'openToWork',
+  connection: 'connection',
   linkedinId: 'linkedinId',
   linkedinHash: 'linkedinHash',
   jobTitle: 'jobTitle',
   industry: 'industry',
+  birthDate: 'birthDate',
+  source: 'source',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   companyId: 'companyId',
+  educations: 'educations',
   listId: 'listId'
 } as const
 
@@ -1607,20 +1612,6 @@ export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
- * Reference to a field of type 'ListSource'
- */
-export type EnumListSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ListSource'>
-    
-
-
-/**
- * Reference to a field of type 'ListSource[]'
- */
-export type ListEnumListSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ListSource[]'>
-    
-
-
-/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -1635,6 +1626,34 @@ export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
+ * Reference to a field of type 'LeadSource'
+ */
+export type EnumLeadSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LeadSource'>
+    
+
+
+/**
+ * Reference to a field of type 'LeadSource[]'
+ */
+export type ListEnumLeadSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LeadSource[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json[]'
+ */
+export type ListJsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
  * Reference to a field of type 'StepType'
  */
 export type EnumStepTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StepType'>
@@ -1645,13 +1664,6 @@ export type EnumStepTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
  * Reference to a field of type 'StepType[]'
  */
 export type ListEnumStepTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StepType[]'>
-    
-
-
-/**
- * Reference to a field of type 'Json'
- */
-export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
     
 
 
@@ -1687,13 +1699,6 @@ export type EnumQueueJobTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$Pri
  * Reference to a field of type 'QueueJobType[]'
  */
 export type ListEnumQueueJobTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueueJobType[]'>
-    
-
-
-/**
- * Reference to a field of type 'Json[]'
- */
-export type ListJsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json[]'>
     
 
 

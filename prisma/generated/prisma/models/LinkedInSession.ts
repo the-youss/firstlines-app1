@@ -337,21 +337,6 @@ export type LinkedInSessionNullableScalarRelationFilter = {
   isNot?: Prisma.LinkedInSessionWhereInput | null
 }
 
-export type JsonNullableListFilter<$PrismaModel = never> =
-| Prisma.PatchUndefined<
-    Prisma.Either<Required<JsonNullableListFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableListFilterBase<$PrismaModel>>, 'path'>>,
-    Required<JsonNullableListFilterBase<$PrismaModel>>
-  >
-| Prisma.OptionalFlat<Omit<Required<JsonNullableListFilterBase<$PrismaModel>>, 'path'>>
-
-export type JsonNullableListFilterBase<$PrismaModel = never> = {
-  equals?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel> | null
-  has?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
-  hasEvery?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel>
-  hasSome?: runtime.InputJsonValue[] | Prisma.ListJsonFieldRefInput<$PrismaModel>
-  isEmpty?: boolean
-}
-
 export type LinkedInSessionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   userId?: Prisma.SortOrder

@@ -1,6 +1,8 @@
+import { format } from "date-fns";
 import { LinkedinClient } from "../core/client";
 import { CompanySize, Job } from "../entities/jobs.entity";
-import { SalesNavLead } from "../entities/leads.entity";
+import { Education, SalesNavLead } from "../entities/leads.entity";
+import { GetSalesNavProfileResponse } from "../responses/sales-nav/get-profile.response.get";
 import { findCountryIsoCode } from "../utils/country-utils";
 
 export class SalesNavRepository {
@@ -14,65 +16,78 @@ export class SalesNavRepository {
     profileHash,
   }: {
     profileHash: string;
-  }): Promise<SalesNavLead> {
+  }): Promise<SalesNavLead | null> {
     const response = await this.client.request.salesnav.getProfile({
       profileHash,
     });
+    if (response.status === 400) {
+      return null
+    }
+    return this._formatSalesNavResponse(response);
+  }
+  private async _formatSalesNavResponse(json: GetSalesNavProfileResponse) {
+    if (json.status === 400) {
+      return null;
+    }
+    const element = json;
+    const profileHash = element.entityUrn
+      .split(",")[0]
+      .replace("urn:li:fs_salesProfile:(", "");
+    const { country, city } = await this.parseLocation(
+      element.entityUrnResolutionResult.location
+    );
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const linkedinId = response?.objectUrn.split(":").pop()!;
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const commonLinkedinProfileHash = profileHash;
-    const { country, city } = await this.parseLocation(response?.location);
-
-    // To find current position we need to go through position view en get the first element id
-    const positionEntityUrnList = response?.positions || [];
-    const jobs: Job[] = positionEntityUrnList
-      .filter((position) => {
-        // Only one job, keep it as current job even if there is an ending date
-        if (positionEntityUrnList.length <= 1) {
-          return true;
-        }
-        return position?.endedOn ? false : true;
-      })
-      .map((position) => {
-        const job: Job = {};
-        if (position) {
-          job.jobTitle = position.title || undefined;
-          job.companyName = position.companyName || undefined;
-          if (position.companyUrnResolutionResult) {
-            job.industry = position.companyUrnResolutionResult.industry;
-            job.companySize = position.companyUrnResolutionResult
-              .employeeCountRange as CompanySize;
-            job.companyLinkedinUniversalName = position.companyUrn
-              ?.split(":")
-              .pop();
-          }
-        }
-        return job;
+    const currentJobs: Job[] = (
+      element.entityUrnResolutionResult.positions || []
+    )
+      .filter((pos) => pos.current)
+      .map((pos) => {
+        return {
+          jobTitle: pos.title,
+          companyName: pos.companyName,
+          companyWebsite: pos.companyUrnResolutionResult?.website,
+          companyLinkedinUrl:
+            pos.companyUrnResolutionResult?.flagshipCompanyUrl,
+          companySize: (pos.companyUrnResolutionResult?.employeeCountRange ===
+            "myself only"
+            ? "1"
+            : pos.companyUrnResolutionResult
+              ?.employeeCountRange) as CompanySize,
+          industry: pos.companyUrnResolutionResult?.industry,
+        };
       });
 
-    const result: SalesNavLead = {
+    return {
       lead: {
-        firstName: response?.firstName || "",
-        lastName: response?.lastName || "",
-        linkedinId,
-        profileHash: commonLinkedinProfileHash,
-        country,
+        firstName: element.entityUrnResolutionResult.firstName || element.firstName, // elem.entityUrnResolutionResult is most trustworthy but sometimes undefined
+        lastName: element.entityUrnResolutionResult.lastName || element.lastName, // elem.entityUrnResolutionResult is most trustworthy but sometimes undefined, elem.lastname can sometimes be shorten by linkedin (eg: Charly .B)
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        linkedinId: element.entityUrnResolutionResult.objectUrn
+          .split(":")
+          .pop()!,
+        profileHash,
+        headline: element.summary || "",
         city,
-        jobTitle: jobs[0]?.jobTitle,
-        companyName: jobs[0]?.companyName,
-        industry: jobs[0]?.industry,
-        companySize: jobs[0]?.companySize,
-        companyLinkedinUrl: this._getLinkedinCompanyUrlFromUniversalName(
-          jobs[0]?.companyLinkedinUniversalName
-        ),
+        country,
+        connection: element.degree,
+        birthday: this._constructBirthday(element.entityUrnResolutionResult.birthDateOn),
+        isLinkedinPremium: Boolean(element.entityUrnResolutionResult.memberBadges?.premium === true),
+        openToWork: Boolean(element.entityUrnResolutionResult.memberBadges?.openLink === true),
+        companyName: currentJobs[0]?.companyName,
+        companyWebsite: currentJobs[0]?.companyWebsite,
+        companySize: currentJobs[0]?.companySize,
+        jobTitle: currentJobs[0]?.jobTitle,
+        industry: currentJobs[0]?.industry,
+        companyLinkedinUrl: currentJobs[0]?.companyLinkedinUrl,
+        educations: (element.entityUrnResolutionResult?.educations || []).map<Education>((edu) => ({
+          degree: edu.degree,
+          fieldsOfStudy: edu.fieldsOfStudy,
+          schoolName: edu.schoolName,
+        })),
       },
-      currentJobs: jobs[0],
-    };
-    return result;
+      currentJobs: currentJobs[0],
+    }
   }
-
   protected async parseLocation(
     rawLocalizedLocation: string | undefined, // eg "France" or "Paris, France" or "Paris, Iles de France, France" or "Area Paris, France", or "Paris"
     countryLocalized?: string | undefined,
@@ -184,4 +199,48 @@ export class SalesNavRepository {
     }
     return `https://linkedin.com/company/${universalName}`;
   }
+  private _constructBirthday = (birthDateOn?: {
+    month?: number;
+    day?: number;
+    year?: number;
+  }) => {
+    if (!birthDateOn) return undefined;
+
+    const { day, month, year } = birthDateOn;
+
+    // If everything is missing → nothing to show
+    if (!day && !month && !year) return undefined;
+
+    // If only year → "1999"
+    if (year && !month && !day) {
+      return `${year}`;
+    }
+
+    // If month only → "Mar"
+    if (month && !day && !year) {
+      const d = new Date(2000, month - 1, 1);
+      return format(d, "MMM");
+    }
+
+    // If month + year → "Mar 1999"
+    if (month && year && !day) {
+      const d = new Date(year, month - 1, 1);
+      return format(d, "MMM yyyy");
+    }
+
+    // If day + month → "11 Mar"
+    if (day && month && !year) {
+      const d = new Date(2000, month - 1, day);
+      return format(d, "dd MMM");
+    }
+
+    // FULL DATE → "11 Mar 1999"
+    if (day && month && year) {
+      const d = new Date(year, month - 1, day);
+      return format(d, "dd MMM yyyy");
+    }
+
+    // If we reach here, the data was weird → just return nothing
+    return undefined;
+  };
 }
