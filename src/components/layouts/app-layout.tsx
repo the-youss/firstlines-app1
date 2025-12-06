@@ -75,7 +75,7 @@ export const AppLayout = ({ children, }: AppLayoutProps) => {
           <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
+            {/* <Breadcrumb>
               <BreadcrumbList>
                 {breadcrumbs.map((crumb, index) => (
                   <div key={index} className="flex items-center">
@@ -90,7 +90,7 @@ export const AppLayout = ({ children, }: AppLayoutProps) => {
                   </div>
                 ))}
               </BreadcrumbList>
-            </Breadcrumb>
+            </Breadcrumb> */}
 
             <div className="ml-auto flex items-center gap-3">
               {/* LinkedIn Status Indicator */}

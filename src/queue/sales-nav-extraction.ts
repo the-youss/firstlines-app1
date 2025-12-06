@@ -4,6 +4,7 @@ import { db, LeadSource, Prisma, QueueJob } from '@/lib/db';
 import { getServerUTCDate } from '@/lib/utils';
 import { LinkedinClient } from '@/Linkedin-API';
 import { Job } from '@/Linkedin-API/entities/jobs.entity';
+import { MAX_PAGE_SIZE } from '@/Linkedin-API/requests/sales-nav-search-request';
 import { getSocket } from '@/socket';
 import Queue, { worker } from 'fastq';
 
@@ -13,15 +14,18 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
   const queue = arg.queue;
   console.log('queueId', queue.id);
   try {
-    const socket = getSocket();
     const props = queue.input as unknown as ExtractionQueueInput
+    const lastPage = (queue.metadata as { lastPage?: number })?.lastPage || 0
     const url = props.linkedinPayload.url
     const lk = new LinkedinClient({
       userId: queue.userId,
       cookies: props.linkedinPayload.cookies,
       linkedinHeaders: props.linkedinPayload.headers
     })
+    emitSocketEvent(props.list.id, { status: 'starting' })
     const leadIds = new Set<string>()
+    const startingPage = lastPage === 0 ? lastPage + 1 : 0
+    console.log('startingPage', startingPage)
     const success = await lk.salesnavSearch.scrapeSearchResult(url,
       async (args) => {
         const companies = args.scrapedLeads.map(c => c.currentJobs).reduce((p, c) => {
@@ -88,13 +92,26 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
           skipDuplicates: true
         })
         leads.forEach(lead => leadIds.add(lead.id))
-        socket.emit('import-leads', {
-          listId: props.list.id,
+        emitSocketEvent(props.list.id, {
+          status: 'in-progress',
           progress: args.progress,
           total: args.total,
-          processed: leadIds.size
+          processed: leadIds.size,
+        })
+        await db.queueJob.update({
+          where: {
+            id: queue.id,
+          },
+          data: {
+            metadata: {
+              lastPage: args.scrapedPage
+            }
+          }
         })
         return true
+      },
+      {
+        offset: startingPage * MAX_PAGE_SIZE
       }
     )
     const leadCount = await db.lead.count({
@@ -135,6 +152,10 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
         })
       }
     }
+    emitSocketEvent(props.list.id, {
+      status: "done",
+      processed: leadIds.size
+    })
     cb(null, true)
   } catch (error) {
     console.error(`[WORKER SALES_NAV_EXTRACTION] ${(error as Error).message}`);
@@ -198,4 +219,12 @@ async function pollingSalesNavExtractionQueue() {
 export function initSalesNavExtractionQueue() {
   checkSalesNavExtractionQueueWhenServerIsReady()
   pollingSalesNavExtractionQueue()
+}
+
+function emitSocketEvent(listId: string, args: { status: 'starting' | 'in-progress' | 'done', progress?: number, total?: number, processed?: number }) {
+  const socket = getSocket();
+  socket.emit('import-leads', {
+    listId,
+    ...args
+  })
 }

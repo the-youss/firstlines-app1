@@ -120,10 +120,10 @@ export class SalesNavSearchRequest extends Request {
     }
 
     const endpointUrl = this.appendLinkedinParams(sourceUrl, searchParams);
-    await this.sleepRandomDelayBetweenRequests();
 
     let json: GetSalesNavSearchResponse | undefined = undefined;
     try {
+      await this.sleepRandomDelayBetweenRequests();
       json = await this.fetchJson<GetSalesNavSearchResponse>(endpointUrl);
     } catch (error) {
       console.error(

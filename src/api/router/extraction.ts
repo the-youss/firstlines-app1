@@ -123,7 +123,7 @@ export const extractionRouter = {
           logs: [`Added to queue at ${getServerUTCDate()}`],
         }
       })
-      return queue
+      return { queue, listId }
     }),
   cancelSalesNavExtraction: protectedProcedure
     .input(z.object({ queueId: z.string() }))

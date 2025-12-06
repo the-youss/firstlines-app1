@@ -54,6 +54,7 @@ export type QueueJobCountAggregateOutputType = {
   lastMessage: number
   logs: number
   isFailed: number
+  metadata: number
   userId: number
   createdAt: number
   updatedAt: number
@@ -91,6 +92,7 @@ export type QueueJobCountAggregateInputType = {
   lastMessage?: true
   logs?: true
   isFailed?: true
+  metadata?: true
   userId?: true
   createdAt?: true
   updatedAt?: true
@@ -177,6 +179,7 @@ export type QueueJobGroupByOutputType = {
   lastMessage: string | null
   logs: string[]
   isFailed: boolean
+  metadata: runtime.JsonValue | null
   userId: string
   createdAt: Date
   updatedAt: Date
@@ -211,6 +214,7 @@ export type QueueJobWhereInput = {
   lastMessage?: Prisma.StringNullableFilter<"QueueJob"> | string | null
   logs?: Prisma.StringNullableListFilter<"QueueJob">
   isFailed?: Prisma.BoolFilter<"QueueJob"> | boolean
+  metadata?: Prisma.JsonNullableFilter<"QueueJob">
   userId?: Prisma.StringFilter<"QueueJob"> | string
   createdAt?: Prisma.DateTimeFilter<"QueueJob"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"QueueJob"> | Date | string
@@ -225,6 +229,7 @@ export type QueueJobOrderByWithRelationInput = {
   lastMessage?: Prisma.SortOrderInput | Prisma.SortOrder
   logs?: Prisma.SortOrder
   isFailed?: Prisma.SortOrder
+  metadata?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -242,6 +247,7 @@ export type QueueJobWhereUniqueInput = Prisma.AtLeast<{
   lastMessage?: Prisma.StringNullableFilter<"QueueJob"> | string | null
   logs?: Prisma.StringNullableListFilter<"QueueJob">
   isFailed?: Prisma.BoolFilter<"QueueJob"> | boolean
+  metadata?: Prisma.JsonNullableFilter<"QueueJob">
   userId?: Prisma.StringFilter<"QueueJob"> | string
   createdAt?: Prisma.DateTimeFilter<"QueueJob"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"QueueJob"> | Date | string
@@ -256,6 +262,7 @@ export type QueueJobOrderByWithAggregationInput = {
   lastMessage?: Prisma.SortOrderInput | Prisma.SortOrder
   logs?: Prisma.SortOrder
   isFailed?: Prisma.SortOrder
+  metadata?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -275,6 +282,7 @@ export type QueueJobScalarWhereWithAggregatesInput = {
   lastMessage?: Prisma.StringNullableWithAggregatesFilter<"QueueJob"> | string | null
   logs?: Prisma.StringNullableListFilter<"QueueJob">
   isFailed?: Prisma.BoolWithAggregatesFilter<"QueueJob"> | boolean
+  metadata?: Prisma.JsonNullableWithAggregatesFilter<"QueueJob">
   userId?: Prisma.StringWithAggregatesFilter<"QueueJob"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"QueueJob"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"QueueJob"> | Date | string
@@ -288,6 +296,7 @@ export type QueueJobCreateInput = {
   lastMessage?: string | null
   logs?: Prisma.QueueJobCreatelogsInput | string[]
   isFailed?: boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutQueueJobsInput
@@ -301,6 +310,7 @@ export type QueueJobUncheckedCreateInput = {
   lastMessage?: string | null
   logs?: Prisma.QueueJobCreatelogsInput | string[]
   isFailed?: boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -314,6 +324,7 @@ export type QueueJobUpdateInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutQueueJobsNestedInput
@@ -327,6 +338,7 @@ export type QueueJobUncheckedUpdateInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -340,6 +352,7 @@ export type QueueJobCreateManyInput = {
   lastMessage?: string | null
   logs?: Prisma.QueueJobCreatelogsInput | string[]
   isFailed?: boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -353,6 +366,7 @@ export type QueueJobUpdateManyMutationInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -365,6 +379,7 @@ export type QueueJobUncheckedUpdateManyInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -396,6 +411,7 @@ export type QueueJobCountOrderByAggregateInput = {
   lastMessage?: Prisma.SortOrder
   logs?: Prisma.SortOrder
   isFailed?: Prisma.SortOrder
+  metadata?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -490,6 +506,7 @@ export type QueueJobCreateWithoutUserInput = {
   lastMessage?: string | null
   logs?: Prisma.QueueJobCreatelogsInput | string[]
   isFailed?: boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -502,6 +519,7 @@ export type QueueJobUncheckedCreateWithoutUserInput = {
   lastMessage?: string | null
   logs?: Prisma.QueueJobCreatelogsInput | string[]
   isFailed?: boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -543,6 +561,7 @@ export type QueueJobScalarWhereInput = {
   lastMessage?: Prisma.StringNullableFilter<"QueueJob"> | string | null
   logs?: Prisma.StringNullableListFilter<"QueueJob">
   isFailed?: Prisma.BoolFilter<"QueueJob"> | boolean
+  metadata?: Prisma.JsonNullableFilter<"QueueJob">
   userId?: Prisma.StringFilter<"QueueJob"> | string
   createdAt?: Prisma.DateTimeFilter<"QueueJob"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"QueueJob"> | Date | string
@@ -556,6 +575,7 @@ export type QueueJobCreateManyUserInput = {
   lastMessage?: string | null
   logs?: Prisma.QueueJobCreatelogsInput | string[]
   isFailed?: boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -568,6 +588,7 @@ export type QueueJobUpdateWithoutUserInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -580,6 +601,7 @@ export type QueueJobUncheckedUpdateWithoutUserInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -592,6 +614,7 @@ export type QueueJobUncheckedUpdateManyWithoutUserInput = {
   lastMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   logs?: Prisma.QueueJobUpdatelogsInput | string[]
   isFailed?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  metadata?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -606,6 +629,7 @@ export type QueueJobSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   lastMessage?: boolean
   logs?: boolean
   isFailed?: boolean
+  metadata?: boolean
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -620,6 +644,7 @@ export type QueueJobSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   lastMessage?: boolean
   logs?: boolean
   isFailed?: boolean
+  metadata?: boolean
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -634,6 +659,7 @@ export type QueueJobSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   lastMessage?: boolean
   logs?: boolean
   isFailed?: boolean
+  metadata?: boolean
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -648,12 +674,13 @@ export type QueueJobSelectScalar = {
   lastMessage?: boolean
   logs?: boolean
   isFailed?: boolean
+  metadata?: boolean
   userId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type QueueJobOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "status" | "type" | "input" | "lastMessage" | "logs" | "isFailed" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["queueJob"]>
+export type QueueJobOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "status" | "type" | "input" | "lastMessage" | "logs" | "isFailed" | "metadata" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["queueJob"]>
 export type QueueJobInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -677,6 +704,7 @@ export type $QueueJobPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     lastMessage: string | null
     logs: string[]
     isFailed: boolean
+    metadata: runtime.JsonValue | null
     userId: string
     createdAt: Date
     updatedAt: Date
@@ -1111,6 +1139,7 @@ export interface QueueJobFieldRefs {
   readonly lastMessage: Prisma.FieldRef<"QueueJob", 'String'>
   readonly logs: Prisma.FieldRef<"QueueJob", 'String[]'>
   readonly isFailed: Prisma.FieldRef<"QueueJob", 'Boolean'>
+  readonly metadata: Prisma.FieldRef<"QueueJob", 'Json'>
   readonly userId: Prisma.FieldRef<"QueueJob", 'String'>
   readonly createdAt: Prisma.FieldRef<"QueueJob", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"QueueJob", 'DateTime'>

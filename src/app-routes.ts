@@ -15,6 +15,8 @@ export const appRoutes = {
   appCampaignDetails: "/app/campaigns/:campaignId",
   appProfile: "/app/profile",
 
+  appImportProgress: "/app/ext/import/:identifier/p/:listId",
+
 
   sampleCsv: "/download/sample.csv",
 } as const
@@ -40,6 +42,7 @@ export const ROUTES_TITLE: Record<keyof AppRoutes, string> = {
   'appCampaignDetails': 'Campaign Details',
   'appProfile': 'Profile',
 
-  'sampleCsv': ''
+  'sampleCsv': '',
+  appImportProgress: ""
 
 }

@@ -84,10 +84,7 @@ export class SalesNavSearchRepository {
       const result = await fn(sourceUrl, {
         start,
         // Limit results for the last page, so we do not scraper more than what we need
-        limit:
-          opts?.leadsLimit && start + MAX_PAGE_SIZE > opts?.leadsLimit
-            ? opts?.leadsLimit - start
-            : undefined,
+        limit: 1
       });
       // It can happen that SalesNav says there is X results but it returns less results
       // let's add this catch to break and avoid infinite search

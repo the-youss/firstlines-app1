@@ -1575,6 +1575,7 @@ export const QueueJobScalarFieldEnum = {
   lastMessage: 'lastMessage',
   logs: 'logs',
   isFailed: 'isFailed',
+  metadata: 'metadata',
   userId: 'userId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

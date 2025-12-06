@@ -242,6 +242,7 @@ model QueueJob {
   lastMessage String?
   logs        String[]
   isFailed    Boolean        @default(false)
+  metadata Json?
 
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)

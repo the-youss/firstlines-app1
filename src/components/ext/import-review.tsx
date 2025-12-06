@@ -49,9 +49,8 @@ export function ImportReview({ sourceData, identifier }: { sourceData: SourceDat
 
 
   const { mutate: importLeads, isPending } = useMutation(trpc.extraction.startSalesNavExtraction.mutationOptions({
-    onSuccess() {
-      toast.info(`Import in progress...`)
-      router.replace(appRoutes.appDashboard)
+    onSuccess(data) {
+      router.replace(appRoutes.appImportProgress.replace(":identifier", data.queue.id).replace(":listId", data.listId))
     },
   }))
 

@@ -1,6 +1,7 @@
 import { linkedinLogs } from "@/api/lib/linkedin-logs";
 import fs from "fs";
 import { LinkedinCookies, LinkedinCustomHeaders } from "../entities";
+import { db } from "@/lib/db";
 
 export interface RequestOpts {
   cookies: LinkedinCookies;
@@ -10,8 +11,8 @@ export interface RequestOpts {
 }
 
 export class Request {
-  private _scraperMandatoryDelayBtwnRequestsMaxMs = 650;
-  private _scraperMandatoryDelayBtwnRequestsMinMs = 350;
+  private _scraperMandatoryDelayBtwnRequestsMaxMs = 2500;
+  private _scraperMandatoryDelayBtwnRequestsMinMs = 1200;
 
   constructor(protected params: RequestOpts) { }
 
@@ -31,12 +32,12 @@ export class Request {
     }
     const cleanHeaders = this._cleanOutLinkedinHeaders(merged);
     const url = this.buildUrl(endpoint, init?.queryParams);
-    console.log(`${Date.now()} :: [Linkedin API::Request] url => ${url}`);
-    await this.sleepRandomDelayBetweenRequests();
+    console.log(`${new Date().toLocaleString()} :: [Linkedin API::Request] url => ${url}`);
     if (init?.overwriteHeaders) {
       init.overwriteHeaders(cleanHeaders);
     }
 
+    await this.sleepRandomDelayBetweenRequests(url);
     const res = await fetch(url, {
       headers: cleanHeaders,
       ...init,
@@ -257,7 +258,7 @@ export class Request {
       .join("");
   }
 
-  async sleepRandomDelayBetweenRequests() {
+  async sleepRandomDelayBetweenRequests(url?: string) {
     const delay = Math.floor(
       Math.random() *
       (this._scraperMandatoryDelayBtwnRequestsMaxMs -
@@ -266,9 +267,78 @@ export class Request {
       this._scraperMandatoryDelayBtwnRequestsMinMs
     );
     await this.sleep(delay);
+    await this.applyUserLevelWait(url)
   }
+  async applyUserLevelWait(url?: string, min = 5, max = 12) {
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
 
+    const todayEnd = new Date();
+    todayEnd.setHours(23, 59, 59, 999);
+
+    // 1. Fetch today's last log
+    const lastLog = await db.linkedinAPILogs.findFirst({
+      where: {
+        userId: this.params.userId,
+        date: { gte: todayStart, lte: todayEnd }
+      },
+      orderBy: { time: "desc" }
+    });
+
+    // 2. If no logs today → no wait
+    if (!lastLog) return;
+
+    const now = new Date().getTime();
+
+    // Combine stored date + time
+    const lastCallDateTime = new Date(
+      `${lastLog.date.toISOString().split("T")[0]}T${lastLog.time.toISOString().split("T")[1]}`
+    ).getTime();
+
+    const diffSeconds = (now - lastCallDateTime) / 1000;
+
+    // 3. Generate random wait interval
+    let randomWait = Math.floor(Math.random() * (max - min + 1)) + min;
+    // 4. If same URL as last call, add extra wait
+    if (url && lastLog.url) {
+      console.log('same url')
+      console.log('prev random wait', randomWait)
+      try {
+        const lastUrlPath = new URL(lastLog.url).pathname;
+        const currentUrlPath = new URL(url).pathname;
+
+        if (lastUrlPath === currentUrlPath) {
+          // Same endpoint → apply extra wait
+          const extraWait = Math.floor(
+            Math.random() * (max - min + 1)
+          ) + min;
+
+          randomWait += extraWait;
+        }
+      } catch (e) {
+        // If URL is invalid, fallback to full string comparison
+        if (lastLog.url === url) {
+          const extraWait = Math.floor(
+            Math.random() * (max - min + 1)
+          ) + min;
+
+          randomWait += extraWait;
+        }
+      }
+      console.log('new random wait', randomWait)
+    }
+
+    console.log('diffSeconds', diffSeconds, randomWait)
+    // 4. If already waited enough → skip
+    if (diffSeconds >= randomWait) return;
+
+    // 5. Sleep the remaining time
+    const sleepMs = (randomWait - diffSeconds) * 1000;
+
+    await this.sleep(sleepMs)
+  }
   sleep(delay: number) {
+    console.log(`SLEEP::LINKEDIN :: user-${this.params.userId}`, `${Math.floor(delay / 1000)} sec`)
     return new Promise((resolve) => setTimeout(resolve, delay));
   }
 
@@ -282,4 +352,5 @@ export class Request {
 
     return `${base.origin}${base.pathname}?${query}`;
   }
+
 }

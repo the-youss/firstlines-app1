@@ -13,7 +13,7 @@ import { LinkedinCookies, LinkedinHeaders } from '@/interface/LinkedinCookies'
 const run = async () => {
   const session = await db.extensionPayload.findUnique({
     where: {
-      id: 'cmiu16wni00009ws5rpmtngq8'
+      id: 'cmiur3yeo0005qcs59014zv4p'
     }
   })
   if (!session) {
@@ -25,7 +25,9 @@ const run = async () => {
     userId: session.userId,
     linkedinHeaders: payload.headers as LinkedinHeaders,
   })
-const s = await linkedinClient.salesnavSearch.fetchMetas(payload.url)
+  const s = await linkedinClient.salesnavSearch.scrapeSearchResult(payload.url, async () => {
+    return true
+  })
   // const r = await linkedinClient.profile.getProfile({
   //   profileHash: 'ACwAABiWRIUBXGYH8X9ys3fz8WI9-2NGX4jwImo'
   // })

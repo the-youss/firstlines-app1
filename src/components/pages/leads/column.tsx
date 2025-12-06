@@ -9,6 +9,7 @@ import { createHeading } from "@/lib/utils"
 import { getLinkedinProfileUrlFromHash } from "@/lib/linkedin.utils"
 import Link from "next/link"
 import { appRoutes } from "@/app-routes"
+import { Popover } from "@mui/material"
 
 
 
@@ -98,7 +99,7 @@ export const useLeadsColumn = (): MRT_ColumnDef<Rows>[] => {
       Cell(props) {
         return (
           <Link href={{ pathname: appRoutes.appLeads, query: { listId: props.row.original.list.id } }}>
-            <Badge variant="secondary" className="capitalize">{props.row.original.list.name}</Badge>
+            <Badge title={props.row.original.list.name} variant="secondary" className="capitalize text-pretty text-ellipsis line-clamp-1 max-w-[150px]">{props.row.original.list.name}</Badge>
           </Link>
         )
       },

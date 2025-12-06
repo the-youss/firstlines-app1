@@ -36,7 +36,7 @@ export const listRouter = {
       },
     };
     if (q) {
-      const keys = ['firstName', 'lastName', 'industry', "country", 'city'] as (keyof Prisma.LeadWhereInput)[];
+      const keys = ['firstName', 'lastName', 'industry', "country", 'city','jobTitle'] as (keyof Prisma.LeadWhereInput)[];
       filter.OR = keys.map(key => ({
         [key]: {
           contains: q,

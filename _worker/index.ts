@@ -5,9 +5,8 @@ import initSocketServer from '@/socket';
 
 const init = async () => {
   console.log(`[worker] Started at ${getServerUTCDate()}`);
-
+  initSocketServer()
   initSalesNavExtractionQueue();
 }
 
 init()
-initSocketServer()
