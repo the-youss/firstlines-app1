@@ -6,5 +6,6 @@ export interface StartExtractionProps {
   headers: Array<{
     name: string,
     value: string,
-  }>
+  }>;
+  sourceURL:string
 }

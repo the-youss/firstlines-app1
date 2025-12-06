@@ -47,6 +47,7 @@ export interface GetSalesNavSearchSuccessResponse {
   };
   metadata?: {
     keywords?: string;
+    searchTitle?: string;
     filters?: {
       singleFilterMetadata?: {
         values: {

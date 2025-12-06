@@ -30,7 +30,7 @@ export const extractionRouter = {
         linkedinHeaders: props.headers,
       });
       const searchResult = await client.salesnavSearch.fetchMetas(props.url)
-      return searchResult.status !== 400 ? searchResult.paging : null
+      return searchResult.status !== 400 ? { total: searchResult.paging.total, title: searchResult.metadata?.searchTitle, sourceURL: props.sourceURL } : null
     }),
   startSalesNavExtraction: protectedProcedure
     .input(z.object({ payloadId: z.string(), name: z.string() }))

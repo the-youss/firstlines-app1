@@ -40,10 +40,6 @@ export class SalesNavSearchRequest extends Request {
         `Adjusted limit to ${limit} because start=${start} would exceed max=${SEARCH_RESULT_MAX_ITEMS_COUNT}`
       );
     }
-    const searchParams = new URLSearchParams(sourceUrl);
-    searchParams.delete('decorationId');
-    searchParams.delete('start');
-    searchParams.delete('count');
 
     // let seachParams = this._getSearchPageUrlParams(sourceUrl);
 
@@ -117,15 +113,18 @@ export class SalesNavSearchRequest extends Request {
     // if (savedSearchId && lastViewedAt) {
     //   endpointUrl += "&lastViewedAt=" + lastViewedAt;
     // }
-    searchParams.set('start', start.toString());
-    searchParams.set('count', limit.toString());
-    searchParams.set('decoration', this._craftSearchUrlDecoration());
-    const endpointUrl = searchParams.toString()
+    const searchParams ={
+      start: start.toString(),
+      count:limit.toString(),
+      decoration: this._craftSearchUrlDecoration()
+    }
+
+    const endpointUrl = this.appendLinkedinParams(sourceUrl, searchParams);
     await this.sleepRandomDelayBetweenRequests();
 
     let json: GetSalesNavSearchResponse | undefined = undefined;
     try {
-      json = await this.fetchJson<GetSalesNavSearchResponse>(decodeURIComponent(endpointUrl));
+      json = await this.fetchJson<GetSalesNavSearchResponse>(endpointUrl);
     } catch (error) {
       console.error(
         "_scrapeOneSearchResultPage error, cannot parse json content, see http response above",
@@ -226,5 +225,24 @@ export class SalesNavSearchRequest extends Request {
         .replace(/\)/g, "%29");
     }
     return deco;
+  }
+
+
+  private appendLinkedinParams(url: string, newParams: Record<string, string>) {
+    // Remove existing decoration, start, count if present
+    url = url.replace(/([?&])(decorationId|decoration|start|count)=[^&]*/g, '');
+
+    // Remove trailing '&' or '?' if any
+    url = url.replace(/([?&])$/, '');
+
+    // Determine the separator for appending
+    const separator = url.includes('?') ? '&' : '?';
+
+    // Append new params without encoding
+    const newQuery = Object.entries(newParams)
+      .map(([k, v]) => `${k}=${v}`)
+      .join('&');
+
+    return url + (newQuery ? separator + newQuery : '');
   }
 }

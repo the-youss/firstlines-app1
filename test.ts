@@ -11,25 +11,25 @@ import { LinkedinCookies, LinkedinHeaders } from '@/interface/LinkedinCookies'
 
 
 const run = async () => {
-  const session = await db.linkedInSession.findUnique({
+  const session = await db.extensionPayload.findUnique({
     where: {
-      id: '0cddbe8f-fbaa-4a6b-afa9-fc84df5a655c'
+      id: 'cmiu16wni00009ws5rpmtngq8'
     }
   })
   if (!session) {
     return;
   }
-
+  const payload = session.payload as unknown as StartExtractionProps
   const linkedinClient = new LinkedinClient({
-    cookies: session.cookies as LinkedinCookies,
-    userId: "",
-    linkedinHeaders: session.headers as LinkedinHeaders,
+    cookies: payload.cookies as LinkedinCookies,
+    userId: session.userId,
+    linkedinHeaders: payload.headers as LinkedinHeaders,
   })
-
-  const r = await linkedinClient.profile.getProfile({
-    profileHash: 'ACwAABiWRIUBXGYH8X9ys3fz8WI9-2NGX4jwImo'
-  })
-  console.log(r)
+const s = await linkedinClient.salesnavSearch.fetchMetas(payload.url)
+  // const r = await linkedinClient.profile.getProfile({
+  //   profileHash: 'ACwAABiWRIUBXGYH8X9ys3fz8WI9-2NGX4jwImo'
+  // })
+  console.log(s)
 }
 
 run()

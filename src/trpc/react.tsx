@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import {
   createTRPCClient,
   httpBatchStreamLink,
+  httpLink,
   loggerLink,
 } from "@trpc/client";
 import { createTRPCContext } from "@trpc/tanstack-react-query";
@@ -41,7 +42,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
             Environment.isProduction() === false ||
             (op.direction === "down" && op.result instanceof Error),
         }),
-        httpBatchStreamLink({
+        httpLink({
           url: getBaseUrl() + "/api/trpc",
           headers() {
             const headers = new Headers();

@@ -130,7 +130,7 @@ function Review({ identifier }: { identifier: string }) {
   const trpc = useTRPC();
   const sourceData: SourceData = MOCK_SOURCE;
   const { data: lists } = useQuery(trpc.extension.getLists.queryOptions())
-  // const { data: meta, isPending: isPendingMetadta } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
+  const { data: meta, isPending: isPendingMetadta } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
   const [destination, setDestination] = useState<ImportDestination>("new-list");
   const [listName, setListName] = useState(`Search Results - ${new Date().toLocaleDateString()}`);
   const [selectedCampaignId, setSelectedCampaignId] = useState<string>("");
