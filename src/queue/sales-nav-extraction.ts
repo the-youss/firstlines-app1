@@ -19,6 +19,7 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
       cookies: props.linkedinPayload.cookies,
       linkedinHeaders: props.linkedinPayload.headers
     })
+    const leadIds = new Set<string>()
     const success = await lk.salesnavSearch.scrapeSearchResult(url,
       async (args) => {
         const companies = args.scrapedLeads.map(c => c.currentJobs).reduce((p, c) => {
@@ -80,10 +81,11 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
             schoolName: e.schoolName,
           }))
         }))
-        await db.lead.createMany({
+        const leads = await db.lead.createManyAndReturn({
           data: input,
           skipDuplicates: true
         })
+        leads.forEach(lead => leadIds.add(lead.id))
         return true
       }
     )
@@ -106,6 +108,25 @@ const __WORKER__: worker<any, { queue: QueueJob }, boolean> = async (arg, cb) =>
         }
       }
     });
+    if (props.shouldAddToCampaign) {
+      const campaign = await db.campaign.findUnique({
+        where: {
+          listId: props.list.id
+        }
+      })
+      if (campaign) {
+        await db.campaign.update({
+          where: {
+            id: campaign.id
+          },
+          data: {
+            leads: {
+              connect: Array.from(leadIds).map(id => ({ id }))
+            }
+          }
+        })
+      }
+    }
     cb(null, true)
   } catch (error) {
     console.error(`[WORKER SALES_NAV_EXTRACTION] ${(error as Error).message}`);

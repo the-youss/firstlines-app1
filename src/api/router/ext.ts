@@ -61,10 +61,12 @@ export const extensionRouter = {
           li_at: z.string(),
           JSESSIONID: z.string()
         }).partial(),
-        sourceURL: z.string()
+        sourceURL: z.string(),
+        source: z.enum($Enums.LeadSource)
       })
     }))
     .mutation(async ({ ctx, input }) => {
+      console.log(input.payload)
       const hash = md5(JSON.stringify(input.payload))
       const payload = await ctx.db.extensionPayload.upsert({
         create: {

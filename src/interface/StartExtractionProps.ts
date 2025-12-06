@@ -7,5 +7,6 @@ export interface StartExtractionProps {
     name: string,
     value: string,
   }>;
-  sourceURL:string
+  sourceURL: string,
+  source: "sales_nav" | "linkedin_search"
 }

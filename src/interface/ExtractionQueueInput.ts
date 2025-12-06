@@ -3,5 +3,6 @@ import { StartExtractionProps } from "./StartExtractionProps";
 
 export interface ExtractionQueueInput {
   list: List;
-  linkedinPayload: StartExtractionProps
+  linkedinPayload: StartExtractionProps;
+  shouldAddToCampaign: boolean
 }

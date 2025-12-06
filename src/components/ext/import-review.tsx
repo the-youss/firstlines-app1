@@ -27,71 +27,27 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-interface SourceData {
-  sourceUrl: string;
-  sourceType: "linkedin" | "sales-nav";
-  leadCount: number;
-}
-
+import { RouterOutputs } from "@/api";
 
 const MOCK_CAMPAIGNS = [
   { id: "camp-1", name: "Tech Leaders Outreach" },
   { id: "camp-2", name: "Q1 Sales Push" },
   { id: "camp-3", name: "Enterprise Accounts" },
 ];
-const MOCK_SOURCE: SourceData = {
-  sourceUrl: "https://www.linkedin.com/search/results/people/?keywords=sales%20manager&origin=GLOBAL_SEARCH_HEADER",
-  sourceType: "linkedin",
-  leadCount: 1340,
-};
 type ImportDestination = "new-list" | "campaign" | "existing-list";
-type ImportState = "review" | "processing" | "success";
+type SourceData = RouterOutputs['extraction']['fetchMeta']
 
-export function Client({ identifier }: { identifier: string }) {
-  const trpc = useTRPC();
-  const { data: sourceData, isPending } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
-
-
-
-
-
-
-
-
-  return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-112px)]">
-      {isPending ? <Loading /> : (
-        <div className="w-full max-w-2xl">
-          <Review identifier={identifier} sourceData={sourceData!} />
-        </div>
-      )}
-    </div >
-  )
-}
-
-
-function Loading() {
-  return (
-    <div className="flex flex-col gap-4 items-center justify-center min-h-screen">
-      <Spinner className="size-10" />
-      <span className="ml-2">Please wait while we fetch the metadata...</span>
-    </div>
-  )
-}
-
-
-function Review({ sourceData, identifier }: { sourceData: SourceData, identifier: string }) {
+export function ImportReview({ sourceData, identifier }: { sourceData: SourceData, identifier: string }) {
   const router = useRouter();
   const trpc = useTRPC();
-
-  const { data: lists } = useQuery(trpc.extension.getLists.queryOptions())
+  const { data: lists } = useQuery(trpc.list.getLists.queryOptions())
   const [destination, setDestination] = useState<ImportDestination>("new-list");
-  const [listName, setListName] = useState(`Search Results - ${new Date().toLocaleDateString()}`);
+  const [listName, setListName] = useState(sourceData?.title ?? `Search Results - ${new Date().toLocaleDateString()}`);
   const [selectedCampaignId, setSelectedCampaignId] = useState<string>("");
   const [selectedListId, setSelectedListId] = useState<string>("");
   const [createNewSegment, setCreateNewSegment] = useState(false);
-  const [segmentName, setSegmentName] = useState("");
+
+
   const { mutate: importLeads, isPending } = useMutation(trpc.extraction.startSalesNavExtraction.mutationOptions({
     onSuccess() {
       toast.info(`Import in progress...`)
@@ -100,8 +56,14 @@ function Review({ sourceData, identifier }: { sourceData: SourceData, identifier
   }))
 
   const handleSubmit = useCallback(() => {
-    console.log('submit', destination, identifier, listName, selectedCampaignId, selectedListId)
-  }, [identifier, destination, listName, selectedCampaignId, selectedListId])
+    importLeads({
+      payloadId: identifier,
+      campaignId: selectedCampaignId,
+      listId: selectedListId,
+      listName: destination === 'new-list' || createNewSegment ? listName : undefined,
+      destination
+    })
+  }, [identifier, destination, listName, selectedCampaignId, selectedListId, createNewSegment])
 
   const isImportValid = () => {
     switch (destination) {
@@ -116,30 +78,7 @@ function Review({ sourceData, identifier }: { sourceData: SourceData, identifier
     }
   };
 
-  const SourceIcon =
-    'sales-nav' === "sales-nav" ? (
-      <div className="h-12 w-12 rounded-xl bg-[#0A66C2] flex items-center justify-center">
-        <span className="text-white font-bold text-lg">SN</span>
-      </div>
-    ) : (
-      <div className="h-12 w-12 rounded-xl bg-[#0A66C2] flex items-center justify-center">
-        <Linkedin className="h-6 w-6 text-white" />
-      </div>
-    );
-  const getDestinationIcon = () => {
-    if (destination === "campaign") {
-      return (
-        <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-          <Megaphone className="h-6 w-6 text-primary" />
-        </div>
-      );
-    }
-    return (
-      <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-        <List className="h-6 w-6 text-primary" />
-      </div>
-    );
-  };
+
   const getDestinationLabel = () => {
     switch (destination) {
       case "new-list":
@@ -165,7 +104,9 @@ function Review({ sourceData, identifier }: { sourceData: SourceData, identifier
         <div className="space-y-6">
           {/* Source Section */}
           <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/50">
-            {SourceIcon}
+            <div className="h-12 w-12 rounded-xl bg-[#0A66C2] flex items-center justify-center">
+              {sourceData?.source === 'sales_nav' ? <span className="text-white font-bold text-lg">SN</span> : <Linkedin className="h-6 w-6 text-white" />}
+            </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <a
@@ -230,7 +171,9 @@ function Review({ sourceData, identifier }: { sourceData: SourceData, identifier
             {/* Dynamic Configuration Based on Selection */}
             <div className="p-4 rounded-lg bg-muted/50 space-y-4">
               <div className="flex items-center gap-4">
-                {getDestinationIcon()}
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  {destination === "campaign" ? <Megaphone className="h-6 w-6 text-primary" /> : <List className="h-6 w-6 text-primary" />}
+                </div>
                 <div className="flex-1">
                   <p className="font-medium">{getDestinationLabel()}</p>
                   <p className="text-sm text-muted-foreground">
@@ -294,9 +237,8 @@ function Review({ sourceData, identifier }: { sourceData: SourceData, identifier
                       <Label htmlFor="segment-name">New List Name</Label>
                       <Input
                         id="segment-name"
-                        value={segmentName}
-                        onChange={(e) => setSegmentName(e.target.value)}
-                        placeholder={`Import - ${new Date().toLocaleDateString()}`}
+                        value={listName}
+                        onChange={(e) => setListName(e.target.value)}
                       />
                     </div>
                   )}
@@ -326,11 +268,11 @@ function Review({ sourceData, identifier }: { sourceData: SourceData, identifier
 
           {/* Action Buttons */}
           <div className="flex gap-3 pt-4">
-            <Button variant="outline" className="flex-1" onClick={router.back}>
+            <Button variant="outline" className="flex-1" onClick={() => router.push(appRoutes.appDashboard)}>
               Cancel
             </Button>
-            <Button className="flex-1" onClick={handleSubmit} disabled={!isImportValid()}>
-              Start Import
+            <Button className="flex-1" onClick={handleSubmit} disabled={!isImportValid() || isPending}>
+              {isPending ? "Please wait..." : 'Start Import'}
             </Button>
           </div>
         </div>

@@ -13,6 +13,7 @@ import { useTRPC } from "@/trpc/react";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import { appRoutes } from "@/app-routes";
+import { useSocket } from "@/hooks/use-socket";
 
 type SortKey = 'name' | 'title' | 'company' | 'country' | 'industry' | 'source' | 'list';
 type SortDirection = 'asc' | 'desc' | null;
@@ -32,6 +33,13 @@ interface Lead {
 }
 
 export const Leads = () => {
+  useSocket(['test'], {
+    onEvent: {
+      'test': (data) => {
+        console.log(data)
+      }
+    }
+  })
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<"leads" | "lists">("leads");
   const listId = searchParams.get('listId') || ''
