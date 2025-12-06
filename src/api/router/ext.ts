@@ -48,7 +48,7 @@ export const extensionRouter = {
       })
       return { success: true }
     }),
-  createPayload: publicProcedure
+  createPayload: protectedProcedure
     .input(z.object({
       payload: z.object({
         url: z.string(),
@@ -68,7 +68,7 @@ export const extensionRouter = {
       const hash = md5(JSON.stringify(input.payload))
       const payload = await ctx.db.extensionPayload.upsert({
         create: {
-          userId: '3cb5147b-8ded-43e4-b89a-0552db8f82b4',
+          userId: ctx.session.user.id,
           hash,
           payload: input.payload,
         },
