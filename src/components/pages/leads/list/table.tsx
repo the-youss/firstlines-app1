@@ -59,6 +59,7 @@ export function ListsTable(props: ListsTableProps) {
 
   return (
     <DataTable<Rows>
+      density="comfortable"
       option={{
         manualFiltering: false,
         manualPagination: false,

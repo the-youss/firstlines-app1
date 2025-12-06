@@ -98,6 +98,13 @@ export const extensionRouter = {
     return ctx.db.list.findMany({
       where: {
         userId: ctx.session.user.id
+      },
+      include:{
+        _count:{
+          select:{
+            leads:true
+          }
+        }
       }
     })
   }),

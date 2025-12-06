@@ -269,7 +269,7 @@ export class Request {
     await this.sleep(delay);
     await this.applyUserLevelWait(url)
   }
-  async applyUserLevelWait(url?: string, min = 5, max = 12) {
+  async applyUserLevelWait(url?: string, min = 4, max = 9) {
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
 

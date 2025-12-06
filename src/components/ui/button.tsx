@@ -64,10 +64,8 @@ export { Button, buttonVariants }
 
 export const ExternalLink = (props: React.ComponentProps<typeof Button> & React.ComponentProps<typeof Link>) => {
   return (
-    <Button asChild variant='ghost' size='sm' {...props} className={cn('justify-start h-4 p-0 hover:underline hover:underline-offset-2', props.className, 'cursor-newtab')}>
-      <Link href={props.href} rel={props.rel} target="_blank">
-        {props.children}
-      </Link>
-    </Button>
+    <Link href={props.href} rel={props.rel} target="_blank" className={cn(' p-0 hover:underline hover:underline-offset-2', props.className, 'cursor-newtab')}>
+      {props.children}
+    </Link>
   )
 }

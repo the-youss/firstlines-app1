@@ -25,7 +25,7 @@ export type GetProfileResponse = {
     headline: string
     profilePositionGroups?: {
       elements?: Array<{
-        dateRange: {
+        dateRange?: {
           start: any
           end?: any
         },

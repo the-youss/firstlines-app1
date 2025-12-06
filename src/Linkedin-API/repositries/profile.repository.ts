@@ -31,7 +31,7 @@ export class ProfileRepository {
     if (!element) {
       return null
     }
-    const currentJobs = (element.profilePositionGroups?.elements || []).filter(pos => !pos.dateRange.end).map(el => ({
+    const currentJobs = (element.profilePositionGroups?.elements || []).filter(pos => !pos.dateRange?.end).map(el => ({
       companyName: el.company?.name,
       companyWebsite: undefined,
       companySize: (el.company?.employeeCountRange?.start === 1 &&

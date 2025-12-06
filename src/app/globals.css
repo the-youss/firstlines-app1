@@ -179,4 +179,8 @@
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+
+  .cursor-newtab {
+    cursor: url('/img/new-tab.png') 10 10, pointer;
+  }
 }

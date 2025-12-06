@@ -30,7 +30,7 @@ export const useListTableColumn = (): MRT_ColumnDef<Rows>[] => {
       Cell(props) {
         return (
           <div className="flex items-center gap-3">
-            <Link href={{ pathname: appRoutes.appLeads, query: { listId: props.row.original.id } }} className="font-medium text-primary hover:underline">
+            <Link href={{ pathname: appRoutes.appLeads, query: { listId: props.row.original.id } }} className="font-medium text-primary hover:underline line-clamp-2 text-ellipsis text-pretty">
               {props.row.original.name}
             </Link>
           </div>
@@ -52,8 +52,39 @@ export const useListTableColumn = (): MRT_ColumnDef<Rows>[] => {
       },
     },
     {
+      accessorKey: '_count.leads',
+      header: 'Lead Count',
+      Cell(props) {
+        return (
+          <span>{props.row.original._count.leads}</span>
+        )
+      },
+    },
+    {
       accessorKey: 'createdAt',
       header: 'Created At',
+      Cell(props) {
+        return (
+          <span className="text-sm text-muted-foreground">
+            {format(props.row.original.createdAt, "MMM d, yyyy")}
+          </span>
+        )
+      },
+    },
+    {
+      accessorKey: 'createdAt',
+      header: 'Active Campaign',
+      Cell(props) {
+        return (
+          <span className="text-sm text-muted-foreground">
+            {format(props.row.original.createdAt, "MMM d, yyyy")}
+          </span>
+        )
+      },
+    },
+    {
+      accessorKey: 'id',
+      header: 'Action',
       Cell(props) {
         return (
           <span className="text-sm text-muted-foreground">
