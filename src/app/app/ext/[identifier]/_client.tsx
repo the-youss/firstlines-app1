@@ -50,51 +50,7 @@ type ImportState = "review" | "processing" | "success";
 
 export function Client({ identifier }: { identifier: string }) {
   const trpc = useTRPC();
-  const router = useRouter()
-  const { data: meta, isPending: isPendingMetadta } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
-  const singleLead = meta?.total === 1 ? 'lead' : 'leads';
-
-
-  // Source data from Chrome extension or mock
-  const sourceData: SourceData = MOCK_SOURCE;
-
-  // Import state
-  // const [state, setState] = useState<ImportState>("review");
-  // const [progress, setProgress] = useState(0);
-  // const [importedCount, setImportedCount] = useState(0);
-
-  // // Reset relevant fields when destination changes
-  // useEffect(() => {
-  //   if (destination === "new-list") {
-  //     setListName(`Search Results - ${new Date().toLocaleDateString()}`);
-  //   }
-  //   setSelectedCampaignId("");
-  //   setSelectedListId("");
-  //   setCreateNewSegment(false);
-  //   setSegmentName("");
-  // }, [destination]);
-
-  // Processing simulation
-  // useEffect(() => {
-  //   if (state === "processing") {
-  //     const interval = setInterval(() => {
-  //       setProgress((prev) => {
-  //         const increment = Math.random() * 8 + 2;
-  //         const newProgress = Math.min(prev + increment, 100);
-  //         setImportedCount(Math.floor((newProgress / 100) * sourceData.leadCount));
-
-  //         if (newProgress >= 100) {
-  //           clearInterval(interval);
-  //           setTimeout(() => setState("success"), 500);
-  //         }
-  //         return newProgress;
-  //       });
-  //     }, 200);
-
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [state, sourceData.leadCount]);
-
+  const { data: sourceData, isPending } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
 
 
 
@@ -105,9 +61,9 @@ export function Client({ identifier }: { identifier: string }) {
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-112px)]">
-      {false ? <Loading /> : (
+      {isPending ? <Loading /> : (
         <div className="w-full max-w-2xl">
-          <Review identifier={identifier} />
+          <Review identifier={identifier} sourceData={sourceData!} />
         </div>
       )}
     </div >
@@ -125,12 +81,11 @@ function Loading() {
 }
 
 
-function Review({ identifier }: { identifier: string }) {
+function Review({ sourceData, identifier }: { sourceData: SourceData, identifier: string }) {
   const router = useRouter();
   const trpc = useTRPC();
-  const sourceData: SourceData = MOCK_SOURCE;
+
   const { data: lists } = useQuery(trpc.extension.getLists.queryOptions())
-  const { data: meta, isPending: isPendingMetadta } = useQuery(trpc.extraction.fetchMeta.queryOptions({ payloadId: identifier }));
   const [destination, setDestination] = useState<ImportDestination>("new-list");
   const [listName, setListName] = useState(`Search Results - ${new Date().toLocaleDateString()}`);
   const [selectedCampaignId, setSelectedCampaignId] = useState<string>("");
@@ -214,21 +169,21 @@ function Review({ identifier }: { identifier: string }) {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <a
-                  href={sourceData.sourceUrl}
+                  href={sourceData?.sourceURL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium hover:underline flex items-center gap-1 text-foreground"
                 >
-                  {sourceData.sourceType === "sales-nav"
+                  {'sales-nav' === "sales-nav"
                     ? "Sales Navigator Results"
                     : "LinkedIn Search Results"}
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>
-              <p className="text-sm text-muted-foreground truncate">{sourceData.sourceUrl}</p>
+              <p className="text-sm text-muted-foreground truncate">{sourceData?.sourceURL}</p>
             </div>
             <Badge variant="secondary" className="shrink-0">
-              {sourceData.leadCount.toLocaleString()} leads found
+              {sourceData?.leadCount.toLocaleString()} leads found
             </Badge>
           </div>
 
